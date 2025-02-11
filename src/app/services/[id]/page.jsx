@@ -44,32 +44,6 @@ export default async function ServicePost({ params }) {
             <div className="text-justify" dangerouslySetInnerHTML={{ __html: post.content }} />
           </article>
           
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-3 mt-8 border p-4 rounded-lg shadow-lg">
-            {/* Small Video Section */}
-            <div className="mt-5 relative w-[250px] h-[300px] rounded-lg overflow-hidden">
-              <video 
-                src={post.smallVideo} 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-
-            {/* Content Section */}
-            <div className="flex-1">
-              <h3 className="text-2xl font-semibold">{post.heading}</h3>
-              <ul className="text-black dark:text-gray-200 space-y-2 mt-2">
-                {post.points?.map((point, index) => (
-                  <li key={index} className="flex text-s items-start">
-                    <span className="text-blue-500 mr-2">✔</span> 
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </section>
 
         {/* Sidebar */}
@@ -93,15 +67,15 @@ export default async function ServicePost({ params }) {
 
           {/* Download Brochure - Moved to the bottom of Sidebar */}
           <div className="p-4 bg-gradient-to-r from-[#c0392b] to-[#e67e22] text-white rounded-lg mt-6">
-            <h3 className="text-lg font-semibold">कोई भी प्रश्न है?</h3>
+            <h3 className="text-lg font-semibold text-black">कोई भी प्रश्न है?</h3>
             <p className="mt-3 text-sm text-white">
               बेझिझक हमसे संपर्क करें। हम जितनी जल्दी हो सकेगा आप को वापस संपर्क करेंगे।
               या अभी हमें फोन करें।
             </p>
 
             <div className="mt-4">
-              <p className="text-sm text-white">कॉल करें: <span className="text-blue-300">+(91) 9810487266</span></p>
-              <p className="text-sm text-white">मेल करें: <span className="text-blue-300">baglamukhisadhnapeeth@gmail.com</span></p>
+              <p className="text-sm text-white">कॉल करें: <span className="text-black">+(91) 9810487266</span></p>
+              <p className="text-sm text-white">मेल करें: <span className="text-black">baglamukhisadhnapeeth@gmail.com</span></p>
             </div>
           </div>
 
