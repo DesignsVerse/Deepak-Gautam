@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ProfileSection = () => {
   return (
     <div className="w-full bg-gradient-to-br from-gray-100 to-gray-50 shadow-lg rounded-xl"> {/* Gradient BG + Shadow */}
@@ -6,7 +8,7 @@ const ProfileSection = () => {
           
           {/* Image Section */}
           <div className="md:w-1/2 max-w-[550px]">
-            <img
+            <Image
               alt="A man in traditional attire standing in front of a temple"
               className="w-full h-auto rounded-2xl shadow-md border border-gray-300" // Rounded + Shadow + Border
               src="/images/panditjiphoto.jpg"

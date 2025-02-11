@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutSectionOne = () => {
   return (
@@ -14,7 +15,7 @@ const AboutSectionOne = () => {
               whileHover={{ scale: 1.05 }}
               className={`relative mx-auto rounded-lg shadow-lg overflow-hidden ${index % 3 === 0 ? 'col-span-2' : ''}`}
             >
-              <img
+              <Image
                 src={`/images/img${index + 1}.jpg`}
                 alt={`Image ${index + 1}`}
                 className="w-full h-auto object-cover"

@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 const Hero = () => {
   return (
     <section
@@ -33,7 +33,7 @@ const Hero = () => {
 
           {/* Right Side - Image */}
           <div className="w-full md:w-1/2  flex justify-center md:justify-end">
-            <img
+            <Imgage
               alt="माँ बगलामुखी की दिव्य प्रतिमा"
               height="450"
               width="450"

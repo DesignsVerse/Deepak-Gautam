@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="py-10 bg-gradient-to-r from-[#c0392b] to-[#e67e22] text-white">
@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div>
-            <img 
+            <Image
               src="https://storage.googleapis.com/a1aa/image/wd2wd8O3W-zUf-jcKxFfsc-53dCZ4n6oqKM8LA1BBAs.jpg" 
               alt="Panditjee Online logo" 
               className="mb-4" 

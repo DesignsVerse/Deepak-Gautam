@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import data from "@/data/servicedata.json";
 import Link from "next/link";
@@ -31,7 +32,7 @@ export default async function ServicePost({ params }) {
           {/* Image Section instead of Video */}
           {post.image && (
             <div className="relative mt-6 w-full rounded-lg overflow-hidden">
-              <img 
+              <Image 
                 src={post.image} 
                 alt="image" 
                 className="w-full h-[400px] object-cover rounded-lg"

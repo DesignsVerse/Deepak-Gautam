@@ -29,7 +29,7 @@ const Blog = () => {
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [scrollAmount]);
 
   return (
     <section id="blog" className="bg-[#F9FAFB] from-yellow-50 to-orange-100 py-10 md:py-14 lg:py-20">
