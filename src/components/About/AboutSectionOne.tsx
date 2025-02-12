@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-
 const AboutSectionOne = () => {
   return (
     <section id="about" className="pt-12 md:pt-16 lg:pt-20">

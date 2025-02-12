@@ -4,8 +4,7 @@ const ProfileSection = () => {
   return (
     <div className="w-full bg-gradient-to-br from-gray-100 to-gray-50 shadow-lg rounded-xl">
       <div className="p-8">
-        <div className="flex flex-col md:flex-row items-center">
-          
+        <div className="flex flex-col md:flex-row items-center">      
           {/* Image Section */}
           <div className="md:w-1/2 max-w-[550px]">
             <Image
@@ -17,7 +16,6 @@ const ProfileSection = () => {
               priority // ✅ Faster LCP ke liye
             />
           </div>
-
           {/* Content Section */}
           <div className="text-gray-800 md:w-1/2 mt-6 md:mt-0 md:ml-10">
             <h1 className="text-4xl font-extrabold mb-4 text-gray-900">पंडित नंदकिशोर जोशी</h1>

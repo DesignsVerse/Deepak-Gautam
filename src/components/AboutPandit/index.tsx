@@ -1,5 +1,4 @@
 import ProfileSection from "./ProfileSection"; // Profile Component Import किया
-
 const AboutPandit = () => {
   return (
     <>
