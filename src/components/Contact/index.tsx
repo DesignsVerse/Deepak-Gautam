@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState } from "react";
 import Image from "next/image";
 
@@ -128,7 +128,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 xl:w-1/2 flex justify-center items-center p-4">
-            <Image src="/images/contact.jpeg" alt="संपर्क करें" className="w-full h-auto max-h-[565px] object-cover rounded-sm" />
+            <Image src="/images/contact.jpeg" alt="संपर्क करें" width={500} height={400} className="rounded-sm object-cover" />
           </div>
         </div>
       </div>

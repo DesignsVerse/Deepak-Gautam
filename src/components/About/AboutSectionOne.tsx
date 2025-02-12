@@ -13,12 +13,17 @@ const AboutSectionOne = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
-              className={`relative mx-auto rounded-lg shadow-lg overflow-hidden ${index % 3 === 0 ? 'col-span-2' : ''}`}
+              className={`relative mx-auto rounded-lg shadow-lg overflow-hidden ${
+                index % 3 === 0 ? "col-span-2" : ""
+              }`}
             >
               <Image
                 src={`/images/img${index + 1}.jpg`}
                 alt={`Image ${index + 1}`}
+                width={500} // ✅ Required for Next.js optimization
+                height={300} // ✅ Required for Next.js optimization
                 className="w-full h-auto object-cover"
+                unoptimized // ✅ Optional: Remove if using external images
               />
             </motion.div>
           ))}

@@ -35,7 +35,10 @@ export default async function ServicePost({ params }) {
               <Image 
                 src={post.image} 
                 alt="image" 
+                width={800}  // ✅ Added proper width
+                height={400} // ✅ Added proper height
                 className="w-full h-[400px] object-cover rounded-lg"
+                unoptimized // ✅ Optional for local images
               />
             </div>
           )}
@@ -50,7 +53,7 @@ export default async function ServicePost({ params }) {
         {/* Sidebar */}
         <aside className="w-full lg:w-1/3 p-5 pt-24 rounded-lg shadow-md order-2 lg:order-none">
           
-          {/* All Services - Moved up */}
+          {/* All Services */}
           <h2 className="text-xl font-semibold mb-4">All Services</h2>
           <ul className="space-y-2">
             {data.map((service) => (
@@ -63,10 +66,7 @@ export default async function ServicePost({ params }) {
             ))}
           </ul>
 
-          {/* Sidebar Video */}
-          
-
-          {/* Download Brochure - Moved to the bottom of Sidebar */}
+          {/* Contact Info */}
           <div className="p-4 bg-gradient-to-r from-[#c0392b] to-[#e67e22] text-white rounded-lg mt-6">
             <h3 className="text-lg font-semibold text-black">कोई भी प्रश्न है?</h3>
             <p className="mt-3 text-sm text-white">

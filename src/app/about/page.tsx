@@ -24,20 +24,18 @@ const Galary = () => {
                 key={index}
                 className="relative rounded-lg shadow-lg overflow-hidden group"
               >
-               
                 <Image
                   src={`/images/galary/${index + 1}.jpg`}
                   alt={`Image ${index + 1}`}
-                  width={500} // Set a proper width
-                  height={300} // Set a proper height
+                  width={500}
+                  height={300}
+                  unoptimized // 👈 Added this for local images
                   className="w-full h-52 sm:h-56 md:h-64 lg:h-72 object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
 
                 {/* Overlay Effect */}
-                <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <p className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    
-                  </p>
+                <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <p className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></p>
                 </div>
               </div>
             ))}

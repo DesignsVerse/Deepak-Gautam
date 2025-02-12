@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from "next/image";
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="py-10 bg-gradient-to-r from-[#c0392b] to-[#e67e22] text-white">
@@ -8,24 +9,22 @@ export default function Footer() {
           {/* Logo and Description */}
           <div>
             <Image
-              src="https://storage.googleapis.com/a1aa/image/wd2wd8O3W-zUf-jcKxFfsc-53dCZ4n6oqKM8LA1BBAs.jpg" 
+              src="/moreadd-2.jpg" 
               alt="Panditjee Online logo" 
-              className="mb-4" 
               width={200} 
               height={100} 
+              className="mb-4"
             />
-            <p className="italic mb-4">"पंडितजी ऑनलाइन - आपकी हर धार्मिक सेवा का विश्वसनीय साथी।"</p>
-            
+            <p className="italic mb-4">&quot;पंडितजी ऑनलाइन - आपकी हर धार्मिक सेवा का विश्वसनीय साथी।&quot;</p>
             
             <div className="mt-4">
               <p className="font-bold mb-2">Stay In Touch With Us:</p>
               <div className="flex space-x-4">
-                <Link href="#" className="text-white"><i className="fab fa-facebook-f"></i></Link>
-                <Link href="#" className="text-white"><i className="fab fa-instagram"></i></Link>
-                <Link href="#" className="text-white"><i className="fab fa-pinterest"></i></Link>
+                <Link href="#" className="text-white">📘</Link>
+                <Link href="#" className="text-white">📸</Link>
+                <Link href="#" className="text-white">📌</Link>
               </div>
             </div>
-            
           </div>
           
           {/* Quick Links */}
@@ -56,28 +55,28 @@ export default function Footer() {
           {/* Contact Us */}
           <div>
             <h3 className="font-bold mb-4">CONTACT US</h3>
-            <div className="mb-4">
-              <i className="fas fa-map-marker-alt"></i>
-              <p className="inline-block ml-2">
+            <div className="mb-4 flex items-center">
+              <span className="mr-2">📍</span>
+              <p>
                 Panditjee Online<br/>
                 255, Satyam Mall,<br/>
                 Near Mansi Cross Road, Satellite,<br/>
                 Ahmedabad - 380015, (Gujarat) - India
               </p>
             </div>
-            <div className="mb-4">
-              <i className="fas fa-envelope"></i>
-              <p className="inline-block ml-2">Email: info@panditjeeonline.in</p>
+            <div className="mb-4 flex items-center">
+              <span className="mr-2">📧</span>
+              <p>Email: info@panditjeeonline.in</p>
             </div>
-            <div>
-              <i className="fas fa-phone"></i>
-              <p className="inline-block ml-2">Phone: +91 96620 01600</p>
+            <div className="flex items-center">
+              <span className="mr-2">📞</span>
+              <p>Phone: +91 96620 01600</p>
             </div>
           </div>
         </div>
         
         <div className="text-center mt-10">
-          <p>COPYRIGHT © 2025 <a href="#">DesignsVerse</a>. ALL RIGHTS RESERVED.</p>
+          <p>COPYRIGHT © 2025 <Link href="#">DesignsVerse</Link>. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>

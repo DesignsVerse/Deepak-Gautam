@@ -126,11 +126,11 @@ const Header = () => {
 
               <div className="flex items-center space-x-2 sm:space-x-3 mt-4 md:mt-0">
                 <div className="flex items-center bg-black p-1 rounded-lg cursor-pointer hover:bg-gray-800 transition">
-                  <Image src="/images/india.png" alt="HI" width={16} height={16} />
+                  {/* <Image src="/images/india.png" alt="HI" width={16} height={16} /> */}
                   <span className="text-white ml-1 text-xs sm:text-sm">HI</span>
                 </div>
                 <div className="flex items-center bg-black p-1 rounded-lg cursor-pointer hover:bg-gray-800 transition">
-                  <Image src="/images/us.png" alt="EN" width={16} height={16} />
+                  {/* <Image src="/images/us.png" alt="EN" width={16} height={16} /> */}
                   <span className="text-white ml-1 text-xs sm:text-sm">EN</span>
                 </div>
               </div>
