@@ -7,24 +7,24 @@ import { useRouter } from "next/navigation";
 const testimonialData = [
   {
     id: 1,
-    name: "Raj Patel",
+    name: " राज पटेल",
     content:
       "\"मैंने माँ बगलामुखी मंदिर में शत्रु बाधा निवारण पूजा करवाई और कुछ ही समय में सकारात्मक बदलाव देखने को मिले। जीवन की परेशानियाँ कम हुईं और मानसिक शांति प्राप्त हुई। पंडित नंदकिशोर जोशी जी का मार्गदर्शन बहुत उपयोगी रहा।\"",
-    image: "/images/testimonials/auth-01.png",
+    image: "/images/testimonials/testmonial-1.jpg",
   },
   {
     id: 2,
-    name: "Luna Gomez",
+    name: "आनंद किशोर",
     content:
       "\"व्यापार में लगातार नुकसान हो रहा था, लेकिन माँ बगलामुखी की विशेष पूजा के बाद आर्थिक स्थिति में सुधार हुआ। अब व्यवसाय बढ़ रहा है और सभी अड़चनें दूर हो गई हैं। जोशी जी का आभार।\"",
-    image: "/images/testimonials/auth-02.png",
+    image: "/images/testimonials/testmonial-2.jpg",
   },
   {
     id: 3,
-    name: "Karan Singh",
+    name: "राजेश शर्मा",
     content:
       "\"कोर्ट केस में सालों से फंसा था, लेकिन माँ बगलामुखी की पूजा के बाद फैसला मेरे पक्ष में आया। यह सच में एक चमत्कार से कम नहीं था। अब मैं पहले से ज्यादा आत्मविश्वास से भर गया हूँ।\"",
-    image: "/images/testimonials/auth-03.png",
+    image: "/images/testimonials/testmonial-3.jpg",
   },
 ];
 

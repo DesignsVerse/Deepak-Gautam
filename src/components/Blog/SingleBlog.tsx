@@ -21,13 +21,13 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
       <div className="p-4 text-left">
         <p className="text-sm text-gray-500">{author.name} - {publishDate}</p>
         <h2 className="text-xl font-bold text-gray-900 mt-2">
-          <Link href={`/blog/${id}`} className="hover:text-blue-600">
+          <Link href={`/blog/${id}`} className="hover:text-[#D55F26]">
             {title}
           </Link>
         </h2>
         <p className="text-gray-700 mt-2">{paragraph}</p>
-        <Link href={`/blog/${id}`} className="text-blue-600 font-semibold mt-4 inline-flex items-center">
-          Continue Reading <ArrowRight className="ml-2" size={18} />
+        <Link href={`/blog/${id}`} className="text-[#D55F26] font-semibold mt-4 inline-flex items-center">
+        आगे पढ़ें <ArrowRight className="ml-2" size={18} />
         </Link>
       </div>
     </div>

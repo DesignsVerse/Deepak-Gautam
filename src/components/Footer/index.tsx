@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div>
             <Image
-              src="/moreadd-2.jpg" 
+              src="/images/logo/LOGO-2.png" 
               alt="Panditjee Online logo" 
               width={200} 
               height={100} 
@@ -17,60 +17,60 @@ export default function Footer() {
             />
             <p className="italic mb-4">&quot;पंडितजी ऑनलाइन - आपकी हर धार्मिक सेवा का विश्वसनीय साथी।&quot;</p>
             
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <p className="font-bold mb-2">Stay In Touch With Us:</p>
               <div className="flex space-x-4">
                 <Link href="#" className="text-white">📘</Link>
                 <Link href="#" className="text-white">📸</Link>
                 <Link href="#" className="text-white">📌</Link>
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold mb-4">QUICK LINKS</h3>
+            <h3 className="font-bold mb-4">त्वरित लिंक</h3>
             <ul>
-              <li className="mb-2"><Link href="/" className="text-white">Home</Link></li>
-              <li className="mb-2"><Link href="/about" className="text-white">Gallery</Link></li>
-              <li className="mb-2"><Link href="/blog" className="text-white">Blogs</Link></li>
-              <li className="mb-2"><Link href="/contact" className="text-white">Contact Us</Link></li>
+              <li className="mb-2"><Link href="/" className="text-white">होम</Link></li>
+              <li className="mb-2"><Link href="/about" className="text-white">गैलरी</Link></li>
+              <li className="mb-2"><Link href="/blog" className="text-white">समाचार</Link></li>
+              <li className="mb-2"><Link href="/contact" className="text-white">संपर्क करें</Link></li>
             </ul>
           </div>
           
           {/* Puja Services */}
           <div>
-            <h3 className="font-bold mb-4">PUJA SERVICES</h3>
+            <h3 className="font-bold mb-4">पूजा सेवाएं </h3>
             <ul>
-              <li className="mb-2"><Link href="/services/1" className="text-white">Puran Katha</Link></li>
-              <li className="mb-2"><Link href="/services/2" className="text-white">Shanti Puja</Link></li>
-              <li className="mb-2"><Link href="/services/3" className="text-white">Havan / Yagna</Link></li>
-              <li className="mb-2"><Link href="/services/4" className="text-white">Sanskar Vidhi</Link></li>
-              <li className="mb-2"><Link href="/services/5" className="text-white">Sthapan Puja</Link></li>
-              <li className="mb-2"><Link href="/services/6" className="text-white">Festival Puja</Link></li>
-              <li className="mb-2"><Link href="/services" className="text-white font-bold">All Puja Services</Link></li>
+              <li className="mb-2"><Link href="/services/1" className="text-white">शत्रु बाधा निवारण पूजा</Link></li>
+              <li className="mb-2"><Link href="/services/2" className="text-white">अनुष्ठान पूजा</Link></li>
+              <li className="mb-2"><Link href="/services/3" className="text-white">सम्मोहन तंत्र पूजा</Link></li>
+              <li className="mb-2"><Link href="/services/4" className="text-white">लक्ष्मी पूजा</Link></li>
+              <li className="mb-2"><Link href="/services/5" className="text-white">विद्वेषण पूजा</Link></li>
+              <li className="mb-2"><Link href="/services/6" className="text-white">तंत्र पूजा</Link></li>
+              <li className="mb-2"><Link href="/services" className="text-white font-bold">हमारी सेवाएं</Link></li>
             </ul>
           </div>
           
           {/* Contact Us */}
           <div>
-            <h3 className="font-bold mb-4">CONTACT US</h3>
+            <h3 className="font-bold mb-4">संपर्क करें</h3>
             <div className="mb-4 flex items-center">
               <span className="mr-2">📍</span>
               <p>
-                Panditjee Online<br/>
-                255, Satyam Mall,<br/>
-                Near Mansi Cross Road, Satellite,<br/>
-                Ahmedabad - 380015, (Gujarat) - India
+                छापीहेड़ा रोड, नलखेड़ा,<br/>
+                आगर मालवा ज़िला, <br/>
+                {/* Near Mansi Cross Road, Satellite,<br/> */}
+                मध्य प्रदेश - 465445 - India
               </p>
             </div>
-            <div className="mb-4 flex items-center">
+            {/* <div className="mb-4 flex items-center">
               <span className="mr-2">📧</span>
               <p>Email: info@panditjeeonline.in</p>
-            </div>
+            </div> */}
             <div className="flex items-center">
               <span className="mr-2">📞</span>
-              <p>Phone: +91 96620 01600</p>
+              <p>Phone: +91 97521 65718</p>
             </div>
           </div>
         </div>
