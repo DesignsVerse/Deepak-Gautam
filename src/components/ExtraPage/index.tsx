@@ -1,52 +1,44 @@
 "use client";
 
 import Image from "next/image";
-import { FaCheck, FaArrowRight } from "react-icons/fa";
+import "@/styles/index.css"; // Ensure you have this file for custom animations
 
 const BaglamukhiSection = () => {
   return (
-    <section className="bg-gradient-to-b from-yellow-50 to-yellow-100 text-black py-16">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="flex flex-col md:flex-row items-center gap-10">
-          {/* Content Section */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <h1 className="text-3xl  text-yellow-700 mb-3">सम्पूर्ण समाधान का मार्ग!</h1>
-            <h2 className="text-5xl font-bold text-gray-900 leading-tight mb-5">
-              माँ बगलामुखी की कृपा से जीवन में सफलता, शांति और समृद्धि पाएं
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              माँ बगलामुखी के दिव्य अनुष्ठान और साधना से अपने जीवन की बाधाओं को दूर करें और सफलता का मार्ग प्रशस्त करें।
-            </p>
-            <ul className="list-none space-y-3 mb-6">
-              {[
-                "जीवन की सभी कठिनाइयों से छुटकारा पाएं",
-                "शत्रुओं पर विजय प्राप्त करें और कानूनी समस्याओं का समाधान करें",
-                "नौकरी, व्यवसाय और आर्थिक मामलों में अपार सफलता",
-                "वाणी में प्रभावशाली सुधार और रिश्तों में मधुरता",
-              ].map((text, index) => (
-                <li key={index} className="flex items-center bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <FaCheck className="text-green-500 mr-3" />
-                  <span className="flex-grow text-gray-800 font-medium">{text}</span>
-                </li>
-              ))}
-            </ul>
-            <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer">
-              <button className="bg-[#d55f26] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-yellow-700 transition duration-300">
-                अभी बुक करें
-              </button>
-            </a>
-          </div>
+    <section className="flex items-center justify-center min-h-screen p-8 bg-[#FDF7F4]">
+      <div className="p-12 rounded-lg shadow-2xl max-w-6xl mx-auto flex flex-col md:flex-row items-center backdrop-blur-lg bg-transparent">
+        {/* Content Section */}
+        <div className="md:w-2/3 md:pr-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-red-800 mb-6">
+            Book Consultation Call From The Best Astrologer In India!
+          </h1>
+          <p className="text-lg text-gray-900 mb-8">
+            We believe astrology is pure science, and we aim to create such a social impact of the organization on you
+            that science and astrology through its resources of the astrology chart, kundali, etc. As we dive into our
+            50th year, we strive to build a community where we are a part of your daily routine right from our astrology
+            by date of birth, name, time, palm reading, and face reading, to all other online astrology, numerology,
+            palmistry services.
+          </p>
+          <button className="bg-orange-500 text-white text-lg font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-all">
+            Book Now
+          </button>
+        </div>
 
-          {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center">
-            <Image
-              src="/images/injoy.jpg"
-              alt="Maa Baglamukhi"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-lg"
-            />
-          </div>
+        {/* Image Section */}
+        <div className="relative flex justify-center items-center">
+          {/* Rotating Background Image */}
+          <div
+            className="w-80 h-80 rounded-full absolute bg-cover bg-center rotate-animation"
+            style={{ backgroundImage: "url('/bg.png')" }}
+          ></div>
+          {/* Static Foreground Image */}
+          <Image
+            src="/p.png"
+            alt="Astrologer consultation call advertisement"
+            width={250}
+            height={300}
+            className="rounded-full relative z-10"
+          />
         </div>
       </div>
     </section>

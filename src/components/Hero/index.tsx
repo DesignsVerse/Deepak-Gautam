@@ -1,62 +1,102 @@
-import Link from "next/link";
+
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative z-10 overflow-hidden pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]">
-      
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section 
+      className="relative w-full h-screen md:h-[547px] flex flex-col md:flex-row items-center justify-between px-6 md:px-32 lg:px-48 py-10 bg-gradient-to-b from-[#fff5ea] to-[#ffaf6d] overflow-hidden"
+    >
+      {/* Right Side - Image Section (Moves on top in mobile) */}
+      <div className="relative flex flex-col items-center w-full md:w-auto md:order-2 mt-10 md:mt-0 md:mr-10 lg:mr-16">
+        {/* 🔥 Rotating Background Shape */}
+        <motion.div
+          className="absolute w-60 h-60 md:w-80 md:h-80 rounded-full bg-cover bg-center shadow-lg top-10 md:top-0"
+          style={{ backgroundImage: "url('/bg.png')" }}
+          animate={{ rotate: [0, 360] }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+        />
+
+        {/* 📸 Foreground Image (Pandit Ji) */}
         <Image
-          src="/bg-hero.png"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          priority
+          src="/p.png"
+          alt="Astrologer consultation"
+          width={180} 
+          height={220} 
+          className="rounded-full relative z-10  mt-16 mb-10 shadow-lg "
         />
       </div>
 
-      {/* Overlay for Blurred Effect */}
-      <div className="absolute inset-0 bg-black/10 z-5"></div>
-
-      {/* Main Content */}
-      <div className="relative z-10 container mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+      {/* Left Side - Text Content */}
+      <motion.div 
+        className="max-w-lg relative z-10 text-center md:text-left flex-1 mt-6 md:mt-0 md:ml-10 lg:ml-16"
+        initial={{ opacity: 0, y: 30 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#7b1e1e] leading-tight">
+          Discover Your Destiny with Astrology
+        </h1>
+        <p className="mt-3 text-gray-700 text-lg leading-relaxed md:block hidden">
+          Let our expert <b>Pandit Ji</b> guide you with <b>accurate horoscope & Vastu insights</b> for success, peace, and happiness.
+        </p>
         
-        {/* White Background Box Covering Both Text and Image */}
-        <div className="w-full bg-white/80 p-8 rounded-lg shadow-xl flex flex-col md:flex-row items-center md:items-start gap-10">
-          
-          {/* Left Side - Text Content */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 mt-20 text-black leading-tight">
-              माँ बगलामुखी मंदिर में पूजा बुक करें
-            </h1>
-            <p className="text-lg md:text-xl mb-6 text-gray-700 leading-relaxed">
-              माता बगलामुखी के दिव्य आशीर्वाद और आध्यात्मिक शांति का अनुभव करें।
-              सुरक्षा और सफलता के लिए अपनी पूजा आज ही बुक करें।
-            </p>
-            <Link
-              href="tel:+919413466075"
-              className="px-8 py-3 border-2 border-black text-black rounded-full text-lg font-semibold hover:bg-black hover:text-white transition duration-300"
-            >
-              📞 अभी संपर्क करें
-            </Link>
-          </div>
+        {/* 🚀 CTA Button */}
+        <motion.button 
+          className="mt-5 px-6 py-3 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white text-lg font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
+          whileHover={{ scale: 1.1 }}
+        >
+          Consult Pandit Ji Now  
+        </motion.button>
 
-          {/* Right Side - Image */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-            <Image
-              alt="माँ बगलामुखी की दिव्य प्रतिमा"
-              height={450}
-              width={450}
-              className="rounded-2xl shadow-xl object-cover transform hover:scale-105 transition duration-500"
-              src="/images/hero/Maabaglamukhi1.jpeg"
-            />
-          </div>
-        </div>
-      </div>
+        {/* Small Paragraph (Visible in mobile only) */}
+        <p className="mt-3 text-gray-700 text-sm md:hidden">
+          Get expert guidance on astrology and Vastu for a better future.
+        </p>
+      </motion.div>
     </section>
   );
 };
 
 export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

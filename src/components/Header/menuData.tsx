@@ -3,31 +3,31 @@ import { Menu } from "@/types/menu";
 const menuData: Menu[] = [
   {
     id: 1,
-    title: "होम",
+    title: "Home",
     path: "/",
     newTab: false,
   },
   {
     id: 2,
-    title: "हमारी सेवाएं",
+    title: "Services",
     path: "/services",
     newTab: false,
   },
   {
     id: 4,
-    title: "गैलरी",
+    title: "About",
     path: "/about",
     newTab: false,
   },
   {
     id: 33,
-    title: "समाचार ",
+    title: "Blog",
     path: "/blog",
     newTab: false,
   },
   {
     id: 3,
-    title: "संपर्क करें ",
+    title: "Contact",
     path: "/contact",
     newTab: false,
   },

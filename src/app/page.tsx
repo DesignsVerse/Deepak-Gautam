@@ -7,6 +7,8 @@ import AboutPandit from "@/components/AboutPandit";
 import Services from "@/components/Services";
 import BaglamukhiSection from "@/components/ExtraPage";
 import CallNow from "@/components/Marquee";
+import Experience from "@/components/Experience";
+import ZodiacSigns from "@/components/Try";
 export const metadata: Metadata = {
   title: "DesignsVerse",
   description: "DesignsVerse is an India's leading digital solutions agency offering custom website development, ERP software, digital marketing, UI/UX design, mobile app development, and branding services to enhance your online presence and drive business growth.",  
@@ -17,12 +19,15 @@ export default function Home() {
     <>
       
       <Hero />
-      <AboutPandit/>
-      <Services/>
       <CallNow/>
+      {/* <AboutPandit/> */}
+      <Services/>
+      <Experience/>
       <BaglamukhiSection/>
       <Testimonials />
+      <ZodiacSigns/>
       <Blog />
+      
       {/* <ScrollUp /> */}
     </>
   );

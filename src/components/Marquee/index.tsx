@@ -1,23 +1,43 @@
 "use client"; // Next.js Client Component
 
 import Marquee from "react-fast-marquee";
-import { FaPhoneAlt } from "react-icons/fa"; // Call Icon Import
+import Image from "next/image";
+
+const astrologySymbols = [
+  { name: "Om Symbol", image: "/images/m/1.png" },
+  { name: "Swastik", image: "/images/m/2.png" },
+  { name: "Kalash", image: "/images/m/3.png" },
+  { name: "Pandit Ji", image: "/images/m/4.png" },
+  { name: "Rudraksha", image: "/images/m/5.png" },
+  { name: "Yantra", image: "/images/m/6.png" },
+  { name: "Trishul", image: "/images/m/7.png" },
+  { name: "Shankh", image: "/images/m/1.png" },
+  { name: "Deepak", image: "/images/m/2.png" },
+  { name: "Mala", image: "/images/m/2.png" },
+];
 
 const CallNow = () => {
   return (
-    <section className="w-full">
-      <div className="bg-gradient-to-r from-[#FFECB3] to-[#FFD54F]  shadow-md overflow-hidden border-b-2 border-[#FFA000]">
+    <section className="w-full mt-5 h-60 overflow-hidden">
+      <div className="bg-white overflow-hidden border-gray-300 p-4">
         <Marquee
-          gradient={false}
-          speed={80} // Normal Speed
-          pauseOnHover={true} // Hover pe smooth stop
-          direction="right" // Right Move karega
-          className="text-lg md:text-xl font-bold text-black uppercase py-2 tracking-wider"
+          gradient={false} // Shadow effect hata diya
+          speed={50}
+          pauseOnHover={true}
+          direction="left"
+          className="text-xl md:text-2xl font-semibold text-black py-4 tracking-wider custom-marquee"
         >
-          {[...Array(10)].map((_, index) => (
-            <span key={index} className="flex items-center gap-3 mx-8">
-              <FaPhoneAlt className="text-black text-sm md:text-lg" /> {/* Call Icon */}
-              <span>BOOK NOW</span>
+          {astrologySymbols.map((symbol, index) => (
+            <span key={index} className="mx-8 flex items-center gap-4">
+              <div className="w-[100px] h-[100px] flex items-center justify-center overflow-hidden bg-white">
+                <Image
+                  src={symbol.image}
+                  alt={symbol.name}
+                  width={100}
+                  height={100}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </span>
           ))}
         </Marquee>

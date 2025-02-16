@@ -1,52 +1,40 @@
 import { Services } from "@/types/services";
-import Image from "next/image";
+import { FaStar, FaPhone, FaBookOpen, FaChartLine } from "react-icons/fa"; // Icons Import
 import Link from "next/link";
 
 const SingleServices = ({ services }: { services: Services }) => {
-  const { id, title, image, paragraph } = services;
+  const { id, title, paragraph } = services;
+
+  // Icon Mapping (हर service के लिए अलग icon use करने का तरीका)
+  const iconMap: { [key: string]: JSX.Element } = {
+    astrology: <FaStar className="text-[#800000] text-4xl" />,
+    consultation: <FaPhone className="text-[#800000] text-4xl" />,
+    numerology: <FaChartLine className="text-[#800000] text-4xl" />,
+    kitab: <FaBookOpen className="text-[#800000] text-4xl" />,
+  };
 
   return (
-    <div className="group relative overflow-hidden rounded-md bg-white shadow-one duration-300 hover:shadow-two mb-8">
+    <div className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 text-center border-2 border-yellow-500">
+      {/* Service Icon */}
+      <div className="flex justify-center items-center bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full w-20 h-20 mx-auto shadow-md p-4">
+        {iconMap[id] || <FaStar className="text-[#800000] text-4xl" />} {/* Default Icon */}
+      </div>
       
-      {/* Image Link */}
-      <Link href={`/services/${id}`} className="relative block w-full">
-        <div className="relative w-full h-[200px] md:h-[250px] lg:h-[280px] overflow-hidden">
-          <Image
-            src={image}
-            alt="image"
-            width={500}
-            height={300}
-            priority
-            className="rounded-md object-cover"
-          />
-        </div>
-      </Link>
-
-      <div className="p-4">
-        {/* Title Link */}
-        <h3 className="mb-4 block text-xl font-bold text-black hover:text sm:text-2xl">
-          <Link href={`/services/${id}`}>{title}</Link>
-        </h3>
-
-        {/* Paragraph */}
-        <p className="no-underline mb-6 border-b text-justify border-body-color border-opacity-10 pb-6 font-medium text-body-color-black">
-          <Link href={`/services/${id}`} className="">{paragraph}</Link>
-        </p>
-
-        {/* Buttons - View More & Book Now */}
-        <div className="flex justify-between items-center mt-4">
-          <Link href={`/services/${id}`} className="text-[#d55f26] font-semibold hover:underline">
-          और देखें
-          </Link>
-          <a
-            href="https://wa.me/919876543210" // Yaha apna WhatsApp number dal dena
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#d55f26] text-white px-4 py-2 rounded-lg shadow-md font-semibold flex items-center gap-2 hover:scale-105 hover:shadow-lg transition duration-300"
-          >
-            {/* 📲  */}अभी बुक करें
-          </a>
-        </div>
+      {/* Title */}
+      <h3 className="mt-4 text-xl font-bold text-[#800000] hover:text-[#FFD700] transition duration-300">
+        {title}
+      </h3>
+      
+      {/* Description */}
+      <p className="text-gray-700 text-sm mt-2">{paragraph}</p>
+      
+      {/* CTA Button */}
+      <div className="mt-6">
+        <Link href={`/services/${id}`}>
+          <button className="bg-[#FF9933] text-white font-semibold px-5 py-2 rounded-full shadow-md hover:bg-[#FFD700] hover:text-[#800000] hover:scale-105 transition duration-300">
+            Order Now
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const Services = () => {
         {/* View More Button - Centered & Improved */}
         <div className="flex justify-center mt-6">
           <Link href="/services">
-            <button className="bg-gradient-to-r from-[#D96625] to-[#FF5733] text-white px-8 py-3 rounded-lg shadow-md font-semibold hover:scale-105 hover:shadow-lg transition duration-300">
+            <button className="bg-[#FF9933] text-white font-semibold px-5 py-2 rounded-full shadow-md hover:bg-[#FFD700] hover:text-[#800000] hover:scale-105 transition duration-300">
               🚀 और देखें
             </button>
           </Link>
