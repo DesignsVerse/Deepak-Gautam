@@ -2,6 +2,7 @@
 import { Services } from "@/types/services";
 import { FaPhone, FaChartLine, FaBookOpen } from "react-icons/fa"; // Icons Import
 import Link from "next/link";
+import Image from "next/image";
 
 const SingleServices = ({ services }: { services: Services }) => {
   const { id, title, paragraph } = services;
@@ -13,7 +14,7 @@ const SingleServices = ({ services }: { services: Services }) => {
     <div className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 text-center border-2 border-yellow-500">
       {/* Service Image */}
       <div className="flex bg-[#f0703a] optional:40 justify-center items-center bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full w-20 h-20 mx-auto shadow-md p-4">
-        <img src={defaultImage} alt={title} className="w-full  h-full object-cover rounded-full" />
+        <Image src={defaultImage} alt={title} className="w-full  h-full object-cover rounded-full" />
       </div>
       
       {/* Title */}
