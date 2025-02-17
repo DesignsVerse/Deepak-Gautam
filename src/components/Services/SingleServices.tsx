@@ -8,7 +8,7 @@ const SingleServices = ({ services }: { services: Services }) => {
   const { id, title, paragraph } = services;
 
   // Default Image (Same Image for All Services)
-  const defaultImage = "/s-icon.png"; // Replace with actual image path
+  const defaultImage = "/images/m/9.png"; // Replace with actual image path
 
   return (
     <div className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 text-center border-2 border-yellow-500">
