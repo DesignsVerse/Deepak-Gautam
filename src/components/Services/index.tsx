@@ -11,33 +11,40 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="bg-[#fafaf8] py-16 md:py-20 lg:py-24"
+      className="relative   pt-10 pb-20 "
+      style={{ 
+        backgroundColor: "#FDF7F4", 
+        backgroundSize: "cover",  // Ensure full coverage
+        backgroundPosition: "center" // Adjust as needed: "top", "bottom", "left center", etc.
+      }}
     >
-      <div className="container px-4 md:px-8">
-        {/* Title */}
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
+
+      <div className="container px-4 md:px-8 relative z-10">
+        {/* Title with updated color */}
         <SectionTitle
           title="हमारी सेवाएँ"
           paragraph="हमारी सेवाओं का लाभ उठाएँ, जो आपकी ज़रूरतों को ध्यान में रखते हुए विशेष रूप से तैयार की गई हैं।"
           center
         />
 
-        {/* Cards Section - Gap reduced */}
+        {/* Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {visibleServices.map((service) => (
-            <div
-              key={service.id}
-              className="p-6 rounded-2xl shadow-lg border border-gray-200 text-center transform transition-all hover:scale-105 hover:shadow-xl bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5]"
-            >
+          {visibleServices.map((service, index) => (
+            <div key={index}>
               <SingleServices services={service} />
             </div>
           ))}
         </div>
 
-        {/* View More Button - Centered & Improved */}
+        {/* View More Button with custom hover effect */}
         <div className="flex justify-center mt-6">
           <Link href="/services">
-            <button className="bg-[#FF9933] text-white font-semibold px-5 py-2 rounded-full shadow-md hover:bg-[#FFD700] hover:text-[#800000] hover:scale-105 transition duration-300">
-              🚀 और देखें
+            <button className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300">
+              <span className="relative z-10 inset-0 bg-[#F0703A] transition-transform transform scale-x-0 origin-left hover:scale-x-100 duration-300">📖 Book Now</span>
+              {/* Hover Effect - Left to Right */}
+              <span className=""></span>
             </button>
           </Link>
         </div>

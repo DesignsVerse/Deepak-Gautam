@@ -11,14 +11,14 @@ const astrologySymbols = [
   { name: "Rudraksha", image: "/images/m/5.png" },
   { name: "Yantra", image: "/images/m/6.png" },
   { name: "Trishul", image: "/images/m/7.png" },
-  { name: "Shankh", image: "/images/m/1.png" },
-  { name: "Deepak", image: "/images/m/2.png" },
-  { name: "Mala", image: "/images/m/2.png" },
+  { name: "Shankh", image: "/images/m/8.png" },
+  { name: "Deepak", image: "/images/m/9.png" },
+  { name: "Mala", image: "/images/m/10.png" },
 ];
 
 const CallNow = () => {
   return (
-    <section className="w-full mt-5 h-60 overflow-hidden">
+    <section className="w-full mt-5 h-48 overflow-hidden">
       <div className="bg-white overflow-hidden border-gray-300 p-4">
         <Marquee
           gradient={false} // Shadow effect hata diya
@@ -28,7 +28,7 @@ const CallNow = () => {
           className="text-xl md:text-2xl font-semibold text-black py-4 tracking-wider custom-marquee"
         >
           {astrologySymbols.map((symbol, index) => (
-            <span key={index} className="mx-8 flex items-center gap-4">
+            <span key={index} className="mx-16 flex items-center gap-20">
               <div className="w-[100px] h-[100px] flex items-center justify-center overflow-hidden bg-white">
                 <Image
                   src={symbol.image}

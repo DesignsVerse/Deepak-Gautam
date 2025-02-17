@@ -20,10 +20,10 @@ const Hero = () => {
 
         {/* 📸 Foreground Image (Pandit Ji) */}
         <Image
-          src="/p.png"
+          src="/images/bhaiya/33.png"
           alt="Astrologer consultation"
-          width={180} 
-          height={220} 
+          width={260} 
+          height={260} 
           className="rounded-full relative z-10  mt-16 mb-10 shadow-lg "
         />
       </div>
