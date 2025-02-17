@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Page",
-  description: "Have questions or need expert solutions for website development, digital marketing, or personal branding? Contact DesignsVerse today for tailored strategies and seamless digital experiences. Let's build something amazing together!",
+  description: "Have questions or need expert solutions for website development, digital marketing, or personal branding? Contact Deepak_Gautam today for tailored strategies and seamless digital experiences. Let's build something amazing together!",
   // other metadata
 };
 

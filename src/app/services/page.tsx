@@ -4,9 +4,9 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | DesignsVerse",
+  title: "Services | Deepak_Gautam",
   description:
-    "Explore our premium website development, digital marketing, and personal branding services at DesignsVerse. We craft SEO-friendly websites, powerful marketing strategies, and brand identities to elevate your online presence."
+    "Explore our premium website development, digital marketing, and personal branding services at Deepak_Gautam. We craft SEO-friendly websites, powerful marketing strategies, and brand identities to elevate your online presence."
 };
 
 const ServicePage = () => {
