@@ -29,7 +29,7 @@ const Testimonials = () => {
     <section className="bg-[#fdf7f4] py-12 text-gray-800 text-center">
       <h2 className="text-4xl font-bold text-[#7b1e1e] mb-12">Happy Client Testimonials</h2>
 
-      <div className="overflow-hidden relative max-w-6xl mx-auto" onDoubleClick={handleDoubleClick}>
+      <div className="overflow-hidden relative max-w-6xl mx-auto" >
         <motion.div
           className="flex space-x-6"
           style={infiniteScrollStyle}
@@ -37,13 +37,13 @@ const Testimonials = () => {
           {testimonialsData.map((testimonial, index) => (
             <motion.div
               key={`${testimonial.id}-${index}`}  
-              className="min-w-[280px] max-w-[280px] bg-[#7b1e1e] text-white p-6 rounded-lg shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-[#FF5C16] hover:to-[#800000] cursor-pointer"
+              className="min-w-[290px] max-w-[290px] bg-[#7b1e1e] text-white p-2 h-50 rounded-lg  cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-white text-[#7b1e1e] p-6 rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#FF5C16] to-[#800000] opacity-20"></div>
+              <div className="bg-white p-1 text-[#7b1e1e] h-46 rounded-lg relative overflow-hidden">
+                <div className="absolute h-60   inset-0 bg-gradient-to-r from-[#FF5C16] to-[#800000] opacity-20"></div>
                 <h3 className="text-xl font-bold mb-4 z-10">{testimonial.title}</h3>
-                <p className="mb-4 z-10">{testimonial.content}</p>
+                <p className="mb-4 text-justify z-10">{testimonial.content}</p>
                 <p className="font-bold z-10">– {testimonial.name}</p>
               </div>
             </motion.div>
