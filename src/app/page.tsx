@@ -3,12 +3,11 @@ import Blog from "@/components/Blog";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
-import AboutPandit from "@/components/AboutPandit";
+  
 import Services from "@/components/Services";
 import BaglamukhiSection from "@/components/ExtraPage";
 import CallNow from "@/components/Marquee";
 import Experience from "@/components/Experience";
-import ZodiacSigns from "@/components/Try";
 import Faq from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "Deepak_Gautam",
