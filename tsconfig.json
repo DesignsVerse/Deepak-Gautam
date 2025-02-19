@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/blog/[id]/page.jsx", "src/app/services/[id]/page.jsx"  ],
+, "src/app/blog/[id]/page.tsx", "src/app/services/[id]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

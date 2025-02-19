@@ -11,21 +11,21 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative   pt-10 pb-20 "
-      style={{ 
-        backgroundColor: "#FDF7F4", 
-        backgroundSize: "cover",  // Ensure full coverage
-        backgroundPosition: "center" // Adjust as needed: "top", "bottom", "left center", etc.
+      className="relative pt-10 pb-20"
+      style={{
+        backgroundColor: "#FDF7F4",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       {/* Overlay for better readability */}
       <div className="absolute inset-0 bg-black bg-opacity-0"></div>
 
       <div className="container px-4 md:px-8 relative z-10">
-        {/* Title with updated color */}
+        {/* SEO-Friendly Section Title */}
         <SectionTitle
-          title="हमारी सेवाएँ"
-          paragraph="हमारी सेवाओं का लाभ उठाएँ, जो आपकी ज़रूरतों को ध्यान में रखते हुए विशेष रूप से तैयार की गई हैं।"
+          title="🔱 हमारी सेवाएँ | ज्योतिष समाधान | दीपक गौतम जी"
+          paragraph="🌟 ग्रह दोष निवारण, विवाह मिलान, तंत्र साधना, व्यापार वृद्धि और सफलता प्राप्त करने के लिए हमारी विशेष सेवाएँ उपलब्ध हैं।"
           center
         />
 
@@ -38,13 +38,13 @@ const Services = () => {
           ))}
         </div>
 
-        {/* View More Button with custom hover effect */}
+        {/* View More Button with SEO Text */}
         <div className="flex justify-center mt-6">
           <Link href="/services">
             <button className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300">
-              <span className="relative z-10 inset-0  transition-transform transform scale-x-0 origin-left hover:scale-x-100 duration-300">View More</span>
-              {/* Hover Effect - Left to Right */}
-              <span className=""></span>
+              <span className="relative z-10 inset-0 transition-transform transform scale-x-0 origin-left hover:scale-x-100 duration-300">
+                🔍 और सेवाएँ देखें
+              </span>
             </button>
           </Link>
         </div>

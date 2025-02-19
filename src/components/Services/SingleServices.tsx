@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { Services } from "@/types/services";
 import { FaPhone, FaChartLine, FaBookOpen } from "react-icons/fa"; // Icons Import
 import Link from "next/link";
@@ -13,10 +14,11 @@ const SingleServices = ({ services }: { services: Services }) => {
   return (
     <div className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 text-center border-2 border-yellow-500">
       {/* Service Image */}
+      <Link href={`/services/${id}`}>
       <div className="flex bg-[#FFECDD] optional:40 justify-center items-center bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full w-20 h-20 mx-auto shadow-md p-4">
         <Image 
           src={defaultImage} 
-          alt={title} 
+          alt={`${title} - पंडित दीपक गौतम जी की सेवा`} 
           width={80} 
           height={80} 
           className="w-full h-full object-cover rounded-full" 
@@ -24,12 +26,17 @@ const SingleServices = ({ services }: { services: Services }) => {
       </div>
       
       {/* Title */}
-      <h3 className="mt-4 text-xl font-bold text-[#800000] transition duration-300">
-        {title}
-      </h3>
+      <h2 className="mt-4 text-xl font-bold text-[#800000] transition duration-300">
+        {title} 
+      </h2>
+      
       
       {/* Description */}
-      <p className="text-gray-700 text-sm mt-2">{paragraph}</p>
+      <p className="text-gray-700 text-sm mt-2">
+        {paragraph}  
+        <strong> कुंडली मिलान, ग्रह दोष निवारण, शत्रु नाश, सफलता प्राप्ति</strong> जैसी विशेष सेवाएं उपलब्ध हैं।
+      </p>
+      </Link>
       
       {/* CTA Button with Hover Effect */}
       <div className="mt-6">
@@ -39,7 +46,7 @@ const SingleServices = ({ services }: { services: Services }) => {
             <span className="absolute top-0 left-0 w-full h-full bg-[#F0703A] transform -translate-x-full transition-transform duration-500 ease-out"></span>
             
             {/* Button Text (Always Visible) */}
-            <span className="relative z-10 block">📖 Order Now</span>
+            <span className="relative z-10 block">📖 सेवा प्राप्त करें</span>
           </button>
         </Link>
       </div>

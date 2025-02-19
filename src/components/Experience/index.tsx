@@ -6,10 +6,10 @@ import { motion, useAnimation } from "framer-motion";
 const Experience = () => {
   const stats = [
     { value: 200000, label: "Kundli Served" },
-    { value: 50, label: "Year's Of Legacy" },
-    { value: 50000, label: "Students Enrolled" },
-    { value: 100000, label: "Consultations Given" },
-    { value: 5, label: "Languages For Reports" },
+    { value: 50, label: "Years of Legacy in Vedic Astrology" },
+    { value: 50000, label: "Students Enrolled in Astrology Courses" },
+    { value: 100000, label: "Consultations by Certified Experts" },
+    { value: 5, label: "Languages Available for Reports" },
   ];
 
   const ref = useRef(null);
@@ -32,7 +32,7 @@ const Experience = () => {
   }, [controls, startCounting]);
 
   return (
-    <div className="flex justify-center items-center py-10 px-4">
+    <section id="experience" className="flex justify-center items-center py-10 px-4">
       <div
         ref={ref}
         className="relative flex justify-center rounded-2xl overflow-hidden items-center w-full max-w-[1160px] h-auto min-h-[280px] sm:min-h-[300px] px-4 lg:min-h-[400px]"
@@ -41,6 +41,7 @@ const Experience = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-label="Astrology Services Experience Section"
       >
         <div className="absolute inset-0 bg-[#800000] opacity-70"></div>
 
@@ -57,14 +58,17 @@ const Experience = () => {
               animate={controls}
               transition={{ duration: 0.8, delay: index * 0.15 }}
               className="bg-white text-[#800000] w-28 h-28 sm:w-40 sm:h-40 lg:w-60 lg:h-60 flex flex-col justify-center items-center rounded-full shadow-lg p-2 sm:p-4"
+              aria-label={`Stat: ${stat.label}`}
             >
               {startCounting && <Counter targetValue={stat.value} />}
-              <p className="text-xs sm:text-sm lg:text-base">{stat.label}</p>
+              <p className="text-xs sm:text-sm lg:text-base font-semibold">
+                {stat.label}
+              </p>
             </motion.div>
           ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -90,7 +94,11 @@ const Counter = ({ targetValue }) => {
     return () => clearInterval(counter);
   }, [targetValue]);
 
-  return <span className="text-xl sm:text-2xl lg:text-4xl font-bold">{count}+</span>;
+  return (
+    <span className="text-xl sm:text-2xl lg:text-4xl font-bold">
+      {count.toLocaleString()}+
+    </span>
+  );
 };
 
 export default Experience;

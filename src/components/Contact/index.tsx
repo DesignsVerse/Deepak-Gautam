@@ -1,6 +1,7 @@
-'use client';
+"use client";
 import { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -53,86 +54,109 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="overflow-hidden py-12 md:py-16 lg:py-20 bg-white">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap items-center justify-center">
-          <div className="w-full lg:w-1/2 xl:w-1/2 p-4">
-            <div className="rounded-sm bg-[#F9F9F2] px-6 py-8 shadow-lg sm:p-[40px] lg:px-6 xl:p-[40px]">
-              <h2 className="mb-3 text-2xl font-bold text-black sm:text-3xl lg:text-2xl xl:text-3xl">
-                सहायता चाहिए? संपर्क करें
-              </h2>
-              <p className="mb-8 text-base font-medium text-gray-600">
-                हमारी सपोर्ट टीम जल्द ही ईमेल के माध्यम से आपसे संपर्क करेगी।
-              </p>
-              {error && <p className="text-red-500 mb-4">{error}</p>}
-              {isSubmitted ? (
-                <p className="text-green-500 font-medium">आपका फ़ॉर्म सफलतापूर्वक सबमिट हो गया!</p>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="flex flex-col space-y-4">
-                    <div>
-                      <label htmlFor="name" className="mb-2  block text-sm font-medium text-dark">
-                        आपका नाम
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="अपना नाम दर्ज करें"
-                        className="border border-gray-400 w-full rounded-sm bg-white px-4 py-2 text-base outline-none focus:border-black"
-                      />
+    <>
+      {/* SEO Metadata */}
+      <Head>
+        <title>हमसे संपर्क करें - सहायता प्राप्त करें</title>
+        <meta name="description" content="अगर आपको सहायता चाहिए, तो हमसे संपर्क करें। हमारी सपोर्ट टीम जल्दी ही आपसे संपर्क करेगी।" />
+        <meta name="keywords" content="संपर्क करें, हमें संपर्क करें, सहायता, संपर्क फॉर्म, Customer Support" />
+        <meta property="og:title" content="हमसे संपर्क करें - सहायता प्राप्त करें" />
+        <meta property="og:description" content="अगर आपको सहायता चाहिए, तो हमसे संपर्क करें। हमारी सपोर्ट टीम जल्दी ही आपसे संपर्क करेगी।" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/contact" />
+        <meta property="og:image" content="/images/contact.jpeg" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "संपर्क करें",
+            "url": "https://yourwebsite.com/contact",
+            "description": "अगर आपको सहायता चाहिए, तो हमसे संपर्क करें।",
+            "contactType": "customer support",
+            "email": "support@yourwebsite.com",
+          })}
+        </script>
+      </Head>
+
+      <section id="contact" className="overflow-hidden py-12 md:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap items-center justify-center">
+            <div className="w-full lg:w-1/2 xl:w-1/2 p-4">
+              <div className="rounded-sm bg-[#F9F9F2] px-6 py-8 shadow-lg sm:p-[40px] lg:px-6 xl:p-[40px]">
+                <h1 className="mb-3 text-2xl font-bold text-black sm:text-3xl lg:text-2xl xl:text-3xl">
+                  हमसे संपर्क करें
+                </h1>
+                <p className="mb-8 text-base font-medium text-gray-600">
+                  अगर आपको कोई समस्या है या सहायता चाहिए, तो नीचे दिए गए फॉर्म को भरें।
+                </p>
+                {error && <p className="text-red-500 mb-4">{error}</p>}
+                {isSubmitted ? (
+                  <p className="text-green-500 font-medium">आपका फ़ॉर्म सफलतापूर्वक सबमिट हो गया!</p>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <div className="flex flex-col space-y-4">
+                      <div>
+                        <label htmlFor="name" className="mb-2 block text-sm font-medium text-dark">
+                          आपका नाम
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="अपना नाम दर्ज करें"
+                          className="border border-gray-400 w-full rounded-sm bg-white px-4 py-2 text-base outline-none focus:border-black"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="mb-2 block text-sm font-medium text-dark">
+                          आपका ईमेल
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="अपना ईमेल दर्ज करें"
+                          className="border border-gray-400 w-full rounded-sm bg-white px-4 py-2 text-base outline-none focus:border-black"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="message" className="mb-2 block text-sm font-medium text-dark">
+                          आपका संदेश
+                        </label>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          rows={4}
+                          placeholder="अपना संदेश लिखें"
+                          className="border border-gray-400 w-full resize-none rounded-sm bg-white px-4 py-2 text-base outline-none focus:border-black"
+                        ></textarea>
+                      </div>
+                      <div>
+                        <button
+                          type="submit"
+                          className={`rounded-sm px-6 py-3 text-base font-medium text-white shadow-lg duration-300 ${
+                            loading ? "bg-gray-400 cursor-not-allowed" : "bg-black hover:bg-gray-800"
+                          }`}
+                          disabled={loading}
+                        >
+                          {loading ? "सबमिट हो रहा है..." : "फ़ॉर्म सबमिट करें"}
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <label htmlFor="email" className="mb-2 block text-sm font-medium text-dark">
-                        आपका ईमेल
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="अपना ईमेल दर्ज करें"
-                        className="border border-gray-400 w-full rounded-sm bg-white px-4 py-2 text-base outline-none focus:border-black"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="mb-2 block text-sm font-medium text-dark">
-                        आपका संदेश
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows={4}
-                        placeholder="अपना संदेश लिखें"
-                        className="border border-gray-400 w-full resize-none rounded-sm bg-white px-4 py-2 text-base outline-none focus:border-black"
-                      ></textarea>
-                    </div>
-                    <div>
-                      <button
-                        type="submit"
-                        className={`rounded-sm px-6 py-3 text-base font-medium text-white shadow-lg duration-300 ${
-                          loading
-                            ? "bg-gray-400 cursor-not-allowed"
-                            : "bg-black hover:bg-gray-800"
-                        }`}
-                        disabled={loading}
-                      >
-                        {loading ? "सबमिट हो रहा है..." : "फ़ॉर्म सबमिट करें"}
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              )}
+                  </form>
+                )}
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 xl:w-1/2 flex justify-center items-center p-4">
+              <Image src="/images/contact.jpeg" alt="हमसे संपर्क करें - सहायता प्राप्त करें" width={500} height={400} loading="lazy" className="rounded-sm object-cover" />
             </div>
           </div>
-          <div className="w-full lg:w-1/2 xl:w-1/2 flex justify-center items-center p-4">
-            <Image src="/images/contact.jpeg" alt="संपर्क करें" width={500} height={400} className="rounded-sm object-cover" />
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

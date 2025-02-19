@@ -4,17 +4,17 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | Deepak_Gautam",
+  title: "हमारी सेवाएं | पंडित दीपक गौतम जी",
   description:
-    "Explore our premium website development, digital marketing, and personal branding services at Deepak_Gautam. We craft SEO-friendly websites, powerful marketing strategies, and brand identities to elevate your online presence."
+    "पंडित दीपक गौतम जी से ज्योतिष, मंत्र-साधना, पूजा-पाठ और धार्मिक अनुष्ठानों की अनुभवी सेवाएं प्राप्त करें। शत्रु नाश, सफलता प्राप्ति और आध्यात्मिक समाधान के लिए संपर्क करें।"
 };
 
 const ServicePage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="हमारी सेवाएं"
-        description="समाधान, सफलता और शत्रु विजय सेवा!"
+        pageName="हमारी सेवाएं | पंडित दीपक गौतम जी"
+        description="शत्रु नाश, सफलता प्राप्ति और आध्यात्मिक समाधान के लिए संपर्क करें।"
       />
       <ServiceSection />
     </>
