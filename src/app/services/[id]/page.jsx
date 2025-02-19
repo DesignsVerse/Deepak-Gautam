@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import data from "@/data/servicedata.json";
 import Link from "next/link";
 import Price from "@/components/Services/Price";
+import KaalSarpPujaCost from "@/components/Services/Price";
 
 // Fetch metadata for SEO
 export async function generateMetadata({ params }) {
@@ -86,7 +87,7 @@ export default async function ServicePost({ params }) {
         </aside>
       </div>
       {/* Cost of Different Types of Kaal Sarp Dosh Puja in Ujjain */}
-      <Price/>
+      <KaalSarpPujaCost/>
           
       
     </main>
