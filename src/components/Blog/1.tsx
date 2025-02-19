@@ -12,9 +12,9 @@ const Blog = () => {
 
   useEffect(() => {
     if (currentPage > totalPages) {
-      setCurrentPage(totalPages);
+      setCurrentPage((prev) => Math.max(1, totalPages)); // Ensure we don't go below page 1
     }
-  }, [totalPages]);
+  }, [totalPages, currentPage]); // ✅ Added currentPage to the dependency array
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
@@ -33,7 +33,7 @@ const Blog = () => {
               className="w-full p-4 rounded-2xl text-center transform transition-transform hover:scale-105 bg-gray-light"
             >
               <Link href={`/blog/${blog.id}`}>
-                <SingleBlog blog={blog}  />
+                <SingleBlog blog={blog} />
               </Link>
             </div>
           ))}
@@ -54,7 +54,9 @@ const Blog = () => {
               <button
                 key={index + 1}
                 onClick={() => setCurrentPage(index + 1)}
-                className={`px-4 py-2 rounded-md ${currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+                className={`px-4 py-2 rounded-md ${
+                  currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-300"
+                }`}
                 aria-label={`Go to page ${index + 1}`}
               >
                 {index + 1}

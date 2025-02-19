@@ -19,7 +19,7 @@ const BaglamukhiSection = () => {
           {/* Static Foreground Image */}
           <Image
             src="/p.png"
-            alt="Astrology Consultation with India's Best Astrologer for Kundali & Palmistry"
+            alt="Astrology Consultation with India&apos;s Best Astrologer for Kundali & Palmistry"
             width={200}
             height={250}
             className="rounded-full relative z-10 w-32 sm:w-40 md:w-48 h-auto hover:scale-110 transition-all duration-300"
@@ -30,11 +30,11 @@ const BaglamukhiSection = () => {
         {/* Content Section */}
         <div className="w-full md:w-2/3 px-4">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
-            Consult India's Best Astrologer for Kundali & Palmistry
+            Consult India&apos;s Best Astrologer for Kundali & Palmistry
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-[#F5F5F5] mb-6 sm:mb-8 leading-relaxed">
-            Our astrology services, including *kundali reading, palmistry, numerology,* and *face reading*, help you 
-            uncover life’s answers. With over 50 years of experience, we provide *accurate astrology consultation* 
+            Our astrology services, including <em>kundali reading, palmistry, numerology</em>, and <em>face reading</em>, help you 
+            uncover life’s answers. With over 50 years of experience, we provide <em>accurate astrology consultation</em> 
             based on date of birth, name, and planetary positions.
           </p>
           <button
