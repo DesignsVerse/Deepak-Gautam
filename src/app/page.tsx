@@ -3,7 +3,7 @@ import Blog from "@/components/Blog";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
-  
+
 import Services from "@/components/Services";
 import BaglamukhiSection from "@/components/ExtraPage";
 import CallNow from "@/components/Marquee";
@@ -24,10 +24,10 @@ export default function Home() {
       <Services/>
       <BaglamukhiSection/>
       <Experience/>
-      <Testimonials />
+      
       {/* <ZodiacSigns/> */}
       <Blog />
-      
+      <Testimonials />
       <Faq/>
       {/* <ScrollUp /> */}
     </>

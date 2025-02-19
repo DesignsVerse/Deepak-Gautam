@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import data from "@/data/servicedata.json";
 import Link from "next/link";
+import Price from "@/components/Services/Price";
 
 // Fetch metadata for SEO
 export async function generateMetadata({ params }) {
@@ -29,25 +30,29 @@ export default async function ServicePost({ params }) {
           <h1 className="text-4xl font-bold text-left">{post.title}</h1>
           <p className="text-gray-500 pl-1 text-left">{post.author}</p>
 
-          {/* Image Section instead of Video */}
+          {/* Image Section */}
           {post.image && (
             <div className="relative mt-6 w-full rounded-lg overflow-hidden">
               <Image 
                 src={post.image} 
                 alt="image" 
-                width={800}  // ✅ Added proper width
-                height={400} // ✅ Added proper height
+                width={800}  
+                height={400} 
                 className="w-full h-[400px] object-cover rounded-lg"
-                unoptimized // ✅ Optional for local images
+                unoptimized
               />
             </div>
           )}
 
           {/* Service Description */}
-          <article className="prose lg:prose-xl justify-text text-left mt-6">
-            <div className="text-justify" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <article className="prose lg:prose-xl text-left mt-6">
+            <h1 className="text-3xl font-bold">{post.heading1}</h1>
+            <p className="mt-2">{post.paragraph1}</p>
+            <h2 className="text-2xl font-semibold mt-4">{post.heading2}</h2>
+            <p className="mt-2">{post.paragraph2}</p>
+            <h2 className="text-2xl font-semibold mt-4">{post.heading3}</h2>
+            <p className="mt-2">{post.paragraph3}</p>
           </article>
-          
         </section>
 
         {/* Sidebar */}
@@ -73,15 +78,17 @@ export default async function ServicePost({ params }) {
               बेझिझक हमसे संपर्क करें। हम जितनी जल्दी हो सकेगा आप को वापस संपर्क करेंगे।
               या अभी हमें फोन करें।
             </p>
-
             <div className="mt-4">
               <p className="text-sm text-white">कॉल करें: <span className="text-black">+(91) 9810487266</span></p>
               <p className="text-sm text-white">मेल करें: <span className="text-black">baglamukhisadhnapeeth@gmail.com</span></p>
             </div>
           </div>
-
         </aside>
       </div>
+      {/* Cost of Different Types of Kaal Sarp Dosh Puja in Ujjain */}
+      <Price/>
+          
+      
     </main>
   );
 }
