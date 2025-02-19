@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import { Inter } from "next/font/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Analytics />
           <Footer />
           {/* <ScrollToTop /> */}
+          <SpeedInsights/>
         </>
       </body>
     </html>

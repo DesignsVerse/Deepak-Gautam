@@ -33,16 +33,9 @@ const ContactPage = () => {
         description="वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, और SEO सेवाओं के लिए हमसे संपर्क करें। आपकी सहायता के लिए हम हमेशा तैयार हैं।"
       />
 
-      <section className="pt-12 md:pt-16 lg:pt-20 pb-16">
+      <section className="mt-10 pb-16">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6">
-            संपर्क करें - Deepak Gautam
-          </h1> {/* ✅ Added H1 for SEO */}
-
-          <p className="text-center text-lg text-gray-700 mb-8">
-            आपके व्यवसाय को डिजिटल रूप से मजबूत करने के लिए हमारी टीम हमेशा तैयार है।  
-            अभी संपर्क करें और अपनी ऑनलाइन सफलता सुनिश्चित करें! {/* ✅ Improved SEO-friendly content */}
-          </p>
+          
 
           <Contact />
         </div>

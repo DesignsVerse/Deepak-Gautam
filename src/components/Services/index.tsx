@@ -41,8 +41,8 @@ const Services = () => {
         {/* View More Button with SEO Text */}
         <div className="flex justify-center mt-6">
           <Link href="/services">
-            <button className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300">
-              <span className="relative z-10 inset-0 transition-transform transform scale-x-0 origin-left hover:scale-x-100 duration-300">
+            <button className="relative hover:bg-[#FF5C16] overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300">
+              <span className="relative  z-10 inset-0 transition-transform transform scale-x-0 origin-left hover:scale-x-100 duration-300">
                 🔍 और सेवाएँ देखें
               </span>
             </button>

@@ -43,7 +43,7 @@ const SingleServices = ({ services }: { services: Services }) => {
         <Link href={`/services/${id}`}>
           <button className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all duration-300">
             {/* Hover Background Effect - Left to Right */}
-            <span className="absolute top-0 left-0 w-full h-full bg-[#F0703A] transform -translate-x-full transition-transform duration-500 ease-out"></span>
+            <span className="absolute top-0 left-0 w-full h-full bg-[#FF5C16] transform -translate-x-full transition-transform duration-700 ease-out"></span>
             
             {/* Button Text (Always Visible) */}
             <span className="relative z-10 block">📖 सेवा प्राप्त करें</span>

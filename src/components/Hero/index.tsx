@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const images = [
-  "/images/bhaiya/1.jpg",
-  "/images/bhaiya/2.jpg",
-  "/images/bhaiya/3.jpg",
+  "/images/bhaiya/1.webp",
+  "/images/bhaiya/2.webp",
+  "/images/bhaiya/3.webp",
 ];
 
 const Hero = () => {
@@ -30,7 +30,7 @@ const Hero = () => {
         <meta name="author" content="Your Website Name" />
         <meta property="og:title" content="Best Astrology Consultation | Accurate Horoscope & Vastu Insights" />
         <meta property="og:description" content="Get expert astrology consultation from Pandit Ji. Discover your destiny with accurate horoscope & Vastu insights." />
-        <meta property="og:image" content="/images/bhaiya/33.png" />
+        <meta property="og:image" content="/images/bhaiya/33.webp" />
         <meta property="og:type" content="website" />
       </Head>
 
@@ -56,14 +56,14 @@ const Hero = () => {
             {/* 🔥 Rotating Background Shape (Lazy loaded) */}
             <motion.div
               className="absolute w-72 h-72 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
-              style={{ backgroundImage: "url('/bg.png')" }}
+              style={{ backgroundImage: "url('/bg.webp')" }}
               animate={{ rotate: [0, 360] }}
               transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
             />
 
             {/* 📸 Foreground Image (Optimized) */}
             <Image
-              src="/images/bhaiya/33.png"
+              src="/images/bhaiya/33.webp"
               alt="Pandit Ji providing astrology consultation for horoscope and Vastu guidance"
               width={355}
               height={355}
