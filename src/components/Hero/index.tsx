@@ -61,7 +61,7 @@ const Hero = () => {
             transition={{ duration: 0.3 }}
           >
             <h1 className="text-lg md:text-4xl font-extrabold text-black">
-              Consult the Best Astrologer for Your Horoscope & Vastu Needs
+            Consult India's Best Astrologer for Kundali & Palmistry
             </h1>
             <p className="mt-3 text-gray-700 hidden md:block">
               Let our expert <b>Pandit Ji</b> guide you with <b>accurate horoscope & Vastu insights</b> for a successful and peaceful life.
