@@ -38,7 +38,7 @@ const Hero = () => {
           {/* 📸 Right Side - Astrologer Image */}
           <div className="relative mb-14 flex flex-col items-center md:order-2 z-10">
             <motion.div
-              className="absolute w-60 h-60 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
+              className="absolute top-6 w-56 h-56 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center  "
               style={{ backgroundImage: "url('/bg.webp')" }}
               animate={{ rotate: [0, 360] }}
               transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
@@ -49,7 +49,7 @@ const Hero = () => {
               width={320}
               height={320}
               priority
-              className="rounded-full w-60 h-60 md:w-[380px] md:h-[380px] relative z-10 shadow-lg"
+              className="  rounded-full w-60 h-60 md:w-[380px] md:h-[380px] relative z-10 "
             />
           </div>
 
