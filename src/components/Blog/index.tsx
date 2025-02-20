@@ -39,7 +39,7 @@ const Blog = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* SEO-Friendly Section Title */}
         <SectionTitle
-          title="माँ बगलामुखी से जुड़ी ताज़ा खबरें"
+          title="कालसर्प दोष से संबंधित अनुष्ठान के बारे में हालिया जानकारी "
           paragraph="नवीनतम समाचार और धार्मिक अपडेट के लिए हमारे न्यूज़ सेक्शन को विजिट करें।"
           center
         />
