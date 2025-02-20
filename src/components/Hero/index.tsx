@@ -16,22 +16,27 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 🔥 Optimize Background Image
+  // 🔥 Optimized Background Image
   const backgroundImage = useMemo(() => images[currentImage], [currentImage]);
 
   return (
     <>
       <Head>
-        <title>Best Astrology Consultation | Accurate Horoscope & Vastu Insights</title>
-        <meta name="description" content="Get expert astrology consultation from Pandit Ji. Discover your destiny with accurate horoscope & Vastu insights for success, peace, and happiness." />
+        <title>Best Astrology Consultation | Accurate Horoscope &amp; Vastu Insights</title>
+        <meta
+          name="description"
+          content="Get expert astrology consultation from Pandit Ji. Discover your destiny with accurate horoscope &amp; Vastu insights for success, peace, and happiness."
+        />
         <meta name="keywords" content="Astrology, Horoscope, Vastu, Pandit Ji, Astrology Consultation, Vedic Astrology" />
         <meta property="og:image" content="/images/bhaiya/33.webp" />
       </Head>
 
       <section className="relative w-full h-screen md:h-[547px] flex flex-col md:flex-row items-center justify-between px-6 md:px-32 lg:px-48 py-10 overflow-hidden">
         {/* 🔄 Optimized Background Image */}
-        <div className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
-          style={{ backgroundImage: `url(${backgroundImage})` }} />
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
 
         {/* 🏆 White Box for Content */}
         <div className="relative flex flex-col md:flex-row bg-white/90 w-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10 p-6 md:p-10">
@@ -61,10 +66,10 @@ const Hero = () => {
             transition={{ duration: 0.3 }}
           >
             <h1 className="text-lg md:text-4xl font-extrabold text-black">
-            Consult India's Best Astrologer for Kundali & Palmistry
+              Consult the Best Astrologer for Your Horoscope &amp; Vastu Needs
             </h1>
             <p className="mt-3 text-gray-700 hidden md:block">
-              Let our expert <b>Pandit Ji</b> guide you with <b>accurate horoscope & Vastu insights</b> for a successful and peaceful life.
+              Let our expert <b>Pandit Ji</b> guide you with <b>accurate horoscope &amp; Vastu insights</b> for a successful and peaceful life.
             </p>
             <motion.button
               className="px-4 py-3 bg-red-700 text-white rounded-lg shadow-lg hover:scale-105 transition-transform"
