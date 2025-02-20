@@ -35,17 +35,20 @@ const Hero = () => {
       </Head>
 
       <section className="relative w-full h-screen md:h-[547px] flex flex-col md:flex-row items-center justify-between px-6 md:px-32 lg:px-48 py-10 overflow-hidden">
-        {/* 🔄 Background Image Slider */}
-        <div className="absolute inset-0 w-full h-full">
+        {/* 🔄 Optimized Background Image Slider */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
           {images.map((img, index) => (
-            <motion.div
+            <div
               key={index}
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
               style={{
                 backgroundImage: `url(${img})`,
                 opacity: currentImage === index ? 1 : 0,
+                willChange: "opacity",
               }}
-            />
+            >
+              <Image src={img} alt="background" layout="fill" objectFit="cover" priority={index === 0} />
+            </div>
           ))}
         </div>
 
@@ -67,7 +70,7 @@ const Hero = () => {
               alt="Pandit Ji providing astrology consultation for horoscope and Vastu guidance"
               width={355}
               height={355}
-              priority // ✅ Ensures fast LCP
+              priority
               className="rounded-full relative z-10 shadow-lg w-[280px] h-[280px] md:w-[355px] md:h-[355px] mx-auto"
             />
           </div>
@@ -77,7 +80,7 @@ const Hero = () => {
             className="max-w-lg relative z-20 text-center md:text-left flex-1 md:mt-0 md:ml-10 lg:ml-16 flex flex-col justify-center items-center md:items-start"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }} // ✅ Faster fade-in animation
+            transition={{ duration: 0.5 }}
           >
             <h1 className="text-lg p-1 md:text-4xl font-extrabold text-black leading-tight">
               Consult the Best Astrologer for Your Horoscope & Vastu Needs
