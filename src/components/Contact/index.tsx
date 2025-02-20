@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Head from "next/head";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { motion } from "framer-motion"; // For animations
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -13,6 +13,10 @@ const Contact = () => {
   const validateForm = () => {
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setError("कृपया सभी फ़ील्ड भरें।");
+      return false;
+    }
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setError("कृपया वैध ईमेल पता दर्ज करें।");
       return false;
     }
     setError(null);
@@ -33,7 +37,7 @@ const Contact = () => {
           ...formData,
         }),
       });
-      
+
       const result = await response.json();
       if (result.success) {
         setIsSubmitted(true);
@@ -59,42 +63,124 @@ const Contact = () => {
         <meta name="description" content="अगर आपको सहायता चाहिए, तो हमसे संपर्क करें।" />
       </Head>
 
-      <section className="flex flex-col w-full gap-10 md:flex-row bg-[#A24439] p-4 md:p-12 rounded-lg shadow-lg max-w-6xl mx-auto">
-        <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md mb-4 md:mb-0">
-          <div className="mb-6">
-            <FaMapMarkerAlt className="text-[#800000] text-xl inline-block mr-2" />
-            <h2 className="text-lg font-semibold">Address</h2>
-            <p>Surkhet, NP12, Bherendranagar 06</p>
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#A24439] to-[#800000] p-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row gap-8 max-w-6xl w-full bg-white rounded-xl shadow-2xl overflow-hidden"
+        >
+          {/* Contact Info Section */}
+          <div className="w-full md:w-1/3 p-8 bg-gradient-to-b from-[#800000] to-[#A24439] text-white">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <h2 className="text-2xl font-bold mb-6">हमसे संपर्क करें</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-3">
+                  <FaMapMarkerAlt className="text-xl mt-1" />
+                  <div>
+                    <h3 className="font-semibold">पता</h3>
+                    <p>Surkhet, NP12, Bherendranagar 06</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <FaPhoneAlt className="text-xl mt-1" />
+                  <div>
+                    <h3 className="font-semibold">फोन</h3>
+                    <p>+0098 9893 5647</p>
+                    <p>+0096 3434 5678</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <FaEnvelope className="text-xl mt-1" />
+                  <div>
+                    <h3 className="font-semibold">ईमेल</h3>
+                    <p>codinglab@gmail.com</p>
+                    <p>info.codinglab@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
-          <div className="mb-6">
-            <FaPhoneAlt className="text-[#800000] text-xl inline-block mr-2" />
-            <h2 className="text-lg font-semibold">Phone</h2>
-            <p>+0098 9893 5647</p>
-            <p>+0096 3434 5678</p>
-          </div>
-          <div>
-            <FaEnvelope className="text-[#800000] text-xl inline-block mr-2" />
-            <h2 className="text-lg font-semibold">Email</h2>
-            <p>codinglab@gmail.com</p>
-            <p>info.codinglab@gmail.com</p>
-          </div>
-        </div>
 
-        <div className="w-full md:w-2/3 p-6 bg-white rounded-lg shadow-md">
-          <h1 className="text-2xl font-bold text-black mb-4">Send us a message</h1>
-          <p className="text-black mb-6">If you have any queries, feel free to reach out to us.</p>
-          {error && <p className="text-red-500 mb-4">{error}</p>}
-          {isSubmitted ? (
-            <p className="text-green-500 font-medium">आपका फ़ॉर्म सफलतापूर्वक सबमिट हो गया!</p>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Enter your name" className="border w-full p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000]" />
-              <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Enter your email" className="border w-full p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000]" />
-              <textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Enter your message" className="border w-full p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000]"></textarea>
-              <button type="submit" className={`w-full bg-[#800000] text-white p-2 rounded-md ${loading ? "opacity-50" : "hover:bg-black"}`} disabled={loading}>{loading ? "सबमिट हो रहा है..." : "Send Now"}</button>
-            </form>
-          )}
-        </div>
+          {/* Form Section */}
+          <div className="w-full md:w-2/3 p-8">
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="text-3xl font-bold text-[#800000] mb-4"
+            >
+              हमें एक संदेश भेजें
+            </motion.h1>
+            <p className="text-gray-600 mb-6">कोई प्रश्न? हमसे संपर्क करने में संकोच न करें।</p>
+
+            {error && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-red-500 mb-4"
+              >
+                {error}
+              </motion.p>
+            )}
+
+            {isSubmitted ? (
+              <motion.p
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                className="text-green-600 font-semibold text-lg"
+              >
+                आपका फ़ॉर्म सफलतापूर्वक सबमिट हो गया!
+              </motion.p>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="अपना नाम दर्ज करें"
+                    className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000] transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="अपना ईमेल दर्ज करें"
+                    className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000] transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="अपना संदेश दर्ज करें"
+                  
+                    className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000] transition-all duration-300 resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className={`w-full bg-[#800000] text-white p-3 rounded-md font-semibold transition-all duration-300 ${
+                    loading ? "opacity-50 cursor-not-allowed" : "hover:bg-[#A24439]"
+                  }`}
+                  disabled={loading}
+                >
+                  {loading ? "सबमिट हो रहा है..." : "अभी भेजें"}
+                </button>
+              </form>
+            )}
+          </div>
+        </motion.div>
       </section>
     </>
   );

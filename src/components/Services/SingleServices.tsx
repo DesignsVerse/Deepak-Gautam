@@ -1,59 +1,128 @@
 "use client";
 
 import { Services } from "@/types/services";
-import { FaPhone, FaChartLine, FaBookOpen } from "react-icons/fa"; // Icons Import
+import { FaPhone, FaChartLine, FaBookOpen, FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
 const SingleServices = ({ services }: { services: Services }) => {
   const { id, title, paragraph, image } = services;
 
+  // Animation Variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hover: { scale: 1.03, y: -10, transition: { duration: 0.3 } },
+  };
+
+  const buttonVariants = {
+    rest: { scale: 1 },
+    hover: { scale: 1.1, transition: { duration: 0.3, yoyo: Infinity } },
+  };
+
   return (
-    <div className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 text-center border-2 border-yellow-500">
-      {/* Service Image */}
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
+      className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 p-6 text-center border-2 border-yellow-500"
+    >
+      
+
+      {/* Service Image with Animated Ring */}
       <Link href={`/services/${id}`}>
-      <div className="flex bg-[#FFECDD] optional:40 justify-center items-center bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full w-20 h-20 mx-auto shadow-md p-4">
-        <Image 
-          src={image} 
-          alt={`${title} - पंडित दीपक गौतम जी की सेवा`} 
-          width={80} 
-          height={80} 
-          className="w-full h-full object-cover rounded-full" 
-        />
-      </div>
-      
-      {/* Title */}
-      <h2 className="mt-4 text-xl font-bold text-[#800000] transition duration-300">
-        {title} 
-      </h2>
-      
-      
-      {/* Description */}
-      <p className="text-gray-700 text-sm mt-2">
-        {paragraph}  
-        <strong> कुंडली मिलान, ग्रह दोष निवारण, शत्रु नाश, सफलता प्राप्ति</strong> जैसी विशेष सेवाएं उपलब्ध हैं।
-      </p>
+        <div className="relative flex justify-center items-center mx-auto w-24 h-24">
+          <motion.div
+            className="absolute w-24 h-24 rounded-full bg-gradient-to-ropacity-75"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          />
+          <Image
+            src={image}
+            alt={`${title} - पंडित दीपक गौतम जी की सेवा`}
+            width={80}
+            height={80}
+            className="w-20 h-20 object-cover rounded-full z-10 bg-[#FFECDD] p-1 shadow-md"
+          />
+        </div>
+
+        {/* Title with Subtle Glow */}
+        <h2 className="mt-6 text-xl font-bold text-[#800000] relative">
+          {title}
+          <motion.span
+            className="absolute -top-2 -right-2 text-yellow-500"
+            animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <FaStar size={12} />
+          </motion.span>
+        </h2>
+
+        {/* Description with Fade Effect */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-gray-700 text-sm mt-3 leading-relaxed"
+        >
+          {paragraph}
+          <strong className="block mt-1 text-[#800000]">
+            कुंडली मिलान, ग्रह दोष निवारण, शत्रु नाश, सफलता प्राप्ति
+          </strong>
+          जैसी विशेष सेवाएं उपलब्ध हैं।
+        </motion.p>
       </Link>
-      
-      {/* CTA Button with Hover Effect */}
-      <div className="mt-6">
+
+      {/* CTA Button with Advanced Animation */}
+      <div className="mt-6 relative">
         <Link href={`/services/${id}`}>
-          <button className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all duration-300">
-            {/* Hover Background Effect - Left to Right */}
-            <span className="absolute top-0 left-0 w-full h-full bg-[#FF5C16] transform -translate-x-full transition-transform duration-700 ease-out"></span>
-            
-            {/* Button Text (Always Visible) */}
-            <span className="relative z-10 block">📖 सेवा प्राप्त करें</span>
-          </button>
+          <motion.button
+            variants={buttonVariants}
+            initial="rest"
+            whileHover="hover"
+            className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 rounded-xl shadow-md group"
+          >
+            {/* Animated Background Swipe */}
+            <motion.span
+              className="absolute inset-0 bg-[#FF5C16] transform -translate-x-full group-hover:translate-x-0"
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            />
+            {/* Button Text */}
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              <FaBookOpen />
+              सेवा प्राप्त करें
+            </span>
+          </motion.button>
         </Link>
       </div>
 
-      <style jsx>{`
-        button:hover span {
-          transform: translateX(0);
-        }
-      `}</style>
-    </div>
+      {/* Cosmic Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute bg-yellow-500 rounded-full opacity-20"
+            style={{
+              width: Math.random() * 3 + 2,
+              height: Math.random() * 3 + 2,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -50],
+              opacity: [0.2, 0.5, 0],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              ease: "easeOut",
+            }}
+          />
+        ))}
+      </div>
+    </motion.div>
   );
 };
 

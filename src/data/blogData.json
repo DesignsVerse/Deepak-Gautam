@@ -3,6 +3,9 @@
     "id": "1",
     "title": "DesignsVerse",
     "thumbnail": "/images/bhaiya/1.webp",
+    "zodiacSign":"",
+    "cosmicTip":"",
+    "luckyColor":"",
     "author": {
       "name": "Harsh",
       "image": "/images/john-doe.jpg",
