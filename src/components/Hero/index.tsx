@@ -38,9 +38,17 @@ const Hero = () => {
           {/* 📸 Right Side - Astrologer Image */}
           <div className="relative mb-14 flex flex-col items-center md:order-2 z-10">
             <motion.div
-              className="absolute top-6 w-56 h-56 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center  "
-              style={{ backgroundImage: "url('/bg.webp')" }}
+              className="absolute top-6 w-56 h-56 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center bg-no-repeat"
+              animate={{ rotate: [0, 360] }}
+              transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+              style={{
+                backgroundImage: `url('/bg.webp')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                willChange: "opacity, transform", // ✅ GPU acceleration ke liye
+              }}
 
+              
             />
             <Image
               src="/images/bhaiya/33.webp"
