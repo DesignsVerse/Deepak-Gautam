@@ -34,9 +34,9 @@ const Hero = () => {
           style={{ backgroundImage: `url(${backgroundImage})` }} />
 
         {/* 🏆 White Box for Content */}
-        <div className="relative flex flex-col md:flex-row mt-24 bg-white/90 w-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10 p-6 md:p-10">
+        <div className="relative flex flex-col pb-14 md:flex-row mt-24 bg-white/90 w-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10 p-6 md:p-10">
           {/* 📸 Right Side - Astrologer Image */}
-          <div className="relative flex flex-col items-center md:order-2 z-10">
+          <div className="relative mb-14 flex flex-col items-center md:order-2 z-10">
             <motion.div
               className="absolute w-64 h-64 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
               style={{ backgroundImage: "url('/bg.webp')" }}
