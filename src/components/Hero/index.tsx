@@ -53,7 +53,7 @@ const Hero = () => {
         <div className="relative flex flex-col mt-12 md:mt-20 md:flex-row gap-1 md:gap-20 bg-[rgba(255,255,255,0.8)] w-full h-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10">
           {/* 📸 Right Side - Astrologer Image */}
           <div className="relative flex flex-col items-center w-full md:w-auto md:order-2 mt-10 md:mt-0 md:mr-10 lg:mr-16 z-10">
-            {/* 🔥 Rotating Background Shape (Lazy loaded) */}
+            {/* 🔥 Rotating Background Shape (Lazy loaded)
             <motion.div
               className="absolute w-72 h-72 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
               style={{ backgroundImage: "url('/bg.webp')" }}
@@ -61,7 +61,6 @@ const Hero = () => {
               transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
             />
 
-            {/* 📸 Foreground Image (Optimized) */}
             <Image
               src="/images/bhaiya/33.webp"
               alt="Pandit Ji providing astrology consultation for horoscope and Vastu guidance"
@@ -69,7 +68,7 @@ const Hero = () => {
               height={355}
               priority // ✅ Ensures fast LCP
               className="rounded-full relative z-10 shadow-lg w-[280px] h-[280px] md:w-[355px] md:h-[355px] mx-auto"
-            />
+            /> */}
           </div>
 
           {/* 📖 Left Side - Text Content */}
