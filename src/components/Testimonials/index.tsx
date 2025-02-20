@@ -1,87 +1,75 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import testimonialsData from "src/data/testimonials.json";
 
 const Testimonials = () => {
-  const scrollRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [scrollWidth, setScrollWidth] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = React.useState(0);
+  const [isPaused, setIsPaused] = React.useState(false);
 
+  // Auto-scroll one box at a time, slowly
   useEffect(() => {
-    if (scrollRef.current) {
-      setScrollWidth(scrollRef.current.scrollWidth - scrollRef.current.clientWidth);
-    }
-  }, []);
+    if (!scrollRef.current) return;
 
-  const handleScroll = (direction) => {
-    if (scrollRef.current) {
-      let newPos = scrollPosition + (direction === "left" ? -310 : 310);
-      if (newPos < 0) {
-        newPos = scrollWidth;
-      } else if (newPos > scrollWidth) {
-        newPos = 0;
-      }
-      setScrollPosition(newPos);
-      scrollRef.current.scrollTo({ left: newPos, behavior: "smooth" });
-    }
-  };
+    const scrollWidth = scrollRef.current.scrollWidth;
+    const clientWidth = scrollRef.current.clientWidth;
+    const maxScroll = scrollWidth - clientWidth;
+    const cardWidth = window.innerWidth < 640 ? 280 : 320;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleScroll("right");
-    }, 3000);
+    const scroll = () => {
+      if (isPaused) return;
+      setScrollPosition((prev) => {
+        let newPos = prev + cardWidth;
+        if (newPos >= maxScroll) newPos = 0; // Reset for infinite loop
+        scrollRef.current!.scrollTo({ left: newPos, behavior: "smooth" });
+        return newPos;
+      });
+    };
 
-    return () => clearInterval(interval);
-  }, [scrollPosition]);
+    const intervalId = setInterval(scroll, 3000); // Move one box every 3 seconds
+
+    return () => clearInterval(intervalId);
+  }, [isPaused]);
 
   return (
-    <section className="bg-[#7b1e1e] py-12 text-gray-800 text-center relative">
-      <h2 className="text-4xl font-bold text-white pb-4">खुशहाल ग्राहकों के प्रशंसापत्र </h2>
+    <section
+      className="bg-gradient-to-b from-[#7b1e1e] to-[#4a1010] py-12 text-center relative overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)} // Pause on hover
+      onMouseLeave={() => setIsPaused(false)} // Resume on leave
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-white pb-6 px-4">
+        खुशहाल ग्राहकों के प्रशंसापत्र
+      </h2>
 
-      <div className="overflow-hidden relative max-w-6xl mx-auto flex items-center">
-        
-        {/* Left Button */}
-        <button 
-          className="absolute left-0 z-10 bg-white p-3 rounded-full shadow-md hover:scale-110 transition flex items-center justify-center"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          onClick={() => handleScroll("left")}
-        >
-          <ChevronLeft className="text-[#7b1e1e] w-6 h-6" />
-        </button>
-
-        <div 
-          ref={scrollRef} 
-          className="flex overflow-x-scroll no-scrollbar space-x-6 px-10 w-[1200px]" 
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Testimonial Carousel */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-hidden no-scrollbar space-x-4 sm:space-x-6 w-full snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {[...testimonialsData, ...testimonialsData].map((testimonial, index) => (
             <motion.div
               key={`${testimonial.id}-${index}`}
-              className="w-[300px] bg-[#7b1e1e] text-white p-2 h-[250px] rounded-lg cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
+              className="min-w-[280px] sm:min-w-[320px] bg-[#7b1e1e] text-white p-2 rounded-xl snap-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="bg-white text-[#7b1e1e] h-full p-2 w-[300px] rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-[#FF5C16] to-[#800000] opacity-20"></div>
-                <h3 className="text-xl font-bold mb-4 z-10">{testimonial.title}</h3>
-                <div className="w-full h-0.5 bg-black mx-auto mb-3"></div>
-                <p className="mb-4 pl-2 pr-2 z-10">{testimonial.content}</p>
-                <p className="font-bold z-10">– {testimonial.name}</p>
+              <div className="bg-white text-[#7b1e1e] h-[250px] sm:h-[280px] p-4 sm:p-6 rounded-lg relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FF5C16]/20 to-[#800000]/20"></div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 z-10">{testimonial.title}</h3>
+                <div className="w-16 h-0.5 bg-[#800000] mx-auto mb-3 sm:mb-4"></div>
+                <p className="text-sm sm:text-base mb-3 sm:mb-4 pl-2 pr-2 z-10 line-clamp-4">
+                  {testimonial.content}
+                </p>
+                <p className="font-semibold text-sm sm:text-base z-10">– {testimonial.name}</p>
               </div>
             </motion.div>
-          ))}  
+          ))}
         </div>
-        
-        {/* Right Button */}
-        <button 
-          className="absolute right-0 z-10 bg-white p-3 rounded-full shadow-md hover:scale-110 transition flex items-center justify-center"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          onClick={() => handleScroll("right")}
-        >
-          <ChevronRight className="text-[#7b1e1e] w-6 h-6" />
-        </button>
       </div>
 
       <style jsx>{`
