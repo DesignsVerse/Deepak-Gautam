@@ -40,8 +40,7 @@ const Hero = () => {
             <motion.div
               className="absolute top-6 w-56 h-56 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center  "
               style={{ backgroundImage: "url('/bg.webp')" }}
-              animate={{ rotate: [0, 360] }}
-              transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+
             />
             <Image
               src="/images/bhaiya/33.webp"
