@@ -34,11 +34,11 @@ const Hero = () => {
           style={{ backgroundImage: `url(${backgroundImage})` }} />
 
         {/* 🏆 White Box for Content */}
-        <div className="relative flex flex-col md:flex-row bg-white/90 w-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10 p-6 md:p-10">
+        <div className="relative flex flex-col md:flex-row mt-24 bg-white/90 w-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10 p-6 md:p-10">
           {/* 📸 Right Side - Astrologer Image */}
           <div className="relative flex flex-col items-center md:order-2 z-10">
             <motion.div
-              className="absolute w-72 h-72 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
+              className="absolute w-64 h-64 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
               style={{ backgroundImage: "url('/bg.webp')" }}
               animate={{ rotate: [0, 360] }}
               transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
@@ -49,7 +49,7 @@ const Hero = () => {
               width={320}
               height={320}
               priority
-              className="rounded-full relative z-10 shadow-lg"
+              className="rounded-full w-64 h-64 md:w-[380px] md:h-[380px] relative z-10 shadow-lg"
             />
           </div>
 
@@ -73,8 +73,11 @@ const Hero = () => {
               Book Your Astrology Session Now
             </motion.button>
           </motion.div>
+          
         </div>
+        
       </section>
+      
     </>
   );
 };
