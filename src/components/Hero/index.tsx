@@ -2,13 +2,9 @@
 import Image from "next/image";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
 
-const images = [
-  "/images/bhaiya/1.webp",
-  "/images/bhaiya/2.webp",
-  "/images/bhaiya/3.webp",
-];
+const images = ["/images/bhaiya/1.webp", "/images/bhaiya/2.webp", "/images/bhaiya/3.webp"];
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -16,91 +12,66 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
+  // 🔥 Optimize Background Image
+  const backgroundImage = useMemo(() => images[currentImage], [currentImage]);
+
   return (
     <>
-      {/* ✅ SEO Meta Tags */}
       <Head>
         <title>Best Astrology Consultation | Accurate Horoscope & Vastu Insights</title>
         <meta name="description" content="Get expert astrology consultation from Pandit Ji. Discover your destiny with accurate horoscope & Vastu insights for success, peace, and happiness." />
         <meta name="keywords" content="Astrology, Horoscope, Vastu, Pandit Ji, Astrology Consultation, Vedic Astrology" />
-        <meta name="author" content="Your Website Name" />
-        <meta property="og:title" content="Best Astrology Consultation | Accurate Horoscope & Vastu Insights" />
-        <meta property="og:description" content="Get expert astrology consultation from Pandit Ji. Discover your destiny with accurate horoscope & Vastu insights." />
         <meta property="og:image" content="/images/bhaiya/33.webp" />
-        <meta property="og:type" content="website" />
       </Head>
 
       <section className="relative w-full h-screen md:h-[547px] flex flex-col md:flex-row items-center justify-between px-6 md:px-32 lg:px-48 py-10 overflow-hidden">
-        {/* 🔄 Optimized Background Image Slider */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
-              style={{
-                backgroundImage: `url(${img})`,
-                opacity: currentImage === index ? 1 : 0,
-                willChange: "opacity",
-              }}
-            >
-              <Image src={img} alt="background" layout="fill" objectFit="cover" priority={index === 0} />
-            </div>
-          ))}
-        </div>
+        {/* 🔄 Optimized Background Image */}
+        <div className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
+          style={{ backgroundImage: `url(${backgroundImage})` }} />
 
         {/* 🏆 White Box for Content */}
-        <div className="relative flex flex-col mt-12 md:mt-20 md:flex-row gap-1 md:gap-20 bg-[rgba(255,255,255,0.8)] w-full h-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10">
+        <div className="relative flex flex-col md:flex-row bg-white/90 w-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10 p-6 md:p-10">
           {/* 📸 Right Side - Astrologer Image */}
-          <div className="relative flex flex-col items-center w-full md:w-auto md:order-2 mt-10 md:mt-0 md:mr-10 lg:mr-16 z-10">
-            {/* 🔥 Rotating Background Shape (Lazy loaded) */}
+          <div className="relative flex flex-col items-center md:order-2 z-10">
             <motion.div
               className="absolute w-72 h-72 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
               style={{ backgroundImage: "url('/bg.webp')" }}
               animate={{ rotate: [0, 360] }}
               transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
             />
-
-            {/* 📸 Foreground Image (Optimized) */}
             <Image
               src="/images/bhaiya/33.webp"
-              alt="Pandit Ji providing astrology consultation for horoscope and Vastu guidance"
-              width={355}
-              height={355}
+              alt="Pandit Ji"
+              width={320}
+              height={320}
               priority
-              className="rounded-full relative z-10 shadow-lg w-[280px] h-[280px] md:w-[355px] md:h-[355px] mx-auto"
+              className="rounded-full relative z-10 shadow-lg"
             />
           </div>
 
           {/* 📖 Left Side - Text Content */}
           <motion.div
-            className="max-w-lg relative z-20 text-center md:text-left flex-1 md:mt-0 md:ml-10 lg:ml-16 flex flex-col justify-center items-center md:items-start"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-center md:text-left flex-1 flex flex-col justify-center items-center md:items-start"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
-            <h1 className="text-lg p-1 md:text-4xl font-extrabold text-black leading-tight">
+            <h1 className="text-lg md:text-4xl font-extrabold text-black">
               Consult the Best Astrologer for Your Horoscope & Vastu Needs
             </h1>
-            <p className="mt-3 text-gray-700 text-lg leading-relaxed md:block hidden">
+            <p className="mt-3 text-gray-700 hidden md:block">
               Let our expert <b>Pandit Ji</b> guide you with <b>accurate horoscope & Vastu insights</b> for a successful and peaceful life.
             </p>
-
-            {/* 🚀 CTA Button */}
             <motion.button
-              className="px-3 py-3 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white text-s font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
+              className="px-4 py-3 bg-red-700 text-white rounded-lg shadow-lg hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.05 }}
             >
               Book Your Astrology Session Now
             </motion.button>
-
-            {/* 📌 Small Paragraph for Mobile */}
-            <p className="text-gray-700 text-sm md:hidden p-2">
-              Get expert guidance on astrology and Vastu for a better future.
-            </p>
           </motion.div>
         </div>
       </section>
