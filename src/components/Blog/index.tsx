@@ -44,7 +44,7 @@ const Blog = () => {
           center
         />
 
-        <section className="pb-10">
+        <section className="pb-10 mt-10">
           <div className="container">
             <div className="flex flex-wrap mt-10 justify-between gap-6">
             {blogData.map((blog) => (

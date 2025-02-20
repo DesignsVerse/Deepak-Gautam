@@ -38,7 +38,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-[#7b1e1e] py-12 text-gray-800 text-center relative">
-      <h2 className="text-4xl font-bold text-white pb-4">Happy Client Testimonials</h2>
+      <h2 className="text-4xl font-bold text-white pb-4">खुशहाल ग्राहकों के प्रशंसापत्र </h2>
 
       <div className="overflow-hidden relative max-w-6xl mx-auto flex items-center">
         

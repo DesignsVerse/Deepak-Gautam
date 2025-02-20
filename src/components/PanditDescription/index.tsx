@@ -13,12 +13,12 @@ const PanditDescription = () => {
         <div className="relative flex justify-center items-center w-full md:w-1/3 mb-6 md:mb-0">
           {/* Rotating Background Image */}
           <div
-            className="w-48 sm:w-60 md:w-72 h-48 sm:h-60 md:h-72 rounded-full absolute bg-cover bg-center rotate-animation shadow-xl animate-spin-slow"
+            className="w-48 bg-black sm:w-60 md:w-72 h-48 sm:h-60 md:h-72 rounded-full absolute bg-cover bg-center rotate-animation shadow-xl animate-spin-slow"
             style={{ backgroundImage: "url('/bg.png')" }}
           ></div>
           {/* Static Foreground Image */}
           <Image
-            src="/p.png"
+            src="/images/bhaiya/33.webp"
             alt="Astrology Consultation with India&apos;s Best Astrologer for Kundali & Palmistry"
             width={200}
             height={250}
@@ -30,12 +30,10 @@ const PanditDescription = () => {
         {/* Content Section */}
         <div className="w-full md:w-2/3 px-4">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
-            Consult India&apos;s Best Astrologer for Kundali & Palmistry
+           Pandit Deepak Gautam – Expert Vedic Astrologer & Trusted Ritual Specialist
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-[#F5F5F5] mb-6 sm:mb-8 leading-relaxed">
-            Our astrology services, including <em>kundali reading, palmistry, numerology</em>, and <em>face reading</em>, help you 
-            uncover life’s answers. With over 50 years of experience, we provide <em>accurate astrology consultation</em> 
-            based on date of birth, name, and planetary positions.
+            With years of experience in Vedic astrology, Pandit Deepak Gautam specializes in performing powerful rituals and remedies for Kaal Sarp Dosh and Kaal Dosh. His deep knowledge and expertise help individuals overcome life’s obstacles, ensuring peace, prosperity, and spiritual well-being.
           </p>
           <button
             className="bg-[#FF5C16] text-white text-sm sm:text-base md:text-lg font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-xl hover:bg-[#800000] hover:shadow-2xl transition-all duration-300"

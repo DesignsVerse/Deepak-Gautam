@@ -5,11 +5,11 @@ import { motion, useAnimation } from "framer-motion";
 
 const Achivement = () => {
   const stats = [
-    { value: 200000, label: "Kundli Served" },
-    { value: 50, label: "Years of Legacy in Vedic Astrology" },
-    { value: 50000, label: "Students Enrolled in Astrology Courses" },
-    { value: 100000, label: "Consultations by Certified Experts" },
-    { value: 5, label: "Languages Available for Reports" },
+    { value: 2000, label: "Kundli Served" },
+    { value: 15, label: "Years of Legacy in Vedic Astrology" },
+    { value: 500, label: "Kaal surp Problem Solve" },
+    { value: 1000, label: "Consultations by Certified Experts" },
+    { value: 5000, label: "Help People" },
   ];
 
   const ref = useRef(null);
