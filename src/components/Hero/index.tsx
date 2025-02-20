@@ -58,7 +58,7 @@ const Hero = () => {
               className="absolute w-72 h-72 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
               style={{ backgroundImage: "url('/bg.webp')" }}
               animate={{ rotate: [0, 360] }}
-              transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+              transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
             />
 
             {/* 📸 Foreground Image (Optimized) */}
