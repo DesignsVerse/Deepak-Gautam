@@ -5,16 +5,16 @@ import Marquee from "react-fast-marquee";
 import Image from "next/image";
 
 const astrologySymbols = [
-  { name: "Om Symbol - Sacred Mantra", image: "/images/m/1.png" },
-  { name: "Swastik - Sign of Prosperity", image: "/images/m/2.png" },
-  { name: "Kalash - Symbol of Abundance", image: "/images/m/3.png" },
-  { name: "Pandit Ji - Expert Astrologer", image: "/images/m/4.png" },
-  { name: "Rudraksha - Divine Bead", image: "/images/m/5.png" },
-  { name: "Yantra - Spiritual Geometry", image: "/images/m/6.png" },
-  { name: "Trishul - Lord Shiva’s Trident", image: "/images/m/7.png" },
-  { name: "Shankh - Sacred Conch", image: "/images/m/8.png" },
-  { name: "Deepak - Eternal Light", image: "/images/m/9.png" },
-  { name: "Mala - Rosary for Meditation", image: "/images/m/10.png" },
+  { name: "Kalash  - Divine Symbol", image: "/images/Marquee/1.png" },
+  { name: "Namaste Hands - Sign of Respect", image: "/images/Marquee/2.png" },
+  { name: "Puja Thali - Sacred Offering", image: "/images/Marquee/3.png" },
+  { name: "Deepak - Eternal Light", image: "/images/Marquee/5.png" },
+  { name: "Ganesha Ji - Remover of Obstacles", image: "/images/Marquee/6.png" },
+  { name: "Om Symbol - Sacred Mantra", image: "/images/Marquee/7.png" },
+  { name: "Kalash  - Divine Symbol", image: "/images/Marquee/4.png" },
+  { name: "Lal Kitab - Book of Secret", image: "/images/Marquee/8.png" },
+  { name: "Lotus - Purity & Enlightenment", image: "/images/Marquee/9.png" },
+  { name: "Mala - Rosary for Meditation", image: "/images/Marquee/10.png" },
 ];
 
 const AutoScroll = () => {

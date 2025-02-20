@@ -79,23 +79,23 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }} // ✅ Faster fade-in animation
           >
-            <h1 className="text-lg p-1 md:text-4xl font-extrabold text-black leading-tight">
-              Consult the Best Astrologer for Your Horoscope & Vastu Needs
+            <h1 className="text-lg p-1  md:text-4xl font-extrabold text-black leading-tight">
+            Consult the Best Pandit ji for Solving Your Kaal Sarp & Mangal Dosh Issues
             </h1>
             <p className="mt-3 text-gray-700 text-lg leading-relaxed md:block hidden">
-              Let our expert <b>Pandit Ji</b> guide you with <b>accurate horoscope & Vastu insights</b> for a successful and peaceful life.
+            Let our expert Pandit Ji guide you with accurate horoscope & Vastu insights to overcome Kaal Sarp Dosh and Mangal Dosh for a successful and peaceful life.
             </p>
 
             {/* 🚀 CTA Button */}
             <motion.button
-              className="px-3 py-3 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white text-s font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
+              className="px-3 py-3 mx-4 my-4 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white text-s font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
             >
-              Book Your Astrology Session Now
+              Book Now
             </motion.button>
 
             {/* 📌 Small Paragraph for Mobile */}
-            <p className="text-gray-700 text-sm md:hidden p-2">
+            <p className="text-gray-700  text-sm md:hidden p-2">
               Get expert guidance on astrology and Vastu for a better future.
             </p>
           </motion.div>

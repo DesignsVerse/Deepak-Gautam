@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Service = () => {
   return (
-    <section className="pb-[120px] p-[20px] w-full bg-[#FDF7F4]">
+    <section className="pb-[120px] p-[20px] pt-20 w-full bg-[#FDF7F4]">
       <div className="max-w-screen-lx mx-auto">
         {/* SEO-Optimized Section Title */}
         <SectionTitle
@@ -18,7 +18,8 @@ const Service = () => {
 
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10">
           हमारी ज्योतिषीय सेवाओं में <strong>कुंडली मिलान, वास्तु परामर्श, 
-          ग्रह दोष निवारण, तंत्र-मंत्र अनुष्ठान, शत्रु नाश और सफलता प्राप्ति</strong> जैसी प्रमुख सेवाएँ शामिल हैं।
+          ग्रह दोष निवारण, तंत्र-मंत्र अनुष्ठान, शत्रु नाश, काल सर्प दोष पूजा, 
+          मंगल दोष निवारण और सफलता प्राप्ति</strong> जैसी प्रमुख सेवाएँ शामिल हैं।
           अपनी समस्या का समाधान जानने के लिए नीचे दी गई सेवाओं में से चयन करें।
         </p>
 

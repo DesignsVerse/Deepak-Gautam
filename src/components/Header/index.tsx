@@ -46,7 +46,7 @@ const Header = () => {
           <div className="container mx-auto px-4 flex items-center justify-between transition-all duration-300">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="" alt="Logo" width={50} height={20}  className="bg-black cursor-pointer" />
-              <span className={`text-lg font-bold tracking-wide ${sticky ? "text-black" : "text-white"}`}>Pandit Ji Ka Name </span>
+              <span className={`text-lg font-bold tracking-wide ${sticky ? "text-black" : "text-white"}`}>Deepak Gautam</span>
             </Link>
 
             {/* Mobile Menu Button */}

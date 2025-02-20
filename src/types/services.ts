@@ -9,4 +9,5 @@ export type Services = {
   title: string;
   paragraph: string;
   image: string;
+  
 };

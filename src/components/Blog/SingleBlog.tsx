@@ -37,6 +37,15 @@ const SingleBlog = ({ id }: { id: string }) => {
         <p className="text-sm text-gray-500">{blog.paragraph}</p>
 
         {/* Author Section */}
+        <div className="flex justify-between">
+        <div className="flex justify-between items-center mt-4">
+          <Link
+            href={`/blog/${blog.id}`} // ✅ Corrected path
+            className="text-[#D55F26] font-semibold inline-flex items-center"
+          >
+            आगे पढ़ें <ArrowRight className="ml-2" size={18} />
+          </Link>
+        </div>
         <div className="flex items-center mt-3">
           <Image
             src={blog.author.image}
@@ -52,13 +61,7 @@ const SingleBlog = ({ id }: { id: string }) => {
         </div>
 
         {/* Read More Button */}
-        <div className="flex justify-between items-center mt-4">
-          <Link
-            href={`/blog/${blog.id}`} // ✅ Corrected path
-            className="text-[#D55F26] font-semibold inline-flex items-center"
-          >
-            आगे पढ़ें <ArrowRight className="ml-2" size={18} />
-          </Link>
+        
         </div>
 
 
