@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const Experience = () => {
+const Achivement = () => {
   const stats = [
     { value: 200000, label: "Kundli Served" },
     { value: 50, label: "Years of Legacy in Vedic Astrology" },
@@ -101,4 +101,4 @@ const Counter = ({ targetValue }) => {
   );
 };
 
-export default Experience;
+export default Achivement;

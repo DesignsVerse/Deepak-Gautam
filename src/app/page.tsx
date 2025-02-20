@@ -1,14 +1,12 @@
 import Blog from "@/components/Blog";
-// import ScrollUp from "@/components/Common/ScrollUp";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
-
 import Services from "@/components/Services";
-import BaglamukhiSection from "@/components/ExtraPage";
-import CallNow from "@/components/Marquee";
-import Experience from "@/components/Experience";
 import Faq from "@/components/FAQ";
+import PanditDescription from "@/components/PanditDescription";
+import Achivement from "@/components/Achivement";
+import AutoScroll from "@/components/Marquee";
 export const metadata: Metadata = {
   title: "Deepak_Gautam",
   description: "",  
@@ -19,11 +17,11 @@ export default function Home() {
     <>
       
       <Hero />
-      <CallNow/>
+      <AutoScroll/>
       {/* <AboutPandit/> */}
       <Services/>
-      <BaglamukhiSection/>
-      <Experience/>
+      <PanditDescription/>
+      <Achivement/>
       {/* <ZodiacSigns/> */}
       <Blog />
       <Testimonials />

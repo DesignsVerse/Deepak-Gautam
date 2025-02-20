@@ -17,7 +17,7 @@ const astrologySymbols = [
   { name: "Mala - Rosary for Meditation", image: "/images/m/10.png" },
 ];
 
-const CallNow = () => {
+const AutoScroll = () => {
   return (
     <>
       {/* ✅ SEO Meta Tags */}
@@ -72,4 +72,4 @@ const CallNow = () => {
   );
 };
 
-export default CallNow;
+export default AutoScroll;

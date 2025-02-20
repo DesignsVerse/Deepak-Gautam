@@ -1,6 +1,6 @@
 "use client";
 
-import serviceData from "@/components/Services/ServicesData";
+import serviceData from "@/data/services.json";
 import SingleService from "@/components/Services/SingleServices";
 import Link from "next/link";
 

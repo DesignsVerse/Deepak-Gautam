@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import data from "@/data/servicedata.json";
+import data from "@/data/services.json";
 import Link from "next/link";
 
 export async function generateMetadata({ params }) {
@@ -8,12 +8,12 @@ export async function generateMetadata({ params }) {
   if (!post) return { title: "Service Not Found" };
   return {
     title: post.title,
-    description: post.excerpt,
+    description: post.paragraph,
   };
 }
 
 export default async function ServicePost({ params }) {
-  const post = data.find((post) => post.id === params.id);
+  const post = data.find((post) => post.id === parseInt(params.id));
   if (!post) return notFound();
 
   return (
@@ -22,7 +22,7 @@ export default async function ServicePost({ params }) {
         {/* Main Content */}
         <section className="w-full lg:w-2/3 border p-6 rounded-lg shadow-md">
           <h1 className="text-4xl font-bold text-left">{post.title}</h1>
-          <p className="text-gray-500 pl-1 text-left">{post.author}</p>
+          <p className="text-gray-500 pl-1 text-left">{post.paragraph}</p>
           {post.image && (
             <div className="relative mt-6 w-full rounded-lg overflow-hidden">
               <Image 
@@ -38,10 +38,10 @@ export default async function ServicePost({ params }) {
           <article className="prose lg:prose-xl text-left mt-6">
             {[1, 2, 3].map((num) => (
               <div key={num}>
-                <h2 className={`text-${num === 1 ? '3xl' : '2xl'} font-semibold mt-4`}>
-                  {post[`heading${num}`]}
+                <h2 className="text-2xl font-semibold mt-4">
+                  {post.details[`heading${num}`]}
                 </h2>
-                <p className="mt-2">{post[`paragraph${num}`]}</p>
+                <p className="mt-2">{post.details[`paragraph${num}`]}</p>
               </div>
             ))}
           </article>
@@ -60,42 +60,13 @@ export default async function ServicePost({ params }) {
               </li>
             ))}
           </ul>
-          <div className="p-4 bg-gradient-to-r from-[#c0392b] to-[#e67e22] text-white rounded-lg mt-6 shadow-md border">
-            <h3 className="text-lg font-semibold text-black">कोई भी प्रश्न है?</h3>
-            <p className="mt-3 text-sm text-white">
-              बेझिझक हमसे संपर्क करें। हम जितनी जल्दी हो सकेगा आप को वापस संपर्क करेंगे।
-              या अभी हमें फोन करें।
-            </p>
-            <div className="mt-4">
-              <p className="text-sm text-white">कॉल करें: <span className="text-black">+(91) 9810487266</span></p>
-              <p className="text-sm text-white">मेल करें: <span className="text-black">baglamukhisadhnapeeth@gmail.com</span></p>
-            </div>
-          </div>
         </aside>
       </div>
       
       {/* Additional Content */}
       <div className="mt-12 border p-6 rounded-lg shadow-md">
-        {["text-center", "text-left", "text-left flex justify-evenly"].map((className, index) => (
-          <div key={index} className={`mt-12 ${className} border p-6 rounded-lg shadow-md`}>
-            <div>
-              <h1 className="text-3xl font-bold">{post.finalHeading}</h1>
-              <p className="text-lg mt-2">{post.finalParagraph}</p>
-            </div>
-            {index === 2 && post.image && (
-              <div className="relative mt-6 w-[100px] h-[100px] rounded-lg overflow-hidden">
-                <Image 
-                  src={post.image} 
-                  alt="image" 
-                  width={100}  
-                  height={100} 
-                  className="w-full h-full object-cover rounded-lg"
-                  unoptimized
-                />
-              </div>
-            )}
-          </div>
-        ))}
+        <h1 className="text-3xl font-bold text-center">{post.details.finalHeading}</h1>
+        <p className="text-lg mt-2 text-center">{post.details.finalParagraph}</p>
       </div>
     </main>
   );

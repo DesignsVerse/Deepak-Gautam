@@ -2,7 +2,7 @@
 
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
-import blogData from "./blogData";
+import blogData from "@/data/blogData.json";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -47,13 +47,13 @@ const Blog = () => {
         <section className="pb-10">
           <div className="container">
             <div className="flex flex-wrap mt-10 justify-between gap-6">
-              {blogData.map((blog) => (
+            {blogData.map((blog) => (
                 <article
                   key={blog.id}
                   className="w-full md:w-[30%] flex-shrink-0 rounded-2xl text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-lg bg-white shadow-md"
                   aria-labelledby={`blog-title-${blog.id}`}
                 >
-                  <SingleBlog blog={blog} />
+                  <SingleBlog id={blog.id.toString()} />  {/* ✅ Fix applied */}
                 </article>
               ))}
             </div>

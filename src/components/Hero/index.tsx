@@ -53,7 +53,7 @@ const Hero = () => {
         <div className="relative flex flex-col mt-12 md:mt-20 md:flex-row gap-1 md:gap-20 bg-[rgba(255,255,255,0.8)] w-full h-full md:h-[370px] rounded-lg shadow-lg overflow-hidden z-10">
           {/* 📸 Right Side - Astrologer Image */}
           <div className="relative flex flex-col items-center w-full md:w-auto md:order-2 mt-10 md:mt-0 md:mr-10 lg:mr-16 z-10">
-            🔥 Rotating Background Shape (Lazy loaded)
+          
             <motion.div
               className="absolute w-72 h-72 md:w-[380px] md:h-[380px] rounded-full bg-cover bg-center top-1.5"
               style={{ backgroundImage: "url('/bg.webp')" }}

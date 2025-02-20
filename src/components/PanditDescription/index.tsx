@@ -3,7 +3,7 @@
 import Image from "next/image";
 import "@/styles/index.css"; // Ensure you have this file for custom animations
 
-const BaglamukhiSection = () => {
+const PanditDescription = () => {
   return (
     <article className="flex justify-center pt-12 pb-0 p-4 sm:p-6 md:p-8">
       {/* Wrapper Div with Background Color */}
@@ -49,4 +49,4 @@ const BaglamukhiSection = () => {
   );
 };
 
-export default BaglamukhiSection;
+export default PanditDescription;

@@ -6,10 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SingleServices = ({ services }: { services: Services }) => {
-  const { id, title, paragraph } = services;
-
-  // Default Image (Same Image for All Services)
-  const defaultImage = "/images/m/9.png"; // Replace with actual image path
+  const { id, title, paragraph, image } = services;
 
   return (
     <div className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 text-center border-2 border-yellow-500">
@@ -17,7 +14,7 @@ const SingleServices = ({ services }: { services: Services }) => {
       <Link href={`/services/${id}`}>
       <div className="flex bg-[#FFECDD] optional:40 justify-center items-center bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full w-20 h-20 mx-auto shadow-md p-4">
         <Image 
-          src={defaultImage} 
+          src={image} 
           alt={`${title} - पंडित दीपक गौतम जी की सेवा`} 
           width={80} 
           height={80} 

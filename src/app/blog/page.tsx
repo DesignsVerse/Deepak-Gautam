@@ -1,4 +1,4 @@
-import BlogSection from "@/components/Blog/1";
+import BlogSection from "@/components/Blog/Blog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Head from "next/head";
 
