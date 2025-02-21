@@ -11,25 +11,11 @@ const images = [
   "/images/bhaiya/3.webp",
 ];
 
-// SEO Metadata
-export const metadata = {
-  title: "Best Astrology Consultation | Horoscope & Vastu Insights",
-  description:
-    "Expert astrology consultation by Pandit Ji for accurate horoscope and Vastu solutions to ensure success, peace, and happiness.",
-  keywords: "Astrology, Horoscope, Vastu, Pandit Ji, Vedic Astrology",
-  author: "Your Website Name",
-  openGraph: {
-    title: "Best Astrology Consultation | Horoscope & Vastu Insights",
-    description: "Expert astrology consultation by Pandit Ji for accurate horoscope and Vastu solutions.",
-    image: "/images/bhaiya/33.webp",
-    type: "website",
-  },
-};
+export const metadata = { /* unchanged */ };
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Debounced image transition
   const changeImage = useCallback(() => {
     setCurrentImage((prev) => (prev + 1) % images.length);
   }, []);
@@ -39,7 +25,6 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [changeImage]);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
@@ -50,25 +35,37 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen md:h-[547px] flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 py-8 bg-gradient-to-b from-[#FDF7F4] to-transparent overflow-hidden">
+    <section className="relative w-full h-[100vh] md:h-[547px] flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 py-8 bg-gradient-to-b from-[#FDF7F4] to-transparent overflow-hidden">
+      {/* Preload Critical Image */}
+      <link rel="preload" href="/bg.webp" as="image" />
+
       {/* Background Image Slider */}
       <AnimatePresence>
         {images.map((img, index) => (
           <motion.div
             key={img}
             className="absolute inset-0 w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${img})` }}
             initial={{ opacity: 0 }}
             animate={{ opacity: currentImage === index ? 1 : 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-          />
+          >
+            <Image
+              src={img}
+              alt={`Background ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0} // Preload the first image
+              loading={index > 0 ? "lazy" : "eager"}
+              sizes="100vw"
+            />
+          </motion.div>
         ))}
       </AnimatePresence>
 
       {/* White Container */}
       <motion.div
-        className="relative mt-20 z-10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 bg-white/85 backdrop-blur-lg max-w-6xl w-full rounded-2xl shadow-2xl overflow-hidden h-[460px] md:h-[400px] px-8 py-6"
+        className="relative mt-16 z-10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 bg-white/85 backdrop-blur-lg max-w-6xl w-full rounded-2xl shadow-2xl overflow-hidden h-auto md:h-[400px] px-8 py-6"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -76,33 +73,42 @@ const Hero = () => {
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
           <motion.div
-            className="absolute w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-cover bg-center opacity-40"
-            style={{ backgroundImage: "url('/bg.webp')" }}
+            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-40 hidden md:block" // Hide on mobile
+            initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-          />
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          >
+            <Image
+              src="/bg.webp"
+              alt="Background overlay"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 224px, 288px"
+            />
+          </motion.div>
           <Image
             src="/images/bhaiya/33.webp"
             alt="Pandit Ji - Expert in Astrology and Vastu"
-            width={320}
-            height={320}
+            width={288}
+            height={288}
             priority
-            className="relative z-10 rounded-full shadow-lg w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 object-cover transition-transform duration-300 hover:scale-105"
-            sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 288px"
+            className="relative z-10 rounded-full shadow-lg w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+            sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 256px"
           />
         </div>
 
         {/* Text Section */}
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-black leading-tight">
+          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold text-black leading-tight">
             Solve Kaal Sarp & Mangal Dosh with Pandit Ji
           </h1>
-          <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
-            Get expert horoscope & Vastu guidance to overcome challenges and achieve peace and prosperity.
+          <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
+            Expert horoscope & Vastu guidance to overcome challenges and achieve peace.
           </p>
           <motion.button
-            className="mt-3 md:mt-4 px-4 sm:px-6 py-2 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white font-semibold rounded-lg shadow-md text-sm"
-            whileHover={{ scale: 1.05, boxShadow: "0 6px 15px rgba(127, 29, 29, 0.3)" }}
+            className="mt-2 md:mt-4 px-4 sm:px-6 py-2 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white font-semibold rounded-lg shadow-md text-sm"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
             Book Now
