@@ -55,7 +55,7 @@ const Hero = () => {
               src={img}
               alt={`Background ${index + 1}`}
               fill
-              className="object-cover "
+              className="object-cover"
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -75,22 +75,24 @@ const Hero = () => {
       >
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
+          {/* Update 1: Increased size of rotating background image for mobile and desktop */}
           <motion.div
-            className="absolute w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-70 md:block"
+            className="absolute w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-cover bg-center opacity-70 md:block"
             style={{ backgroundImage: "url('/bg.webp')" }}
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           />
            
+          {/* Update 2: Increased size of Pandit Ji image for mobile and desktop */}
           <Image
             src="/images/bhaiya/33.webp"
             alt="Pandit Ji - Expert in Astrology and Vastu"
             width={320}
             height={320}
             priority
-            className="relative z-20 rounded-full shadow-lg w-44 h-44 sm:w-52 sm:h-52 md:w-64 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
-            sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 256px"
+            className="relative z-20 rounded-full shadow-lg w-56 h-56 sm:w-60 sm:h-60 md:w-72 md:h-72 object-cover transition-transform duration-300 hover:scale-105"
+            sizes="(max-width: 640px) 224px, (max-width: 768px) 240px, 288px"
             quality={75}
           />
         </div>
