@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 
-// Predefined image array
+// Predefined image array for slider
 const images = [
   "/images/bhaiya/1.webp",
   "/images/bhaiya/2.webp",
@@ -73,20 +73,12 @@ const Hero = () => {
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
           <motion.div
-            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-40 hidden md:block" // Hide on mobile
+            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-40 " // Hidden on mobile
+            style={{ backgroundImage: "url('/bg.webp')" }} // Use bg.webp as background
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-          >
-            <Image
-              src="/bg.webp"
-              alt="Background overlay"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 224px, 288px"
-            />
-          </motion.div>
+          />
           <Image
             src="/images/bhaiya/33.webp"
             alt="Pandit Ji - Expert in Astrology and Vastu"
