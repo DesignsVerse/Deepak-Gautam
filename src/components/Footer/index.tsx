@@ -104,16 +104,16 @@ export default function Footer() {
             {/* Contact Details */}
             <div className="text-center md:text-left">
               <Image
-                src="https://storage.googleapis.com/a1aa/image/73c7xmthcVttxfI8SeHu6XDA8JM8_i52199JHpr3Au4.jpg"
+                src="/images/logo/main-logo.png"
                 alt="Deepak Gautam - Best Astrologer in India"
                 width={100}
                 height={50}
                 className="mx-auto md:mx-0 mb-4"
               />
               <p><strong>Contact Details</strong></p>
-              <p>📞 <a href="tel:+917236936903" className="hover:text-orange-400">+91-7236936903</a>, <a href="tel:+916391923456" className="hover:text-orange-400">+91-63919 23456</a></p>
-              <p><strong>Occult Gurukul</strong> – Advanced Astrology Learning</p>
-              <p>📞 <a href="tel:+917236936903" className="hover:text-orange-400">+91-7236936903 (Sales)</a></p>
+              <p>📞 <a href="tel:+918803801111" className="hover:text-orange-400">+91-8803801111</a>, <a href="tel:+919153164444" className="hover:text-orange-400">+91-9153164444</a></p>
+              {/* <p><strong>Occult Gurukul</strong> – Advanced Astrology Learning</p>
+              <p>📞 <a href="tel:+917236936903" className="hover:text-orange-400">+91-7236936903 (Sales)</a></p> */}
             </div>
 
             {/* Policies and Social Media */}
