@@ -7,16 +7,16 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const astrologySymbols = [
-  { name: "Kalash - Divine Symbol", image: "/images/Marquee/1.png" },
-  { name: "Namaste Hands - Sign of Respect", image: "/images/Marquee/2.png" },
-  { name: "Puja Thali - Sacred Offering", image: "/images/Marquee/3.png" },
-  { name: "Deepak - Eternal Light", image: "/images/Marquee/5.png" },
-  { name: "Ganesha Ji - Remover of Obstacles", image: "/images/Marquee/6.png" },
-  { name: "Om Symbol - Sacred Mantra", image: "/images/Marquee/7.png" },
-  { name: "Kalash - Divine Symbol", image: "/images/Marquee/4.png" },
-  { name: "Lal Kitab - Book of Secret", image: "/images/Marquee/8.png" },
-  { name: "Lotus - Purity & Enlightenment", image: "/images/Marquee/9.png" },
-  { name: "Mala - Rosary for Meditation", image: "/images/Marquee/10.png" },
+  { name: "Kalash ", image: "/images/Marquee/1.png" },
+  { name: "Namaste Hands ", image: "/images/Marquee/2.png" },
+  { name: "Puja Thali", image: "/images/Marquee/3.png" },
+  { name: "Deepak ", image: "/images/Marquee/5.png" },
+  { name: "Ganesha Ji ", image: "/images/Marquee/6.png" },
+  { name: "Om Symbol ", image: "/images/Marquee/7.png" },
+  { name: "Kalash", image: "/images/Marquee/4.png" },
+  { name: "Lal Kitab ", image: "/images/Marquee/8.png" },
+  { name: "Lotus", image: "/images/Marquee/9.png" },
+  { name: "Mala", image: "/images/Marquee/10.png" },
 ];
 
 const AutoScroll = () => {
@@ -53,7 +53,7 @@ const AutoScroll = () => {
       </Head>
 
       <section className="w-full   overflow-hidden">
-        <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+        <div className="bg-white shadow-lg p-6 border border-gray-200">
           
           <Marquee
             gradient={false}
@@ -70,9 +70,9 @@ const AutoScroll = () => {
                 animate={hoveredIndex === index ? "hover" : "initial"}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="mx-8 flex flex-col items-center gap-3 cursor-pointer"
+                className="md:mx-20 mx-8 flex flex-col items-center gap-3 cursor-pointer"
               >
-                <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] flex items-center justify-center overflow-hidden rounded-full bg-gray-100 shadow-md">
+                <div className=" md:w-[80px] md:h-[80px] h-[80px] w-[80px] flex items-center justify-center overflow-hidden  ">
                   <Image
                     src={symbol.image}
                     alt={symbol.name}

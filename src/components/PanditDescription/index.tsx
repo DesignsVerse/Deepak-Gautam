@@ -41,28 +41,32 @@ const PanditDescription = () => {
 
         {/* Image Section */}
         <motion.div
-          className="relative flex justify-center items-center w-full md:w-1/3 mb-6 md:mb-0"
+          className="flex justify-center items-center w-full md:w-1/3 mb-6 md:mb-0"
           variants={childVariants}
         >
           {/* Rotating Background with Gradient */}
-          <div
-            className="w-48 sm:w-60 md:w-72 h-48 sm:h-60 md:h-72 rounded-full absolute   bg-[#800000] shadow-xl aborder-4 border-[#FF5C16]/30"
-            style={{ filter: "blur(10px)" }}
-          />
-          {/* Foreground Image */}
-          <Image
-            src="/images/bhaiya/33.webp"
-            alt="Pandit Deepak Gautam – Expert Vedic Astrologer"
-            width={200}
-            height={250}
-            className="rounded-full relative z-10 w-32 sm:w-40 md:w-48 h-auto transition-transform duration-500 hover:scale-110 hover:rotate-3 shadow-lg"
-            priority
-          />
+          <div className="relative flex justify-center items-center w-full">
+            <motion.div
+              className="absolute w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full bg-cover bg-center opacity-30"
+              style={{ backgroundImage: "url('/bg.webp')" }}
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+            />
+            <Image
+              src="/images/bhaiya/33.webp"
+              alt="Pandit Ji - Expert in Astrology and Vastu"
+              width={320}
+              height={320}
+              priority
+              className="relative z-10 rounded-full shadow-lg w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain"
+              sizes="(max-width: 660px) 192px, (max-width: 768px) 224px, 288px"
+            />
+          </div>
         </motion.div>
 
         {/* Content Section */}
         <motion.div className="w-full md:w-2/3 px-4 z-10" variants={childVariants}>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-xl ">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-xl">
             Pandit Deepak Gautam – Vedic Astrology & Ritual Expert
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-[#F5F5F5] mb-6 sm:mb-8 leading-relaxed font-medium">
