@@ -93,7 +93,7 @@ export default function Footer() {
               </form>
             )}
             <p className="mt-4 text-sm">
-              <strong>Astro Arun Pandit</strong> is one of the <strong>best astrologers in India</strong> with 49+ years of expertise in <strong>Vedic Astrology, Numerology, and Palmistry</strong>.
+              <strong>Deepak Gautam</strong> is one of the <strong>best astrologers in India</strong> with 49+ years of expertise in <strong>Vedic Astrology, Numerology, and Palmistry</strong>.
             </p>
           </div>
         </motion.div>
@@ -105,7 +105,7 @@ export default function Footer() {
             <div className="text-center md:text-left">
               <Image
                 src="https://storage.googleapis.com/a1aa/image/73c7xmthcVttxfI8SeHu6XDA8JM8_i52199JHpr3Au4.jpg"
-                alt="Astro Arun Pandit - Best Astrologer in India"
+                alt="Deepak Gautam - Best Astrologer in India"
                 width={100}
                 height={50}
                 className="mx-auto md:mx-0 mb-4"
@@ -127,7 +127,7 @@ export default function Footer() {
                 <span>|</span>
                 <Link href="/refund-policy" className="hover:text-orange-400">Refund Policy</Link>
               </p>
-              <p>© {new Date().getFullYear()} <strong>Astro Arun Pandit</strong>. All Rights Reserved.</p>
+              <p>© {new Date().getFullYear()} <strong>DesignsVerse</strong>. All Rights Reserved.</p>
 
               {/* Social Media Icons */}
               <div className="flex justify-center md:justify-end space-x-4 mt-4">
