@@ -11,6 +11,7 @@ const Achivement = () => {
     { value: 500, label: "Kaal Sarp Remedies", cosmicSign: "Scorpio" },
     { value: 1000, label: "Expert Cosmic Consultations", cosmicSign: "Virgo" },
     { value: 5000, label: "Souls Enlightened", cosmicSign: "Pisces" },
+    { value: 5000, label: "Souls Enlightened", cosmicSign: "Pisces" },
   ];
 
   const ref = useRef(null);
@@ -50,11 +51,12 @@ const Achivement = () => {
         <div className="absolute inset-0 bg-[#800000] opacity-70 rounded-2xl"></div>
 
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={controls}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative z-20 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center text-center"
-        >
+  initial={{ opacity: 0, y: 80 }}
+  animate={controls}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  className="relative z-20 w-full flex flex-wrap justify-center gap-6 text-center"
+>
+
           {stats.map((stat, index) => (
             <StatCard
               key={index}
@@ -77,7 +79,7 @@ const StatCard = ({ stat, controls, index, startCounting }) => {
       animate={controls}
       transition={{ duration: 0.9, delay: index * 0.2, ease: "easeOut" }}
       whileHover={{ scale: 1.05, rotate: 2 }}
-      className="relative bg-white text-[#800000] w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-60 flex flex-col justify-center items-center rounded-full shadow-md p-4 border border-[#800000]/20 overflow-hidden"
+      className="relative bg-white text-[#800000] w-32 h-32 sm:w-30 sm:h-30 lg:w-40 lg:h-40 flex flex-col justify-center items-center rounded-full shadow-md  border border-[#800000]/20 overflow-hidden"
     >
       <motion.div className="absolute top-2 right-2">
         <Star size={14} className="text-[#800000]" />
