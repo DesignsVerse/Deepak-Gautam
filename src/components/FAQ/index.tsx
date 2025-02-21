@@ -60,24 +60,27 @@ const Faq = () => {
     {
       id: 1,
       category: "Consultation",
-      question: "How can I book an astrology consultation call with Astro Arun Pandit?",
-      answer: "You can book an astrology consultation call with Astro Arun Pandit by visiting our {link}. Simply select your preferred time slot, provide your birth details (date, time, and place), and complete the payment process. Our team will confirm your appointment via email or WhatsApp within 24 hours.",
+      question: "How can I book an astrology consultation call with Astro Deepak Gautam?",
+      answer:
+        "You can book an astrology consultation call with Astro Deepak Gautam by visiting our {link}. Simply select your preferred time slot, provide your birth details (date, time, and place), and complete the payment process. Our team will confirm your appointment via email or WhatsApp within 24 hours.",
       link: "/consultation",
       linkText: "Astrology Consultation Booking Page",
     },
     {
       id: 2,
       category: "Courses",
-      question: "Does Astro Arun Pandit offer astrology courses online?",
-      answer: "Yes, Astro Arun Pandit offers comprehensive online astrology courses including Kundali reading, Vedic astrology basics, advanced numerology, and palmistry techniques. Visit our {link} to explore course details, syllabus, duration, and enrollment steps. Start your journey to mastering astrology today!",
+      question: "Does Astro Deepak Gautam offer astrology courses online?",
+      answer:
+        "Yes, Astro Deepak Gautam offers comprehensive online astrology courses including Kundali reading, Vedic astrology basics, advanced numerology, and palmistry techniques. Visit our {link} to explore course details, syllabus, duration, and enrollment steps. Start your journey to mastering astrology today!",
       link: "/courses",
       linkText: "Astrology Courses Page",
     },
     {
       id: 3,
       category: "Show",
-      question: "What is 'The Arun Pandit Show' and what topics does it cover?",
-      answer: "'The Arun Pandit Show' is a unique platform where Astro Arun Pandit discusses astrology, personal growth, spiritual awakening, and practical life solutions. Topics include detailed Kundali analysis, numerology predictions, planetary influences on daily life, remedies for doshas, and guidance for career, relationships, and health.",
+      question: "What is 'The Deepak Gautam Show' and what topics does it cover?",
+      answer:
+        "'The Deepak Gautam Show' is a unique platform where Astro Deepak Gautam discusses astrology, personal growth, spiritual awakening, and practical life solutions. Topics include detailed Kundali analysis, numerology predictions, planetary influences on daily life, remedies for doshas, and guidance for career, relationships, and health.",
       link: "",
       linkText: "",
     },
@@ -85,7 +88,8 @@ const Faq = () => {
       id: 4,
       category: "Consultation",
       question: "What are the fees for an astrology consultation?",
-      answer: "The consultation fees vary based on session type: Rs. 1500 for a 30-minute basic session, Rs. 2500 for a 60-minute detailed session, and Rs. 5000 for a premium package including follow-ups. Check our {link} for the latest pricing and offers.",
+      answer:
+        "The consultation fees vary based on session type: Rs. 1500 for a 30-minute basic session, Rs. 2500 for a 60-minute detailed session, and Rs. 5000 for a premium package including follow-ups. Check our {link} for the latest pricing and offers.",
       link: "/consultation",
       linkText: "Consultation Pricing Page",
     },
@@ -93,7 +97,8 @@ const Faq = () => {
       id: 5,
       category: "Courses",
       question: "Are certificates provided after completing astrology courses?",
-      answer: "Yes, upon successful completion of any course by Astro Arun Pandit, you will receive a digital certificate of completion, authenticated by our institute. Visit the {link} to see sample certificates and course completion criteria.",
+      answer:
+        "Yes, upon successful completion of any course by Astro Deepak Gautam, you will receive a digital certificate of completion, authenticated by our institute. Visit the {link} to see sample certificates and course completion criteria.",
       link: "/courses",
       linkText: "Courses Page",
     },

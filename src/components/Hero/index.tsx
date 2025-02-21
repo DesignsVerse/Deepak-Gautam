@@ -55,19 +55,20 @@ const Hero = () => {
               src={img}
               alt={`Background ${index + 1}`}
               fill
-              className="object-cover"
-              priority={index === 0} // Only first image gets priority
+              className="object-cover "
+              priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" // Optimized sizes
-              quality={75} // Adjust quality to reduce file size
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              quality={75}
             />
           </motion.div>
         ))}
       </AnimatePresence>
 
       {/* White Container */}
+      <div className="absolute inset-0 bg-red-500 opacity-20" />
       <motion.div
-        className="relative mt-16 z-10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 bg-white/85 backdrop-blur-lg max-w-6xl w-full rounded-2xl shadow-2xl overflow-hidden h-auto md:h-[400px] px-8 py-6"
+        className="relative mt-10 z-10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 bg-white/85 backdrop-blur-lg max-w-6xl w-full rounded-2xl shadow-2xl overflow-hidden md:h-[400px] px-6 sm:px-8 md:px-12 py-8 sm:py-10 md:py-12"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -75,34 +76,35 @@ const Hero = () => {
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
           <motion.div
-            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-70 hidden black md:block"
+            className="absolute w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-70 md:block"
             style={{ backgroundImage: "url('/bg.webp')" }}
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           />
+           
           <Image
             src="/images/bhaiya/33.webp"
             alt="Pandit Ji - Expert in Astrology and Vastu"
-            width={288}
-            height={288}
+            width={320}
+            height={320}
             priority
-            className="relative z-20 rounded-full shadow-lg w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
-            sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 256px"
+            className="relative z-20 rounded-full shadow-lg w-44 h-44 sm:w-52 sm:h-52 md:w-64 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+            sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 256px"
             quality={75}
           />
         </div>
 
         {/* Text Section */}
-        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold text-black leading-tight">
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-4 md:space-y-6">
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-black leading-tight">
             Solve Kaal Sarp & Mangal Dosh with Pandit Ji
           </h1>
-          <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
+          <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
             Expert horoscope & Vastu guidance to overcome challenges and achieve peace.
           </p>
           <motion.button
-            className="mt-2 md:mt-4 px-4 sm:px-6 py-2 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white font-semibold rounded-lg shadow-md text-sm"
+            className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white font-semibold rounded-lg shadow-md text-sm md:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >

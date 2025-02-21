@@ -5,7 +5,6 @@ import serviceData from "@/data/services.json";
 import SingleService from "@/components/Services/SingleServices";
 import Link from "next/link";
 
-// Define constants outside component for better organization
 const sectionStyles = {
   padding: "20px",
   paddingBottom: "120px",
@@ -13,18 +12,39 @@ const sectionStyles = {
 };
 
 const headingStyles = {
-  fontSize: "1.875rem", // 3xl
+  fontSize: "1.875rem",
   fontWeight: "bold",
   textAlign: "center",
-  marginBottom: "2rem", // 8
+  marginBottom: "2rem",
   color: "#8B5E3C",
 };
 
 const ServiceSection = () => {
-  // Memoize service cards to prevent unnecessary re-renders
-  const serviceCards = useMemo(
+  // Split services into featured (first 2) and regular services
+  const [featuredServices, regularServices] = useMemo(() => {
+    return [serviceData.slice(0, 2), serviceData.slice(2)];
+  }, []);
+
+  // Memoize featured service cards (larger boxes)
+  const featuredCards = useMemo(
     () =>
-      serviceData.map((service) => (
+      featuredServices.map((service) => (
+        <div
+          key={service.id}
+          className="rounded-2xl text-center transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5] p-8 shadow-md hover:shadow-lg"
+        >
+          <Link href={`/service/${service.id}`} prefetch={false}>
+            <SingleService services={service} />
+          </Link>
+        </div>
+      )),
+    [featuredServices]
+  );
+
+  // Memoize regular service cards
+  const regularCards = useMemo(
+    () =>
+      regularServices.map((service) => (
         <div
           key={service.id}
           className="rounded-2xl text-center transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5] p-6 shadow-md hover:shadow-lg"
@@ -34,13 +54,12 @@ const ServiceSection = () => {
           </Link>
         </div>
       )),
-    [] // Empty dependency array since serviceData is static
+    [regularServices]
   );
 
   return (
     <section style={sectionStyles} className="w-full">
       <div className="max-w-7xl mx-auto">
-        {/* Added semantic HTML and aria-label */}
         <h1 aria-label="Pandit Deepak Gautam Ji's Special Services">
           पंडित दीपक गौतम जी की विशेष सेवाएं
         </h1>
@@ -53,13 +72,22 @@ const ServiceSection = () => {
           जैसी प्रमुख सेवाएँ शामिल हैं। अपनी समस्या का समाधान जानने के लिए नीचे दी गई सेवाओं में से चयन करें।
         </p>
 
-        {/* Added role and aria-label for better accessibility */}
+        {/* Featured Services - 2 larger boxes */}
         <div
           role="grid"
-          aria-label="Service Listings"
+          aria-label="Featured Service Listings"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10"
+        >
+          {featuredCards}
+        </div>
+
+        {/* Regular Services - 3 cards per row */}
+        <div
+          role="grid"
+          aria-label="Regular Service Listings"
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-0"
         >
-          {serviceCards}
+          {regularCards}
         </div>
       </div>
     </section>

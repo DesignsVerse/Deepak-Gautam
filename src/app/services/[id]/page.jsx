@@ -4,7 +4,7 @@ import data from "@/data/services.json";
 import Link from "next/link";
 
 export async function generateMetadata({ params }) {
-  const post = data.find((post) => post.id === params.id);
+  const post = data.find((post) => post.id === parseInt(params.id));
   if (!post) return { title: "Service Not Found" };
   return {
     title: post.title,
@@ -49,10 +49,38 @@ export default async function ServicePost({ params }) {
         
         {/* Sidebar */}
         <aside className="w-full lg:w-1/3 p-5 pt-24 rounded-lg shadow-md border">
-          <h2 className="text-xl font-semibold mb-4">All Services</h2>
+          {/* Add Extra Section */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Add Extra</h2>
+            <ul className="space-y-2">
+              {[
+                { id: 101, title: "Extra Service 1" },
+                { id: 102, title: "Extra Service 2" },
+                { id: 103, title: "Extra Service 3" },
+                { id: 104, title: "Extra Service 4" },
+                { id: 105, title: "Extra Service 5" },
+              ].map((demo) => (
+                <li
+                  key={demo.id}
+                  className="border p-2 rounded hover:bg-gray-200 cursor-pointer transition-colors"
+                >
+                  <Link href={`/demo/${demo.id}`} className="flex justify-between items-center">
+                    <span className="text-black">{demo.title}</span>
+                    <span className="text-blue-500">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* All Services Section */}
+          <h2 className="text-xl font-semibold mb-4 mt-6">All Services</h2>
           <ul className="space-y-2">
             {data.map((service) => (
-              <li key={service.id} className="border p-2 rounded hover:bg-gray-200 cursor-pointer transition-colors">
+              <li
+                key={service.id}
+                className="border p-2 rounded hover:bg-gray-200 cursor-pointer transition-colors"
+              >
                 <Link href={`/services/${service.id}`} className="flex justify-between items-center">
                   {service.title}
                   <span className="text-blue-500">→</span>
@@ -62,7 +90,7 @@ export default async function ServicePost({ params }) {
           </ul>
         </aside>
       </div>
-      
+
       {/* Additional Content */}
       <div className="mt-12 border p-6 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold text-center">{post.details.finalHeading}</h1>

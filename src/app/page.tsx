@@ -7,6 +7,7 @@ import Faq from "@/components/FAQ";
 import PanditDescription from "@/components/PanditDescription";
 import Achivement from "@/components/Achivement";
 import AutoScroll from "@/components/Marquee";
+import DualServiceCards from "@/components/Services/TwoImp";
 export const metadata: Metadata = {
   title: "Deepak_Gautam",
   description: "",  
@@ -15,7 +16,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      
       <Hero />
       <AutoScroll/>
       {/* <AboutPandit/> */}
