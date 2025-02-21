@@ -36,7 +36,8 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-[100vh] md:h-[547px] flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 py-8 bg-gradient-to-b from-[#FDF7F4] to-transparent overflow-hidden">
-      {/* Preload Critical Image */}
+      {/* Preload Critical Images */}
+      <link rel="preload" href="/images/bhaiya/1.webp" as="image" />
       <link rel="preload" href="/bg.webp" as="image" />
 
       {/* Background Image Slider */}
@@ -55,9 +56,10 @@ const Hero = () => {
               alt={`Background ${index + 1}`}
               fill
               className="object-cover"
-              priority={index === 0} // Preload the first image
-              loading={index > 0 ? "lazy" : "eager"}
-              sizes="100vw"
+              priority={index === 0} // Only first image gets priority
+              loading={index === 0 ? "eager" : "lazy"}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" // Optimized sizes
+              quality={75} // Adjust quality to reduce file size
             />
           </motion.div>
         ))}
@@ -73,8 +75,8 @@ const Hero = () => {
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
           <motion.div
-            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-40 " // Hidden on mobile
-            style={{ backgroundImage: "url('/bg.webp')" }} // Use bg.webp as background
+            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-70"
+            style={{ backgroundImage: "url('/bg.webp')" }}
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
@@ -85,8 +87,9 @@ const Hero = () => {
             width={288}
             height={288}
             priority
-            className="relative z-10 rounded-full shadow-lg w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+            className="relative z-20 rounded-full shadow-lg w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
             sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 256px"
+            quality={75}
           />
         </div>
 
