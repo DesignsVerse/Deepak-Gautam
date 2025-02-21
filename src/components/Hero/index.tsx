@@ -75,9 +75,11 @@ const Hero = () => {
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
           <motion.div
-            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-70 "
+            className="absolute w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-cover bg-center opacity-70 hidden black md:block"
             style={{ backgroundImage: "url('/bg.webp')" }}
-            
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           />
           <Image
             src="/images/bhaiya/33.webp"
