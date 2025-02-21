@@ -123,7 +123,7 @@ const Faq = () => {
   return (
     <section className="w-full mt-10 mb-10 max-w-5xl mx-auto p-4 sm:p-6 text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#800000] mb-6">
-        Frequently Asked Questions (FAQs) – Astro Arun Pandit
+        Frequently Asked Questions (FAQs) – Deepak Gautam Pandit
       </h2>
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <input
