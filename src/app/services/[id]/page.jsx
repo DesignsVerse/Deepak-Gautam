@@ -62,7 +62,7 @@ export default async function ServicePost({ params }) {
   };
 
   return (
-    <main className="mt-[140px] max-w-7xl mx-auto p-6">
+    <main className="mt-[140px] max-w-7xl mx-auto p-4">
       {/* Add Schema Markup */}
       <script
         type="application/ld+json"
@@ -72,7 +72,7 @@ export default async function ServicePost({ params }) {
       {/* Grid Container */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Main Content + Additional Content */}
-        <section className="lg:col-span-2 border p-6 rounded-lg shadow-md">
+        <section className="lg:col-span-2 mb:border p-3 rounded-lg shadow-md">
           {/* Main Content */}
           <div>
             <h1 className="text-4xl font-bold text-left">{post.title}</h1>
@@ -105,7 +105,7 @@ export default async function ServicePost({ params }) {
 
             {post.sections && post.sections.length > 0 ? (
               post.sections.map((section, index) => (
-                <div key={index} className="p-8 rounded-xl">
+                <div key={index} className=" rounded-xl">
                   <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
                     {section.heading}
                   </h2>
@@ -127,11 +127,19 @@ export default async function ServicePost({ params }) {
               <h2 className="text-xl font-semibold mb-4">अतिरिक्त सेवाएँ</h2>
               <ul className="space-y-2">
                 {[
-                  { id: 101, title: "अतिरिक्त सेवा 1" },
-                  { id: 102, title: "अतिरिक्त सेवा 2" },
-                  { id: 103, title: "अतिरिक्त सेवा 3" },
-                  { id: 104, title: "अतिरिक्त सेवा 4" },
-                  { id: 105, title: "अतिरिक्त सेवा 5" },
+                  { id: 101, title: "अनंत कालसर्प दोष" },
+                  { id: 102, title: "कुलिक कालसर्प दोष" },
+                  { id: 103, title: "वासुकी कालसर्प दोष " },
+                  { id: 104, title: "शंखचूड़ कालसर्प दोष" },
+                  { id: 105, title: "पद्म कालसर्प दोष" },
+                  { id: 106, title: "महापद्म कालसर्प दोष" },
+                  { id: 107, title: "तक्षक कालसर्प दोष:" },
+                  { id: 108, title: "कर्कोटक कालसर्प दोष" },
+                  { id: 109, title: "शंखनाद कालसर्प दोष" },
+                  { id: 110, title: "विषधर कालसर्प दोष" },
+                
+                  { id: 112, title: "शेषनाग कालसर्प दोष" },
+                  { id: 111, title: "पातक कालसर्प दोष" },
                 ].map((demo) => (
                   <li
                     key={demo.id}
