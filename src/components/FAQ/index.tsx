@@ -40,12 +40,7 @@ const FAQItem = ({ item, isOpen, toggle }) => {
         }`}
       >
         <div className="p-4 text-gray-700 text-base">{renderAnswer()}</div>
-        <button
-          onClick={handleCopyLink}
-          className="text-sm text-blue-500 hover:underline mb-2"
-        >
-          Copy Link to this FAQ
-        </button>
+        
       </div>
     </div>
   );
@@ -63,7 +58,7 @@ const Faq = () => {
       question: "How can I book a Kaal Sarp Dosh Puja consultation in Ujjain?",
       answer:
         "You can book a Kaal Sarp Dosh Puja consultation in Ujjain by visiting our {link}. Choose your preferred date, provide birth details, and complete the payment. Our team will confirm your appointment via WhatsApp or email within 24 hours.",
-      link: "/consultation",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "Kaal Sarp Dosh Puja Consultation",
     },
     {
@@ -73,7 +68,7 @@ const Faq = () => {
         "Does Astro Deepak Gautam offer astrology courses on Kaal Sarp Dosh Nivaran?",
       answer:
         "Yes, we provide online astrology courses on Kaal Sarp Dosh Nivaran, Mangal Dosh remedies, and Grahan Dosh effects. Visit {link} to check the syllabus, duration, and enrollment steps.",
-      link: "/courses",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "Astrology Courses",
     },
     {
@@ -82,7 +77,7 @@ const Faq = () => {
       question: "What is 'The Deepak Gautam Show' about?",
       answer:
         "The Deepak Gautam Show covers astrology, Vedic remedies, and personal growth. Topics include Kaal Sarp Dosh effects, Kundali analysis, Navgraha Dosh solutions, and powerful mantras for success.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -92,7 +87,7 @@ const Faq = () => {
         "What are the consultation charges for Kaal Sarp Dosh Puja guidance?",
       answer:
         "The fees depend on session type: Rs. 1500 for basic guidance, Rs. 2500 for a detailed Kundali analysis, and Rs. 5000 for a premium package with remedies. Visit {link} for updated prices.",
-      link: "/consultation",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "Consultation Pricing",
     },
     {
@@ -102,7 +97,7 @@ const Faq = () => {
         "Are certificates provided after completing astrology courses?",
       answer:
         "Yes, after finishing any astrology course, you will receive an authenticated digital certificate. Check {link} for sample certificates and completion details.",
-      link: "/courses",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "Course Completion Certificate",
     },
     {
@@ -112,7 +107,7 @@ const Faq = () => {
         "What is the importance of Kaal Sarp Dosh Puja Muhurt in Ujjain?",
       answer:
         "Performing the puja on an auspicious Kaal Sarp Dosh Puja Muhurt in Ujjain ensures effective results. Our experts guide you in selecting the best dates based on planetary alignments.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -121,7 +116,7 @@ const Faq = () => {
       question: "How does Mangal Dosh affect marriage, and what is the remedy?",
       answer:
         "Mangal Dosh can delay marriage and create relationship issues. Performing Mangal Dosh Pujan in Ujjain neutralizes its effects, ensuring a harmonious married life.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -130,7 +125,7 @@ const Faq = () => {
       question: "What are the effects of Grahan Dosh, and how to remove it?",
       answer:
         "Grahan Dosh impacts career and health. Performing Surya Grahan Dosh Puja in Ujjain reduces its negative effects. Our astrology experts suggest personalized remedies for long-term relief.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -140,7 +135,7 @@ const Faq = () => {
         "What is the significance of Rudrabhishek in Ujjain for wealth and peace?",
       answer:
         "Rudrabhishek in Ujjain is a powerful remedy for financial stability and inner peace. It removes Kaal Sarp Dosh and attracts prosperity by pleasing Lord Shiva.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -149,7 +144,7 @@ const Faq = () => {
       question: "Which puja is best for removing ancestral Pitru Dosh?",
       answer:
         "Amavasya Shanti Puja in Ujjain is highly effective in resolving Pitru Dosh. It helps in bringing peace to ancestors and removing financial or family troubles.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -158,7 +153,7 @@ const Faq = () => {
       question: "Can I get a consultation for career growth through astrology?",
       answer:
         "Yes, we offer career-focused astrology consultations to analyze planetary influences on your professional life. Book a session at {link} for personalized guidance.",
-      link: "/consultation",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "Career Consultation",
     },
     {
@@ -167,7 +162,7 @@ const Faq = () => {
       question: "Are there beginner-level astrology courses available?",
       answer:
         "Absolutely! We offer beginner-friendly courses covering basics like Kundali reading and planetary effects. Check out {link} for details.",
-      link: "/courses",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "Beginner Astrology Courses",
     },
     {
@@ -176,7 +171,7 @@ const Faq = () => {
       question: "How can astrology help improve my health?",
       answer:
         "Astrology identifies planetary impacts on health. Remedies like Chandra Grahan Puja or specific mantras can mitigate negative effects for better well-being.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -185,7 +180,7 @@ const Faq = () => {
       question: "Which puja is best for attracting business success?",
       answer:
         "Laxmi Puja in Ujjain is highly recommended for business prosperity. It aligns planetary energies to boost financial growth and success.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
     {
@@ -194,7 +189,7 @@ const Faq = () => {
       question: "Can astrology predict my marriage timing?",
       answer:
         "Yes, through Kundali analysis, we can predict marriage timing based on planetary positions. Book a consultation for a detailed report.",
-      link: "",
+      link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
   ];
