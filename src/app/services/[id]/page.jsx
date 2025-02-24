@@ -62,7 +62,7 @@ export default async function ServicePost({ params }) {
   };
 
   return (
-    <main className="mt-[140px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main className="mt-[140px] max-w-7xl mb-20 mx-auto px-4 sm:px-6 lg:px-8">
       {/* Add Schema Markup */}
       <script
         type="application/ld+json"
@@ -100,7 +100,7 @@ export default async function ServicePost({ params }) {
               {post.sections && post.sections.length > 0 ? (
                 post.sections.map((section, index) => (
                   <div key={index} className="mt-8">
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-">
                       {section.heading}
                     </h2>
                     <ReactMarkdown className="text-lg text-gray-700 leading-relaxed">
@@ -112,10 +112,10 @@ export default async function ServicePost({ params }) {
                 <p className="text-center text-gray-500 mt-4">कोई अतिरिक्त सामग्री उपलब्ध नहीं।</p>
               )}
               {/* Moved paragraph to the end */}
-              <h1 className="text-3xl font-bold text-center mb-4">
+              <h1 className="text-xl font-bold mt-4 ">
                 {post.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
               </h1>
-              <p className="text-center text-lg mt-4">
+              <p className=" text-lg mt-">
                 {post.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}
               </p>
             </div>
