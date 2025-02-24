@@ -189,8 +189,10 @@ export default function Footer() {
             
             <button
               className="w-full mt-4 bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600 transition-colors"
+            
             >
-              Call Now
+              <a href="tel:+918803801111" className="hover:text-orange-400">Call Now</a>
+              
             </button>
             <p className="mt-4 text-sm">
               <strong>Deepak Gautam</strong> is one of the <strong>best astrologers in India</strong> with 49+ years of expertise in <strong>Vedic Astrology, Numerology, and Palmistry</strong>.
@@ -220,13 +222,12 @@ export default function Footer() {
             {/* Policies and Social Media */}
             <div className="text-center md:text-right">
               <p className="mb-4 space-x-4">
-                <Link href="/help" className="hover:text-orange-400">Help</Link>
+                <Link href="/" className="hover:text-orange-400">Help</Link>
                 <span>|</span>
-                <Link href="/terms" className="hover:text-orange-400">Terms & Services</Link>
+                <Link href="/" className="hover:text-orange-400">Terms & Services</Link>
                 <span>|</span>
-                <Link href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</Link>
-                <span>|</span>
-                <Link href="/refund-policy" className="hover:text-orange-400">Refund Policy</Link>
+                <Link href="/" className="hover:text-orange-400">Privacy Policy</Link>
+                
               </p>
               <p>© {new Date().getFullYear()} <strong>DesignsVerse</strong>. All Rights Reserved.</p>
 
