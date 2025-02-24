@@ -9,38 +9,39 @@ import Achivement from "@/components/Achivement";
 import AutoScroll from "@/components/Marquee";
 
 export const metadata: Metadata = {
-  title: "Deepak Gautam - Website Development, Digital Marketing & SEO Expert",
+  title: "Deepak Gautam - Kaal Sarp Dosh Puja Specialist in Ujjain",
   description:
-    "Welcome to Deepak Gautam's official website. Expert services in website development, SEO, digital marketing, and personal branding to boost your online presence.",
+    "Perform authentic Kaal Sarp Dosh Puja in Ujjain with Deepak Gautam. Get expert guidance and Vedic rituals to remove doshas and bring peace to life.",
   keywords:
-    "Deepak Gautam, website development, digital marketing, SEO expert, personal branding, business growth, online marketing",
+    "Kaal Sarp Dosh Puja Ujjain, Kaal Sarp Puja, Kaal Sarp Dosh Nivaran, Pandit Deepak Gautam, Ujjain Temple, Mahakal Kaal Sarp Puja",
   robots: "index, follow", // ✅ Ensure indexing
   authors: [{ name: "Deepak Gautam" }], // ✅ Author attribution
   alternates: {
-    canonical: "https://www.deepakgautam.com", // ✅ Canonical URL for homepage
+    canonical: "https://www.deepakgautam.com/kaal-sarp-pooja-ujjain", // ✅ Canonical URL for Kaal Sarp Pooja page
   },
   openGraph: {
-    title: "Deepak Gautam - Web & Digital Marketing Expert",
+    title: "Deepak Gautam - Kaal Sarp Dosh Puja Expert in Ujjain",
     description:
-      "Discover expert solutions in website development, SEO, and digital marketing with Deepak Gautam.",
+      "Book your Kaal Sarp Dosh Puja in Ujjain with Deepak Gautam, an experienced Vedic scholar. Get the blessings of Lord Shiva at Mahakaleshwar Temple.",
     images: [
       {
-        url: "/images/home-banner.jpg", // ✅ Homepage-specific banner
+        url: "/images/kaal-sarp-pooja.jpg", // ✅ Specific banner for Kaal Sarp Pooja
         width: 1200,
         height: 630,
-        alt: "Deepak Gautam - Homepage Banner",
+        alt: "Kaal Sarp Puja at Ujjain - Deepak Gautam",
       },
     ],
-    url: "https://www.deepakgautam.com",
-    type: "website",
+    url: "https://www.deepakgautam.com/kaal-sarp-pooja-ujjain",
+    type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deepak Gautam - Digital Marketing Expert",
+    title: "Deepak Gautam - Kaal Sarp Dosh Puja Specialist in Ujjain",
     description:
-      "Boost your online presence with Deepak Gautam’s website development and digital marketing services.",
+      "Perform authentic Kaal Sarp Dosh Puja in Ujjain with expert guidance from Deepak Gautam. Book your puja now and remove doshas.",
   },
 };
+
 
 export default function Home() {
   // Structured Data for Homepage (Schema.org)
