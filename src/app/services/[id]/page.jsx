@@ -62,7 +62,7 @@ export default async function ServicePost({ params }) {
   };
 
   return (
-    <main className="mt-[140px] max-w-7xl mx-auto p-4">
+    <main className="mt-[140px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Add Schema Markup */}
       <script
         type="application/ld+json"
@@ -70,13 +70,13 @@ export default async function ServicePost({ params }) {
       />
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content + Additional Content */}
-        <section className="lg:col-span-2 mb:border p-3 rounded-lg shadow-md">
+        <section className="lg:col-span-2 border rounded-lg shadow-md p-6">
           {/* Main Content */}
           <div>
-            <h1 className="text-4xl font-bold text-left">{post.title}</h1>
-            <p className="text-gray-500 mt-5 text-left">{post.paragraph}</p>
+            <h1 className="text-4xl font-bold text-left mb-6">{post.title}</h1>
+            <p className="text-gray-500 mt-8 text-lg leading-relaxed">{post.paragraph}</p>
 
             {post?.image && (
               <div className="relative mt-6 w-full rounded-lg overflow-hidden">
@@ -91,32 +91,34 @@ export default async function ServicePost({ params }) {
               </div>
             )}
 
-            <p className="mt-5">{post.description}</p>
-          </div>
+            <p className="mt-6 text-lg text-gray-700 leading-relaxed">{post.description}</p>
 
-          {/* Additional Content */}
-          <div className="mt-12">
-            <h1 className="text-3xl font-bold text-center">
-              {post.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
-            </h1>
-            <p className="text-lg mt-2 text-center">
-              {post.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}
-            </p>
+            {/* Additional Content */}
+            <div className="mt-12">
+              
 
-            {post.sections && post.sections.length > 0 ? (
-              post.sections.map((section, index) => (
-                <div key={index} className=" rounded-xl">
-                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
-                    {section.heading}
-                  </h2>
-                  <ReactMarkdown className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {section.content}
-                  </ReactMarkdown>
-                </div>
-              ))
-            ) : (
-              <p className="text-center text-gray-500 mt-4">कोई अतिरिक्त सामग्री उपलब्ध नहीं।</p>
-            )}
+              {post.sections && post.sections.length > 0 ? (
+                post.sections.map((section, index) => (
+                  <div key={index} className="mt-8">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                      {section.heading}
+                    </h2>
+                    <ReactMarkdown className="text-lg text-gray-700 leading-relaxed">
+                      {section.content}
+                    </ReactMarkdown>
+                  </div>
+                ))
+              ) : (
+                <p className="text-center text-gray-500 mt-4">कोई अतिरिक्त सामग्री उपलब्ध नहीं।</p>
+              )}
+              {/* Moved paragraph to the end */}
+              <h1 className="text-3xl font-bold text-center mb-4">
+                {post.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
+              </h1>
+              <p className="text-center text-lg mt-4">
+                {post.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}
+              </p>
+            </div>
           </div>
         </section>
 
@@ -137,7 +139,6 @@ export default async function ServicePost({ params }) {
                   { id: 108, title: "कर्कोटक कालसर्प दोष" },
                   { id: 109, title: "शंखनाद कालसर्प दोष" },
                   { id: 110, title: "विषधर कालसर्प दोष" },
-                
                   { id: 112, title: "शेषनाग कालसर्प दोष" },
                   { id: 111, title: "पातक कालसर्प दोष" },
                 ].map((demo) => (

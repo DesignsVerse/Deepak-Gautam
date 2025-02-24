@@ -69,10 +69,9 @@ const SingleServices = ({ services }: { services: Services }) => {
         >
           {paragraph}
           <strong className="block mt-1 text-[#800000]">
-            कुंडली मिलान, ग्रह दोष निवारण, शत्रु नाश, सफलता प्राप्ति
+          Kundli milan, grah dosh nivaran, shatru naash, aur safalta prapti.
           </strong>
-          जैसी विशेष सेवाएं उपलब्ध हैं।
-        </motion.p>
+          Such special services are available.        </motion.p>
       </Link>
 
       {/* CTA Button with Advanced Animation */}

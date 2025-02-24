@@ -67,10 +67,9 @@ const ServiceSection = () => {
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-base leading-relaxed">
           हमारी ज्योतिषीय सेवाओं में{" "}
           <strong className="font-semibold">
-            कुंडली मिलान, वास्तु परामर्श, ग्रह दोष निवारण, तंत्र-मंत्र अनुष्ठान, शत्रु नाश और सफलता प्राप्ति
+          Kundli milan, Vastu consultation, grah dosh nivaran, tantra-mantra anushthan, shatru naash, aur safalta prapti.
           </strong>{" "}
-          जैसी प्रमुख सेवाएँ शामिल हैं। अपनी समस्या का समाधान जानने के लिए नीचे दी गई सेवाओं में से चयन करें।
-        </p>
+          These are the main services included. Select from the options below to find a solution to your problem.        </p>
 
         {/* Featured Services - 2 larger boxes */}
         <div
