@@ -45,8 +45,10 @@ const Header = () => {
         <header>
           <div className="container mx-auto px-4 flex items-center justify-between transition-all duration-300">
             <Link href="/" className="flex items-center ">
-              <Image src="/images/logo/main-logo.png" alt="Logo" width={50} height={20}  className=" cursor-pointer" />
-              <span className={`text-m font-bold tracking-wide ${sticky ? "text-black" : "text-white"}`}>Deepak Gautam</span>
+              <Image src="/images/logo/main-logo.png" alt="Logo" width={50} height={20} className="cursor-pointer" />
+              <span className={`text-m font-bold tracking-wide ${sticky ? "text-black" : "text-white"}`}>
+                Deepak Goutam
+              </span>
             </Link>
 
             {/* Mobile Menu Button */}
@@ -59,11 +61,11 @@ const Header = () => {
 
             {/* Mobile & Desktop Navigation */}
             <nav
-            className={`fixed top-0 left-0 h-full w-64 transition-transform duration-300 
+              className={`fixed top-0 left-0 h-full w-64 transition-transform duration-300 
               ${mobileMenuOpen ? "translate-x-0 bg-white shadow-lg" : "-translate-x-full"} 
               md:relative md:translate-x-0 md:bg-transparent md:w-auto md:h-auto md:flex md:flex-row md:space-x-6 items-center`}
-            style={{ backgroundColor: mobileMenuOpen ? "white" : "" }}
->
+              style={{ backgroundColor: mobileMenuOpen ? "white" : "" }}
+            >
               {/* Close Button for Mobile */}
               <button
                 className="absolute top-4 right-4 text-black md:hidden"

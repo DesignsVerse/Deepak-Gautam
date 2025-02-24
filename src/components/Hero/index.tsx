@@ -117,7 +117,7 @@ const Hero = () => {
         {/* Text Section */}
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-4 md:space-y-6">
           <h1 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-extrabold text-black leading-tight">
-            Kaal Sarp & Mangal Dosh Nivaran with Ujjain's Best Pandit Ji
+            Kaal Sarp & Mangal Dosh Nivaran with Ujjain Best Pandit Ji
           </h1>
           <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
             Expert Horoscope & Vastu Guidance to Remove Doshas and Attain Peace & Prosperity
