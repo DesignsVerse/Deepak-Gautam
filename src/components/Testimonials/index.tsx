@@ -1,17 +1,18 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import testimonialsData from "src/data/testimonials.json";
 
 const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollPosition, setScrollPosition] = React.useState(0);
-  const [isPaused, setIsPaused] = React.useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isUserScrolling, setIsUserScrolling] = useState(false);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-scroll one box at a time, slowly
   useEffect(() => {
-    if (!scrollRef.current) return;
+    if (!scrollRef.current || isUserScrolling) return;
 
     const scrollWidth = scrollRef.current.scrollWidth;
     const clientWidth = scrollRef.current.clientWidth;
@@ -19,7 +20,7 @@ const Testimonials = () => {
     const cardWidth = window.innerWidth < 640 ? 280 : 320;
 
     const scroll = () => {
-      if (isPaused) return;
+      if (isPaused || isUserScrolling) return;
       setScrollPosition((prev) => {
         let newPos = prev + cardWidth;
         if (newPos >= maxScroll) newPos = 0; // Reset for infinite loop
@@ -28,27 +29,37 @@ const Testimonials = () => {
       });
     };
 
-    const intervalId = setInterval(scroll, 3000); // Move one box every 3 seconds
+    const intervalId = setInterval(scroll, 1400);
 
     return () => clearInterval(intervalId);
-  }, [isPaused]);
+  }, [isPaused, isUserScrolling]);
+
+  // Manual scroll handler
+  const handleManualScroll = () => {
+    setIsUserScrolling(true);
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+
+    scrollTimeout.current = setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 2000); // Auto-resume after 2 sec of inactivity
+  };
 
   return (
     <section
       className="bg-gradient-to-b from-[#7b1e1e] to-[#4a1010] py-12 text-center relative overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)} // Pause on hover
-      onMouseLeave={() => setIsPaused(false)} // Resume on leave
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       <h2 className="text-3xl md:text-4xl font-bold text-white pb-6 px-4">
-        खुशहाल ग्राहकों के प्रशंसापत्र
+      Testimonials from Happy Customers
       </h2>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Testimonial Carousel */}
         <div
           ref={scrollRef}
-          className="flex overflow-x-hidden no-scrollbar space-x-4 sm:space-x-6 w-full snap-x snap-mandatory"
+          className="flex overflow-x-auto no-scrollbar space-x-4 sm:space-x-6 w-full snap-x snap-mandatory"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          onScroll={handleManualScroll} // Detect manual scroll
         >
           {[...testimonialsData, ...testimonialsData].map((testimonial, index) => (
             <motion.div

@@ -89,7 +89,7 @@ const SingleServices = ({ services }: { services: Services }) => {
             />
             <span className="relative z-10 flex items-center justify-center gap-2">
               <FaBookOpen />
-              सेवा प्राप्त करें
+              Know more
             </span>
           </motion.button>
         </Link>

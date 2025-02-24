@@ -11,20 +11,17 @@ const Service = () => {
       <div className="max-w-screen-lx mx-auto">
         {/* SEO-Optimized Section Title */}
         <SectionTitle
-          title="🔱 हमारी सेवाएँ | ज्योतिष समाधान | दीपक गौतम जी"
-          paragraph="🌟 ग्रह दोष निवारण, विवाह मिलान, तंत्र साधना, व्यापार वृद्धि और सफलता प्राप्त करने के लिए हमारी विशेष सेवाएँ उपलब्ध हैं।"
+          title="🔱 Our Services | Astrology Solutions | Deepak Gautam Ji"
+          paragraph="🌟Expert in Kundli Milan, Tantra Sadhana, Grah Dosh Nivaran, and Business Growth Remedies. Experience Kaal Sarp Dosh Puja in Ujjain for success. "
           center
         />
 
-        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-8 text-sm md:text-base">
-          हमारी ज्योतिषीय सेवाओं में <strong>कुंडली मिलान, वास्तु परामर्श, 
-          ग्रह दोष निवारण, तंत्र-मंत्र अनुष्ठान, शत्रु नाश, काल सर्प दोष पूजा, 
-          मंगल दोष निवारण और सफलता प्राप्ति</strong> जैसी प्रमुख सेवाएँ शामिल हैं।
-          अपनी समस्या का समाधान जानने के लिए नीचे दी गई सेवाओं में से चयन करें।
-        </p>
+        {/* <p className="text-center text-gray-700 max-w-2xl mx-auto mb-8 text-sm md:text-base">
+        Our astrology services include <strong>Kundli Milan, Vastu Consultation, Grah Dosh Nivaran, Tantra-Mantra Anushthan, Shatru Nash, Kaal Sarp Dosh Puja in Ujjain, Mangal Dosh Nivaran, and Success Remedies</strong>. Choose from the services below to find a solution to your problems.
+        </p> */}
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-0">
+        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
           {serviceData.slice(0, 3).map((service) => (
             <div
               key={service.id}
@@ -42,7 +39,7 @@ const Service = () => {
           <Link href="/services">
             <button className="relative hover:bg-[#FF5C16] overflow-hidden bg-[#800000] text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition-all duration-300">
               <span className="relative z-10 inset-0">
-                🔍 और सेवाएँ देखें
+                🔍 Explore more services.
               </span>
             </button>
           </Link>

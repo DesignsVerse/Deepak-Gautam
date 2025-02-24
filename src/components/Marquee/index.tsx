@@ -55,13 +55,13 @@ const AutoScroll = () => {
       <section className="w-full   overflow-hidden">
         <div className="bg-white shadow-lg p-6 border border-gray-200">
           
-          <Marquee
+        <Marquee
             gradient={false}
             speed={60}
-            pauseOnHover={true}
+            pauseOnHover={false} // Yeh false kar diya
             direction="left"
             className="py-4"
-          >
+        >
             {astrologySymbols.map((symbol, index) => (
               <motion.div
                 key={index}

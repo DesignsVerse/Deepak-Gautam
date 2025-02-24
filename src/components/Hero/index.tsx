@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link"; // Link import kiya for WhatsApp and Call functionality
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 
-// Predefined image array for slider
 const images = [
   "/images/bhaiya/1.webp",
   "/images/bhaiya/2.webp",
@@ -31,6 +31,26 @@ const Hero = () => {
       opacity: 1,
       scale: 1,
       transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants = {
+    initial: {
+      scale: 1,
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+    },
+    hover: {
+      scale: 1.08,
+      boxShadow: "0px 8px 20px rgba(255, 92, 22, 0.5), 0px 0px 15px rgba(128, 0, 0, 0.3)",
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+    tap: {
+      scale: 0.95,
+      transition: { duration: 0.2 },
+    },
+    pulse: {
+      scale: [1, 1.02, 1],
+      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
     },
   };
 
@@ -75,7 +95,6 @@ const Hero = () => {
       >
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">
-          {/* Update 1: Increased size of rotating background image for mobile and desktop */}
           <motion.div
             className="absolute w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-cover bg-center opacity-70 md:block"
             style={{ backgroundImage: "url('/bg.webp')" }}
@@ -83,8 +102,6 @@ const Hero = () => {
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           />
-           
-          {/* Update 2: Increased size of Pandit Ji image for mobile and desktop */}
           <Image
             src="/images/bhaiya/33.webp"
             alt="Pandit Ji - Expert in Astrology and Vastu"
@@ -99,19 +116,51 @@ const Hero = () => {
 
         {/* Text Section */}
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-4 md:space-y-6">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-black leading-tight">
-            Solve Kaal Sarp & Mangal Dosh with Pandit Ji
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-extrabold text-black leading-tight">
+            Kaal Sarp & Mangal Dosh Nivaran with Ujjain's Best Pandit Ji
           </h1>
           <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
-            Expert horoscope & Vastu guidance to overcome challenges and achieve peace.
+            Expert Horoscope & Vastu Guidance to Remove Doshas and Attain Peace & Prosperity
           </p>
-          <motion.button
-            className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#b91c1c] to-[#7f1d1d] text-white font-semibold rounded-lg shadow-md text-sm md:text-base"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Book Now
-          </motion.button>
+          <div className="flex gap-10">
+            {/* Book Now Button with WhatsApp Link */}
+            <Link href="https://wa.me/+919876543210" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#800000] to-[#FF5C16] text-white font-semibold rounded-lg shadow-md text-sm md:text-base relative overflow-hidden"
+                variants={buttonVariants}
+                initial="initial"
+                animate="pulse"
+                whileHover="hover"
+                whileTap="tap"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%", transition: { duration: 0.5, ease: "easeInOut" } }}
+                />
+                <span className="relative z-10">Book Now</span>
+              </motion.button>
+            </Link>
+
+            {/* Call Now Button with Phone Link */}
+            <Link href="tel:+919876543210" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#FF5C16] to-[#800000] text-white font-semibold rounded-lg shadow-md text-sm md:text-base relative overflow-hidden"
+                variants={buttonVariants}
+                initial="initial"
+                animate="pulse"
+                whileHover="hover"
+                whileTap="tap"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%", transition: { duration: 0.5, ease: "easeInOut" } }}
+                />
+                <span className="relative z-10">Call Now</span>
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </motion.div>
     </section>

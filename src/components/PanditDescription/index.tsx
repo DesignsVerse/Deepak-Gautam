@@ -66,11 +66,10 @@ const PanditDescription = () => {
 
         {/* Content Section */}
         <motion.div className="w-full md:w-2/3 px-4 z-10" variants={childVariants}>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-xl">
-            Pandit Deepak Gautam – Vedic Astrology & Ritual Expert
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg text-[#F5F5F5] mb-6 sm:mb-8 leading-relaxed font-medium">
-            With profound expertise in Vedic astrology, Pandit Deepak Gautam offers transformative rituals and remedies for <strong>Kaal Sarp Dosh</strong> and <strong>Kaal Dosh</strong>. His guidance empowers individuals to conquer challenges, fostering peace, prosperity, and spiritual harmony.
+          <h1 className="text-2x1 sm:text-3xl md:text-3xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-xl">
+          Pandit Deepak Gautam – Expert in Kaal Sarp Dosh Puja in Ujjain & Vedic Astrology Rituals</h1>
+          <p className="text-sm sm:text-base text-justify md:text-lg text-[#F5F5F5] mb-6 sm:mb-8 leading-relaxed font-medium">
+          With profound expertise in Vedic astrology, Pandit Deepak Gautam specializes in <strong>Kaal Sarp Dosh Puja in Ujjain</strong> and <strong>Kaal Dosh Nivaran Puja</strong>. His authentic rituals and remedies help individuals overcome obstacles, ensuring relief from <strong>Anant Kaal Sarp Dosh</strong>, <strong>Karkotak Kaal Sarp Dosh</strong>, and other planetary imbalances. With his guidance, people experience peace, prosperity, and spiritual growth, making him a trusted <strong>Kaal Sarp Dosh Puja specialist in Ujjain</strong>
           </p>
           <motion.button
             className="relative bg-[#FF5C16] text-white text-sm sm:text-base md:text-lg font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-xl overflow-hidden group"

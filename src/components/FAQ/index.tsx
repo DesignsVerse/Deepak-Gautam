@@ -60,47 +60,142 @@ const Faq = () => {
     {
       id: 1,
       category: "Consultation",
-      question: "How can I book an astrology consultation call with Astro Deepak Gautam?",
+      question: "How can I book a Kaal Sarp Dosh Puja consultation in Ujjain?",
       answer:
-        "You can book an astrology consultation call with Astro Deepak Gautam by visiting our {link}. Simply select your preferred time slot, provide your birth details (date, time, and place), and complete the payment process. Our team will confirm your appointment via email or WhatsApp within 24 hours.",
+        "You can book a Kaal Sarp Dosh Puja consultation in Ujjain by visiting our {link}. Choose your preferred date, provide birth details, and complete the payment. Our team will confirm your appointment via WhatsApp or email within 24 hours.",
       link: "/consultation",
-      linkText: "Astrology Consultation Booking Page",
+      linkText: "Kaal Sarp Dosh Puja Consultation",
     },
     {
       id: 2,
       category: "Courses",
-      question: "Does Astro Deepak Gautam offer astrology courses online?",
+      question:
+        "Does Astro Deepak Gautam offer astrology courses on Kaal Sarp Dosh Nivaran?",
       answer:
-        "Yes, Astro Deepak Gautam offers comprehensive online astrology courses including Kundali reading, Vedic astrology basics, advanced numerology, and palmistry techniques. Visit our {link} to explore course details, syllabus, duration, and enrollment steps. Start your journey to mastering astrology today!",
+        "Yes, we provide online astrology courses on Kaal Sarp Dosh Nivaran, Mangal Dosh remedies, and Grahan Dosh effects. Visit {link} to check the syllabus, duration, and enrollment steps.",
       link: "/courses",
-      linkText: "Astrology Courses Page",
+      linkText: "Astrology Courses",
     },
     {
       id: 3,
       category: "Show",
-      question: "What is 'The Deepak Gautam Show' and what topics does it cover?",
+      question: "What is 'The Deepak Gautam Show' about?",
       answer:
-        "'The Deepak Gautam Show' is a unique platform where Astro Deepak Gautam discusses astrology, personal growth, spiritual awakening, and practical life solutions. Topics include detailed Kundali analysis, numerology predictions, planetary influences on daily life, remedies for doshas, and guidance for career, relationships, and health.",
+        "The Deepak Gautam Show covers astrology, Vedic remedies, and personal growth. Topics include Kaal Sarp Dosh effects, Kundali analysis, Navgraha Dosh solutions, and powerful mantras for success.",
       link: "",
       linkText: "",
     },
     {
       id: 4,
       category: "Consultation",
-      question: "What are the fees for an astrology consultation?",
+      question:
+        "What are the consultation charges for Kaal Sarp Dosh Puja guidance?",
       answer:
-        "The consultation fees vary based on session type: Rs. 1500 for a 30-minute basic session, Rs. 2500 for a 60-minute detailed session, and Rs. 5000 for a premium package including follow-ups. Check our {link} for the latest pricing and offers.",
+        "The fees depend on session type: Rs. 1500 for basic guidance, Rs. 2500 for a detailed Kundali analysis, and Rs. 5000 for a premium package with remedies. Visit {link} for updated prices.",
       link: "/consultation",
-      linkText: "Consultation Pricing Page",
+      linkText: "Consultation Pricing",
     },
     {
       id: 5,
       category: "Courses",
-      question: "Are certificates provided after completing astrology courses?",
+      question:
+        "Are certificates provided after completing astrology courses?",
       answer:
-        "Yes, upon successful completion of any course by Astro Deepak Gautam, you will receive a digital certificate of completion, authenticated by our institute. Visit the {link} to see sample certificates and course completion criteria.",
+        "Yes, after finishing any astrology course, you will receive an authenticated digital certificate. Check {link} for sample certificates and completion details.",
       link: "/courses",
-      linkText: "Courses Page",
+      linkText: "Course Completion Certificate",
+    },
+    {
+      id: 6,
+      category: "Muhurt",
+      question:
+        "What is the importance of Kaal Sarp Dosh Puja Muhurt in Ujjain?",
+      answer:
+        "Performing the puja on an auspicious Kaal Sarp Dosh Puja Muhurt in Ujjain ensures effective results. Our experts guide you in selecting the best dates based on planetary alignments.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 7,
+      category: "Marriage",
+      question: "How does Mangal Dosh affect marriage, and what is the remedy?",
+      answer:
+        "Mangal Dosh can delay marriage and create relationship issues. Performing Mangal Dosh Pujan in Ujjain neutralizes its effects, ensuring a harmonious married life.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 8,
+      category: "Dosh",
+      question: "What are the effects of Grahan Dosh, and how to remove it?",
+      answer:
+        "Grahan Dosh impacts career and health. Performing Surya Grahan Dosh Puja in Ujjain reduces its negative effects. Our astrology experts suggest personalized remedies for long-term relief.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 9,
+      category: "Wealth",
+      question:
+        "What is the significance of Rudrabhishek in Ujjain for wealth and peace?",
+      answer:
+        "Rudrabhishek in Ujjain is a powerful remedy for financial stability and inner peace. It removes Kaal Sarp Dosh and attracts prosperity by pleasing Lord Shiva.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 10,
+      category: "Pitru Dosh",
+      question: "Which puja is best for removing ancestral Pitru Dosh?",
+      answer:
+        "Amavasya Shanti Puja in Ujjain is highly effective in resolving Pitru Dosh. It helps in bringing peace to ancestors and removing financial or family troubles.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 11,
+      category: "Consultation",
+      question: "Can I get a consultation for career growth through astrology?",
+      answer:
+        "Yes, we offer career-focused astrology consultations to analyze planetary influences on your professional life. Book a session at {link} for personalized guidance.",
+      link: "/consultation",
+      linkText: "Career Consultation",
+    },
+    {
+      id: 12,
+      category: "Courses",
+      question: "Are there beginner-level astrology courses available?",
+      answer:
+        "Absolutely! We offer beginner-friendly courses covering basics like Kundali reading and planetary effects. Check out {link} for details.",
+      link: "/courses",
+      linkText: "Beginner Astrology Courses",
+    },
+    {
+      id: 13,
+      category: "Health",
+      question: "How can astrology help improve my health?",
+      answer:
+        "Astrology identifies planetary impacts on health. Remedies like Chandra Grahan Puja or specific mantras can mitigate negative effects for better well-being.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 14,
+      category: "Wealth",
+      question: "Which puja is best for attracting business success?",
+      answer:
+        "Laxmi Puja in Ujjain is highly recommended for business prosperity. It aligns planetary energies to boost financial growth and success.",
+      link: "",
+      linkText: "",
+    },
+    {
+      id: 15,
+      category: "Marriage",
+      question: "Can astrology predict my marriage timing?",
+      answer:
+        "Yes, through Kundali analysis, we can predict marriage timing based on planetary positions. Book a consultation for a detailed report.",
+      link: "",
+      linkText: "",
     },
   ];
 
@@ -119,6 +214,12 @@ const Faq = () => {
       categoryFilter === "All" || item.category === categoryFilter;
     return matchesSearch && matchesCategory;
   });
+
+  // Limit to first 5 items initially or when filters are applied
+  const displayedFaqs =
+    searchQuery === "" && categoryFilter === "All"
+      ? faqItems.slice(0, 5) // Show only first 5 when no filters
+      : filteredFaqs; // Show all filtered results when filters are applied
 
   return (
     <section className="w-full mt-10 mb-10 max-w-5xl mx-auto p-4 sm:p-6 text-center">
@@ -146,8 +247,8 @@ const Faq = () => {
         </select>
       </div>
       <div className="space-y-4">
-        {filteredFaqs.length > 0 ? (
-          filteredFaqs.map((item) => (
+        {displayedFaqs.length > 0 ? (
+          displayedFaqs.map((item) => (
             <FAQItem
               key={item.id}
               item={item}

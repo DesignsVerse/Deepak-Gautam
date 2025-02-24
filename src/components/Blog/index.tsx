@@ -39,8 +39,8 @@ const Blog = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* SEO-Friendly Section Title */}
         <SectionTitle
-          title="कालसर्प दोष से संबंधित अनुष्ठान के बारे में हालिया जानकारी "
-          paragraph="नवीनतम समाचार और धार्मिक अपडेट के लिए हमारे न्यूज़ सेक्शन को विजिट करें।"
+          title="Kaal Sarp Dosh se jude anushthan ki latest jankari"
+          paragraph="Latest news aur dharmik updates ke liye hamare News Section ko visit karein."
           center
         />
 
