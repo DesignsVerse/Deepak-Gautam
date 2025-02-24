@@ -70,42 +70,42 @@ export default function Footer() {
             <h2 className="text-xl font-bold mb-4">Important Services</h2>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services/kaal-sarp-dosh" className="hover:text-orange-400 transition-colors">
+                <Link href="/services/1" className="hover:text-orange-400 transition-colors">
                   Kaal Sarp Dosh Puja
                 </Link>
               </li>
               <li>
-                <Link href="/services/mangal-dosh" className="hover:text-orange-400 transition-colors">
+                <Link href="/services/2" className="hover:text-orange-400 transition-colors">
                   Mangal Dosh Pujan
                 </Link>
               </li>
               <li>
-                <Link href="/services/grahan-dosh" className="hover:text-orange-400 transition-colors">
-                  Grahan Dosh Puja
+                <Link href="/services/3" className="hover:text-orange-400 transition-colors">
+                Rudrabhishek
                 </Link>
               </li>
               <li>
-                <Link href="/services/rudrabhishek" className="hover:text-orange-400 transition-colors">
-                  Rudrabhishek
+                <Link href="/services/4" className="hover:text-orange-400 transition-colors">
+                Laghu Rudrabhishek
                 </Link>
               </li>
               <li>
-                <Link href="/services/pitru-dosh" className="hover:text-orange-400 transition-colors">
-                  Pitru Dosh Puja
+                <Link href="/services/5" className="hover:text-orange-400 transition-colors">
+                Mahamrityunjay Jaap
                 </Link>
               </li>
               <li>
-                <Link href="/services/laxmi-puja" className="hover:text-orange-400 transition-colors">
-                  Laxmi Puja
+                <Link href="/services/6" className="hover:text-orange-400 transition-colors">
+                Mahamrityunjay Pujan
                 </Link>
               </li>
               <li>
-                <Link href="/services/kundali-analysis" className="hover:text-orange-400 transition-colors">
-                  Kundali Analysis
+                <Link href="/services/7" className="hover:text-orange-400 transition-colors">
+                Ark Vivah
                 </Link>
               </li>
               <li>
-                <Link href="/services/all" className="hover:text-orange-400 transition-colors">
+                <Link href="/services" className="hover:text-orange-400 transition-colors">
                   All Services
                 </Link>
               </li>
@@ -117,63 +117,64 @@ export default function Footer() {
             <h2 className="text-xl font-bold mb-4">Kaal Sarp Dosh Services</h2>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services/kaal-sarp-dosh/anant" className="hover:text-orange-400 transition-colors">
-                  Anant Kaal Sarp Yog
+                <Link href="/additional-services/101" className="hover:text-orange-400 transition-colors">
+                  Anant Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/kulik" className="hover:text-orange-400 transition-colors">
-                  Kulik Kaal Sarp Yog
+                <Link href="/additional-services/102" className="hover:text-orange-400 transition-colors">
+                  Kulik Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/vasuki" className="hover:text-orange-400 transition-colors">
-                  Vasuki Kaal Sarp Yog
+                <Link href="/additional-services/103" className="hover:text-orange-400 transition-colors">
+                  Vasuki Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/shankhpal" className="hover:text-orange-400 transition-colors">
-                  Shankhpal Kaal Sarp Yog
+                <Link href="/additional-services/104" className="hover:text-orange-400 transition-colors">
+                  Shankhpal Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/padma" className="hover:text-orange-400 transition-colors">
-                  Padma Kaal Sarp Yog
+                <Link href="/additional-services/105" className="hover:text-orange-400 transition-colors">
+                  Padma Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/mahapadma" className="hover:text-orange-400 transition-colors">
-                  Mahapadma Kaal Sarp Yog
+                <Link href="/additional-services/106" className="hover:text-orange-400 transition-colors">
+                  Mahapadma Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/takshak" className="hover:text-orange-400 transition-colors">
-                  Takshak Kaal Sarp Yog
+                <Link href="/additional-services/107" className="hover:text-orange-400 transition-colors">
+                  Takshak Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/karkotak" className="hover:text-orange-400 transition-colors">
-                  Karkotak Kaal Sarp Yog
+                <Link href="/additional-services/108" className="hover:text-orange-400 transition-colors">
+                  Karkotak Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/shankhchud" className="hover:text-orange-400 transition-colors">
-                  Shankhchud Kaal Sarp Yog
+                <Link href="/additional-services/109" className="hover:text-orange-400 transition-colors">
+                  Shankhchud Kaal Sarp Dosh
+                </Link>
+              </li>
+              
+              <li>
+                <Link href="/additional-services/110" className="hover:text-orange-400 transition-colors">
+                  Vishdhar Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/ghaatak" className="hover:text-orange-400 transition-colors">
-                  Ghaatak Kaal Sarp Yog
+                <Link href="/additional-services/112" className="hover:text-orange-400 transition-colors">
+                  Sheshnag Kaal Sarp Dosh
                 </Link>
               </li>
               <li>
-                <Link href="/services/kaal-sarp-dosh/vishdhar" className="hover:text-orange-400 transition-colors">
-                  Vishdhar Kaal Sarp Yog
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/kaal-sarp-dosh/sheshnag" className="hover:text-orange-400 transition-colors">
-                  Sheshnag Kaal Sarp Yog
+                <Link href="/additional-services/111" className="hover:text-orange-400 transition-colors">
+                Patak Kaal Sarp Dosh
                 </Link>
               </li>
             </ul>
