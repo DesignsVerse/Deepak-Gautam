@@ -124,7 +124,7 @@ const Hero = () => {
           </p>
           <div className="flex gap-10">
             {/* Book Now Button with WhatsApp Link */}
-            <Link href="https://wa.me/+919876543210" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai" target="_blank" rel="noopener noreferrer">
               <motion.button
                 className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#800000] to-[#FF5C16] text-white font-semibold rounded-lg shadow-md text-sm md:text-base relative overflow-hidden"
                 variants={buttonVariants}
@@ -143,7 +143,7 @@ const Hero = () => {
             </Link>
 
             {/* Call Now Button with Phone Link */}
-            <Link href="tel:+919876543210" target="_blank" rel="noopener noreferrer">
+            <Link href="tel:+919153164444" rel="noopener noreferrer">
               <motion.button
                 className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#FF5C16] to-[#800000] text-white font-semibold rounded-lg shadow-md text-sm md:text-base relative overflow-hidden"
                 variants={buttonVariants}

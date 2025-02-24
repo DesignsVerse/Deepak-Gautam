@@ -71,6 +71,7 @@ const PanditDescription = () => {
           <p className="text-sm sm:text-base text-justify md:text-lg text-[#F5F5F5] mb-6 sm:mb-8 leading-relaxed font-medium">
           With profound expertise in Vedic astrology, Pandit Deepak Gautam specializes in <strong>Kaal Sarp Dosh Puja in Ujjain</strong> and <strong>Kaal Dosh Nivaran Puja</strong>. His authentic rituals and remedies help individuals overcome obstacles, ensuring relief from <strong>Anant Kaal Sarp Dosh</strong>, <strong>Karkotak Kaal Sarp Dosh</strong>, and other planetary imbalances. With his guidance, people experience peace, prosperity, and spiritual growth, making him a trusted <strong>Kaal Sarp Dosh Puja specialist in Ujjain</strong>
           </p>
+        
           <motion.button
             className="relative bg-[#FF5C16] text-white text-sm sm:text-base md:text-lg font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-xl overflow-hidden group"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(255, 92, 22, 0.5)" }}
@@ -79,8 +80,10 @@ const PanditDescription = () => {
           >
             <span className="absolute inset-0 bg-[#800000] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
             <span className="relative z-10 flex items-center gap-2">
-              <span>Book Consultation</span>
+            <a href="https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center gap-2">
+              <span> Book Consultation</span>
               <span className="group-hover:animate-bounce">✨</span>
+            </a>
             </span>
           </motion.button>
         </motion.div>
