@@ -3,26 +3,26 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "संपर्क करें | Deepak Gautam - वेब डेवलपमेंट और डिजिटल मार्केटिंग विशेषज्ञ",
+  title: "Contact | Deepak Gautam ",
   description:
-    "Deepak Gautam से संपर्क करें—वेबसाइट डेवलपमेंट, SEO, डिजिटल मार्केटिंग, और पर्सनल ब्रांडिंग के लिए विशेषज्ञ समाधान। अपनी ऑनलाइन उपस्थिति को बेहतर बनाएं।",
+    "Contact Deepak Gautam—expert solutions .",
   keywords:
-    "Deepak Gautam, संपर्क करें, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO विशेषज्ञ, पर्सनल ब्रांडिंग, ऑनलाइन परामर्श, व्यवसाय वृद्धि",
+    "",
   robots: "index, follow", // ✅ Ensure indexing
   authors: [{ name: "Deepak Gautam" }], // ✅ Author attribution
   alternates: {
     canonical: "https://www.deepakgautam.com/contact", // ✅ Canonical URL
   },
   openGraph: {
-    title: "संपर्क करें | Deepak Gautam - डिजिटल मार्केटिंग विशेषज्ञ",
+    title: "Contact | Deepak Gautam - Digital Marketing Expert",
     description:
-      "वेबसाइट डेवलपमेंट, SEO, या डिजिटल मार्केटिंग के सवाल हैं? Deepak Gautam से आज ही संपर्क करें।",
+      "Have questions about website development, SEO, or digital marketing? Contact Deepak Gautam today.",
     images: [
       {
         url: "/images/contact-banner.jpg",
         width: 800,
         height: 600,
-        alt: "Deepak Gautam - संपर्क पेज बैनर",
+        alt: "Deepak Gautam - Contact Page Banner",
       },
     ],
     url: "https://www.deepakgautam.com/contact",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "संपर्क करें | Deepak Gautam",
+    title: "Contact | Deepak Gautam",
     description:
-      "Deepak Gautam से वेब डेवलपमेंट और डिजिटल मार्केटिंग के लिए संपर्क करें।",
+      "Reach out to Deepak Gautam for web development and digital marketing solutions.",
   },
 };
 
@@ -40,8 +40,8 @@ const ContactPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="संपर्क करें - Deepak Gautam"
-        description="वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, और SEO सेवाओं के लिए Deepak Gautam से संपर्क करें। हम आपकी सहायता के लिए तैयार हैं।"
+        pageName="Contact - Deepak Gautam"
+        description="Contact Deepak Gautam for Astrology Solution."
       />
 
       <section className="mt-10 pb-16">

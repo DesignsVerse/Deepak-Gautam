@@ -60,7 +60,7 @@ const Galary = () => {
                 className="relative rounded-lg shadow-lg overflow-hidden group"
               >
                 <Image
-                  src={`/images/galary/${index + 1}.jpg`}
+                  src={`/images/about/${index + 1}.jpg`}
                   alt={`माँ बगलामुखी पूजा छवि ${index + 1} - Deepak Gautam`} // ✅ Enhanced alt text
                   width={500}
                   height={300}
@@ -69,7 +69,7 @@ const Galary = () => {
                 />
                 <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
                   <p className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    माँ बगलामुखी विशेष पूजन {index + 1}
+                    Deepak Goutam Seva
                   </p>
                 </div>
               </div>

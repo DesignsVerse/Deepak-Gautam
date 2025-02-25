@@ -12,11 +12,11 @@ const Contact = () => {
 
   const validateForm = () => {
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setError("कृपया सभी फ़ील्ड भरें।");
+      setError("Please fill in all fields.");
       return false;
     }
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      setError("कृपया वैध ईमेल पता दर्ज करें।");
+      setError("Please enter a valid email address.");
       return false;
     }
     setError(null);
@@ -43,10 +43,10 @@ const Contact = () => {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setError("सबमिट करने में असफल। कृपया बाद में पुनः प्रयास करें।");
+        setError("Submission failed. Please try again later.");
       }
     } catch {
-      setError("नेटवर्क समस्या। कृपया अपना इंटरनेट कनेक्शन जांचें।");
+      setError("Network issue. Please check your internet connection.");
     }
     setLoading(false);
   };
@@ -59,8 +59,8 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>हमसे संपर्क करें - सहायता प्राप्त करें</title>
-        <meta name="description" content="अगर आपको सहायता चाहिए, तो हमसे संपर्क करें।" />
+        <title>Contact Us - Get Assistance</title>
+        <meta name="description" content="If you need assistance, feel free to contact us." />
       </Head>
 
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#A24439] to-[#800000] p-6">
@@ -77,19 +77,19 @@ const Contact = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <h2 className="text-2xl font-bold mb-6">हमसे संपर्क करें</h2>
+              <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-3">
                   <FaMapMarkerAlt className="text-xl mt-1" />
                   <div>
-                    <h3 className="font-semibold">पता</h3>
+                    <h3 className="font-semibold">Address</h3>
                     <p>Surkhet, NP12, Bherendranagar 06</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <FaPhoneAlt className="text-xl mt-1" />
                   <div>
-                    <h3 className="font-semibold">फोन</h3>
+                    <h3 className="font-semibold">Phone</h3>
                     <p>+0098 9893 5647</p>
                     <p>+0096 3434 5678</p>
                   </div>
@@ -97,7 +97,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <FaEnvelope className="text-xl mt-1" />
                   <div>
-                    <h3 className="font-semibold">ईमेल</h3>
+                    <h3 className="font-semibold">Email</h3>
                     <p>codinglab@gmail.com</p>
                     <p>info.codinglab@gmail.com</p>
                   </div>
@@ -114,9 +114,9 @@ const Contact = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-3xl font-bold text-[#800000] mb-4"
             >
-              हमें एक संदेश भेजें
+              Send Us a Message
             </motion.h1>
-            <p className="text-gray-600 mb-6">कोई प्रश्न? हमसे संपर्क करने में संकोच न करें।</p>
+            <p className="text-gray-600 mb-6">Have any questions? Feel free to reach out to us.</p>
 
             {error && (
               <motion.p
@@ -134,7 +134,7 @@ const Contact = () => {
                 animate={{ scale: 1 }}
                 className="text-green-600 font-semibold text-lg"
               >
-                आपका फ़ॉर्म सफलतापूर्वक सबमिट हो गया!
+                Your form has been successfully submitted!
               </motion.p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -144,7 +144,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="अपना नाम दर्ज करें"
+                    placeholder="Enter your name"
                     className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000] transition-all duration-300"
                   />
                 </div>
@@ -154,7 +154,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="अपना ईमेल दर्ज करें"
+                    placeholder="Enter your email"
                     className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000] transition-all duration-300"
                   />
                 </div>
@@ -163,8 +163,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="अपना संदेश दर्ज करें"
-                  
+                    placeholder="Enter your message"
                     className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#800000] transition-all duration-300 resize-none"
                   />
                 </div>
@@ -175,7 +174,7 @@ const Contact = () => {
                   }`}
                   disabled={loading}
                 >
-                  {loading ? "सबमिट हो रहा है..." : "अभी भेजें"}
+                  {loading ? "Submitting..." : "Send Now"}
                 </button>
               </form>
             )}
