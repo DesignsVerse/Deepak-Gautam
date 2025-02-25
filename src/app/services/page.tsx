@@ -59,8 +59,8 @@ const ServicePage = () => {
         />
       </head>
       <Breadcrumb
-        pageName="हमारी सेवाएं - पंडित दीपक गौतम"
-        description="ज्योतिष, मंत्र-साधना, और धार्मिक अनुष्ठानों के लिए पंडित दीपक गौतम से संपर्क करें—शत्रु नाश और सफलता के समाधान।"
+        pageName="Our Services - Pandit Deepak Gautam"
+        description="Contact Pandit Deepak Gautam for astrology, mantra practice, and religious rituals—solutions for enemy destruction and success."
       />
       <ServiceSection />
     </>

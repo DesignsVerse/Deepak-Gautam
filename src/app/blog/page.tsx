@@ -66,7 +66,7 @@ const BlogPage = () => {
       </Head>
 
       <Breadcrumb
-        pageName="ब्लॉग और लेख"
+        pageName="Blog and Articles"
         description="Deepak Gautam के नवीनतम ब्लॉग और लेख देखें—वेबसाइट डेवलपमेंट, SEO, और डिजिटल मार्केटिंग पर विशेषज्ञ सुझाव।"
       />
       <BlogSection />
