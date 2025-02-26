@@ -239,13 +239,13 @@ export default function Footer() {
                 <Link href="https://twitter.com" className="hover:text-orange-400 transition-colors">
                   <FaTwitter />
                 </Link>
-                <Link href="https://youtube.com" className="hover:text-orange-400 transition-colors">
+                <Link href="https://www.youtube.com/@Astrodeepak4444" className="hover:text-orange-400 transition-colors">
                   <FaYoutube />
                 </Link>
                 <Link href="https://linkedin.com" className="hover:text-orange-400 transition-colors">
                   <FaLinkedinIn />
                 </Link>
-                <Link href="https://instagram.com" className="hover:text-orange-400 transition-colors">
+                <Link href="https://www.instagram.com/astro.deepakgoutam" className="hover:text-orange-400 transition-colors">
                   <FaInstagram />
                 </Link>
               </div>
