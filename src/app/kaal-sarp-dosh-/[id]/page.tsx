@@ -32,7 +32,7 @@ export default function AdditionalServicePage({ params }) {
             <div className="flex items-center justify-between">
               <h1 className="md:text-4xl text-xl sm:text-3xl font-bold text-left">{service.title}</h1>
               <a
-                href="tel:+919153164444" // Replace with your actual phone number
+                href="tel:+919153164444"
                 className="bg-[#800000] text-white px-2 py-1 w-32 sm:px-3 sm:py-1 md:px-4 md:py-2 md:w-40 rounded-lg hover:bg-[#660000] transition-colors ml-2 sm:ml-2 md:ml-4 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 <svg
@@ -55,7 +55,7 @@ export default function AdditionalServicePage({ params }) {
             <p className="text-gray-500 mt-5 text-left">{service.paragraph || service.description}</p>
           </div>
 
-          {/* Dynamic Image */}
+          {/* Dynamic Image - Adjusted for Desktop */}
           {service.image && (
             <div className="mt-6">
               <Image
@@ -63,7 +63,7 @@ export default function AdditionalServicePage({ params }) {
                 alt={`${service.title} image`}
                 width={800}
                 height={400}
-                className="rounded-lg object-cover w-full"
+                className="rounded-lg object-cover w-full h-auto lg:h-[700px] lg:max-w-[800px]" // Adjusted for desktop
                 priority={true} // Optional: for faster loading of above-the-fold images
               />
             </div>
@@ -71,13 +71,6 @@ export default function AdditionalServicePage({ params }) {
 
           {/* Additional Content */}
           <div className="mt-12">
-            <h1 className="text-3xl font-bold text-center">
-              {service.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
-            </h1>
-            <p className="text-lg mt-2 text-center">
-              {service.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}
-            </p>
-
             {service.sections && service.sections.length > 0 ? (
               service.sections.map((section, index) => (
                 <div key={index} className="mb:p-8 p-2 rounded-xl">
@@ -92,6 +85,12 @@ export default function AdditionalServicePage({ params }) {
             ) : (
               <p className="text-center text-gray-500 mt-4">कोई अतिरिक्त सामग्री उपलब्ध नहीं।</p>
             )}
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
+              {service.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
+            </h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed ">
+              {service.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}
+            </p>
           </div>
         </section>
 

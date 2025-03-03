@@ -191,7 +191,7 @@ export default function Footer() {
               className="w-full mt-4 bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600 transition-colors"
             
             >
-              <a href="tel:+918803801111" className="hover:text-orange-400">Call Now</a>
+              <a href="tel:+919153164444" className="hover:text-orange-400">Call Now</a>
               
             </button>
             <p className="mt-4 text-sm">
@@ -214,7 +214,7 @@ export default function Footer() {
               />
               <p><strong>Contact Details</strong></p>
               <p>
-                📞 <a href="tel:+918803801111" className="hover:text-orange-400">+91-8803801111</a>,{" "}
+                📞 
                 <a href="tel:+919153164444" className="hover:text-orange-400">+91-9153164444</a>
               </p>
             </div>
