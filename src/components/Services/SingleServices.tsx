@@ -1,7 +1,7 @@
 "use client";
 
 import { Services } from "@/types/services";
-import { FaPhone, FaChartLine, FaBookOpen, FaStar } from "react-icons/fa";
+import { FaPhone, FaBookOpen, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,6 +21,13 @@ const SingleServices = ({ services }: { services: Services }) => {
     hover: { scale: 1.1, transition: { duration: 0.3, yoyo: Infinity } },
   };
 
+  // Function to handle call button click
+  const handleCallClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevents any default navigation
+    e.stopPropagation(); // Stops event from bubbling up to parent Link
+    window.location.href = "tel:+919153164444"; // Forces the call action
+  };
+
   return (
     <motion.div
       variants={cardVariants}
@@ -29,7 +36,7 @@ const SingleServices = ({ services }: { services: Services }) => {
       whileHover="hover"
       className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 p-6 text-center border-2 border-yellow-500"
     >
-      {/* Service Image with Animated Ring */}
+      {/* Service Image, Title, and Description wrapped in Link */}
       <Link href={`/services/${id}`}>
         <div className="relative flex justify-center items-center mx-auto w-24 h-24">
           <motion.div
@@ -46,7 +53,6 @@ const SingleServices = ({ services }: { services: Services }) => {
           />
         </div>
 
-        {/* Title with Subtle Glow */}
         <h2 className="mt-6 text-xl font-bold text-[#800000] relative">
           {title}
           <motion.span
@@ -58,7 +64,6 @@ const SingleServices = ({ services }: { services: Services }) => {
           </motion.span>
         </h2>
 
-        {/* Description with Fade Effect */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -95,23 +100,22 @@ const SingleServices = ({ services }: { services: Services }) => {
         </Link>
 
         {/* Call Now Button */}
-        <a href="tel:+919153164444"> {/* Replace with your actual phone number */}
-          <motion.button
-            variants={buttonVariants}
-            initial="rest"
-            whileHover="hover"
-            className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md group w-full sm:w-auto"
-          >
-            <motion.span
-              className="absolute inset-0 bg-[#FF5C16] transform -translate-x-full group-hover:translate-x-0"
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            />
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              <FaPhone />
-              Call Now
-            </span>
-          </motion.button>
-        </a>
+        <motion.button
+          variants={buttonVariants}
+          initial="rest"
+          whileHover="hover"
+          onClick={handleCallClick} // Custom handler for call
+          className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md group w-full sm:w-auto"
+        >
+          <motion.span
+            className="absolute inset-0 bg-[#FF5C16] transform -translate-x-full group-hover:translate-x-0"
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          />
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            <FaPhone />
+            Call Now
+          </span>
+        </motion.button>
       </div>
 
       {/* Cosmic Particles */}
