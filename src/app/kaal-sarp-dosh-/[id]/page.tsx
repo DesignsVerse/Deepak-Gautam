@@ -104,7 +104,7 @@ export default function AdditionalServicePage({ params }) {
                 key={demo.id}
                 className="border p-2 rounded hover:bg-gray-200 cursor-pointer transition-colors"
               >
-                <Link href={`/additional-services/${demo.id}`} className="flex justify-between items-center">
+                <Link href={`/kaal-sarp-dosh-/${demo.id}`} className="flex justify-between items-center">
                   <span className="text-black">{demo.title}</span>
                   <span className="text-blue-500">→</span>
                 </Link>

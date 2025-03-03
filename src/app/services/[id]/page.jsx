@@ -165,7 +165,7 @@ export default async function ServicePost({ params }) {
                     className="border p-2 rounded hover:bg-gray-200 cursor-pointer transition-colors"
                   >
                     <Link
-                      href={`/additional-services/${demo.id}`}
+                      href={`/kaal-sarp-dosh-/${demo.id}`}
                       className="flex justify-between items-center"
                     >
                       <span className="text-black">{demo.title}</span>
