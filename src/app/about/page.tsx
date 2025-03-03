@@ -44,13 +44,13 @@ const Galary = () => {
       {/* Breadcrumb - Already Good, Minor Tweak */}
       <Breadcrumb
         pageName="Puja Gallery"
-        description="माँ बगलामुखी मंदिर, नलखेड़ा में होने वाली विशेष पूजाओं और अनुष्ठानों की झलकियाँ। शत्रु बाधा निवारण, व्यापार वृद्धि, और आध्यात्मिक उन्नति के लिए धार्मिक अनुष्ठानों के दिव्य क्षण।"
+        description="Explore the Kaal Sarp Dosh Puja and Other Puja Gallery by Deepak Gautam Panditji. View sacred rituals, ceremonies, and spiritual practices captured in vivid detail."
       />
 
       <section id="about" className="pt-12 md:pt-16 lg:pt-20 pb-16">
         <div className="container mx-auto px-6">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
-            माँ बगलामुखी पूजा एवं अनुष्ठान गैलरी
+          Kaal Sarp Dosh Puja and Other Puja Gallery
           </h1> {/* ✅ Changed to H1 for better SEO */}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

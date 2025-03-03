@@ -96,7 +96,7 @@ export default function AdditionalServicePage({ params }) {
 
         {/* Sidebar */}
         <aside className="lg:col-span-1 p-5 rounded-lg shadow-md border sticky top-[140px] max-h-[calc(100vh-160px)] overflow-y-auto">
-          <h2 className="text-xl font-semibold mb-4">अन्य अतिरिक्त सेवाएँ</h2>
+          <h2 className="text-xl font-semibold mb-4">Other Additional Services</h2>
           <ul className="space-y-2">
             {additionalServices.map((demo) => (
               <li

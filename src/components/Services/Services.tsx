@@ -60,16 +60,14 @@ const ServiceSection = () => {
   return (
     <section style={sectionStyles} className="w-full">
       <div className="max-w-7xl mx-auto">
-        <h1 aria-label="Pandit Deepak Gautam Ji's Special Services">
-          पंडित दीपक गौतम जी की विशेष सेवाएं
-        </h1>
         
-        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-base leading-relaxed">
-          हमारी ज्योतिषीय सेवाओं में{" "}
-          <strong className="font-semibold">
+        
+        <p className="text-center  text-gray-700 max-w-2xl mx-auto mb-10 text-base leading-relaxed">
+        "In our astrological services{" "}
+          <strong className="font-semibold ">
           Kundli milan, Vastu consultation, grah dosh nivaran, tantra-mantra anushthan, shatru naash, aur safalta prapti.
           </strong>{" "}
-          These are the main services included. Select from the options below to find a solution to your problem.        </p>
+          These are the main services included. Select from the options below to find a solution to your problem."   </p>
 
         {/* Featured Services - 2 larger boxes */}
         <div
