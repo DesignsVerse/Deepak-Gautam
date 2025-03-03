@@ -65,7 +65,7 @@ const Blog = () => {
               className="bg-[#800000] text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-500 transition-all duration-300 hover:scale-105"
               aria-label="Read more articles on माँ बगलामुखी मंदिर न्यूज़"
             >
-              और पढ़ें
+              View More
             </Link>
 
             </div>
