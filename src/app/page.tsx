@@ -7,6 +7,9 @@ import Faq from "@/components/FAQ";
 import PanditDescription from "@/components/PanditDescription";
 import Achivement from "@/components/Achivement";
 import AutoScroll from "@/components/Marquee";
+import ResponsiveImage from "@/components/Banner";
+import Banner from "@/components/Banner";
+import PyramidCircles from "@/components/Thali";
 
 export const metadata: Metadata = {
   title: "Deepak Gautam - Kaal Sarp Dosh Puja Specialist in Ujjain",
@@ -68,7 +71,9 @@ export default function Home() {
         />
       </head>
       <Hero />
-      <AutoScroll />
+      <Banner/>
+      {/* <PyramidCircles/> */}
+      {/* <AutoScroll /> */}
       <Services />
       <PanditDescription />
       <Achivement />
