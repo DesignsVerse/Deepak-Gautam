@@ -28,13 +28,7 @@ export const metadata: Metadata = {
     url: "https://www.deepakgautam.com/services",
     type: "website",
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "हमारी सेवाएं | पंडित दीपक गौतम",
-  //   description:
-  //     "ज्योतिष, मंत्र-साधना, और पूजा-पाठ की सेवाएं पंडित दीपक गौतम से। संपर्क करें।",
-    
-  // },
+  
 };
 
 const ServicePage = () => {

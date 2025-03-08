@@ -38,12 +38,7 @@ export const metadata: Metadata = {
     url: "https://www.deepakgautam.com/kaal-sarp-pooja-ujjain",
     type: "article",
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "Deepak Gautam - Kaal Sarp Dosh Puja Specialist in Ujjain",
-  //   description:
-  //     "Perform authentic Kaal Sarp Dosh Puja in Ujjain with expert guidance from Deepak Gautam. Book your puja now and remove doshas.",
-  // },
+  
 };
 
 

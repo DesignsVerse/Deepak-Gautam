@@ -36,12 +36,7 @@ export async function generateMetadata({ params }) {
       url: `/blog/${params.id}`,
       type: "article",
     },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.title} | Deepak Gautam`,
-      description: post.sections[0]?.content.slice(0, 150) + "...",
-      image: post.thumbnail || "/images/default-blog.jpg",
-    },
+    
   };
 }
 

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FaFacebookF,
-  FaTwitter,
   FaYoutube,
   FaLinkedinIn,
   FaInstagram,
@@ -236,9 +235,7 @@ export default function Footer() {
                 <Link href="https://facebook.com" className="hover:text-orange-400 transition-colors">
                   <FaFacebookF />
                 </Link>
-                {/* <Link href="https://twitter.com" className="hover:text-orange-400 transition-colors">
-                  <FaTwitter />
-                </Link> */}
+                
                 <Link href="https://www.youtube.com/@Astrodeepak4444" className="hover:text-orange-400 transition-colors">
                   <FaYoutube />
                 </Link>
