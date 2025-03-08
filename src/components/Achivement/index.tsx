@@ -36,13 +36,13 @@ const Achivement = () => {
   return (
     <section
       id="experience"
-      className="relative flex justify-center items-center py-16 px-4 bg-gray-100 overflow-hidden"
+      className="relative flex justify-center items-center py-16 px-4 bg-[#FEF9F6] overflow-hidden"
     >
       <div
         ref={ref}
         className="relative z-10 flex justify-center items-center w-full max-w-[1160px] h-auto min-h-[300px] rounded-2xl px-6 py-8 bg-cover bg-center shadow-lg"
         style={{
-          backgroundImage: "url('/images/services/bg-1.png')",
+          
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -51,12 +51,12 @@ const Achivement = () => {
         <div className="absolute inset-0 bg-[#800000] opacity-70 rounded-2xl"></div>
 
         <motion.div
-  initial={{ opacity: 0, y: 80 }}
-  animate={controls}
-  transition={{ duration: 1.2, ease: "easeOut" }}
-  className="relative z-20 w-full flex flex-wrap justify-center gap-6 text-center"
->
-
+          initial={{ opacity: 0, y: 80 }}
+          animate={controls}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative z-20 w-full flex flex-wrap justify-center gap-6 text-center"
+        >
+          
           {stats.map((stat, index) => (
             <StatCard
               key={index}

@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "https://www.tuwebsite.com/puja-gallery",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "पूजा गैलरी - माँ बगलामुखी अनुष्ठान | Deepak Gautam",
-    description:
-      "माँ बगलामुखी की पूजा और अनुष्ठानों की छायाचित्र गैलरी। Deepak Gautam के साथ दिव्य अनुभव।",
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "पूजा गैलरी - माँ बगलामुखी अनुष्ठान | Deepak Gautam",
+  //   description:
+  //     "माँ बगलामुखी की पूजा और अनुष्ठानों की छायाचित्र गैलरी। Deepak Gautam के साथ दिव्य अनुभव।",
     
-  },
+  // },
 };
 
 const Galary = () => {

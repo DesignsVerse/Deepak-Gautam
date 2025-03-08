@@ -35,12 +35,12 @@ export async function generateMetadata({ params }) {
       url: `https://www.deepakgautam.com/services/${params.id}`,
       type: "website",
     },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.title} | Deepak Gautam`,
-      description: post.paragraph.slice(0, 150) + "...",
-      image: post.image || "/images/default-service.jpg",
-    },
+    // twitter: {
+    //   card: "summary_large_image",
+    //   title: `${post.title} | Deepak Gautam`,
+    //   description: post.paragraph.slice(0, 150) + "...",
+    //   image: post.image || "/images/default-service.jpg",
+    // },
   };
 }
 

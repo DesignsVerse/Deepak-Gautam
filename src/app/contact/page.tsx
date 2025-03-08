@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     url: "https://www.deepakgautam.com/contact",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact | Deepak Gautam",
-    description:
-      "Reach out to Deepak Gautam for web development and digital marketing solutions.",
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Contact | Deepak Gautam",
+  //   description:
+  //     "Reach out to Deepak Gautam for web development and digital marketing solutions.",
+  // },
 };
 
 const ContactPage = () => {

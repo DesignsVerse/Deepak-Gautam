@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     url: "https://www.deepakgautam.com",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Deepak Gautam - Digital Marketing Expert",
-    description:
-      "Website development, SEO, and digital marketing solutions by Deepak Gautam.",
-     // Fixed missing image field
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Deepak Gautam - Digital Marketing Expert",
+  //   description:
+  //     "Website development, SEO, and digital marketing solutions by Deepak Gautam.",
+  //    // Fixed missing image field
+  // },
 };
 
 export default function RootLayout({

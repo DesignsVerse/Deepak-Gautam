@@ -17,7 +17,7 @@ const Blog = () => {
       "name": "बगलामुखी मंदिर न्यूज़",
       "description": "बगलामुखी माता से जुड़ी नवीनतम खबरें और विशेष रिपोर्ट्स।",
       "url": "https://yourwebsite.com/blog",
-      "blogPost": blogData.map((blog) => ({
+      "blogPost": blogData.slice(0, 3).map((blog) => ({ // Limit to 3 in schema too
         "@type": "BlogPosting",
         "headline": blog.title,
         "datePublished": blog.publishDate || "December 01, 2024",
@@ -32,7 +32,15 @@ const Blog = () => {
       }))
     });
     document.head.appendChild(script);
+
+    // Cleanup to avoid duplicate scripts on re-render
+    return () => {
+      document.head.removeChild(script);
+    };
   }, []);
+
+  // Limit blogData to first 3 items
+  const featuredBlogs = blogData.slice(0, 3);
 
   return (
     <section id="blog" className="bg-[#FDF7F4] py-10 md:py-14 lg:py-20">
@@ -47,27 +55,26 @@ const Blog = () => {
         <section className="pb-10 mt-10">
           <div className="container">
             <div className="flex flex-wrap mt-10 justify-between gap-6">
-            {blogData.map((blog) => (
+              {featuredBlogs.map((blog) => (
                 <article
                   key={blog.id}
                   className="w-full md:w-[30%] flex-shrink-0 rounded-2xl text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-lg bg-white shadow-md"
                   aria-labelledby={`blog-title-${blog.id}`}
                 >
-                  <SingleBlog id={blog.id.toString()} />  {/* ✅ Fix applied */}
+                  <SingleBlog id={blog.id.toString()} />
                 </article>
               ))}
             </div>
 
             {/* View More Button with SEO Optimization */}
             <div className="flex justify-center mt-8">
-            <Link 
-              href="/blog"
-              className="bg-[#800000] text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-500 transition-all duration-300 hover:scale-105"
-              aria-label="Read more articles on माँ बगलामुखी मंदिर न्यूज़"
-            >
-              View More
-            </Link>
-
+              <Link 
+                href="/blog"
+                className="bg-[#800000] text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-500 transition-all duration-300 hover:scale-105"
+                aria-label="Read more articles on माँ बगलामुखी मंदिर न्यूज़"
+              >
+                View More
+              </Link>
             </div>
           </div>
         </section>

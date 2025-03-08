@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
-import blogData from "@/data/blogData.json"; // Single source
+import blogData from "@/data/blogData.json";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { Metadata } from "next";
+import RelatedBlogs from "@/components/Blog/RelatedBlogs"; // Naya component import
 
 export async function generateMetadata({ params }) {
   const post = blogData.find((post) => post.id.toString() === params.id);
@@ -11,28 +12,29 @@ export async function generateMetadata({ params }) {
   }
 
   return {
+    metadataBase: new URL("https://www.deepakgautam.com"), // Added metadataBase
     title: `${post.title} | Deepak Gautam - SEO & Digital Marketing Expert`,
     description:
       post.sections[0]?.content.slice(0, 150) + "..." || "Read more about this topic by Deepak Gautam.",
-    keywords: `${post.title.split(" ").join(", ")}, Deepak Gautam, SEO, digital marketing, blog`, // ✅ Dynamic keywords
-    robots: "index, follow", // ✅ Ensure indexing
-    authors: [{ name: "Deepak Gautam" }], // ✅ Author attribution
+    keywords: `${post.title.split(" ").join(", ")}, Deepak Gautam, SEO, digital marketing, blog`,
+    robots: "index, follow",
+    authors: [{ name: "Deepak Gautam" }],
     alternates: {
-      canonical: `https://www.deepakgautam.com/blog/${params.id}`, // ✅ Replace with your domain
+      canonical: `/blog/${params.id}`,
     },
     openGraph: {
       title: `${post.title} | Deepak Gautam`,
       description: post.sections[0]?.content.slice(0, 150) + "..." || "A blog by Deepak Gautam.",
       images: [
         {
-          url: post.thumbnail || "/images/default-blog.jpg", // ✅ Fallback image
+          url: post.thumbnail || "/images/default-blog.jpg",
           width: 900,
           height: 500,
           alt: `${post.title} - Deepak Gautam Blog`,
         },
       ],
-      url: `https://www.deepakgautam.com/blog/${params.id}`,
-      type: "article", // ✅ Blog ke liye "article" type
+      url: `/blog/${params.id}`,
+      type: "article",
     },
     twitter: {
       card: "summary_large_image",
@@ -46,22 +48,18 @@ export async function generateMetadata({ params }) {
 export async function generateStaticParams() {
   console.log("Generating Static Params...");
   return blogData.map((post) => ({
-    id: post.id.toString(), // Ensure id is a string
+    id: post.id.toString(),
   }));
 }
 
 export default function BlogPost({ params }) {
-  console.log("Params:", params.id); // Debugging
-  console.log("Blog Data:", blogData); // Debugging
-
   const post = blogData.find((post) => post.id.toString() === params.id);
 
   if (!post) {
-    console.log("Post Not Found!"); // Debugging
+    console.log("Post Not Found!");
     return notFound();
   }
 
-  // Structured Data for Blog (Schema.org)
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -80,67 +78,79 @@ export default function BlogPost({ params }) {
   };
 
   return (
-    <main className="mt-20 mb-20 w-full min-h-screen flex flex-col items-center pt-16 px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-[#121723] text-black dark:text-white transition-all duration-300">
-      {/* Add Schema Markup */}
+    <main className="mt-16 mb-10 w-full min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-[#121723] text-black dark:text-white transition-all duration-300">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
 
-      <div className="w-full max-w-6xl bg-white dark:bg-gray-800 rounded-xl shadow-md p-10 border-4 border-[#800000]">
-        {post.thumbnail && (
-          <div className="relative w-full flex justify-center mb-10">
-            <div className="absolute inset-0 flex justify-center items-center">
-              <div className="w-72 h-72 rounded-full bg-[#800000]"></div>
+      <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10">
+        {/* Left Side: Main Blog Content */}
+        <article className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 sm:p-6 md:p-10 border-4 border-[#800000]">
+          {post.thumbnail && (
+            <div className="relative w-full flex justify-center mb-6 sm:mb-10">
+              <div className="absolute inset-0 flex justify-center items-center">
+                <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-[#800000]"></div>
+              </div>
+              <Image
+                src={post.thumbnail}
+                width={900}
+                height={500}
+                alt={`${post.title} - Blog by Deepak Gautam`}
+                className="object-cover w-full max-h-[300px] sm:max-h-[400px] md:max-h-[500px] relative z-10 rounded-lg shadow-lg"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 900px"
+                priority
+              />
             </div>
+          )}
+
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+              {post.title}
+            </h1>
+            <p className="text-sm sm:text-md text-gray-500 dark:text-gray-400 mt-2">
+              Published on {post.publishDate} • {post.readTime} min read
+            </p>
+          </div>
+
+          <div>
+            {post.sections.map((section, index) => (
+              <div key={index} className="sm:p-6 md:p-4 rounded-xl">
+                <h2 className="text-xl text-center mt-5 sm:text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-3 sm:mb-4">
+                  {section.heading}
+                </h2>
+                <ReactMarkdown
+                  className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed prose dark:prose-invert max-w-none"
+                >
+                  {section.content}
+                </ReactMarkdown>
+              </div>
+            ))}
+          </div>
+
+          {/* Uncomment if you want to add author section back */}
+          {/* <div className="flex flex-col sm:flex-row items-center mt-10 sm:mt-16 p-4 sm:p-6 rounded-lg bg-gray-100 dark:bg-gray-900 shadow-md border-t-4 border-[#800000]">
             <Image
-              src={post.thumbnail}
-              width={900}
-              height={500}
-              alt={`${post.title} - Blog by Deepak Gautam`} // ✅ Enhanced alt text
-              className="object-cover w-full h-auto relative z-10 rounded-lg shadow-lg"
+              src={post.author.image}
+              width={60}
+              height={60}
+              alt={`Author ${post.author.name} - Deepak Gautam Blog`}
+              className="rounded-full border-2 border-gray-300 dark:border-gray-700 mb-4 sm:mb-0 sm:mr-4"
             />
-          </div>
-        )}
-
-        <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white">
-            {post.title}
-          </h1>
-          <p className="text-md text-gray-500 dark:text-gray-400 mt-3">
-            Published on {post.publishDate} • {post.readTime} min read
-          </p>
-        </div>
-
-        <div>
-          {post.sections.map((section, index) => (
-            <div key={index} className="p-8 rounded-xl">
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
-                {section.heading}
-              </h2>
-              <ReactMarkdown className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                {section.content}
-              </ReactMarkdown>
+            <div className="text-center sm:text-left">
+              <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
+                {post.author.name}
+              </p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                {post.author.designation}
+              </p>
             </div>
-          ))}
-        </div>
+          </div> */}
+        </article>
 
-        <div className="flex items-center mt-16 p-6 rounded-lg bg-gray-100 dark:bg-gray-900 shadow-md border-t-4 border-[#800000]">
-          <Image
-            src={post.author.image}
-            width={60}
-            height={60}
-            alt={`Author ${post.author.name} - Deepak Gautam Blog`} // ✅ Enhanced alt text
-            className="rounded-full border-2 border-gray-300 dark:border-gray-700"
-          />
-          <div className="ml-4">
-            <p className="text-lg font-semibold text-gray-900 dark:text-white">
-              {post.author.name}
-            </p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              {post.author.designation}
-            </p>
-          </div>
+        {/* Right Side: Related Blogs */}
+        <div className="lg:col-span-1">
+          <RelatedBlogs currentBlogId={params.id} />
         </div>
       </div>
     </main>

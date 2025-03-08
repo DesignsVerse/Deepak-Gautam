@@ -43,9 +43,11 @@ const Banner: React.FC = () => {
             <Image
               src={image.url}
               alt={image.alt}
-              layout="fill"
-              objectFit="contain"
-              className="w-full h-auto"
+              width={2000} // Example width (adjust based on your design)
+              height={700} // Example height (20:7 ratio = 2000:700)
+              className="w-full h-full object-contain" // Replace objectFit with Tailwind
+              sizes="100vw" // Adjust based on your needs
+              priority={index === 0} // Prioritize the first image for LCP
             />
           </div>
         ))}

@@ -43,20 +43,8 @@ const BlogPage = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.deepakgautam.com/images/blog-og-image.jpg" />
 
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="ब्लॉग और लेख | Deepak Gautam"
-        />
-        <meta
-          name="twitter:description"
-          content="Deepak Gautam के ब्लॉग में वेबसाइट डेवलपमेंट, SEO, और डिजिटल मार्केटिंग पर विशेषज्ञ लेख।"
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.deepakgautam.com/images/blog-twitter-image.jpg"
-        />
+       
+        
 
         {/* Structured Data */}
         <script
