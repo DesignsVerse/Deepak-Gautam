@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
 import { Metadata } from "next";
+import Popup from "@/components/Popup/Popup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,6 +79,7 @@ export default function RootLayout({
       <body className={`bg-white text-black ${inter.className}`}>
         <Header />
         {children}
+        <Popup/>
         <Analytics />
         <Footer />
         {/* <ScrollToTop /> */}

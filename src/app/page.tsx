@@ -10,6 +10,7 @@ import AutoScroll from "@/components/Marquee";
 import ResponsiveImage from "@/components/Banner";
 import Banner from "@/components/Banner";
 import PyramidCircles from "@/components/Thali";
+import Popup from "@/components/Popup/Popup";
 
 export const metadata: Metadata = {
   title: "Deepak Gautam - Kaal Sarp Dosh Puja Specialist in Ujjain",
@@ -71,7 +72,9 @@ export default function Home() {
         />
       </head>
       <Hero />
+     
       <Banner/>
+
       {/* <PyramidCircles/> */}
       {/* <AutoScroll /> */}
       <Services />
@@ -80,6 +83,7 @@ export default function Home() {
       <Blog />
       <Testimonials />
       <Faq />
+      <Popup/>
       {/* <ScrollUp /> */}
     </>
   );
