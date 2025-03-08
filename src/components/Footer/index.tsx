@@ -205,8 +205,8 @@ export default function Footer() {
             {/* Contact Details */}
             <div className="text-center md:text-left">
               <Image
-                src="/images/logo/main-logo.png"
-                alt="Deepak Gautam - Best Astrologer in India"
+                src="/images/logo/logo-2.png"
+                alt="ujjain-kal-sarp"
                 width={100}
                 height={50}
                 className="mx-auto md:mx-0 mb-4"

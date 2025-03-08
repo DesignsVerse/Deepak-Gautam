@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const callNumber = "+919876543210";
+  const callNumber = "+919153164444";
 
   // Color scheme
   const colors = {
@@ -15,16 +15,11 @@ const Popup = () => {
     overlay: "rgba(74, 44, 42, 0.4)",
   };
 
-  const showPopup = () => {
+  useEffect(() => {
     const hasShownPopup = localStorage.getItem("popupShown");
     if (!hasShownPopup) {
-      setIsOpen(true);
+      setTimeout(() => setIsOpen(true), 3000); // Show popup after 3 sec
     }
-  };
-
-  useEffect(() => {
-    const initialTimer = setTimeout(showPopup, 30000);
-    return () => clearTimeout(initialTimer);
   }, []);
 
   const handleClose = () => {
@@ -32,59 +27,35 @@ const Popup = () => {
     localStorage.setItem("popupShown", "true");
   };
 
-  const handleCall = () => {
-    // Optional: You can add tracking here if needed
+  // Combined animation for popup and background
+  const popupContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 },
   };
-
-  // Animation variants
-  const popupVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-    exit: {
-      opacity: 0,
-      scale: 0.8,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-
-  if (!isOpen) return null;
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          variants={popupContainerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
           className="fixed inset-0 flex justify-center items-center z-50"
           style={{ backgroundColor: colors.overlay }}
         >
           <motion.div
-            variants={popupVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3 }}
             className="relative w-full max-w-md mx-4"
           >
             <div
               className="rounded-xl shadow-2xl p-8 relative overflow-hidden"
               style={{ backgroundColor: colors.background }}
             >
-              {/* Decorative corner element */}
-              <div
-                className="absolute top-0 left-0 w-16 h-16 opacity-10"
-                style={{ backgroundColor: colors.primary }}
-              />
-
               {/* Close Button */}
               <button
                 onClick={handleClose}
@@ -98,46 +69,29 @@ const Popup = () => {
               </button>
 
               {/* Header */}
-              <h2
-                className="text-3xl font-bold mb-4 text-center relative"
-                style={{ color: colors.primary }}
-              >
+              <h2 className="text-3xl font-bold mb-4 text-center" style={{ color: colors.primary }}>
                 Call Karein!
-                <span
-                  className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1"
-                  style={{ backgroundColor: colors.secondary }}
-                />
+                <span className="block w-16 h-1 mx-auto mt-1" style={{ backgroundColor: colors.secondary }} />
               </h2>
 
               {/* Message */}
-              <p
-                className="text-center mb-6 leading-relaxed"
-                style={{ color: colors.text }}
-              >
-                Aap humse turant baat karne ke liye niche{" "}
-                <span>&quot;Call Now&quot;</span> button dabayein.
+              <p className="text-center mb-6 leading-relaxed" style={{ color: colors.text }}>
+                Aap humse turant baat karne ke liye niche <span>&quot;Call Now&quot;</span> button dabayein.
               </p>
 
               {/* Call Button */}
               <div className="text-center">
-                <a
-                  href={`tel:${callNumber}`}
-                  onClick={handleCall}
+                <button
+                  onClick={() => window.location.href = `tel:${callNumber}`}
                   className="inline-block px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-                  style={{
-                    backgroundColor: colors.primary,
-                    color: colors.background,
-                  }}
+                  style={{ backgroundColor: colors.primary, color: colors.background }}
                 >
-                  Call Now
-                </a>
+                  📞 Call Now: {callNumber}
+                </button>
               </div>
 
               {/* Footer Note */}
-              <p
-                className="text-center text-sm mt-4 opacity-75"
-                style={{ color: colors.text }}
-              >
+              <p className="text-center text-sm mt-4 opacity-75" style={{ color: colors.text }}>
                 Hum aapke call ka intezaar kar rahe hain!
               </p>
             </div>
