@@ -16,7 +16,6 @@ const Popup = () => {
   };
 
   const showPopup = () => {
-    // Check if popup has already been shown in this session
     const hasShownPopup = localStorage.getItem("popupShown");
     if (!hasShownPopup) {
       setIsOpen(true);
@@ -24,15 +23,12 @@ const Popup = () => {
   };
 
   useEffect(() => {
-    // Show popup after 30 seconds (changed from 10s to 30s as per your request)
     const initialTimer = setTimeout(showPopup, 30000);
-
     return () => clearTimeout(initialTimer);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    // Mark popup as shown in localStorage so it doesn't show again
     localStorage.setItem("popupShown", "true");
   };
 
@@ -118,7 +114,8 @@ const Popup = () => {
                 className="text-center mb-6 leading-relaxed"
                 style={{ color: colors.text }}
               >
-                Aap humse turant baat karne ke liye niche "Call Now" button dabayein.
+                Aap humse turant baat karne ke liye niche{" "}
+                <span>&quot;Call Now&quot;</span> button dabayein.
               </p>
 
               {/* Call Button */}
