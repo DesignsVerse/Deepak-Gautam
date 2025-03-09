@@ -49,7 +49,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function ServicePost({ params }: { params: Params }) {
   const post = data.find((post) => post.id === parseInt(params.id));
   if (!post) return notFound();
-@@ -70,41 +33,15 @@
 
   return (
     <main className="mt-[140px] max-w-7xl mb-20 mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,7 +90,6 @@ export default async function ServicePost({ params }: { params: Params }) {
             <p className="text-gray-500 mt-8 text-lg leading-relaxed">{post.paragraph}</p>
 
             {post?.image && (
-@@ -122,73 +59,25 @@
 
             <p className="mt-6 text-lg text-gray-700 leading-relaxed">{post.description}</p>
 
@@ -165,7 +163,6 @@ export default async function ServicePost({ params }: { params: Params }) {
                 <Link href={`/services/${service.id}`} className="flex justify-between items-center">
                   {service.title}
                   <span className="text-blue-500">→</span>
-@@ -202,7 +91,6 @@
   );
 }
 
