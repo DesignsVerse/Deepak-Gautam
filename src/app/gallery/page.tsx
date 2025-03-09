@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     "Explore the photo gallery of Kaal Sarp Puja in Ujjain by Pandit Deepak Goutam. Witness divine rituals for Kaal Sarp Dosha Nivaran and spiritual peace.",
   keywords:
     "ujjain kaal sarp, kaal sarp ujjain, deepak goutam pandit, kaal sarp puja ujjain, kaal sarp dosha nivaran, spiritual rituals",
-  robots: "index, follow", // ✅ Kept for indexing
-  authors: [{ name: "Pandit Deepak Goutam" }], // ✅ Kept as is
+  robots: "index, follow",
+  authors: [{ name: "Pandit Deepak Goutam" }],
   alternates: {
-    canonical: "https://www.ujjainkalsarp.com/gallery", // ✅ Correct domain
+    canonical: "https://www.ujjainkalsarp.com/gallery",
   },
   openGraph: {
     title: "Puja Gallery - Kaal Sarp Puja Ujjain | Pandit Deepak Goutam",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-const Gallery = () => {
+export default function Gallery() {
   return (
     <>
       {/* Breadcrumb - Updated */}
@@ -44,11 +44,11 @@ const Gallery = () => {
         <div className="container mx-auto px-6">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
             Kaal Sarp Dosha Puja Gallery - Pandit Deepak Goutam
-          </h1> {/* ✅ Focused on Kaal Sarp */}
+          </h1>
 
           <p className="text-center mb-8">
             Discover divine moments from Kaal Sarp Puja in Ujjain, performed by Pandit Deepak Goutam. These sacred rituals offer solutions for Kaal Sarp Dosha Nivaran and spiritual peace.
-          </p> {/* ✅ Updated content */}
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[...Array(10)].map((_, index) => (
@@ -58,10 +58,10 @@ const Gallery = () => {
               >
                 <Image
                   src={`/images/about/${index + 1}.jpg`}
-                  alt={`Pandit Deepak Goutam - Kaal Sarp Puja Ujjain Image ${index + 1}`} // ✅ Focused alt text
+                  alt={`Pandit Deepak Goutam - Kaal Sarp Puja Ujjain Image ${index + 1}`}
                   width={500}
                   height={300}
-                  unoptimized // ✅ Kept for local images
+                  unoptimized
                   className="w-full h-52 sm:h-56 md:h-64 lg:h-72 object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
@@ -76,8 +76,4 @@ const Gallery = () => {
       </section>
     </>
   );
-};
-
-export default Gallery;
-
-export { Gallery }; // ✅ Kept named export
+}
