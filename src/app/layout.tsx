@@ -13,52 +13,52 @@ const inter = Inter({ subsets: ["latin"] });
 // Global Metadata for the entire site
 export const metadata: Metadata = {
   title: {
-    default: "Deepak Gautam - Website Development & Digital Marketing Expert",
-    template: "%s | Deepak Gautam", // Dynamic title template for sub-pages
+    default: "Pandit Deepak Goutam - Kaal Sarp Puja Specialist in Ujjain",
+    template: "%s | Pandit Deepak Goutam - Ujjain Kaal Sarp", // Dynamic title template for sub-pages
   },
   description:
-    "Deepak Gautam offers expert solutions in website development, SEO, digital marketing, and personal branding. Boost your online presence with proven strategies.",
+    "Pandit Deepak Goutam offers authentic Kaal Sarp Puja in Ujjain at Mahakaleshwar Temple. Expert Vedic rituals for Kaal Sarp Dosha Nivaran and spiritual peace.",
   keywords:
-    "Deepak Gautam, website development, digital marketing, SEO expert, personal branding, business growth, online marketing",
-  robots: "index, follow", // Ensure site-wide indexing
-  authors: [{ name: "Deepak Gautam" }], // Author attribution
+    "ujjain kaal sarp, kaal sarp puja ujjain, pandit deepak goutam, kaal sarp dosh nivaran, mahakaleshwar temple, vedic rituals, spiritual services",
+  robots: "index, follow",
+  authors: [{ name: "Pandit Deepak Goutam" }],
   alternates: {
-    canonical: "https://www.deepakgautam.com", // Base canonical URL
+    canonical: "https://www.ujjainkalsarp.com", // Updated to match your site
   },
   openGraph: {
-    title: "Deepak Gautam - Web & Digital Marketing Expert",
+    title: "Pandit Deepak Goutam - Kaal Sarp Puja Expert in Ujjain",
     description:
-      "Explore expert services in website development, SEO, and digital marketing by Deepak Gautam.",
+      "Authentic Kaal Sarp Puja services in Ujjain by Pandit Deepak Goutam. Vedic solutions for Kaal Sarp Dosha Nivaran at Mahakaleshwar Temple.",
     images: [
       {
-        url: "/images/site-banner.jpg", // Default OG image
+        url: "/images/kaal-sarp-banner.jpg", // Updated to Kaal Sarp-specific image
         width: 1200,
         height: 630,
-        alt: "Deepak Gautam - Digital Marketing Expert",
+        alt: "Pandit Deepak Goutam - Kaal Sarp Puja in Ujjain",
       },
     ],
-    url: "https://www.deepakgautam.com",
+    url: "https://www.ujjainkalsarp.com", // Updated to match your site
     type: "website",
   },
-  
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   // Site-wide Structured Data (Schema.org)
   const siteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Deepak Gautam",
-    url: "https://www.deepakgautam.com",
+    name: "Pandit Deepak Goutam - Ujjain Kaal Sarp",
+    url: "https://www.ujjainkalsarp.com", // Updated to match your site
     description:
-      "Official website of Deepak Gautam - Expert in website development, SEO, and digital marketing.",
+      "Official website of Pandit Deepak Goutam, specialist in Kaal Sarp Puja and Vedic rituals in Ujjain at Mahakaleshwar Temple.",
     publisher: {
       "@type": "Person",
-      name: "Deepak Gautam",
+      name: "Pandit Deepak Goutam",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.ujjainkalsarp.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
     },
   };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
       <body className={`bg-white text-black ${inter.className}`}>
         <Header />
         {children}
-        <Popup/>
+        <Popup />
         <Analytics />
         <Footer />
         {/* <ScrollToTop /> */}

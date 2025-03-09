@@ -7,44 +7,40 @@ const BlogPage = () => {
   const blogListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Deepak Gautam के ब्लॉग और लेख",
+    name: "Pandit Deepak Gautam Ji's Blogs on Ujjain Kaal Sarp Dosh and Astrology",
     description:
-      "Deepak Gautam द्वारा वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, और पर्सनल ब्रांडिंग पर नवीनतम ब्लॉग और लेख।",
-    url: "https://www.deepakgautam.com/blog",
-    // Add actual blog items dynamically if possible from BlogSection data
+      "Read expert blogs by Pandit Deepak Gautam Ji on Ujjain Kaal Sarp Dosh, astrology remedies, and Vedic rituals. Get insights into effective solutions for Kaal Sarp Yog.",
+    url: "https://www.ujjainkalsarp.com/blog",
   };
 
   return (
     <>
       <Head>
-        <title>ब्लॉग और लेख | Deepak Gautam - SEO और डिजिटल मार्केटिंग विशेषज्ञ</title>
+        <title>Blogs on Kaal Sarp Dosh & Astrology | Pandit Deepak Gautam Ji - Ujjain</title>
         <meta
           name="description"
-          content="Deepak Gautam के नवीनतम ब्लॉग और लेख पढ़ें—वेबसाइट डेवलपमेंट, SEO, डिजिटल मार्केटिंग, और पर्सनल ब्रांडिंग पर विशेषज्ञ सुझाव और इंडस्ट्री ट्रेंड्स।"
+          content="Read blogs by Pandit Deepak Gautam Ji on Kaal Sarp Dosh puja in Ujjain, astrology remedies, and Vedic rituals. Get expert insights into resolving Kaal Sarp Yog."
         />
         <meta
           name="keywords"
-          content="Deepak Gautam, ब्लॉग, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, ऑनलाइन रणनीति"
+          content="Kaal Sarp Dosh, Kaal Sarp Yog, Ujjain Kaal Sarp, Pandit Deepak Gautam Ji, astrology remedies, Kaal Sarp Puja in Ujjain, Ujjain astrologer, Vedic astrology"
         />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Deepak Gautam" /> {/* ✅ Added author */}
-        <link rel="canonical" href="https://www.deepakgautam.com/blog" /> {/* ✅ Updated domain */}
+        <meta name="author" content="Pandit Deepak Gautam Ji" />
+        <link rel="canonical" href="https://www.ujjainkalsarp.com/blog" />
 
         {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
-          content="ब्लॉग और लेख | Deepak Gautam - डिजिटल मार्केटिंग विशेषज्ञ"
+          content="Blogs on Kaal Sarp Dosh  | Pandit Deepak Gautam Ji - Ujjain"
         />
         <meta
           property="og:description"
-          content="Deepak Gautam के ब्लॉग में वेबसाइट डेवलपमेंट, SEO, और पर्सनल ब्रांडिंग पर नवीनतम लेख। इंडस्ट्री ट्रेंड्स के साथ अपडेट रहें।"
+          content="Explore Pandit Deepak Gautam Ji’s expert insights on Kaal Sarp Dosh remedies, Ujjain Kaal Sarp Puja, and Vedic astrology solutions."
         />
-        <meta property="og:url" content="https://www.deepakgautam.com/blog" />
+        <meta property="og:url" content="https://www.ujjainkalsarp.com/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.deepakgautam.com/images/blog-og-image.jpg" />
-
-       
-        
+        <meta property="og:image" content="https://www.ujjainkalsarp.com/images/blog-og-image.jpg" />
 
         {/* Structured Data */}
         <script
@@ -54,8 +50,8 @@ const BlogPage = () => {
       </Head>
 
       <Breadcrumb
-        pageName="Blog and Articles"
-        description="Discover Deepak Gautam Panditji’s blogs and articles on Vedic astrology and spirituality. Gain expert insights, remedies, and guidance for a balanced life."
+        pageName="Kaal Sarp DoshBlogs"
+        description="Explore expert blogs by Pandit Deepak Gautam Ji on Kaal Sarp Dosh puja in Ujjain, astrology remedies, and Vedic rituals for spiritual well-being."
       />
       <BlogSection />
     </>

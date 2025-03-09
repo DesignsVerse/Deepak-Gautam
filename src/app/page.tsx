@@ -7,53 +7,56 @@ import Faq from "@/components/FAQ";
 import PanditDescription from "@/components/PanditDescription";
 import Achivement from "@/components/Achivement";
 import AutoScroll from "@/components/Marquee";
-import ResponsiveImage from "@/components/Banner";
 import Banner from "@/components/Banner";
 import PyramidCircles from "@/components/Thali";
 import Popup from "@/components/Popup/Popup";
 
+// Optimized Metadata for SEO
 export const metadata: Metadata = {
-  title: "Deepak Gautam - Kaal Sarp Dosh Puja Specialist in Ujjain",
+  title: "Pandit Deepak Goutam - Kaal Sarp Dosh Puja Specialist in Ujjain",
   description:
-    "Perform authentic Kaal Sarp Dosh Puja in Ujjain with Deepak Gautam. Get expert guidance and Vedic rituals to remove doshas and bring peace to life.",
+    "Authentic Kaal Sarp Dosh Puja in Ujjain by Pandit Deepak Goutam. Expert Vedic rituals at Mahakaleshwar Temple for Kaal Sarp Dosha Nivaran and spiritual peace.",
   keywords:
-    "Kaal Sarp Dosh Puja Ujjain, Kaal Sarp Puja, Kaal Sarp Dosh Nivaran, Pandit Deepak Gautam, Ujjain Temple, Mahakal Kaal Sarp Puja",
-  robots: "index, follow", // ✅ Ensure indexing
-  authors: [{ name: "Deepak Gautam" }], // ✅ Author attribution
+    "ujjain kaal sarp, kaal sarp puja ujjain, pandit deepak goutam, kaal sarp dosh nivaran, mahakaleshwar temple, vedic rituals, spiritual peace",
+  robots: "index, follow",
+  authors: [{ name: "Pandit Deepak Goutam" }],
   alternates: {
-    canonical: "https://www.deepakgautam.com/kaal-sarp-pooja-ujjain", // ✅ Canonical URL for Kaal Sarp Pooja page
+    canonical: "https://www.ujjainkalsarp.com/", // Unchanged
   },
   openGraph: {
-    title: "Deepak Gautam - Kaal Sarp Dosh Puja Expert in Ujjain",
+    title: "Pandit Deepak Goutam - Kaal Sarp Dosh Puja Expert in Ujjain",
     description:
-      "Book your Kaal Sarp Dosh Puja in Ujjain with Deepak Gautam, an experienced Vedic scholar. Get the blessings of Lord Shiva at Mahakaleshwar Temple.",
+      "Book authentic Kaal Sarp Puja in Ujjain with Pandit Deepak Goutam. Vedic rituals at Mahakaleshwar Temple for Kaal Sarp Dosha Nivaran and blessings.",
     images: [
       {
-        url: "/images/kaal-sarp-pooja.jpg", // ✅ Specific banner for Kaal Sarp Pooja
+        url: "/images/kaal-sarp-pooja.jpg", // Unchanged
         width: 1200,
         height: 630,
-        alt: "Kaal Sarp Puja at Ujjain - Deepak Gautam",
+        alt: "Pandit Deepak Goutam - Kaal Sarp Puja in Ujjain",
       },
     ],
-    url: "https://www.deepakgautam.com/kaal-sarp-pooja-ujjain",
-    type: "article",
+    url: "https://www.ujjainkalsarp.com/", // Unchanged
+    type: "website", // Changed to "website" as it's homepage
   },
-  
 };
-
 
 export default function Home() {
   // Structured Data for Homepage (Schema.org)
   const homeSchema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Deepak Gautam - Homepage",
+    "@type": "WebSite",
+    name: "Pandit Deepak Goutam - Kaal Sarp Puja Specialist",
     url: "https://www.deepakgautam.com",
     description:
-      "Official homepage of Deepak Gautam - Expert in website development, SEO, and digital marketing.",
+      "Official website of Pandit Deepak Goutam, expert in Kaal Sarp Dosh Puja and Vedic rituals in Ujjain at Mahakaleshwar Temple.",
     publisher: {
       "@type": "Person",
-      name: "Deepak Gautam",
+      name: "Pandit Deepak Goutam",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.ujjainkalsarp.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
     },
   };
 
@@ -67,9 +70,7 @@ export default function Home() {
         />
       </head>
       <Hero />
-     
-      <Banner/>
-
+      <Banner />
       {/* <PyramidCircles/> */}
       {/* <AutoScroll /> */}
       <Services />
@@ -78,7 +79,7 @@ export default function Home() {
       <Blog />
       <Testimonials />
       <Faq />
-      <Popup/>
+      <Popup />
       {/* <ScrollUp /> */}
     </>
   );

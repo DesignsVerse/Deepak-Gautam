@@ -1,0 +1,30 @@
+[
+    {
+      "heading": "About {product.name}",
+      "content": "The {product.name} is a sacred and powerful spiritual item, intricately crafted with pure {product.material}. It is associated with wealth, prosperity, and divine protection. Wearing this {product.name} brings blessings of Lord Kuber, the deity of wealth, and enhances financial stability, success, and spiritual growth. It is recommended for those seeking abundance and divine energy in their lives."
+    },
+    {
+      "heading": "Swami Graha Mangal",
+      "content": "The ruling planet of the {product.name} is Jupiter, the planet of wisdom, wealth, and prosperity. The {product.name} helps balance the energies of Jupiter, bringing good fortune, optimism, and growth to the wearer. It is especially beneficial for those facing financial struggles or seeking career advancement."
+    },
+    {
+      "heading": "Swami Dev Agni",
+      "content": "The {product.name} is associated with the Sun, the source of energy, vitality, and leadership. The Sun's energy in this {product.name} enhances confidence, willpower, and success in endeavors. It purifies the aura and strengthens the wearer's connection to divine energy."
+    },
+    {
+      "heading": "Mantra to Wear",
+      "content": "To activate the divine energy of the {product.name}, chant the following mantra 108 times while wearing it:\n\n- ॐ कुबेराय नमः (Om Kuberaya Namah)\n- ॐ श्रीं ह्रीं क्लीं श्रीं क्लीं वित्तेश्वराय नमः (Om Shreem Hreem Kleem Shreem Kleem Vitteshwaraya Namah)\n\nThis mantra invokes the blessings of Lord Kuber for wealth and prosperity."
+    },
+    {
+      "heading": "Health Benefits",
+      "content": "The {product.name} is believed to have therapeutic properties. It helps in reducing stress, anxiety, and negative energies. The gold in the {product.name} promotes positivity, improves blood circulation, and balances the body's energy. It is also said to enhance mental clarity and emotional stability, making it ideal for meditation and spiritual practices."
+    },
+    {
+      "heading": "Product Info",
+      "content": "- **Rashi**: Kuber Rudraksha\n- **Name**: {product.name}\n- **Origin**: Nepal\n- **Shape**: Oval\n- **Symbol of**: Kuber\n- **Ruling Planet**: Jupiter\n- **Ruling God**: Lord Kuber\n- **Quality**: {product.quality}%\n- **Day of Wearing**: Thursday"
+    },
+    {
+      "heading": "Method of Wearing",
+      "content": "- Wake up early on a Thursday morning and take a bath.\n- Place the {product.name} in a puja area and offer flowers, dhoop, and sandalwood paste.\n- Chant the Kuber Mantra 108 times while holding the {product.name}.\n- Wear the {product.name} as a pendant or bracelet, ensuring it touches your skin for maximum benefits.\n- Optionally, you can also recite the 'Om Shreem Hreem Kleem' mantra daily to enhance its effects."
+    }
+  ]

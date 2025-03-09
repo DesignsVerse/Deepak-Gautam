@@ -2,45 +2,53 @@ import ServiceSection from "@/components/Services/Services";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
+// Optimized Metadata for SEO in English
 export const metadata: Metadata = {
-  title: "हमारी सेवाएं | पंडित दीपक गौतम - ज्योतिष और धार्मिक विशेषज्ञ",
+  title: "Our Services - Pandit Deepak Goutam | Kaal Sarp Puja Ujjain",
   description:
-    "पंडित दीपक गौतम से ज्योतिष, मंत्र-साधना, पूजा-पाठ, और धार्मिक अनुष्ठानों की विशेषज्ञ सेवाएं प्राप्त करें। शत्रु नाश, सफलता, और आध्यात्मिक शांति के लिए संपर्क करें।",
+    "Get expert services from Pandit Deepak Goutam in Ujjain for Kaal Sarp Puja, astrology, mantra sadhana, and religious rituals. Contact for enemy destruction, success, and spiritual peace.",
   keywords:
-    "पंडित दीपक गौतम, ज्योतिष सेवाएं, मंत्र-साधना, पूजा-पाठ, शत्रु नाश, धार्मिक अनुष्ठान, आध्यात्मिक समाधान, सफलता प्राप्ति",
-  robots: "index, follow", // ✅ Ensure indexing
-  authors: [{ name: "Pandit Deepak Gautam" }], // ✅ Author attribution
+    "ujjain kaal sarp, kaal sarp puja ujjain, pandit deepak goutam, astrology services, mantra sadhana, religious rituals, kaal sarp dosha nivaran, enemy destruction",
+  robots: "index, follow", // ✅ Kept as is
+  authors: [{ name: "Pandit Deepak Goutam" }], // ✅ Kept as is
   alternates: {
-    canonical: "https://www.deepakgautam.com/services", // ✅ Canonical URL
+    canonical: "https://www.deepakgautam.com/services", // ✅ Unchanged
   },
   openGraph: {
-    title: "हमारी सेवाएं | पंडित दीपक गौतम",
+    title: "Our Services - Pandit Deepak Goutam | Kaal Sarp Puja Ujjain",
     description:
-      "पंडित दीपक गौतम से ज्योतिष, पूजा-पाठ, और मंत्र-साधना की सेवाएं। शत्रु नाश और सफलता के लिए संपर्क करें।",
+      "Expert Kaal Sarp Puja, astrology, and mantra sadhana services in Ujjain by Pandit Deepak Goutam. Contact for enemy destruction, success, and peace.",
     images: [
       {
-        url: "/images/services-banner.jpg", // ✅ Services-specific banner
+        url: "/images/services-banner.jpg", // ✅ Kept as is
         width: 1200,
         height: 630,
-        alt: "पंडित दीपक गौतम - हमारी सेवाएं",
+        alt: "Pandit Deepak Goutam - Kaal Sarp Puja and Astrology Services",
       },
     ],
-    url: "https://www.deepakgautam.com/services",
+    url: "https://www.deepakgautam.com/services", // ✅ Unchanged
     type: "website",
   },
-  
 };
 
 const ServicePage = () => {
   // Structured Data for Services Page (Schema.org)
   const servicesSchema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Pandit Deepak Gautam - हमारी सेवाएं",
-    description:
-      "पंडित दीपक गौतम द्वारा प्रदान की जाने वाली ज्योतिष, मंत्र-साधना, और पूजा-पाठ सेवाएं।",
-    url: "https://www.deepakgautam.com/services",
-    // Optional: Add specific services from ServiceSection if dynamic data available
+    "@type": "Service",
+    "serviceType": "Astrology and Religious Rituals",
+    "provider": {
+      "@type": "Person",
+      "name": "Pandit Deepak Goutam",
+      "url": "https://www.deepakgautam.com/services",
+    },
+    "name": "Our Services - Pandit Deepak Goutam",
+    "description":
+      "Expert Kaal Sarp Puja, astrology, mantra sadhana, and religious rituals by Pandit Deepak Goutam in Ujjain. Solutions for Kaal Sarp Dosha Nivaran and enemy destruction.",
+    "areaServed": {
+      "@type": "City",
+      "name": "Ujjain",
+    },
   };
 
   return (
@@ -53,8 +61,8 @@ const ServicePage = () => {
         />
       </head>
       <Breadcrumb
-        pageName="Our Services - Pandit Deepak Gautam"
-        description="Contact Pandit Deepak Gautam for astrology, mantra practice, and religious rituals—solutions for enemy destruction and success."
+        pageName="Our Services - Pandit Deepak Goutam"
+        description="Expert Kaal Sarp Puja, astrology, and religious rituals in Ujjain by Pandit Deepak Goutam. Contact for solutions to enemy destruction and success."
       />
       <ServiceSection />
     </>

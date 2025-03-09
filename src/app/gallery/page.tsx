@@ -4,48 +4,51 @@ import { Metadata } from "next";
 
 // Optimized Metadata for SEO
 export const metadata: Metadata = {
-  title: "पूजा गैलरी - माँ बगलामुखी अनुष्ठान | Deepak Gautam",
+  title: "Puja Gallery - Kaal Sarp Puja Ujjain | Pandit Deepak Goutam",
   description:
-    "माँ बगलामुखी मंदिर, नलखेड़ा की विशेष पूजाओं और अनुष्ठानों की छायाचित्र गैलरी। शत्रु बाधा निवारण, व्यापार वृद्धि, और आध्यात्मिक उन्नति के दिव्य क्षणों को देखें। Deepak Gautam द्वारा प्रस्तुत।",
+    "Explore the photo gallery of Kaal Sarp Puja in Ujjain by Pandit Deepak Goutam. Witness divine rituals for Kaal Sarp Dosha Nivaran and spiritual peace.",
   keywords:
-    "माँ बगलामुखी पूजा, अनुष्ठान गैलरी, Deepak Gautam, नलखेड़ा मंदिर, शत्रु निवारण, व्यापार वृद्धि, SEO विशेषज्ञ, धार्मिक छायाचित्र",
-  robots: "index, follow", // ✅ Added robots for indexing
-  authors: [{ name: "Deepak Gautam" }], // ✅ Added author
+    "ujjain kaal sarp, kaal sarp ujjain, deepak goutam pandit, kaal sarp puja ujjain, kaal sarp dosha nivaran, spiritual rituals",
+  robots: "index, follow", // ✅ Kept for indexing
+  authors: [{ name: "Pandit Deepak Goutam" }], // ✅ Kept as is
   alternates: {
-    canonical: "https://www.tuwebsite.com/puja-gallery", // ✅ Canonical URL (apna domain daal)
+    canonical: "https://www.ujjainkalsarp.com/gallery", // ✅ Correct domain
   },
   openGraph: {
-    title: "पूजा गैलरी - माँ बगलामुखी अनुष्ठान | Deepak Gautam",
+    title: "Puja Gallery - Kaal Sarp Puja Ujjain | Pandit Deepak Goutam",
     description:
-      "माँ बगलामुखी की विशेष पूजाओं की झलकियाँ - शत्रु बाधा निवारण, व्यापार वृद्धि और आध्यात्मिक उन्नति के लिए। Deepak Gautam द्वारा।",
+      "View glimpses of Kaal Sarp Puja in Ujjain by Pandit Deepak Goutam. Expert rituals for Kaal Sarp Dosha Nivaran and spiritual upliftment.",
     images: [
       {
-        url: "/images/seo-banner.jpg",
+        url: "/images/puja-gallery-banner.jpg",
         width: 800,
         height: 600,
-        alt: "माँ बगलामुखी पूजा बैनर",
+        alt: "Pandit Deepak Goutam - Kaal Sarp Puja Ujjain Gallery",
       },
     ],
-    url: "https://www.tuwebsite.com/puja-gallery",
+    url: "https://www.ujjainkalsarp.com/gallery",
     type: "website",
   },
-  
 };
 
 const Gallery = () => {
   return (
     <>
-      {/* Breadcrumb - Already Good, Minor Tweak */}
+      {/* Breadcrumb - Updated */}
       <Breadcrumb
         pageName="Puja Gallery"
-        description="Explore the Kaal Sarp Dosh Puja and Other Puja Gallery by Deepak Gautam Panditji. View sacred rituals, ceremonies, and spiritual practices captured in vivid detail."
+        description="Explore the Kaal Sarp Dosha Puja Gallery by Pandit Deepak Goutam in Ujjain. View sacred rituals and spiritual ceremonies in vivid detail."
       />
 
       <section id="about" className="pt-12 md:pt-16 lg:pt-20 pb-16">
         <div className="container mx-auto px-6">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
-          Kaal Sarp Dosh Puja and Other Puja Gallery
-          </h1> {/* ✅ Changed to H1 for better SEO */}
+            Kaal Sarp Dosha Puja Gallery - Pandit Deepak Goutam
+          </h1> {/* ✅ Focused on Kaal Sarp */}
+
+          <p className="text-center mb-8">
+            Discover divine moments from Kaal Sarp Puja in Ujjain, performed by Pandit Deepak Goutam. These sacred rituals offer solutions for Kaal Sarp Dosha Nivaran and spiritual peace.
+          </p> {/* ✅ Updated content */}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[...Array(10)].map((_, index) => (
@@ -55,7 +58,7 @@ const Gallery = () => {
               >
                 <Image
                   src={`/images/about/${index + 1}.jpg`}
-                  alt={`माँ बगलामुखी पूजा छवि ${index + 1} - Deepak Gautam`} // ✅ Enhanced alt text
+                  alt={`Pandit Deepak Goutam - Kaal Sarp Puja Ujjain Image ${index + 1}`} // ✅ Focused alt text
                   width={500}
                   height={300}
                   unoptimized // ✅ Kept for local images
@@ -63,7 +66,7 @@ const Gallery = () => {
                 />
                 <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
                   <p className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Deepak Goutam Seva
+                    Pandit Deepak Goutam Seva
                   </p>
                 </div>
               </div>
@@ -76,3 +79,5 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+export { Gallery }; // ✅ Kept named export

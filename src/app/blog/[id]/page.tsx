@@ -8,35 +8,34 @@ import RelatedBlogs from "@/components/Blog/RelatedBlogs"; // Naya component imp
 export async function generateMetadata({ params }) {
   const post = blogData.find((post) => post.id.toString() === params.id);
   if (!post) {
-    return { title: "Blog Post Not Found | Deepak Gautam" };
+    return { title: "Blog Post Not Found | Deepak Goutam" };
   }
 
   return {
-    metadataBase: new URL("https://www.deepakgautam.com"), // Added metadataBase
-    title: `${post.title} | Deepak Gautam - SEO & Digital Marketing Expert`,
+    metadataBase: new URL("https://www.ujjainkalsarp.com"), // Added metadataBase
+    title: `${post.title} | Deepak Goutam - kaal sarp ujjain pandit ji`,
     description:
-      post.sections[0]?.content.slice(0, 150) + "..." || "Read more about this topic by Deepak Gautam.",
-    keywords: `${post.title.split(" ").join(", ")}, Deepak Gautam, SEO, digital marketing, blog`,
+      post.sections[0]?.content.slice(0, 150) + "..." || "Read more about this topic by Deepak Goutam.",
+    keywords: `${post.title.split(" ").join(", ")}, Deepak Goutam, ujjain, ujjain kaal sarp , kaal sarp ujjain, kaal sarp`,
     robots: "index, follow",
-    authors: [{ name: "Deepak Gautam" }],
+    authors: [{ name: "Deepak Goutam" }],
     alternates: {
       canonical: `/blog/${params.id}`,
     },
     openGraph: {
-      title: `${post.title} | Deepak Gautam`,
-      description: post.sections[0]?.content.slice(0, 150) + "..." || "A blog by Deepak Gautam.",
+      title: `${post.title} | Deepak Goutam`,
+      description: post.sections[0]?.content.slice(0, 150) + "..." || "A blog by Deepak Goutam.",
       images: [
         {
           url: post.thumbnail || "/images/default-blog.jpg",
           width: 900,
           height: 500,
-          alt: `${post.title} - Deepak Gautam Blog`,
+          alt: `${post.title} - Deepak Goutam Blog`,
         },
       ],
       url: `/blog/${params.id}`,
       type: "article",
     },
-    
   };
 }
 
@@ -68,7 +67,7 @@ export default function BlogPost({ params }) {
     image: post.thumbnail || "/images/default-blog.jpg",
     publisher: {
       "@type": "Person",
-      name: "Deepak Gautam",
+      name: "Deepak Goutam",
     },
   };
 
@@ -91,7 +90,7 @@ export default function BlogPost({ params }) {
                 src={post.thumbnail}
                 width={900}
                 height={500}
-                alt={`${post.title} - Blog by Deepak Gautam`}
+                alt={`${post.title} - Blog by Deepak Goutam`}
                 className="object-cover w-full max-h-[300px] sm:max-h-[400px] md:max-h-[500px] relative z-10 rounded-lg shadow-lg"
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 900px"
                 priority
@@ -122,25 +121,6 @@ export default function BlogPost({ params }) {
               </div>
             ))}
           </div>
-
-          {/* Uncomment if you want to add author section back */}
-          {/* <div className="flex flex-col sm:flex-row items-center mt-10 sm:mt-16 p-4 sm:p-6 rounded-lg bg-gray-100 dark:bg-gray-900 shadow-md border-t-4 border-[#800000]">
-            <Image
-              src={post.author.image}
-              width={60}
-              height={60}
-              alt={`Author ${post.author.name} - Deepak Gautam Blog`}
-              className="rounded-full border-2 border-gray-300 dark:border-gray-700 mb-4 sm:mb-0 sm:mr-4"
-            />
-            <div className="text-center sm:text-left">
-              <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
-                {post.author.name}
-              </p>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                {post.author.designation}
-              </p>
-            </div>
-          </div> */}
         </article>
 
         {/* Right Side: Related Blogs */}

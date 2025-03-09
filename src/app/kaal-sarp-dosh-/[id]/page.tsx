@@ -3,17 +3,41 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import additionalServices from "@/data/additional-services.json";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image"; // Added for optimized image handling
+import Image from "next/image";
+import { Metadata } from "next";
 
+// Generate Metadata for SEO
 export async function generateMetadata({ params }) {
   const service = additionalServices.find((s) => s.id === parseInt(params.id));
   if (!service) {
-    return { title: "Service Not Found | Deepak Gautam" };
+    return {
+      title: "Service Not Found | Pandit Deepak Goutam",
+      description: "The requested service page was not found. Contact Pandit Deepak Goutam for Kaal Sarp Puja in Ujjain.",
+    };
   }
 
   return {
-    title: `${service.title} | Deepak Gautam`,
-    description: service.description.slice(0, 150) + "...",
+    title: `${service.title} - Kaal Sarp Puja Ujjain | Pandit Deepak Goutam`,
+    description: `${service.description.slice(0, 150)}... Book your Kaal Sarp Dosha Nivaran with Pandit Deepak Goutam in Ujjain today!`,
+    keywords: "ujjain kaal sarp, kaal sarp puja ujjain, deepak goutam pandit, kaal sarp dosha nivaran, spiritual rituals",
+    robots: "index, follow",
+    alternates: {
+      canonical: `https://www.ujjainkalsarp.com/kaal-sarp-dosh-/${params.id}`,
+    },
+    openGraph: {
+      title: `${service.title} - Kaal Sarp Puja Ujjain | Pandit Deepak Goutam`,
+      description: `${service.description.slice(0, 150)}... Contact Pandit Deepak Goutam for expert Kaal Sarp solutions.`,
+      images: [
+        {
+          url: service.image || "/images/default-kaal-sarp-puja.jpg",
+          width: 800,
+          height: 400,
+          alt: `${service.title} - Pandit Deepak Goutam`,
+        },
+      ],
+      url: `https://www.ujjainkalsarp.com/kaal-sarp-dosh-/${params.id}`,
+      type: "website",
+    },
   };
 }
 
@@ -22,22 +46,31 @@ export default function AdditionalServicePage({ params }) {
   if (!service) return notFound();
 
   return (
-    <main className="mt-[140px] max-w-7xl mx-auto mb:p-6 p-4">
+    <main className="mt-[140px] max-w-7xl mx-auto p-4 md:p-6">
+      {/* Breadcrumb for Navigation */}
+      <nav className="mb-6">
+        <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
+        <Link href="/services" className="text-blue-600 hover:underline">Services</Link> &gt; 
+        <span className="text-gray-600">{service.title}</span>
+      </nav>
+
       {/* Grid Container */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Main Content + Additional Content */}
-        <section className="lg:col-span-2 pt-5 pl-2 pr-2 border mb:p-6 p-2 rounded-lg shadow-md">
+        <section className="lg:col-span-2 p-6 border rounded-lg shadow-md">
           {/* Main Content */}
           <div>
-            <div className="flex items-center justify-between">
-              <h1 className="md:text-4xl text-xl sm:text-3xl font-bold text-left">{service.title}</h1>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                {service.title} - Pandit Deepak Goutam
+              </h1>
               <a
                 href="tel:+919153164444"
-                className="bg-[#800000] text-white px-2 py-1 w-32 sm:px-3 sm:py-1 md:px-4 md:py-2 md:w-40 rounded-lg hover:bg-[#660000] transition-colors ml-2 sm:ml-2 md:ml-4 flex items-center justify-center gap-2 text-sm sm:text-base"
+                className="bg-[#800000] text-white px-4 py-2 rounded-lg hover:bg-[#660000] transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 sm:h-5 w-4 sm:w-5"
+                  className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -52,19 +85,21 @@ export default function AdditionalServicePage({ params }) {
                 Free Call
               </a>
             </div>
-            <p className="text-gray-500 mt-5 text-left">{service.paragraph || service.description}</p>
+            <p className="text-gray-600 mt-5 text-left leading-relaxed">
+              {service.paragraph || service.description}
+            </p>
           </div>
 
-          {/* Dynamic Image - Adjusted for Desktop */}
+          {/* Dynamic Image */}
           {service.image && (
             <div className="mt-6">
               <Image
                 src={service.image}
-                alt={`${service.title} image`}
+                alt={`${service.title} - Kaal Sarp Puja by Pandit Deepak Goutam`}
                 width={800}
                 height={400}
-                className="rounded-lg object-cover w-full h-auto lg:h-[700px] lg:max-w-[800px]" // Adjusted for desktop
-                priority={true} // Optional: for faster loading of above-the-fold images
+                className="rounded-lg object-cover w-full h-auto lg:h-[500px] lg:max-w-[800px]"
+                priority={true}
               />
             </div>
           )}
@@ -73,24 +108,31 @@ export default function AdditionalServicePage({ params }) {
           <div className="mt-12">
             {service.sections && service.sections.length > 0 ? (
               service.sections.map((section, index) => (
-                <div key={index} className="mb:p-8 p-2 rounded-xl">
-                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
+                <div key={index} className="p-4 rounded-xl">
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                     {section.heading}
                   </h2>
-                  <ReactMarkdown className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <ReactMarkdown className="text-lg text-gray-700 leading-relaxed">
                     {section.content}
                   </ReactMarkdown>
                 </div>
               ))
             ) : (
-              <p className="text-center text-gray-500 mt-4">कोई अतिरिक्त सामग्री उपलब्ध नहीं।</p>
+              <p className="text-center text-gray-500 mt-4">No additional content available.</p>
             )}
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
-              {service.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {service.details?.finalHeading || "Final Thoughts"}
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed ">
-              {service.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {service.details?.finalParagraph || "Contact Pandit Deepak Goutam for more details about this service."}
             </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8 text-center">
+            <Link href="/contact" className="text-blue-600 hover:underline">
+              Book Your Kaal Sarp Puja Now
+            </Link>
           </div>
         </section>
 
@@ -101,10 +143,10 @@ export default function AdditionalServicePage({ params }) {
             {additionalServices.map((demo) => (
               <li
                 key={demo.id}
-                className="border p-2 rounded hover:bg-gray-200 cursor-pointer transition-colors"
+                className="border p-2 rounded hover:bg-gray-100 transition-colors"
               >
                 <Link href={`/kaal-sarp-dosh-/${demo.id}`} className="flex justify-between items-center">
-                  <span className="text-black">{demo.title}</span>
+                  <span className="text-gray-900">{demo.title}</span>
                   <span className="text-blue-500">→</span>
                 </Link>
               </li>
