@@ -50,24 +50,6 @@ export default async function ServicePost({ params }: { params: Params }) {
   const post = data.find((post) => post.id === parseInt(params.id));
   if (!post) return notFound();
 
-  // Structured Data for SEO
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: post.title,
-    description: `${post.paragraph} Expert service by Pandit Deepak Goutam in Ujjain for Kaal Sarp Dosha Nivaran.`,
-    provider: {
-      "@type": "Person",
-      name: "Pandit Deepak Goutam",
-    },
-    url: `https://www.deepakgautam.com/services/${params.id}`,
-    image: post.image || "/images/default-service.jpg",
-    areaServed: {
-      "@type": "City",
-      name: "Ujjain",
-    },
-  };
-
   return (
     <main className="mt-[140px] max-w-7xl mb-20 mx-auto px-4 sm:px-6 lg:px-8">
       {/* Add Schema Markup */}
@@ -108,17 +90,6 @@ export default async function ServicePost({ params }: { params: Params }) {
             <p className="text-gray-500 mt-8 text-lg leading-relaxed">{post.paragraph}</p>
 
             {post?.image && (
-              <div className="relative mt-6 w-full rounded-lg overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={`${post.title} - Pandit Deepak Goutam Service`}
-                  width={800}
-                  height={400}
-                  className="w-full h-[400px] object-cover rounded-lg"
-                  unoptimized
-                />
-              </div>
-            )}
 
             <p className="mt-6 text-lg text-gray-700 leading-relaxed">{post.description}</p>
 
@@ -192,19 +163,10 @@ export default async function ServicePost({ params }: { params: Params }) {
                 <Link href={`/services/${service.id}`} className="flex justify-between items-center">
                   {service.title}
                   <span className="text-blue-500">→</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </aside>
-      </div>
-    </main>
   );
 }
 
 // Generate static params for pre-rendering
 export async function generateStaticParams() {
   return data.map((post) => ({
-    id: post.id.toString(),
-  }));
-}
+    id: post.id.toString()
