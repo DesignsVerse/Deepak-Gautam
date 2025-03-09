@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   
 };
 
-const Galary = () => {
+const Gallery = () => {
   return (
     <>
       {/* Breadcrumb - Already Good, Minor Tweak */}
@@ -75,4 +75,4 @@ const Galary = () => {
   );
 };
 
-export default Galary;
+export default Gallery;

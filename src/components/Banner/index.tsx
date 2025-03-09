@@ -12,6 +12,7 @@ const Banner: React.FC = () => {
     { url: "/images/Banner/banner-2.png", alt: "Banner 2" },
     { url: "/images/Banner/banner-3.png", alt: "Banner 3" },
     { url: "/images/Banner/banner-4.png", alt: "Banner 4" },
+    { url: "/images/Banner/banner-5.png", alt: "Banner 5" },
   ];
 
   const sliderRef = useRef<Slider | null>(null);
