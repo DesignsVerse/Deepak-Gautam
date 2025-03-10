@@ -3,16 +3,12 @@ import Image from "next/image";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { useState } from "react";
 import { motion } from "framer-motion"; // For animations
-import Lightbox from "react-image-lightbox"; // For image lightbox
-import "react-image-lightbox/style.css"; // Lightbox styling
 import { LazyLoadImage } from "react-lazy-load-image-component"; // Lazy loading images
 import "react-lazy-load-image-component/src/effects/blur.css"; // Lazy load effect
 import { FaPlay } from "react-icons/fa"; // Importing play icon from react-icons
 
 export default function Gallery() {
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState("all"); // Filter state
 
   // Sample data for gallery (replace with real data if available)
@@ -79,7 +75,7 @@ export default function Gallery() {
           >
             Kaal Sarp Dosha Puja Gallery
           </motion.h1>
-          <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-lg text-gray-600 Vividmb-12 max-w-2xl mx-auto">
             Immerse yourself in divine moments from Kaal Sarp Puja ceremonies in
             Ujjain, led by Pandit Deepak Goutam, offering spiritual peace and
             Dosha Nivaran.
@@ -96,11 +92,7 @@ export default function Gallery() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative rounded-xl shadow-xl overflow-hidden group cursor-pointer transform hover:-translate-y-2 transition-all duration-500"
-                onClick={() => {
-                  setPhotoIndex(index);
-                  setIsOpen(true);
-                }}
+                className="relative rounded-xl shadow-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-500"
               >
                 <LazyLoadImage
                   src={image.src}
@@ -118,32 +110,6 @@ export default function Gallery() {
               </motion.div>
             ))}
           </motion.div>
-
-          {/* Lightbox */}
-          {isOpen && (
-            <Lightbox
-              mainSrc={filteredImages[photoIndex].src}
-              nextSrc={
-                filteredImages[(photoIndex + 1) % filteredImages.length].src
-              }
-              prevSrc={
-                filteredImages[
-                  (photoIndex + filteredImages.length - 1) %
-                    filteredImages.length
-                ].src
-              }
-              onCloseRequest={() => setIsOpen(false)}
-              onMovePrevRequest={() =>
-                setPhotoIndex(
-                  (photoIndex + filteredImages.length - 1) %
-                    filteredImages.length
-                )
-              }
-              onMoveNextRequest={() =>
-                setPhotoIndex((photoIndex + 1) % filteredImages.length)
-              }
-            />
-          )}
 
           {/* Video Section */}
           <motion.h1
@@ -192,7 +158,7 @@ export default function Gallery() {
           {selectedVideo && (
             <motion.div
               initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 overflow-y-auto"
               onClick={handleVideoClose} // Close on backdrop click
