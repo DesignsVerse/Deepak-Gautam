@@ -154,11 +154,12 @@
                     {images.map((img, idx) => (
                     
                         <Image
+                          key={idx} // Yeh key prop add kiya
                           src={img}
                           alt={`Thumbnail ${idx + 1}`}
                           width={60}
                           height={60}
-                          className="w-[60px] h-[60px] object-cover   "
+                          className="w-[60px] h-[60px] object-cover"
                         />
                       
                     ))}
