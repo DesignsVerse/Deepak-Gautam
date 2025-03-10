@@ -10,6 +10,7 @@ import AutoScroll from "@/components/Marquee";
 import Banner from "@/components/Banner";
 import PyramidCircles from "@/components/Thali";
 import Popup from "@/components/Popup/Popup";
+import ProductList from "@/components/E-Commerce";
 
 // Optimized Metadata for SEO
 export const metadata: Metadata = {
@@ -74,6 +75,7 @@ export default function Home() {
       {/* <PyramidCircles/> */}
       {/* <AutoScroll /> */}
       <Services />
+      <ProductList/>
       <PanditDescription />
       <Achivement />
       <Blog />
