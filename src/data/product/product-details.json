@@ -5,8 +5,9 @@
       "image": "/images/product/p-1.webp",
       "images": [
         "/images/product/p-1.webp",
-        "/images/product/p-1.webp",
-        "/images/product/p-1.webp"
+        "/images/product/p-2.webp",
+        "/images/product/p-3.webp",
+        "/images/product/p-4.webp"
       ],
       "price": 600.00,
       "originalPrice": 1000.00,
@@ -30,7 +31,7 @@
           "comment": "Great quality, highly recommended."
         }
       ],
-      "relatedIds": [2, 3] 
+      "relatedIds": [2, 3,4,5] 
     },
     {
       "id": 2,

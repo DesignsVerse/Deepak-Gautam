@@ -205,8 +205,8 @@ export default function Footer() {
             {/* Contact Details */}
             <div className="text-center md:text-left">
               <Image
-                src="/images/logo/logo-2.png"
-                alt="ujjain-kal-sarp"
+                src="/images/logo/logo.png"
+                alt="ujjainkalsarp"
                 width={100}
                 height={50}
                 className="mx-auto md:mx-0 mb-4"

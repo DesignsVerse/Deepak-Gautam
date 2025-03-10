@@ -45,7 +45,7 @@ const Header = () => {
         <header>
           <div className="container mx-auto px-4 flex items-center justify-between transition-all duration-300">
             <Link href="/" className="flex items-center ">
-              <Image src="/images/logo/logo-2.png" alt="ujjain-kal-sarp" width={50} height={20} className="cursor-pointer" />
+              <Image src="/images/logo/logo.png" alt="ujjainkalsarp" width={60} height={30} className="cursor-pointer mr-1" />
               <span className={`text-m font-bold tracking-wide ${sticky ? "text-black" : "text-white"}`}>
                 Deepak Goutam
               </span>
