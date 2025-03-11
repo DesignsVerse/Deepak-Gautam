@@ -251,7 +251,7 @@
                             : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
                         }`}
                       >
-                        Good Quality
+                        Normal Quality
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -263,7 +263,7 @@
                             : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
                         }`}
                       >
-                        Normal Quality
+                        High Quality
                       </motion.button>
                     </div>
                   </div>
