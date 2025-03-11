@@ -34,7 +34,7 @@ export default function Help() {
             If you forget your password, follow these steps:
           </p>
           <ul className="list-disc pl-6 mt-2">
-            <li>Go to the login page and click "Forgot Password?"</li>
+            <li>Go to the login page and click {"\"Forgot Password?\""}</li>
             <li>Enter your registered email address.</li>
             <li>Check your inbox for a reset link and follow the instructions.</li>
           </ul>
@@ -112,7 +112,6 @@ export default function Help() {
           <h1 className="text-4xl font-bold" style={{ color: '#800000' }}>
             Help & Support
           </h1>
-          
         </div>
       </header>
 
