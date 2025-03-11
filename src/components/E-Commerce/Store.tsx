@@ -162,7 +162,7 @@ const StorePage = () => {
                   key={index + 1}
                   onClick={() => setCurrentPage(index + 1)}
                   className={`px-4 py-2 rounded-md ${
-                    currentPage === index + 1 ? "bg-saffron text-white" : "bg-gray-300"
+                    currentPage === index + 1 ? "bg-[#800000] text-white" : "bg-gray-300"
                   }`}
                   aria-label={`Go to page ${index + 1}`}
                 >
