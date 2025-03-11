@@ -3,15 +3,35 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import productData from "@/data/product/products.json"; // Ensure correct path to products.json
+import { useRouter, useSearchParams } from "next/navigation";
+import productData from "@/data/product/products.json";
 import SingleProduct from "@/components/E-Commerce/SingleProduct";
 
 const StorePage = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [sortOption, setSortOption] = useState("default"); // Sorting state
-  const [filterCategory, setFilterCategory] = useState("all"); // Category filter
-  const [searchQuery, setSearchQuery] = useState(""); // Search state
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Get initial values from URL or use defaults
+  const initialPage = parseInt(searchParams.get("page") || "1", 10);
+  const initialSort = searchParams.get("sort") || "default";
+  const initialCategory = searchParams.get("category") || "all";
+  const initialSearch = searchParams.get("search") || "";
+
+  const [currentPage, setCurrentPage] = useState(initialPage);
+  const [sortOption, setSortOption] = useState(initialSort);
+  const [filterCategory, setFilterCategory] = useState(initialCategory);
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
   const productsPerPage = 12;
+
+  // Update URL when any state changes
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set("page", currentPage.toString());
+    params.set("sort", sortOption);
+    params.set("category", filterCategory);
+    params.set("search", searchQuery);
+    router.push(`?${params.toString()}`, { scroll: false });
+  }, [currentPage, sortOption, filterCategory, searchQuery, router]);
 
   // Filter and sort products
   const filteredProducts = productData
@@ -23,14 +43,15 @@ const StorePage = () => {
     .sort((a, b) => {
       if (sortOption === "price-low-high") return a.price - b.price;
       if (sortOption === "price-high-low") return b.price - a.price;
-      return 0; // Default: no sorting
+      return 0;
     });
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / productsPerPage));
 
+  // Adjust page if it exceeds total pages
   useEffect(() => {
     if (currentPage > totalPages) {
-      setCurrentPage((prev) => Math.max(1, totalPages));
+      setCurrentPage(Math.max(1, totalPages));
     }
   }, [totalPages, currentPage]);
 
@@ -40,11 +61,10 @@ const StorePage = () => {
 
   const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
+  const goToPage = (page: number) => setCurrentPage(page);
 
-  // Assuming categories exist in your product data (e.g., Rudraksha, Gemstones)
   const categories = ["all", ...new Set(productData.map((p) => p.category))];
 
-  // Structured Data for Product Listing (Schema.org)
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -82,27 +102,17 @@ const StorePage = () => {
 
       <section className="pb-[120px] pt-[10px]">
         <div className="container mx-auto">
-          {/* Filter and Sort Controls */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-            {/* Search Bar */}
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setCurrentPage(1); // Reset to first page on search
-              }}
+              onChange={(e) => setSearchQuery(e.target.value)} // Removed setCurrentPage(1)
               placeholder="Search products..."
               className="w-full md:w-1/3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-saffron"
             />
-
-            {/* Category Filter */}
             <select
               value={filterCategory}
-              onChange={(e) => {
-                setFilterCategory(e.target.value);
-                setCurrentPage(1); // Reset to first page on filter change
-              }}
+              onChange={(e) => setFilterCategory(e.target.value)} // Removed setCurrentPage(1)
               className="w-full md:w-1/4 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-saffron"
             >
               {categories.map((category) => (
@@ -111,14 +121,9 @@ const StorePage = () => {
                 </option>
               ))}
             </select>
-
-            {/* Sort Options */}
             <select
               value={sortOption}
-              onChange={(e) => {
-                setSortOption(e.target.value);
-                setCurrentPage(1); // Reset to first page on sort change
-              }}
+              onChange={(e) => setSortOption(e.target.value)} // Removed setCurrentPage(1)
               className="w-full md:w-1/4 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-saffron"
             >
               <option value="default">Sort By: Default</option>
@@ -127,7 +132,6 @@ const StorePage = () => {
             </select>
           </div>
 
-          {/* Product Grid */}
           {currentProducts.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
               {currentProducts.map((product) => (
@@ -146,7 +150,6 @@ const StorePage = () => {
             <p className="text-center text-gray-500 mt-10">No products found matching your criteria.</p>
           )}
 
-          {/* Pagination */}
           {totalPages > 1 && (
             <div className="flex justify-center items-center mt-10 space-x-2">
               <button
@@ -160,7 +163,7 @@ const StorePage = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
-                  onClick={() => setCurrentPage(index + 1)}
+                  onClick={() => goToPage(index + 1)}
                   className={`px-4 py-2 rounded-md ${
                     currentPage === index + 1 ? "bg-[#800000] text-white" : "bg-gray-300"
                   }`}

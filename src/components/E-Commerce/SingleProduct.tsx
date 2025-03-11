@@ -50,10 +50,9 @@ const SingleProduct = ({ id }: { id: string }) => {
         {/* Discount Badge */}
         {product.discount > 0 && (
           <span
-            className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse"
-            style={{ backgroundColor: getRashiColor(product.rashi) }}
+            className="absolute top-2 left-2 bg-green-700 text-white px-2 py-1 rounded-full text-xs font-bold "
           >
-            -{product.discount}%
+            {product.discount}% off
           </span>
         )}
       </div>

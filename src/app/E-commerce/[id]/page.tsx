@@ -139,7 +139,7 @@
                   whileHover={{ scale: 1.02 }}
                   className="overflow-hidden rounded-lg shadow-lg"
                 >
-                 <div className="relative w-full max-w-full md:h-[550px] h-[300px]">
+                 <div className="relative w-full max-w-full md:h-[500px] h-[300px]">
                   {/* Main Image */}
                   <Image
                     src={selectedImage || product.image}
@@ -168,12 +168,12 @@
                 </div>
 
                 </motion.div>
-                <span
+                {/* <span
                   className="absolute top-4 left-4 bg-opacity-80 text-white px-3 py-1 rounded-full text-sm animate-fade-in"
                   style={{ backgroundColor: getRashiColor(product.rashi) }}
                 >
                   {product.rashi} ✨
-                </span>
+                </span> */}
                 {product.images && product.images.length > 0 && (
                   <div className="flex space-x-2 mt-4">
                     {product.images.map((img, idx) => (
@@ -224,7 +224,7 @@
                       ₹{(product.originalPrice + priceAdjustment).toFixed(2)}
                     </span>
                     {product.discount > 0 && (
-                      <span className="ml-3 text-red-500">(-{product.discount}%)</span>
+                      <span className="ml-3 text-white bg-green-700 p-2 rounded-xl">{product.discount}% off</span>
                     )}
                   </div>
                   <motion.div
@@ -284,7 +284,7 @@
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleBuyNow}
-                      className="flex items-center  bg-green-500 text-white py-3 px-6 rounded-md hover:bg-green-600 transition-all duration-300"
+                      className="flex items-center  bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-600 transition-all duration-300"
                     >
                       Buy Now
                     </motion.button>

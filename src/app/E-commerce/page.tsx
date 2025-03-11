@@ -3,32 +3,7 @@ import StorePage from "@/components/E-Commerce/Store";
 import { Metadata } from "next";
 
 // Metadata for SEO
-export const metadata: Metadata = {
-  title: "Store - Pandit Deepak Goutam | Kaal Sarp Puja Ujjain",
-  description:
-    "Explore sacred Rudraksha, gemstones, and spiritual items at Pandit Deepak Goutam’s store in Ujjain. Find divine products for peace, prosperity, and Kaal Sarp Dosha Nivaran.",
-  keywords:
-    "ujjain kaal sarp, kaal sarp puja ujjain, deepak goutam pandit, rudraksha, gemstones, spiritual items, kaal sarp dosha nivaran",
-  robots: "index, follow",
-  alternates: {
-    canonical: "https://www.ujjainkalsarp.com/store",
-  },
-  openGraph: {
-    title: "Store - Pandit Deepak Goutam | Kaal Sarp Puja Ujjain",
-    description:
-      "Shop sacred Rudraksha, gemstones, and spiritual products by Pandit Deepak Goutam in Ujjain for peace, prosperity, and Kaal Sarp solutions.",
-    images: [
-      {
-        url: "/images/store-banner.jpg",
-        width: 800,
-        height: 600,
-        alt: "Pandit Deepak Goutam Store - Rudraksha and Gemstones",
-      },
-    ],
-    url: "https://www.ujjainkalsarp.com/store",
-    type: "website",
-  },
-};
+
 
 // Structured Data for Store (Schema.org)
 const storeSchema = {
@@ -60,7 +35,7 @@ const Store = () => {
 
       <Breadcrumb
         pageName="Spiritual Store"
-        description="Explore sacred Rudraksha, gemstones, and spiritual items at Pandit Deepak Goutam’s store in Ujjain. Find divine products for peace, prosperity, and Kaal Sarp Dosha Nivaran."
+        description="Rudraksha Store "
       />
 
       <StorePage />
