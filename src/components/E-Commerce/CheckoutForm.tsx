@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CreditCard, Wallet, Loader2 } from "lucide-react";
+import Image from "next/image"; // Added Next.js Image import
 import { Product } from "@/types/product";
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
@@ -112,14 +113,14 @@ export default function CheckoutForm({
       total,
     };
     setOrderDetails(orderData);
-    setStep(3); // Move to order details step
+    setStep(3);
   };
 
   const handleConfirmOrder = async () => {
     try {
       setIsLoading(true);
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Rudrak's Order Details:", orderDetails);
+      console.log("Rudrak\'s Order Details:", orderDetails);
       toast.success("Order placed successfully!");
       onClose();
     } catch (error) {
@@ -156,15 +157,16 @@ export default function CheckoutForm({
       >
         <div className="w-1/3 bg-gray-50 p-6 hidden md:block overflow-y-auto">
           <h2 id="checkout-title" className="text-lg font-semibold text-maroon mb-4">
-            Rudrak's Order Summary
+            Rudrak&apos;s Order Summary
           </h2>
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <img
+              <Image
                 src={product.image || "/placeholder-image.jpg"}
                 alt={product.name}
-                className="w-16 h-16 object-cover rounded-md"
-                loading="lazy"
+                width={64}
+                height={64}
+                className="object-cover rounded-md"
               />
               <div>
                 <h3 className="font-medium line-clamp-2">{product.name}</h3>
@@ -225,7 +227,7 @@ export default function CheckoutForm({
               {step === 1 && (
                 <motion.div key="step1" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="space-y-6">
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-maroon">Rudrak's Shipping Address</h3>
+                    <h3 className="text-lg font-semibold text-maroon">Rudrak&apos;s Shipping Address</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name *</label>
@@ -274,7 +276,7 @@ export default function CheckoutForm({
 
               {step === 2 && (
                 <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
-                  <h3 className="text-lg font-semibold text-maroon">Rudrak's Payment Method</h3>
+                  <h3 className="text-lg font-semibold text-maroon">Rudrak&apos;s Payment Method</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       { value: "cod", label: "Cash on Delivery", icon: Wallet, desc: "Pay when you receive" },
@@ -299,7 +301,7 @@ export default function CheckoutForm({
                     </motion.button>
                     <motion.button whileHover={{ scale: isLoading ? 1 : 1.02 }} whileTap={{ scale: isLoading ? 1 : 0.98 }} type="submit" disabled={isLoading} className="w-full bg-[#800000] text-black py-3 rounded-lg hover:bg-maroon/90 disabled:bg-maroon/50 disabled:cursor-not-allowed transition-all focus:outline-none focus:ring-2 focus:ring-maroon focus:ring-offset-2 flex items-center justify-center">
                       {isLoading ? <Loader2 className="animate-spin mr-2" size={20} /> : null}
-                      {isLoading ? "Processing..." : "Place Rudrak's Order"}
+                      {isLoading ? "Processing..." : "Place Rudrak\'s Order"}
                     </motion.button>
                   </div>
                 </motion.div>
@@ -314,10 +316,9 @@ export default function CheckoutForm({
                 className="space-y-6"
               >
                 <h3 className="text-xl font-bold text-[#800000] border-b-2 border-[#800000] pb-2">
-                  Rudrak's Order Invoice
+                  Rudrak&apos;s Order Invoice
                 </h3>
                 <div className="bg-gray-100 p-6 rounded-lg shadow-md border border-green-200">
-                  {/* Header */}
                   <div className="flex justify-between items-center mb-6">
                     <div>
                       <p className="text-sm font-semibold text-green-700">Order ID: #{orderDetails.productId}</p>
@@ -329,7 +330,6 @@ export default function CheckoutForm({
                     </div>
                   </div>
 
-                  {/* Shipping Info */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-white p-4 rounded-md border border-green-300">
                       <h4 className="text-sm font-semibold text-[#800000] mb-2">Shipping To:</h4>
@@ -348,7 +348,6 @@ export default function CheckoutForm({
                     </div>
                   </div>
 
-                  {/* Order Items Table */}
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-[#800000] mb-2">Order Details:</h4>
                     <div className="overflow-x-auto">
@@ -375,7 +374,6 @@ export default function CheckoutForm({
                     </div>
                   </div>
 
-                  {/* Total Summary */}
                   <div className="flex justify-end">
                     <div className="w-full md:w-1/2">
                       <div className="bg-white p-4 rounded-lg shadow-sm border border-green-300">
@@ -396,7 +394,6 @@ export default function CheckoutForm({
                   </div>
                 </div>
 
-                {/* Buttons */}
                 <div className="flex space-x-4">
                   <motion.button
                     whileHover={{ scale: isLoading ? 1 : 1.02 }}
