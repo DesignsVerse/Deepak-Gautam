@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import productData from "@/data/product/products.json";
 import SingleProduct from "@/components/E-Commerce/SingleProduct";
 
-const StorePage = () => {
+// Create a separate component for the search params logic
+const StoreContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -106,13 +107,13 @@ const StorePage = () => {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)} // Removed setCurrentPage(1)
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products..."
               className="w-full md:w-1/3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-saffron"
             />
             <select
               value={filterCategory}
-              onChange={(e) => setFilterCategory(e.target.value)} // Removed setCurrentPage(1)
+              onChange={(e) => setFilterCategory(e.target.value)}
               className="w-full md:w-1/4 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-saffron"
             >
               {categories.map((category) => (
@@ -123,7 +124,7 @@ const StorePage = () => {
             </select>
             <select
               value={sortOption}
-              onChange={(e) => setSortOption(e.target.value)} // Removed setCurrentPage(1)
+              onChange={(e) => setSortOption(e.target.value)}
               className="w-full md:w-1/4 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-saffron"
             >
               <option value="default">Sort By: Default</option>
@@ -185,6 +186,14 @@ const StorePage = () => {
         </div>
       </section>
     </>
+  );
+};
+
+const StorePage = () => {
+  return (
+    <Suspense fallback={<div>Loading store...</div>}>
+      <StoreContent />
+    </Suspense>
   );
 };
 
