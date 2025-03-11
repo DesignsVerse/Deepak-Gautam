@@ -15,10 +15,11 @@ const menuData: Menu[] = [
   },
   {
     id: 3,
-    title: "Gallery",
-    path: "/gallery",
+    title: "Rudraksha",
+    path: "/E-commerce",
     newTab: false,
   },
+  
   {
     id: 4,
     title: "Blog",
@@ -27,10 +28,11 @@ const menuData: Menu[] = [
   },
   {
     id: 5,
-    title: "Rudraksha",
-    path: "/E-commerce",
+    title: "Gallery",
+    path: "/gallery",
     newTab: false,
   },
+  
   {
     id: 6,
     title: "Contact",

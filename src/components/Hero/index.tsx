@@ -29,10 +29,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full mt-[120px] md:mt-[75px] md:h-[547px] flex items-center justify-center md:px-12 bg-[#FDF7F4] overflow-hidden">
+    <section className="relative w-full mt-[90px] pt-8 md:mt-[75px] md:h-[547px] flex items-center justify-center md:px-12 bg-[#fff2eb] md:bg-[#fff2eb] overflow-hidden">
       {/* White Container */}
       <motion.div
-        className="relative flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 bg-white backdrop-blur-lg max-w-6xl w-full md:rounded-2xl md:shadow-2xl overflow-hidden md:h-[400px] sm:px-8 md:px-12 py-8 sm:py-10 md:py-12"
+        className="relative flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10  bg-[#fff2eb] md:bg-white backdrop-blur-lg max-w-6xl w-full md:rounded-2xl md:shadow-2xl overflow-hidden md:h-[400px] sm:px-8 md:px-12 py-8 sm:py-10 md:py-12"
       >
         {/* Image Section */}
         <div className="relative flex justify-center items-center w-full md:w-1/2">

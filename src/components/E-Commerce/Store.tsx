@@ -138,7 +138,7 @@ const StoreContent = () => {
               {currentProducts.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/product/${product.id}`}
+                  href={`/E-commerce/${product.id}`}
                   className="w-full"
                 >
                   <div className="w-full rounded-2xl transform transition-transform hover:scale-105 shadow-lg">

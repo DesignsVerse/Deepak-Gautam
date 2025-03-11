@@ -42,6 +42,11 @@ export default function Footer() {
             <h2 className="text-xl font-bold mb-4">Important Links</h2>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/E-commerce" className="hover:text-orange-400 transition-colors">
+                  Rudraksha
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-orange-400 transition-colors">
                   Blog
                 </Link>
@@ -221,11 +226,11 @@ export default function Footer() {
             {/* Policies and Social Media */}
             <div className="text-center md:text-right">
               <p className="mb-4 space-x-4">
-                <Link href="/" className="hover:text-orange-400">Help</Link>
+                <Link href="/help" className="hover:text-orange-400">Help</Link>
                 <span>|</span>
-                <Link href="/" className="hover:text-orange-400">Terms & Services</Link>
+                <Link href="/Terms-&-Services" className="hover:text-orange-400">Terms & Services</Link>
                 <span>|</span>
-                <Link href="/" className="hover:text-orange-400">Privacy Policy</Link>
+                <Link href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</Link>
                 
               </p>
               <p>© {new Date().getFullYear()} <strong>DesignsVerse</strong>. All Rights Reserved.</p>
