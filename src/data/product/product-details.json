@@ -25,7 +25,12 @@
         "comment": "This Rudraksha brought wisdom and clarity!"
       }
     ],
-    "relatedIds": [2, 3, 4, 5]
+    "relatedIds": [
+      2,
+      3,
+      4,
+      5
+    ]
   },
   {
     "id": 2,
@@ -51,7 +56,11 @@
         "comment": "Perfect for emotional balance!"
       }
     ],
-    "relatedIds": [1, 3, 6]
+    "relatedIds": [
+      1,
+      3,
+      6
+    ]
   },
   {
     "id": 3,
@@ -70,7 +79,11 @@
     "rashi": "Singh",
     "description": "This 1 Mukhi Rudraksha is ideal for Singh Rashi, boosting leadership and confidence.",
     "reviews": [],
-    "relatedIds": [1, 2, 7]
+    "relatedIds": [
+      1,
+      2,
+      7
+    ]
   },
   {
     "id": 4,
@@ -89,7 +102,11 @@
     "rashi": "Kanya",
     "description": "This 4 Mukhi Rudraksha suits Kanya Rashi, improving analytical skills.",
     "reviews": [],
-    "relatedIds": [1, 2, 5]
+    "relatedIds": [
+      1,
+      2,
+      5
+    ]
   },
   {
     "id": 5,
@@ -108,7 +125,11 @@
     "category": "Rashi Rudraksha",
     "description": "This 6 Mukhi Rudraksha is great for Tula Rashi, promoting harmony and balance.",
     "reviews": [],
-    "relatedIds": [1, 3, 6]
+    "relatedIds": [
+      1,
+      3,
+      6
+    ]
   },
   {
     "id": 6,
@@ -127,7 +148,11 @@
     "category": "Rashi Rudraksha",
     "description": "A 3 Mukhi Rudraksha to enhance spiritual power for Vrishchik Rashi.",
     "reviews": [],
-    "relatedIds": [1, 2, 7]
+    "relatedIds": [
+      1,
+      2,
+      7
+    ]
   },
   {
     "id": 7,
@@ -146,7 +171,11 @@
     "category": "Rashi Rudraksha",
     "description": "This 5 Mukhi Rudraksha provides wisdom and spiritual growth for Dhanu Rashi.",
     "reviews": [],
-    "relatedIds": [1, 2, 6]
+    "relatedIds": [
+      1,
+      2,
+      6
+    ]
   },
   {
     "id": 8,
@@ -165,7 +194,11 @@
     "category": "Rashi Rudraksha",
     "description": "This 7 Mukhi Rudraksha is ideal for Makar Rashi, boosting financial stability.",
     "reviews": [],
-    "relatedIds": [1, 3, 5]
+    "relatedIds": [
+      1,
+      3,
+      5
+    ]
   },
   {
     "id": 9,
@@ -184,7 +217,11 @@
     "category": "Rashi Rudraksha",
     "description": "This 7 Mukhi Rudraksha is for Kumbh Rashi, increasing intuition and insight.",
     "reviews": [],
-    "relatedIds": [2, 4, 6]
+    "relatedIds": [
+      2,
+      4,
+      6
+    ]
   },
   {
     "id": 10,
@@ -203,7 +240,11 @@
     "category": "Rashi Rudraksha",
     "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
     "reviews": [],
-    "relatedIds": [1, 3, 5]
+    "relatedIds": [
+      1,
+      3,
+      5
+    ]
   },
   {
     "id": 11,
@@ -222,7 +263,11 @@
     "category": "Rashi Rudraksha",
     "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
     "reviews": [],
-    "relatedIds": [1, 3, 5]
+    "relatedIds": [
+      1,
+      3,
+      5
+    ]
   },
   {
     "id": 12,
@@ -241,464 +286,538 @@
     "category": "Rashi Rudraksha",
     "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
     "reviews": [],
-    "relatedIds": [1, 3, 5]
+    "relatedIds": [
+      1,
+      3,
+      5
+    ]
   },
-    {
-      "id": 13,
-      "name": "1 Mukhi Rudraksha",
-      "image": "/images/puja/11.webp",
-      "images": [
-        "/images/rudraksha-1face-1.jpg",
-        "/images/rudraksha-1face-2.jpg"
-      ],
-      "price": 1500.00,
-      "originalPrice": 2500.00,
-      "discount": 40,
-      "rating": 4.8,
-      "faces": 1,
-      "rashi": "Mesh",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 1 Mukhi Rudraksha is perfect for Mesh Rashi, enhancing leadership and spiritual growth.",
-      "reviews": [],
-      "relatedIds": [14, 15]
-    },
-    {
-      "id": 14,
-      "name": "2 Mukhi Rudraksha",
-      "image": "/images/puja/12.webp",
-      "images": [
-        "/images/rudraksha-2face-1.jpg",
-        "/images/rudraksha-2face-2.jpg"
-      ],
-      "price": 800.00,
-      "originalPrice": 1200.00,
-      "discount": 33,
-      "rating": 4.5,
-      "faces": 2,
-      "rashi": "Mithun",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 2 Mukhi Rudraksha suits Mithun Rashi, promoting harmony and emotional balance.",
-      "reviews": [],
-      "relatedIds": [13, 16]
-    },
-    {
-      "id": 15,
-      "name": "3 Mukhi Rudraksha",
-      "image": "/images/puja/13.webp",
-      "images": [
-        "/images/rudraksha-3face-1.jpg",
-        "/images/rudraksha-3face-2.jpg"
-      ],
-      "price": 900.00,
-      "originalPrice": 1500.00,
-      "discount": 40,
-      "rating": 4.7,
-      "faces": 3,
-      "rashi": "Karka",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 3 Mukhi Rudraksha is perfect for Karka Rashi, aiding in overcoming past karma and boosting confidence.",
-      "reviews": [],
-      "relatedIds": [14, 17]
-    },
-    {
-      "id": 16,
-      "name": "4 Mukhi Rudraksha",
-      "image": "/images/puja/14.webp",
-      "images": [
-        "/images/rudraksha-4face-1.jpg",
-        "/images/rudraksha-4face-2.jpg"
-      ],
-      "price": 700.00,
-      "originalPrice": 1000.00,
-      "discount": 30,
-      "rating": 4.4,
-      "faces": 4,
-      "rashi": "Simha",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 4 Mukhi Rudraksha benefits Simha Rashi, enhancing intellect and creativity.",
-      "reviews": [],
-      "relatedIds": [15, 18]
-    },
-    {
-      "id": 17,
-      "name": "5 Mukhi Rudraksha",
-      "image": "/images/puja/15.webp",
-      "images": [
-        "/images/rudraksha-5face-1.jpg",
-        "/images/rudraksha-5face-2.jpg"
-      ],
-      "price": 660.00,
-      "originalPrice": 1100.00,
-      "discount": 40,
-      "rating": 4.6,
-      "faces": 5,
-      "rashi": "Kanya",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 5 Mukhi Rudraksha is ideal for Kanya Rashi, fostering peace and health.",
-      "reviews": [],
-      "relatedIds": [16, 19]
-    },
-    {
-      "id": 18,
-      "name": "6 Mukhi Rudraksha",
-      "image": "/images/puja/16.webp",
-      "images": [
-        "/images/rudraksha-6face-1.jpg",
-        "/images/rudraksha-6face-2.jpg"
-      ],
-      "price": 850.00,
-      "originalPrice": 1300.00,
-      "discount": 35,
-      "rating": 4.5,
-      "faces": 6,
-      "rashi": "Tula",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 6 Mukhi Rudraksha suits Tula Rashi, improving willpower and grounding energy.",
-      "reviews": [],
-      "relatedIds": [17, 20]
-    },
-    {
-      "id": 19,
-      "name": "7 Mukhi Rudraksha",
-      "image": "/images/puja/17.webp",
-      "images": [
-        "/images/rudraksha-7face-1.jpg",
-        "/images/rudraksha-7face-2.jpg"
-      ],
-      "price": 1200.00,
-      "originalPrice": 2000.00,
-      "discount": 40,
-      "rating": 4.7,
-      "faces": 7,
-      "rashi": "Vrishchika",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 7 Mukhi Rudraksha is great for Vrishchika Rashi, attracting wealth and removing negativity.",
-      "reviews": [],
-      "relatedIds": [18, 21]
-    },
-    {
-      "id": 20,
-      "name": "8 Mukhi Rudraksha",
-      "image": "/images/puja/18.webp",
-      "images": [
-        "/images/rudraksha-8face-1.jpg",
-        "/images/rudraksha-8face-2.jpg"
-      ],
-      "price": 1800.00,
-      "originalPrice": 3000.00,
-      "discount": 40,
-      "rating": 4.8,
-      "faces": 8,
-      "rashi": "Dhanu",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 8 Mukhi Rudraksha benefits Dhanu Rashi, removing obstacles and enhancing wisdom.",
-      "reviews": [],
-      "relatedIds": [19, 22]
-    },
-    {
-      "id": 21,
-      "name": "9 Mukhi Rudraksha",
-      "image": "/images/puja/19.webp",
-      "images": [
-        "/images/rudraksha-9face-1.jpg",
-        "/images/rudraksha-9face-2.jpg"
-      ],
-      "price": 2500.00,
-      "originalPrice": 4000.00,
-      "discount": 37,
-      "rating": 4.9,
-      "faces": 9,
-      "rashi": "Makara",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 9 Mukhi Rudraksha is perfect for Makara Rashi, boosting energy and courage.",
-      "reviews": [],
-      "relatedIds": [20, 23]
-    },
-    {
-      "id": 22,
-      "name": "10 Mukhi Rudraksha",
-      "image": "/images/puja/20.webp",
-      "images": [
-        "/images/rudraksha-10face-1.jpg",
-        "/images/rudraksha-10face-2.jpg"
-      ],
-      "price": 3000.00,
-      "originalPrice": 5000.00,
-      "discount": 40,
-      "rating": 4.8,
-      "faces": 10,
-      "rashi": "Kumbha",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 10 Mukhi Rudraksha suits Kumbha Rashi, offering protection from negative energies.",
-      "reviews": [],
-      "relatedIds": [21, 24]
-    },
-    {
-      "id": 23,
-      "name": "11 Mukhi Rudraksha",
-      "image": "/images/puja/21.webp",
-      "images": [
-        "/images/rudraksha-11face-1.jpg",
-        "/images/rudraksha-11face-2.jpg"
-      ],
-      "price": 3500.00,
-      "originalPrice": 6000.00,
-      "discount": 42,
-      "rating": 4.9,
-      "faces": 11,
-      "rashi": "Meen",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 11 Mukhi Rudraksha is ideal for Meen Rashi, enhancing intuition and spiritual awareness.",
-      "reviews": [],
-      "relatedIds": [22, 25]
-    },
-    {
-      "id": 24,
-      "name": "12 Mukhi Rudraksha",
-      "image": "/images/puja/22.webp",
-      "images": [
-        "/images/rudraksha-12face-1.jpg",
-        "/images/rudraksha-12face-2.jpg"
-      ],
-      "price": 4000.00,
-      "originalPrice": 7000.00,
-      "discount": 43,
-      "rating": 4.7,
-      "faces": 12,
-      "rashi": "Mesh",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 12 Mukhi Rudraksha benefits Mesh Rashi, improving leadership and vitality.",
-      "reviews": [],
-      "relatedIds": [23, 26]
-    },
-    {
-      "id": 25,
-      "name": "13 Mukhi Rudraksha",
-      "image": "/images/puja/23.webp",
-      "images": [
-        "/images/rudraksha-13face-1.jpg",
-        "/images/rudraksha-13face-2.jpg"
-      ],
-      "price": 5000.00,
-      "originalPrice": 8500.00,
-      "discount": 41,
-      "rating": 4.9,
-      "faces": 13,
-      "rashi": "Vrishabha",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 13 Mukhi Rudraksha suits Vrishabha Rashi, attracting love and material success.",
-      "reviews": [],
-      "relatedIds": [24, 26]
-    },
-    {
-      "id": 26,
-      "name": "14 Mukhi Rudraksha",
-      "image": "/images/puja/24.webp",
-      "images": [
-        "/images/rudraksha-14face-1.jpg",
-        "/images/rudraksha-14face-2.jpg"
-      ],
-      "price": 6000.00,
-      "originalPrice": 10000.00,
-      "discount": 40,
-      "rating": 5.0,
-      "faces": 14,
-      "rashi": "Mithun",
-      "category": "1 to 14 Mukhi Rudraksha",
-      "description": "This 14 Mukhi Rudraksha is perfect for Mithun Rashi, enhancing intuition and divine connection.",
-      "reviews": [],
-      "relatedIds": [25, 13]
-    },
-      {
-        "id": 27,
-        "name": "Child-Related Problems & Miscarriage Issues - Garbh Gauri Rudraksha",
-        "image": "/images/puja/27.webp",
-        "images": [
-          "/images/rudraksha-garbh-gauri-1.jpg",
-          "/images/rudraksha-garbh-gauri-2.jpg"
-        ],
-        "price": 2000.00,
-        "originalPrice": 3500.00,
-        "discount": 43,
-        "rating": 4.7,
-        "faces": null,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This Garbh Gauri Rudraksha is ideal for child-related problems and miscarriage issues, blessing couples with fertility and protection.",
-        "reviews": [],
-        "relatedIds": [28, 34]
-      },
-      {
-        "id": 28,
-        "name": "Mangal Dosha and Property-Related Work - 3 Mukhi Rudraksha",
-        "image": "/images/puja/28.webp",
-        "images": [
-          "/images/rudraksha-3face-1.jpg",
-          "/images/rudraksha-3face-2.jpg"
-        ],
-        "price": 900.00,
-        "originalPrice": 1500.00,
-        "discount": 40,
-        "rating": 4.7,
-        "faces": 3,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 3 Mukhi Rudraksha helps with Mangal Dosha and property-related work, reducing anger and enhancing stability.",
-        "reviews": [],
-        "relatedIds": [27, 29]
-      },
-      {
-        "id": 29,
-        "name": "Shani Sade Sati and Dhaiya - 7 Mukhi Rudraksha",
-        "image": "/images/puja/29.webp",
-        "images": [
-          "/images/rudraksha-7face-1.jpg",
-          "/images/rudraksha-7face-2.jpg"
-        ],
-        "price": 1200.00,
-        "originalPrice": 2000.00,
-        "discount": 40,
-        "rating": 4.7,
-        "faces": 7,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 7 Mukhi Rudraksha is perfect for Shani Sade Sati and Dhaiya, bringing prosperity and reducing Saturn’s malefic effects.",
-        "reviews": [],
-        "relatedIds": [28, 30]
-      },
-      {
-        "id": 30,
-        "name": "Kaal Sarp Dosha and Rahu Pacification - 8 Mukhi Rudraksha",
-        "image": "/images/puja/30.webp",
-        "images": [
-          "/images/rudraksha-8face-1.jpg",
-          "/images/rudraksha-8face-2.jpg"
-        ],
-        "price": 1800.00,
-        "originalPrice": 3000.00,
-        "discount": 40,
-        "rating": 4.8,
-        "faces": 8,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 8 Mukhi Rudraksha pacifies Kaal Sarp Dosha and Rahu, removing obstacles and enhancing wisdom.",
-        "reviews": [],
-        "relatedIds": [29, 31]
-      },
-      {
-        "id": 31,
-        "name": "Ketu Pacification - 9 Mukhi Rudraksha",
-        "image": "/images/puja/31.webp",
-        "images": [
-          "/images/rudraksha-9face-1.jpg",
-          "/images/rudraksha-9face-2.jpg"
-        ],
-        "price": 2500.00,
-        "originalPrice": 4000.00,
-        "discount": 37,
-        "rating": 4.9,
-        "faces": 9,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 9 Mukhi Rudraksha pacifies Ketu, boosting energy and protecting against negative influences.",
-        "reviews": [],
-        "relatedIds": [30, 32]
-      },
-      {
-        "id": 32,
-        "name": "Obstacles in Education - 6 Mukhi Rudraksha",
-        "image": "/images/puja/32.webp",
-        "images": [
-          "/images/rudraksha-6face-1.jpg",
-          "/images/rudraksha-6face-2.jpg"
-        ],
-        "price": 850.00,
-        "originalPrice": 1300.00,
-        "discount": 35,
-        "rating": 4.5,
-        "faces": 6,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 6 Mukhi Rudraksha removes obstacles in education, enhancing focus and willpower.",
-        "reviews": [],
-        "relatedIds": [31, 33]
-      },
-      {
-        "id": 33,
-        "name": "Health-Related Problems - 5 Mukhi Rudraksha",
-        "image": "/images/puja/33.webp",
-        "images": [
-          "/images/rudraksha-5face-1.jpg",
-          "/images/rudraksha-5face-2.jpg"
-        ],
-        "price": 660.00,
-        "originalPrice": 1100.00,
-        "discount": 40,
-        "rating": 4.6,
-        "faces": 5,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 5 Mukhi Rudraksha aids in health-related problems, promoting physical and mental well-being.",
-        "reviews": [],
-        "relatedIds": [32, 34]
-      },
-      {
-        "id": 34,
-        "name": "Career Growth and Obstacle Removal - Ganesh Rudraksha",
-        "image": "/images/puja/34.webp",
-        "images": [
-          "/images/rudraksha-ganesh-1.jpg",
-          "/images/rudraksha-ganesh-2.jpg"
-        ],
-        "price": 1500.00,
-        "originalPrice": 2500.00,
-        "discount": 40,
-        "rating": 4.6,
-        "faces": null,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This Ganesh Rudraksha supports career growth and obstacle removal, invoking Lord Ganesha’s blessings.",
-        "reviews": [],
-        "relatedIds": [33, 35]
-      },
-      {
-        "id": 35,
-        "name": "Husband-Wife Disputes and Marriage Issues - Gauri Shankar Rudraksha",
-        "image": "/images/puja/35.webp",
-        "images": [
-          "/images/rudraksha-gauri-shankar-1.jpg",
-          "/images/rudraksha-gauri-shankar-2.jpg"
-        ],
-        "price": 3000.00,
-        "originalPrice": 5000.00,
-        "discount": 40,
-        "rating": 4.8,
-        "faces": null,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This Gauri Shankar Rudraksha resolves husband-wife disputes and marriage issues, fostering unity and love.",
-        "reviews": [],
-        "relatedIds": [34, 36]
-      },
-      {
-        "id": 36,
-        "name": "Happy Married Life - 2 Mukhi Rudraksha",
-        "image": "/images/puja/36.webp",
-        "images": [
-          "/images/rudraksha-2face-1.jpg",
-          "/images/rudraksha-2face-2.jpg"
-        ],
-        "price": 800.00,
-        "originalPrice": 1200.00,
-        "discount": 33,
-        "rating": 4.5,
-        "faces": 2,
-        "rashi": "All",
-        "category": "Rudraksha for Specific Problems",
-        "description": "This 2 Mukhi Rudraksha ensures a happy married life, promoting harmony and emotional balance.",
-        "reviews": [],
-        "relatedIds": [35, 27]
-      }
-    
-  
+  {
+    "id": 13,
+    "name": "1 Mukhi Rudraksha",
+    "image": "/images/puja/11.webp",
+    "images": [
+      "/images/rudraksha-1face-1.jpg",
+      "/images/rudraksha-1face-2.jpg"
+    ],
+    "price": 1500.00,
+    "originalPrice": 2500.00,
+    "discount": 40,
+    "rating": 4.8,
+    "faces": 1,
+    "rashi": "Mesh",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 1 Mukhi Rudraksha is perfect for Mesh Rashi, enhancing leadership and spiritual growth.",
+    "reviews": [],
+    "relatedIds": [
+      14,
+      15
+    ]
+  },
+  {
+    "id": 14,
+    "name": "2 Mukhi Rudraksha",
+    "image": "/images/puja/12.webp",
+    "images": [
+      "/images/rudraksha-2face-1.jpg",
+      "/images/rudraksha-2face-2.jpg"
+    ],
+    "price": 800.00,
+    "originalPrice": 1200.00,
+    "discount": 33,
+    "rating": 4.5,
+    "faces": 2,
+    "rashi": "Mithun",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 2 Mukhi Rudraksha suits Mithun Rashi, promoting harmony and emotional balance.",
+    "reviews": [],
+    "relatedIds": [
+      13,
+      16
+    ]
+  },
+  {
+    "id": 15,
+    "name": "3 Mukhi Rudraksha",
+    "image": "/images/puja/13.webp",
+    "images": [
+      "/images/rudraksha-3face-1.jpg",
+      "/images/rudraksha-3face-2.jpg"
+    ],
+    "price": 900.00,
+    "originalPrice": 1500.00,
+    "discount": 40,
+    "rating": 4.7,
+    "faces": 3,
+    "rashi": "Karka",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 3 Mukhi Rudraksha is perfect for Karka Rashi, aiding in overcoming past karma and boosting confidence.",
+    "reviews": [],
+    "relatedIds": [
+      14,
+      17
+    ]
+  },
+  {
+    "id": 16,
+    "name": "4 Mukhi Rudraksha",
+    "image": "/images/puja/14.webp",
+    "images": [
+      "/images/rudraksha-4face-1.jpg",
+      "/images/rudraksha-4face-2.jpg"
+    ],
+    "price": 700.00,
+    "originalPrice": 1000.00,
+    "discount": 30,
+    "rating": 4.4,
+    "faces": 4,
+    "rashi": "Simha",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 4 Mukhi Rudraksha benefits Simha Rashi, enhancing intellect and creativity.",
+    "reviews": [],
+    "relatedIds": [
+      15,
+      18
+    ]
+  },
+  {
+    "id": 17,
+    "name": "5 Mukhi Rudraksha",
+    "image": "/images/puja/15.webp",
+    "images": [
+      "/images/rudraksha-5face-1.jpg",
+      "/images/rudraksha-5face-2.jpg"
+    ],
+    "price": 660.00,
+    "originalPrice": 1100.00,
+    "discount": 40,
+    "rating": 4.6,
+    "faces": 5,
+    "rashi": "Kanya",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 5 Mukhi Rudraksha is ideal for Kanya Rashi, fostering peace and health.",
+    "reviews": [],
+    "relatedIds": [
+      16,
+      19
+    ]
+  },
+  {
+    "id": 18,
+    "name": "6 Mukhi Rudraksha",
+    "image": "/images/puja/16.webp",
+    "images": [
+      "/images/rudraksha-6face-1.jpg",
+      "/images/rudraksha-6face-2.jpg"
+    ],
+    "price": 850.00,
+    "originalPrice": 1300.00,
+    "discount": 35,
+    "rating": 4.5,
+    "faces": 6,
+    "rashi": "Tula",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 6 Mukhi Rudraksha suits Tula Rashi, improving willpower and grounding energy.",
+    "reviews": [],
+    "relatedIds": [
+      17,
+      20
+    ]
+  },
+  {
+    "id": 19,
+    "name": "7 Mukhi Rudraksha",
+    "image": "/images/puja/17.webp",
+    "images": [
+      "/images/rudraksha-7face-1.jpg",
+      "/images/rudraksha-7face-2.jpg"
+    ],
+    "price": 1200.00,
+    "originalPrice": 2000.00,
+    "discount": 40,
+    "rating": 4.7,
+    "faces": 7,
+    "rashi": "Vrishchika",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 7 Mukhi Rudraksha is great for Vrishchika Rashi, attracting wealth and removing negativity.",
+    "reviews": [],
+    "relatedIds": [
+      18,
+      21
+    ]
+  },
+  {
+    "id": 20,
+    "name": "8 Mukhi Rudraksha",
+    "image": "/images/puja/18.webp",
+    "images": [
+      "/images/rudraksha-8face-1.jpg",
+      "/images/rudraksha-8face-2.jpg"
+    ],
+    "price": 1800.00,
+    "originalPrice": 3000.00,
+    "discount": 40,
+    "rating": 4.8,
+    "faces": 8,
+    "rashi": "Dhanu",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 8 Mukhi Rudraksha benefits Dhanu Rashi, removing obstacles and enhancing wisdom.",
+    "reviews": [],
+    "relatedIds": [
+      19,
+      22
+    ]
+  },
+  {
+    "id": 21,
+    "name": "9 Mukhi Rudraksha",
+    "image": "/images/puja/19.webp",
+    "images": [
+      "/images/rudraksha-9face-1.jpg",
+      "/images/rudraksha-9face-2.jpg"
+    ],
+    "price": 2500.00,
+    "originalPrice": 4000.00,
+    "discount": 37,
+    "rating": 4.9,
+    "faces": 9,
+    "rashi": "Makara",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 9 Mukhi Rudraksha is perfect for Makara Rashi, boosting energy and courage.",
+    "reviews": [],
+    "relatedIds": [
+      20,
+      23
+    ]
+  },
+  {
+    "id": 22,
+    "name": "10 Mukhi Rudraksha",
+    "image": "/images/puja/20.webp",
+    "images": [
+      "/images/rudraksha-10face-1.jpg",
+      "/images/rudraksha-10face-2.jpg"
+    ],
+    "price": 3000.00,
+    "originalPrice": 5000.00,
+    "discount": 40,
+    "rating": 4.8,
+    "faces": 10,
+    "rashi": "Kumbha",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 10 Mukhi Rudraksha suits Kumbha Rashi, offering protection from negative energies.",
+    "reviews": [],
+    "relatedIds": [
+      21,
+      24
+    ]
+  },
+  {
+    "id": 23,
+    "name": "11 Mukhi Rudraksha",
+    "image": "/images/puja/21.webp",
+    "images": [
+      "/images/rudraksha-11face-1.jpg",
+      "/images/rudraksha-11face-2.jpg"
+    ],
+    "price": 3500.00,
+    "originalPrice": 6000.00,
+    "discount": 42,
+    "rating": 4.9,
+    "faces": 11,
+    "rashi": "Meen",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 11 Mukhi Rudraksha is ideal for Meen Rashi, enhancing intuition and spiritual awareness.",
+    "reviews": [],
+    "relatedIds": [
+      22,
+      25
+    ]
+  },
+  {
+    "id": 24,
+    "name": "12 Mukhi Rudraksha",
+    "image": "/images/puja/22.webp",
+    "images": [
+      "/images/rudraksha-12face-1.jpg",
+      "/images/rudraksha-12face-2.jpg"
+    ],
+    "price": 4000.00,
+    "originalPrice": 7000.00,
+    "discount": 43,
+    "rating": 4.7,
+    "faces": 12,
+    "rashi": "Mesh",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 12 Mukhi Rudraksha benefits Mesh Rashi, improving leadership and vitality.",
+    "reviews": [],
+    "relatedIds": [
+      23,
+      26
+    ]
+  },
+  {
+    "id": 25,
+    "name": "13 Mukhi Rudraksha",
+    "image": "/images/puja/23.webp",
+    "images": [
+      "/images/rudraksha-13face-1.jpg",
+      "/images/rudraksha-13face-2.jpg"
+    ],
+    "price": 5000.00,
+    "originalPrice": 8500.00,
+    "discount": 41,
+    "rating": 4.9,
+    "faces": 13,
+    "rashi": "Vrishabha",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 13 Mukhi Rudraksha suits Vrishabha Rashi, attracting love and material success.",
+    "reviews": [],
+    "relatedIds": [
+      24,
+      26
+    ]
+  },
+  {
+    "id": 26,
+    "name": "14 Mukhi Rudraksha",
+    "image": "/images/puja/24.webp",
+    "images": [
+      "/images/rudraksha-14face-1.jpg",
+      "/images/rudraksha-14face-2.jpg"
+    ],
+    "price": 6000.00,
+    "originalPrice": 10000.00,
+    "discount": 40,
+    "rating": 5.0,
+    "faces": 14,
+    "rashi": "Mithun",
+    "category": "1 to 14 Mukhi Rudraksha",
+    "description": "This 14 Mukhi Rudraksha is perfect for Mithun Rashi, enhancing intuition and divine connection.",
+    "reviews": [],
+    "relatedIds": [
+      25,
+      13
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Child-Related Problems & Miscarriage Issues - Garbh Gauri Rudraksha",
+    "image": "/images/puja/27.webp",
+    "images": [
+      "/images/rudraksha-garbh-gauri-1.jpg",
+      "/images/rudraksha-garbh-gauri-2.jpg"
+    ],
+    "price": 2000.00,
+    "originalPrice": 3500.00,
+    "discount": 43,
+    "rating": 4.7,
+    "faces": null,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This Garbh Gauri Rudraksha is ideal for child-related problems and miscarriage issues, blessing couples with fertility and protection.",
+    "reviews": [],
+    "relatedIds": [
+      28,
+      34
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Mangal Dosha and Property-Related Work - 3 Mukhi Rudraksha",
+    "image": "/images/puja/28.webp",
+    "images": [
+      "/images/rudraksha-3face-1.jpg",
+      "/images/rudraksha-3face-2.jpg"
+    ],
+    "price": 900.00,
+    "originalPrice": 1500.00,
+    "discount": 40,
+    "rating": 4.7,
+    "faces": 3,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 3 Mukhi Rudraksha helps with Mangal Dosha and property-related work, reducing anger and enhancing stability.",
+    "reviews": [],
+    "relatedIds": [
+      27,
+      29
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Shani Sade Sati and Dhaiya - 7 Mukhi Rudraksha",
+    "image": "/images/puja/29.webp",
+    "images": [
+      "/images/rudraksha-7face-1.jpg",
+      "/images/rudraksha-7face-2.jpg"
+    ],
+    "price": 1200.00,
+    "originalPrice": 2000.00,
+    "discount": 40,
+    "rating": 4.7,
+    "faces": 7,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 7 Mukhi Rudraksha is perfect for Shani Sade Sati and Dhaiya, bringing prosperity and reducing Saturn’s malefic effects.",
+    "reviews": [],
+    "relatedIds": [
+      28,
+      30
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Kaal Sarp Dosha and Rahu Pacification - 8 Mukhi Rudraksha",
+    "image": "/images/puja/30.webp",
+    "images": [
+      "/images/rudraksha-8face-1.jpg",
+      "/images/rudraksha-8face-2.jpg"
+    ],
+    "price": 1800.00,
+    "originalPrice": 3000.00,
+    "discount": 40,
+    "rating": 4.8,
+    "faces": 8,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 8 Mukhi Rudraksha pacifies Kaal Sarp Dosha and Rahu, removing obstacles and enhancing wisdom.",
+    "reviews": [],
+    "relatedIds": [
+      29,
+      31
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Ketu Pacification - 9 Mukhi Rudraksha",
+    "image": "/images/puja/31.webp",
+    "images": [
+      "/images/rudraksha-9face-1.jpg",
+      "/images/rudraksha-9face-2.jpg"
+    ],
+    "price": 2500.00,
+    "originalPrice": 4000.00,
+    "discount": 37,
+    "rating": 4.9,
+    "faces": 9,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 9 Mukhi Rudraksha pacifies Ketu, boosting energy and protecting against negative influences.",
+    "reviews": [],
+    "relatedIds": [
+      30,
+      32
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Obstacles in Education - 6 Mukhi Rudraksha",
+    "image": "/images/puja/32.webp",
+    "images": [
+      "/images/rudraksha-6face-1.jpg",
+      "/images/rudraksha-6face-2.jpg"
+    ],
+    "price": 850.00,
+    "originalPrice": 1300.00,
+    "discount": 35,
+    "rating": 4.5,
+    "faces": 6,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 6 Mukhi Rudraksha removes obstacles in education, enhancing focus and willpower.",
+    "reviews": [],
+    "relatedIds": [
+      31,
+      33
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Health-Related Problems - 5 Mukhi Rudraksha",
+    "image": "/images/puja/33.webp",
+    "images": [
+      "/images/rudraksha-5face-1.jpg",
+      "/images/rudraksha-5face-2.jpg"
+    ],
+    "price": 660.00,
+    "originalPrice": 1100.00,
+    "discount": 40,
+    "rating": 4.6,
+    "faces": 5,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 5 Mukhi Rudraksha aids in health-related problems, promoting physical and mental well-being.",
+    "reviews": [],
+    "relatedIds": [
+      32,
+      34
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Career Growth and Obstacle Removal - Ganesh Rudraksha",
+    "image": "/images/puja/34.webp",
+    "images": [
+      "/images/rudraksha-ganesh-1.jpg",
+      "/images/rudraksha-ganesh-2.jpg"
+    ],
+    "price": 1500.00,
+    "originalPrice": 2500.00,
+    "discount": 40,
+    "rating": 4.6,
+    "faces": null,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This Ganesh Rudraksha supports career growth and obstacle removal, invoking Lord Ganesha’s blessings.",
+    "reviews": [],
+    "relatedIds": [
+      33,
+      35
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Husband-Wife Disputes and Marriage Issues - Gauri Shankar Rudraksha",
+    "image": "/images/puja/35.webp",
+    "images": [
+      "/images/rudraksha-gauri-shankar-1.jpg",
+      "/images/rudraksha-gauri-shankar-2.jpg"
+    ],
+    "price": 3000.00,
+    "originalPrice": 5000.00,
+    "discount": 40,
+    "rating": 4.8,
+    "faces": null,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This Gauri Shankar Rudraksha resolves husband-wife disputes and marriage issues, fostering unity and love.",
+    "reviews": [],
+    "relatedIds": [
+      34,
+      36
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Happy Married Life - 2 Mukhi Rudraksha",
+    "image": "/images/puja/36.webp",
+    "images": [
+      "/images/rudraksha-2face-1.jpg",
+      "/images/rudraksha-2face-2.jpg"
+    ],
+    "price": 800.00,
+    "originalPrice": 1200.00,
+    "discount": 33,
+    "rating": 4.5,
+    "faces": 2,
+    "rashi": "All",
+    "category": "Rudraksha for Specific Problems",
+    "description": "This 2 Mukhi Rudraksha ensures a happy married life, promoting harmony and emotional balance.",
+    "reviews": [],
+    "relatedIds": [
+      35,
+      27
+    ]
+  }
 ]

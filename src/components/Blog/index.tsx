@@ -14,20 +14,26 @@ const Blog = () => {
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "बगलामुखी मंदिर न्यूज़",
-      "description": "बगलामुखी माता से जुड़ी नवीनतम खबरें और विशेष रिपोर्ट्स।",
+      "name": "Pandit Deepak Gautam - Kaal Sarp Dosh Remedies",
+      "description": "Latest updates and rituals by Pandit Deepak Gautam .",
       "url": "https://yourwebsite.com/blog",
-      "blogPost": blogData.slice(0, 3).map((blog) => ({ // Limit to 3 in schema too
+      "publisher": {
+        "@type": "Person",
+        "name": "Pandit Deepak Gautam",
+        "description": "Renowned astrologer specializing in Kaal Sarp Dosh remedies in Ujjain."
+      },
+      "blogPost": blogData.slice(0, 3).map((blog) => ({
         "@type": "BlogPosting",
-        "headline": blog.title,
-        "datePublished": blog.publishDate || "December 01, 2024",
+        "headline": `${blog.title} - Kaal Sarp Puja Ujjain`,
+        "datePublished": blog.publishDate || "March 12, 2025",
         "author": {
           "@type": "Person",
-          "name": blog.author
+          "name": "Pandit Deepak Gautam"
         },
+        "keywords": "Kaal Sarp Puja Ujjain, Ujjain Kaal Sarp Dosh, Kaal Sarp Dosh",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `https://yourwebsite.com/blog/${blog.id}`
+          "@id": `https://ujjainkalsarp.com/blog/${blog.id}`
         }
       }))
     });
@@ -45,10 +51,10 @@ const Blog = () => {
   return (
     <section id="blog" className="bg-[#FDF7F4] py-10 md:py-14 lg:py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* SEO-Friendly Section Title */}
+        {/* SEO-Optimized Section Title */}
         <SectionTitle
-          title="Kaal Sarp Dosh se jude anushthan ki latest jankari"
-          paragraph="Latest news aur dharmik updates ke liye hamare News Section ko visit karein."
+          title="Latest Spiritual & Astrological Updates by Pandit Deepak Gautam"
+          paragraph="Explore the latest news and rituals for Kaal Sarp Dosh remedies in Ujjain by renowned astrologer Pandit Deepak Gautam."
           center
         />
 
@@ -66,14 +72,14 @@ const Blog = () => {
               ))}
             </div>
 
-            {/* View More Button with SEO Optimization */}
+            {/* SEO-Optimized View More Button */}
             <div className="flex justify-center mt-8">
-              <Link 
+              <Link
                 href="/blog"
                 className="bg-[#800000] text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-500 transition-all duration-300 hover:scale-105"
-                aria-label="Read more articles on माँ बगलामुखी मंदिर न्यूज़"
+                aria-label="Read more about Kaal Sarp Puja Ujjain by Pandit Deepak Gautam"
               >
-                View More
+                Explore More 
               </Link>
             </div>
           </div>
