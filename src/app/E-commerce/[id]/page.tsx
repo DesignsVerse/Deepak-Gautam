@@ -207,15 +207,19 @@
                     )}
                   </div>
                   <div className="flex items-center mb-4">
+                    {/* Golden Star Icons */}
                     <span className="text-yellow-500 flex">
                       {Array.from({ length: Math.floor(product.rating) }, (_, i) => (
-                        <Star key={i} size={20} fill="currentColor" />
+                        <Star key={i} size={20} fill="gold" className="text-yellow-500" />
                       ))}
                     </span>
-                    <span className="ml-2 text-gray-600">
+                    
+                    {/* Reviews Count */}
+                    {/* <span className="ml-2 text-gray-600 text-sm">
                       ({product.reviews?.length || 0} customer review{product.reviews?.length === 1 ? "" : "s"})
-                    </span>
+                    </span> */}
                   </div>
+
                   <div className="mb-4">
                     <span className="text-2xl font-bold text-gold">
                       ₹{(product.price + priceAdjustment).toFixed(2)}

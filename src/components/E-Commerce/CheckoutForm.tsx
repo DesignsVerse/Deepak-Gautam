@@ -4,26 +4,11 @@ import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CreditCard, Wallet, Loader2 } from "lucide-react";
 import Image from "next/image";
+import { Product } from "@/types/product";
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image?: string;
-}
-
-interface CheckoutFormProps {
-  product: Product;
-  quantity: number;
-  selectedQuality: string;
-  priceAdjustment: number;
-  isOpen: boolean;
-  onClose: () => void;
-}
 
 const checkoutSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100),
@@ -39,6 +24,15 @@ const checkoutSchema = z.object({
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
+
+interface CheckoutFormProps {
+  product: Product;
+  quantity: number;
+  selectedQuality: string;
+  priceAdjustment: number;
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 export default function CheckoutForm({
   product,
@@ -145,41 +139,38 @@ export default function CheckoutForm({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black bg-opacity-60 flex items-start md:items-center justify-center z-50 p-2 sm:p-4 md:p-0 overflow-y-auto"
+      className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4"
       onClick={onClose}
       onKeyDown={handleKeyDown}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="checkout-title"
     >
       <motion.div
         initial={{ scale: 0.95, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 20 }}
-        className="bg-white rounded-xl w-full max-w-md sm:max-w-lg md:max-w-4xl relative shadow-2xl flex flex-col overflow-hidden max-h-[95vh] my-4 md:my-0"
+        className="bg-white rounded-2xl w-full max-w-lg md:max-w-4xl max-h-[90vh] overflow-y-auto relative flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Order Summary - Collapsible on Mobile */}
-        <div className="w-full bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
-          <h2 id="checkout-title" className="text-base sm:text-lg font-semibold text-maroon mb-3">
-            Order Summary
+        {/* Desktop Order Summary */}
+        <div className="hidden md:block md:w-1/3 bg-gray-50 p-6 overflow-y-auto">
+          <h2 className="text-lg font-semibold text-maroon mb-4">
+            Rudrak's Order Summary
           </h2>
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-4">
               <Image
                 src={product.image || "/placeholder-image.jpg"}
                 alt={product.name}
-                width={48}
-                height={48}
-                className="object-cover rounded-md flex-shrink-0"
+                width={64}
+                height={64}
+                className="object-cover rounded-md"
               />
-              <div className="flex-1 min-w-0">
-                <h3 className="font-medium line-clamp-2 text-xs sm:text-sm">{product.name}</h3>
-                <p className="text-xs text-gray-600">Quality: {selectedQuality}</p>
-                <p className="text-xs text-gray-600">Qty: {quantity}</p>
+              <div>
+                <h3 className="font-medium line-clamp-2">{product.name}</h3>
+                <p className="text-sm text-gray-600">Quality: {selectedQuality}</p>
+                <p className="text-sm text-gray-600">Qty: {quantity}</p>
               </div>
             </div>
-            <div className="space-y-1 text-xs sm:text-sm">
+            <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>₹{subtotal.toFixed(2)}</span>
@@ -188,7 +179,7 @@ export default function CheckoutForm({
                 <span>Shipping</span>
                 <span>₹{shipping.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between font-semibold pt-1 border-t">
+              <div className="flex justify-between font-semibold pt-2 border-t">
                 <span>Total</span>
                 <span>₹{total.toFixed(2)}</span>
               </div>
@@ -196,161 +187,136 @@ export default function CheckoutForm({
           </div>
         </div>
 
-        {/* Main Form Area */}
-        <div className="w-full p-4 sm:p-6 overflow-y-auto relative">
+        {/* Main Content */}
+        <div className="w-full md:w-2/3 p-4 md:p-6 relative">
           <button
             onClick={onClose}
-            className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-maroon rounded"
-            aria-label="Close checkout"
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
             disabled={isLoading}
           >
-            <X size={18} />
+            <X size={24} />
           </button>
 
-          {/* Progress Steps */}
-          <div className="flex justify-around mb-4 sm:mb-6">
-            {[
-              { num: 1, label: "Shipping" },
-              { num: 2, label: "Payment" },
-              { num: 3, label: "Review" },
-            ].map((s) => (
-              <div key={s.num} className="flex flex-col items-center">
-                <div
-                  className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs sm:text-sm ${
-                    step >= s.num ? "bg-maroon text-white" : "bg-gray-200 text-gray-600"
-                  }`}
-                >
-                  {s.num}
-                </div>
-                <span className={`mt-1 text-xs ${step >= s.num ? "text-maroon" : "text-gray-600"}`}>
-                  {s.label}
-                </span>
+          {/* Mobile Header */}
+          <div className="md:hidden border-b pb-2 mb-4">
+            <h2 className="text-lg font-bold text-maroon">
+              {step === 1 ? "Shipping" : step === 2 ? "Payment" : "Review"}
+            </h2>
+            <div className="flex items-center gap-3 mt-2">
+              <Image
+                src={product.image || "/placeholder-image.jpg"}
+                alt={product.name}
+                width={40}
+                height={40}
+                className="rounded-md object-cover"
+              />
+              <div className="flex-1">
+                <p className="text-sm font-medium">{product.name}</p>
+                <p className="text-xs text-gray-600">Qty: {quantity}</p>
               </div>
-            ))}
+              <p className="font-semibold text-sm">₹{total.toFixed(2)}</p>
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit(handleOrderPreview)} noValidate>
+          {/* Desktop Stepper */}
+          <div className="hidden md:flex items-center justify-center mb-6">
+            <div className="flex items-center">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 1 ? "bg-[#800000] text-white" : "bg-gray-200 text-gray-600"}`}>1</div>
+              <span className={`ml-2 ${step >= 1 ? "text-maroon" : "text-gray-600"}`}>Shipping</span>
+            </div>
+            <div className="w-16 h-1 bg-gray-200 mx-4">
+              <div className={`h-full ${step >= 2 ? "bg-maroon" : "bg-gray-200"}`} />
+            </div>
+            <div className="flex items-center">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 2 ? "bg-[#800000] text-white" : "bg-gray-200 text-gray-600"}`}>2</div>
+              <span className={`ml-2 ${step >= 2 ? "text-maroon" : "text-gray-600"}`}>Payment</span>
+            </div>
+            <div className="w-16 h-1 bg-gray-200 mx-4">
+              <div className={`h-full ${step === 3 ? "bg-maroon" : "bg-gray-200"}`} />
+            </div>
+            <div className="flex items-center">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 3 ? "bg-[#800000] text-white" : "bg-gray-200 text-gray-600"}`}>3</div>
+              <span className={`ml-2 ${step === 3 ? "text-maroon" : "text-gray-600"}`}>Review</span>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit(handleOrderPreview)}>
             <AnimatePresence mode="wait">
               {step === 1 && (
                 <motion.div
                   key="step1"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="space-y-3 sm:space-y-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="space-y-4"
                 >
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-maroon">
-                    Shipping Address
+                  <h3 className="text-lg font-semibold text-maroon md:block hidden">
+                    Rudrak's Shipping Address
                   </h3>
-                  <div className="space-y-2 sm:space-y-3">
-                    <div className="space-y-1">
-                      <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Full Name *
-                      </label>
+                  <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4">
+                    <div>
                       <input
-                        id="name"
                         {...register("name")}
-                        placeholder="Full Name"
-                        className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                          errors.name ? "border-red-500" : ""
-                        }`}
+                        placeholder="Full Name *"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.name ? "border-red-500" : ""}`}
                       />
                       {errors.name && <p className="text-red-500 text-xs">{errors.name.message}</p>}
                     </div>
-                    <div className="space-y-1">
-                      <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Phone Number *
-                      </label>
+                    <div>
                       <input
-                        id="phone"
                         {...register("phone")}
-                        placeholder="Phone Number"
-                        className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                          errors.phone ? "border-red-500" : ""
-                        }`}
+                        placeholder="Phone Number *"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.phone ? "border-red-500" : ""}`}
                       />
                       {errors.phone && <p className="text-red-500 text-xs">{errors.phone.message}</p>}
                     </div>
-                    <div className="space-y-1">
-                      <label htmlFor="address" className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Address *
-                      </label>
+                    <div className="md:col-span-2">
                       <input
-                        id="address"
                         {...register("address")}
-                        placeholder="Address"
-                        className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                          errors.address ? "border-red-500" : ""
-                        }`}
+                        placeholder="Address *"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.address ? "border-red-500" : ""}`}
                       />
                       {errors.address && <p className="text-red-500 text-xs">{errors.address.message}</p>}
                     </div>
-                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                      <div className="space-y-1">
-                        <label htmlFor="city" className="block text-xs sm:text-sm font-medium text-gray-700">
-                          City *
-                        </label>
-                        <input
-                          id="city"
-                          {...register("city")}
-                          placeholder="City"
-                          className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                            errors.city ? "border-red-500" : ""
-                          }`}
-                        />
-                        {errors.city && <p className="text-red-500 text-xs">{errors.city.message}</p>}
-                      </div>
-                      <div className="space-y-1">
-                        <label htmlFor="state" className="block text-xs sm:text-sm font-medium text-gray-700">
-                          State *
-                        </label>
-                        <input
-                          id="state"
-                          {...register("state")}
-                          placeholder="State"
-                          className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                            errors.state ? "border-red-500" : ""
-                          }`}
-                        />
-                        {errors.state && <p className="text-red-500 text-xs">{errors.state.message}</p>}
-                      </div>
-                      <div className="space-y-1 col-span-2">
-                        <label htmlFor="pincode" className="block text-xs sm:text-sm font-medium text-gray-700">
-                          Pincode *
-                        </label>
-                        <input
-                          id="pincode"
-                          {...register("pincode")}
-                          placeholder="Pincode"
-                          className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                            errors.pincode ? "border-red-500" : ""
-                          }`}
-                        />
-                        {errors.pincode && <p className="text-red-500 text-xs">{errors.pincode.message}</p>}
-                      </div>
-                    </div>
-                    <div className="space-y-1">
-                      <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Email (optional)
-                      </label>
+                    <div>
                       <input
-                        id="email"
+                        {...register("city")}
+                        placeholder="City *"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.city ? "border-red-500" : ""}`}
+                      />
+                      {errors.city && <p className="text-red-500 text-xs">{errors.city.message}</p>}
+                    </div>
+                    <div>
+                      <input
+                        {...register("state")}
+                        placeholder="State *"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.state ? "border-red-500" : ""}`}
+                      />
+                      {errors.state && <p className="text-red-500 text-xs">{errors.state.message}</p>}
+                    </div>
+                    <div>
+                      <input
+                        {...register("pincode")}
+                        placeholder="Pincode *"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.pincode ? "border-red-500" : ""}`}
+                      />
+                      {errors.pincode && <p className="text-red-500 text-xs">{errors.pincode.message}</p>}
+                    </div>
+                    <div className="md:col-span-2">
+                      <input
                         {...register("email")}
-                        placeholder="Email"
-                        className={`w-full p-2 sm:p-3 border rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-maroon focus:border-maroon ${
-                          errors.email ? "border-red-500" : ""
-                        }`}
+                        placeholder="Email (optional)"
+                        className={`w-full p-2 md:p-3 border rounded-md ${errors.email ? "border-red-500" : ""}`}
                       />
                       {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
                     </div>
                   </div>
                   <motion.button
-                    whileHover={{ scale: isLoading ? 1 : 1.02 }}
-                    whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                    whileTap={{ scale: 0.95 }}
                     type="button"
                     onClick={handleNext}
                     disabled={isLoading}
-                    className="w-full bg-[#800000] text-white py-2 sm:py-3 rounded-lg hover:bg-maroon/90 disabled:bg-maroon/50 text-sm sm:text-base"
+                    className="w-full bg-green-700 text-white py-3 rounded-md"
                   >
                     Proceed to Payment
                   </motion.button>
@@ -360,15 +326,15 @@ export default function CheckoutForm({
               {step === 2 && (
                 <motion.div
                   key="step2"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="space-y-3 sm:space-y-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="space-y-4"
                 >
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-maroon">
-                    Payment Method
+                  <h3 className="text-lg font-semibold text-maroon md:block hidden">
+                    Rudrak's Payment Method
                   </h3>
-                  <div className="grid grid-cols-1 gap-2 sm:gap-3">
+                  <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4">
                     {[
                       { value: "cod", label: "Cash on Delivery", icon: Wallet, desc: "Pay when you receive" },
                       { value: "card", label: "Credit/Debit Card", icon: CreditCard, desc: "Secure card payment" },
@@ -377,42 +343,42 @@ export default function CheckoutForm({
                     ].map((method) => (
                       <label
                         key={method.value}
-                        className={`flex items-center p-2 sm:p-3 border rounded-lg cursor-pointer hover:border-maroon transition-all ${
-                          paymentMethod === method.value ? "border-maroon bg-[#800000] text-white" : ""
+                        className={`flex items-center p-3 border rounded-md cursor-pointer ${
+                          paymentMethod === method.value ? "border-maroon bg-maroon/10" : ""
                         }`}
                       >
-                        <input type="radio" {...register("paymentMethod")} value={method.value} className="hidden" />
-                        <method.icon className="mr-2 text-maroon flex-shrink-0" size={18} />
-                        <div className="flex-1 min-w-0">
-                          <span className="font-medium text-xs sm:text-sm">{method.label}</span>
-                          <p className="text-xs text-gray-500 truncate">{method.desc}</p>
+                        <input
+                          type="radio"
+                          {...register("paymentMethod")}
+                          value={method.value}
+                          className="mr-2 md:hidden"
+                        />
+                        <method.icon size={20} className="mr-2 text-maroon" />
+                        <div>
+                          <span className="font-medium">{method.label}</span>
+                          <p className="text-xs text-gray-500 md:block hidden">{method.desc}</p>
                         </div>
                       </label>
                     ))}
                   </div>
-                  {errors.paymentMethod && (
-                    <p className="text-red-500 text-xs">{errors.paymentMethod.message}</p>
-                  )}
-                  <div className="flex flex-col space-y-2 sm:space-y-3 sm:flex-row  sm:space-x-3">
+                  {errors.paymentMethod && <p className="text-red-500 text-xs">{errors.paymentMethod.message}</p>}
+                  <div className="flex gap-3">
                     <motion.button
-                      whileHover={{ scale: isLoading ? 1 : 1.02 }}
-                      whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                      whileTap={{ scale: 0.95 }}
                       type="button"
                       onClick={() => setStep(1)}
                       disabled={isLoading}
-                      className="w-full bg-gray-100 text-gray-700 py-2 sm:py-3 rounded-lg hover:bg-gray-200 text-xs sm:text-sm"
+                      className="flex-1 bg-gray-200 py-3 rounded-md"
                     >
                       Back
                     </motion.button>
                     <motion.button
-                      whileHover={{ scale: isLoading ? 1 : 1.02 }}
-                      whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                      whileTap={{ scale: 0.95 }}
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-[#800000] text-white py-2 sm:py-3 rounded-lg hover:bg-maroon/90 disabled:bg-maroon/50 text-xs sm:text-sm flex items-center justify-center"
+                      className="flex-1 bg-green-700 text-white py-3 rounded-md flex items-center justify-center"
                     >
-                      {isLoading ? <Loader2 className="animate-spin mr-2" size={18} /> : null}
-                      {isLoading ? "Processing..." : "Place Order"}
+                      {isLoading ? <Loader2 className="animate-spin" size={20} /> : "Review Order"}
                     </motion.button>
                   </div>
                 </motion.div>
@@ -421,29 +387,28 @@ export default function CheckoutForm({
               {step === 3 && orderDetails && (
                 <motion.div
                   key="step3"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="space-y-3 sm:space-y-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="space-y-4"
                 >
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#800000] border-b-2 border-[#800000] pb-1">
-                    Order Invoice
+                  <h3 className="text-xl font-bold text-maroon border-b-2 border-maroon pb-2 md:block hidden">
+                    Rudrak's Order Invoice
                   </h3>
-                  <div className="bg-gray-100 p-3 sm:p-4 rounded-lg shadow-md border border-green-200 space-y-3">
-                    <div className="flex flex-col sm:flex-row justify-between items-start gap-2 text-xs sm:text-sm">
+                  <div className="space-y-4 md:bg-gray-100 md:p-6 md:rounded-lg md:border md:border-green-200">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
                       <div>
-                        <p className="font-semibold text-green-700">Order ID: #{orderDetails.productId}</p>
-                        <p className="text-gray-600">Date: {new Date().toLocaleDateString()}</p>
+                        <p className="text-sm font-semibold text-green-700">Order ID: #{orderDetails.productId}</p>
+                        <p className="text-xs text-gray-600">Date: {new Date().toLocaleDateString()}</p>
                       </div>
-                      <div className="text-left sm:text-right">
-                        <p className="font-semibold text-green-700">xAI Store</p>
-                        <p className="text-gray-600">support@xai.com</p>
+                      <div className="text-left md:text-right mt-2 md:mt-0">
+                        <p className="text-sm font-semibold text-green-700">xAI Store</p>
+                        <p className="text-xs text-gray-600">support@xai.com</p>
                       </div>
                     </div>
-
-                    <div className="space-y-2">
-                      <div className="bg-white p-2 sm:p-3 rounded-md border border-green-300 text-xs sm:text-sm">
-                        <h4 className="font-semibold text-[#800000] mb-1">Shipping To:</h4>
+                    <div className="space-y-3 md:grid md:grid-cols-2 md:gap-6">
+                      <div className="md:bg-white md:p-4 md:rounded-md md:border md:border-green-300">
+                        <p className="font-semibold text-maroon">Shipping To:</p>
                         <p>{orderDetails.name}</p>
                         <p>
                           {orderDetails.address}, {orderDetails.city}, {orderDetails.state} -{" "}
@@ -452,75 +417,76 @@ export default function CheckoutForm({
                         <p>Phone: {orderDetails.phone}</p>
                         {orderDetails.email && <p>Email: {orderDetails.email}</p>}
                       </div>
-                      <div className="bg-white p-2 sm:p-3 rounded-md border border-green-300 text-xs sm:text-sm">
-                        <h4 className="font-semibold text-[#800000] mb-1">Payment Method:</h4>
+                      <div className="md:bg-white md:p-4 md:rounded-md md:border md:border-green-300">
+                        <p className="font-semibold text-maroon">Payment Method:</p>
                         <p>{orderDetails.paymentMethod.toUpperCase()}</p>
                       </div>
                     </div>
-
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-semibold text-[#800000] mb-1">Order Details:</h4>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-xs sm:text-sm text-gray-800 border-collapse">
+                    <div className="md:mb-6">
+                      <p className="font-semibold text-maroon md:mb-2">Order Details:</p>
+                      <div className="overflow-x-auto md:block hidden">
+                        <table className="w-full text-sm text-gray-800 border-collapse">
                           <thead>
-                            <tr className="bg-[#800000] text-white">
-                              <th className="py-1 px-2 text-left rounded-tl-lg">Item</th>
-                              <th className="py-1 px-2 text-left">Quality</th>
-                              <th className="py-1 px-2 text-center">Qty</th>
-                              <th className="py-1 px-2 text-right rounded-tr-lg">Total</th>
+                            <tr className="bg-maroon text-white">
+                              <th className="py-2 px-4 text-left rounded-tl-lg">Item</th>
+                              <th className="py-2 px-4 text-left">Quality</th>
+                              <th className="py-2 px-4 text-center">Qty</th>
+                              <th className="py-2 px-4 text-right">Price</th>
+                              <th className="py-2 px-4 text-right rounded-tr-lg">Total</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr className="border-b border-green-200 hover:bg-green-50">
-                              <td className="py-2 px-2">{orderDetails.productName}</td>
-                              <td className="py-2 px-2">{orderDetails.selectedQuality}</td>
-                              <td className="py-2 px-2 text-center">{orderDetails.quantity}</td>
-                              <td className="py-2 px-2 text-right font-medium text-green-700">
+                              <td className="py-3 px-4">{orderDetails.productName}</td>
+                              <td className="py-3 px-4">{orderDetails.selectedQuality}</td>
+                              <td className="py-3 px-4 text-center">{orderDetails.quantity}</td>
+                              <td className="py-3 px-4 text-right">₹{orderDetails.adjustedPrice.toFixed(2)}</td>
+                              <td className="py-3 px-4 text-right font-medium text-green-700">
                                 ₹{orderDetails.subtotal.toFixed(2)}
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                      <div className="md:hidden">
+                        <p>{orderDetails.productName}</p>
+                        <p>Quality: {orderDetails.selectedQuality}</p>
+                        <p>Qty: {orderDetails.quantity}</p>
+                      </div>
                     </div>
-
-                    <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm border border-green-300 text-xs sm:text-sm">
-                      <div className="flex justify-between py-1">
+                    <div className="border-t pt-2">
+                      <div className="flex justify-between">
                         <span>Subtotal:</span>
                         <span>₹{orderDetails.subtotal.toFixed(2)}</span>
                       </div>
-                      <div className="flex justify-between py-1 border-t border-green-200">
+                      <div className="flex justify-between">
                         <span>Shipping:</span>
                         <span>₹{orderDetails.shipping.toFixed(2)}</span>
                       </div>
-                      <div className="flex justify-between py-1 text-sm sm:text-base font-semibold text-[#800000] border-t border-green-200">
+                      <div className="flex justify-between font-semibold text-maroon">
                         <span>Total:</span>
-                        <span className="text-green-700">₹{orderDetails.total.toFixed(2)}</span>
+                        <span>₹{orderDetails.total.toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
-
-                  <div className="flex flex-col space-y-2 sm:space-y-3 sm:flex-row  sm:space-x-3">
+                  <div className="flex gap-3">
                     <motion.button
-                      whileHover={{ scale: isLoading ? 1 : 1.02 }}
-                      whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                      whileTap={{ scale: 0.95 }}
                       type="button"
                       onClick={() => setStep(2)}
                       disabled={isLoading}
-                      className="w-full bg-gray-200 text-gray-700 py-2 sm:py-3 rounded-lg hover:bg-gray-300 text-xs sm:text-sm"
+                      className="flex-1 bg-gray-200 py-3 rounded-md"
                     >
                       Back
                     </motion.button>
                     <motion.button
-                      whileHover={{ scale: isLoading ? 1 : 1.02 }}
-                      whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                      whileTap={{ scale: 0.95 }}
                       type="button"
                       onClick={handleConfirmOrder}
                       disabled={isLoading}
-                      className="w-full bg-[#800000] text-white py-2 sm:py-3 rounded-lg hover:bg-[#600000] disabled:bg-[#800000]/50 text-xs sm:text-sm flex items-center justify-center"
+                      className="flex-1 bg-green-700 text-white py-3 rounded-md flex items-center justify-center"
                     >
-                      {isLoading ? <Loader2 className="animate-spin mr-2" size={18} /> : null}
-                      {isLoading ? "Processing..." : "Confirm & Pay"}
+                      {isLoading ? <Loader2 className="animate-spin" size={20} /> : "Confirm Order"}
                     </motion.button>
                   </div>
                 </motion.div>

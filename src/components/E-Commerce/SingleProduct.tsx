@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import productDetailsData from "@/data/product/product-details.json";
 import { Product } from "@/types/product";
+import { Star } from "lucide-react";
+
 
 const SingleProduct = ({ id }: { id: string }) => {
   const product = productDetailsData.find((p) => p.id.toString() === id) as Product | undefined;
@@ -65,12 +67,17 @@ const SingleProduct = ({ id }: { id: string }) => {
 
         {/* Rating and Reviews */}
         <div className="flex justify-center items-center mt-2 text-yellow-500">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className={i < rating ? "text-yellow-500" : "text-gray-300"}>
-              ★
+        <span className="flex">
+              {Array.from({ length: 5 }, (_, i) => (
+                <Star
+                  key={i}
+                  size={16}
+                  fill={i < product.rating ? "gold" : "gray"}
+                  className={i < product.rating ? "text-yellow-500" : "text-gray-300"}
+                />
+              ))}
             </span>
-          ))}
-          <span className=" text-[8px] md:text-sm text-gray-600 ml-1">({reviews} Reviews)</span>
+          {/* <span className=" text-[8px] md:text-sm text-gray-600 ml-1">({reviews} Reviews)</span> */}
         </div>
 
         {/* Pricing */}

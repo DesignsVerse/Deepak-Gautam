@@ -6,11 +6,25 @@
     "price": 600.00,
     "originalPrice": 1000.00,
     "discount": 40,
-    "rating": 4.5,
+    "rating": 5,
     "faces": 6,
     "category": "Rashi Rudraksha",
     "rashi": "Vrishabha",
     "description": "This 6 Mukhi Rudraksha is ideal for Vrishabha Rashi, bringing peace and prosperity."
+    ,"reviews": [
+      {
+        "id": 1,
+        "user": "Priya S.",
+        "rating": 5,
+        "comment": "This Rudraksha brought wisdom and clarity!"
+      },
+      {
+        "id": 2,
+        "user": "Priya S.",
+        "rating": 5,
+        "comment": "This Rudraksha brought wisdom and clarity!"
+      }
+    ]
   },
   {
     "id": 2,
@@ -20,6 +34,7 @@
     "originalPrice": 1200.00,
     "discount": 33,
     "rating": 4.7,
+    "reviews":5,
     "faces": 3,
     "category": "Rashi Rudraksha",
     "rashi": "Mesh",
