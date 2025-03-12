@@ -16,11 +16,7 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(initialPage);
 
   const blogsPerPage = 12;
-  const totalPages = Math.max(1, Math.ceil(blogData.length / blogsPerPage));
-
-  useEffect(() => {
-    setCurrentPage(Math.min(Math.max(1, initialPage), totalPages));
-  }, [initialPage, totalPages]);
+  const totalPages = Math.max(1, Math.ceil(blogData.length / blogsPerPage))
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
