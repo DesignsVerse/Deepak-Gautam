@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
 interface Product {
-  id: string;
+  id: number;
   name: string;
   price: number;
   image?: string;
