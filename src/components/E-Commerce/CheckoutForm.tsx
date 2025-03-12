@@ -393,7 +393,7 @@ export default function CheckoutForm({
                   {errors.paymentMethod && (
                     <p className="text-red-500 text-xs">{errors.paymentMethod.message}</p>
                   )}
-                  <div className="flex flex-col space-y-2 sm:space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+                  <div className="flex flex-col space-y-2 sm:space-y-3 sm:flex-row  sm:space-x-3">
                     <motion.button
                       whileHover={{ scale: isLoading ? 1 : 1.02 }}
                       whileTap={{ scale: isLoading ? 1 : 0.98 }}
@@ -500,7 +500,7 @@ export default function CheckoutForm({
                     </div>
                   </div>
 
-                  <div className="flex flex-col space-y-2 sm:space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+                  <div className="flex flex-col space-y-2 sm:space-y-3 sm:flex-row  sm:space-x-3">
                     <motion.button
                       whileHover={{ scale: isLoading ? 1 : 1.02 }}
                       whileTap={{ scale: isLoading ? 1 : 0.98 }}
