@@ -88,13 +88,13 @@ const Header = () => {
                     {menuItem.title}
                   </Link>
                 ))}
-                <button
+                {/* <button
                   onClick={() => setLanguage(language === "HI" ? "EN" : "HI")}
                   className="font-bold px-4 py-2 transition-all duration-300 
                     bg-[#800000] text-white hover:bg-[#FF9933] hover:scale-105"
                 >
                   {language === "EN" ? "🇺🇸 English" : "🇮🇳 हिंदी"}
-                </button>
+                </button> */}
               </div>
             </nav>
           </div>
