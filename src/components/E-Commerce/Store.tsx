@@ -7,12 +7,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 import productData from "@/data/product/products.json";
 import SingleProduct from "@/components/E-Commerce/SingleProduct";
 
-// Create a separate component for the search params logic
 const StoreContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // Get initial values from URL or use defaults
   const initialPage = parseInt(searchParams.get("page") || "1", 10);
   const initialSort = searchParams.get("sort") || "default";
   const initialCategory = searchParams.get("category") || "all";
@@ -24,7 +22,6 @@ const StoreContent = () => {
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const productsPerPage = 12;
 
-  // Update URL when any state changes
   useEffect(() => {
     const params = new URLSearchParams();
     params.set("page", currentPage.toString());
@@ -34,7 +31,6 @@ const StoreContent = () => {
     router.push(`?${params.toString()}`, { scroll: false });
   }, [currentPage, sortOption, filterCategory, searchQuery, router]);
 
-  // Filter and sort products
   const filteredProducts = productData
     .filter((product) => {
       const matchesCategory = filterCategory === "all" || product.category === filterCategory;
@@ -49,7 +45,6 @@ const StoreContent = () => {
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / productsPerPage));
 
-  // Adjust page if it exceeds total pages
   useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(Math.max(1, totalPages));
@@ -93,12 +88,9 @@ const StoreContent = () => {
         <title>Store - Deepak Gautam Panditji</title>
         <meta
           name="description"
-          content="Explore sacred Rudraksha, gemstones, and spiritual items at Deepak Gautam Panditji’s store. Find divine products for peace, prosperity, and spiritual growth."
+          content="Explore sacred Rudraksha, gemstones, and spiritual items at Deepak Gautam Panditji’s store."
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
       <section className="pb-[120px] pt-[10px]">
@@ -135,17 +127,16 @@ const StoreContent = () => {
 
           {currentProducts.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-              {currentProducts.map((product) => (
-                <Link
-                  key={product.id}
-                  href={`/E-commerce/${product.id}`}
-                  className="w-full"
-                >
-                  <div className="w-full rounded-2xl transform transition-transform hover:scale-105 shadow-lg">
-                    <SingleProduct id={product.id.toString()} />
-                  </div>
-                </Link>
-              ))}
+              {currentProducts.map((product) => {
+                const slugifiedName = product.name.toLowerCase().replace(/\s+/g, "-");
+                return (
+                  <Link key={product.id} href={`/E-commerce/${slugifiedName}`} className="w-full">
+                    <div className="w-full rounded-2xl transform transition-transform hover:scale-105 shadow-lg">
+                      <SingleProduct id={product.id.toString()} />
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           ) : (
             <p className="text-center text-gray-500 mt-10">No products found matching your criteria.</p>
@@ -159,7 +150,7 @@ const StoreContent = () => {
                 className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
                 aria-label="Previous Page"
               >
-                &lt;
+                {"<"}
               </button>
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
@@ -179,7 +170,7 @@ const StoreContent = () => {
                 className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
                 aria-label="Next Page"
               >
-                &gt;
+                {">"}
               </button>
             </div>
           )}

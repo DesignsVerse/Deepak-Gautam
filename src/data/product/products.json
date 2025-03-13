@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Vrishabha Rashi 6 Mukhi Rudraksha",
+    "name": "Mithun Rashi Rudraksha 4 Face",
     "image": "/images/puja/1.webp",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -28,7 +28,7 @@
   },
   {
     "id": 2,
-    "name": "Mesh Rashi 3 Mukhi Rudraksha",
+    "name": "Kark Rashi Rudraksha 2 Face",
     "image": "/images/rudraksha-3face.jpg",
     "price": 900.00,
     "originalPrice": 1200.00,
@@ -42,7 +42,7 @@
   },
   {
     "id": 3,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Singh Rashi Rudraksha 1 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -55,7 +55,7 @@
   },
   {
     "id": 4,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Kanya Rashi Rudraksha 4 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -68,7 +68,7 @@
   },
   {
     "id": 5,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Tula Rashi Rudraksha 6 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -81,7 +81,7 @@
   },
   {
     "id": 6,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Tula Rashi Rudraksha 6 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -94,7 +94,7 @@
   },
   {
     "id": 7,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Dhanu Rashi Rudraksha 5 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -107,7 +107,7 @@
   },
   {
     "id": 8,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Makar Rashi Rudraksha 7 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -120,7 +120,7 @@
   },
   {
     "id": 9,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Kumbh Rashi Rudraksha 7 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
@@ -133,7 +133,7 @@
   },
   {
     "id": 10,
-    "name": "Mithun Rashi 4 Mukhi Rudraksha",
+    "name": "Meen Rashi Rudraksha 5 Face",
     "image": "/images/rudraksha-4face.jpg",
     "price": 600.00,
     "originalPrice": 1000.00,
