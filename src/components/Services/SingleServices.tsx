@@ -8,9 +8,8 @@ import Image from "next/image";
 
 const SingleServices = ({ services }: { services: Services }) => {
   const { id, title, paragraph, image } = services;
-  const slugifiedTitle = title.toLowerCase().replace(/\s+/g, "-");
-  console.log("Service Title:", title, "Slugified:", slugifiedTitle); // Debug slug
 
+  // Animation Variants
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -22,10 +21,11 @@ const SingleServices = ({ services }: { services: Services }) => {
     hover: { scale: 1.1, transition: { duration: 0.3, yoyo: Infinity } },
   };
 
+  // Function to handle call button click
   const handleCallClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    window.location.href = "tel:+919153164444";
+    e.preventDefault(); // Prevents any default navigation
+    e.stopPropagation(); // Stops event from bubbling up to parent Link
+    window.location.href = "tel:+919153164444"; // Forces the call action
   };
 
   return (
@@ -36,10 +36,11 @@ const SingleServices = ({ services }: { services: Services }) => {
       whileHover="hover"
       className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 p-6 text-center border-2 border-yellow-500"
     >
-      <Link href={`/services/${slugifiedTitle}`}>
+      {/* Service Image, Title, and Description wrapped in Link */}
+      <Link href={`/services/${id}`}>
         <div className="relative flex justify-center items-center mx-auto w-24 h-24">
           <motion.div
-            className="absolute w-24 h-24 rounded-full bg-gradient-to-r opacity-75"
+            className="absolute w-24 h-24 rounded-full bg-gradient-to-ropacity-75"
             animate={{ rotate: 360 }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           />
@@ -77,8 +78,10 @@ const SingleServices = ({ services }: { services: Services }) => {
         </motion.p>
       </Link>
 
+      {/* CTA Buttons Container */}
       <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3">
-        <Link href={`/services/${slugifiedTitle}`}>
+        {/* Service Button */}
+        <Link href={`/services/${id}`}>
           <motion.button
             variants={buttonVariants}
             initial="rest"
@@ -96,11 +99,12 @@ const SingleServices = ({ services }: { services: Services }) => {
           </motion.button>
         </Link>
 
+        {/* Call Now Button */}
         <motion.button
           variants={buttonVariants}
           initial="rest"
           whileHover="hover"
-          onClick={handleCallClick}
+          onClick={handleCallClick} // Custom handler for call
           className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md group w-full sm:w-auto"
         >
           <motion.span
@@ -114,6 +118,7 @@ const SingleServices = ({ services }: { services: Services }) => {
         </motion.button>
       </div>
 
+      {/* Cosmic Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <motion.div
