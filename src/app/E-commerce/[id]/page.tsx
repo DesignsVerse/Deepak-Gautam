@@ -107,10 +107,10 @@
     return (
       <>
         <Head>
-          <title>{`${product.name} - Deepak Gautam Panditji`}</title>
+          <title>{`${product.name} - Deepak GoutamPanditji`}</title>
           <meta
             name="description"
-            content={`Buy ${product.name} at Deepak Gautam Panditji's store. Ideal for ${product.rashi} Rashi, this sacred item brings peace and prosperity.`}
+            content={`Buy ${product.name} at Deepak GoutamPanditji's store. Ideal for ${product.rashi} Rashi, this sacred item brings peace and prosperity.`}
           />
           <script
             type="application/ld+json"

@@ -90,10 +90,10 @@ const StoreContent = () => {
   return (
     <>
       <Head>
-        <title>Store - Deepak Gautam Panditji</title>
+        <title>Store - Deepak GoutamPanditji</title>
         <meta
           name="description"
-          content="Explore sacred Rudraksha, gemstones, and spiritual items at Deepak Gautam Panditji’s store. Find divine products for peace, prosperity, and spiritual growth."
+          content="Explore sacred Rudraksha, gemstones, and spiritual items at Deepak GoutamPanditji’s store. Find divine products for peace, prosperity, and spiritual growth."
         />
         <script
           type="application/ld+json"

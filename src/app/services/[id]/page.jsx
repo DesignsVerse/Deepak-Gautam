@@ -12,9 +12,9 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${post.title} | Deepak Gautam - वेब डेवलपमेंट और डिजिटल मार्केटिंग विशेषज्ञ`,
+    title: `${post.title} | Deepak Goutam- वेब डेवलपमेंट और डिजिटल मार्केटिंग विशेषज्ञ`,
     description:
-      post.paragraph.slice(0, 150) + "..." || "Deepak Gautam से इस सेवा के बारे में और जानें।",
+      post.paragraph.slice(0, 150) + "..." || "Deepak Goutamसे इस सेवा के बारे में और जानें।",
     keywords: `${post.title}, Deepak Gautam, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, सेवा`,
     robots: "index, follow",
     authors: [{ name: "Deepak Gautam" }],
@@ -23,13 +23,13 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: `${post.title} | Deepak Gautam`,
-      description: post.paragraph.slice(0, 150) + "..." || "Deepak Gautam की विशेषज्ञ सेवा।",
+      description: post.paragraph.slice(0, 150) + "..." || "Deepak Goutamकी विशेषज्ञ सेवा।",
       images: [
         {
           url: post.image || "/images/default-service.jpg",
           width: 800,
           height: 400,
-          alt: `${post.title} - Deepak Gautam Service`,
+          alt: `${post.title} - Deepak GoutamService`,
         },
       ],
       url: `https://www.deepakgautam.com/services/${params.id}`,
@@ -101,7 +101,7 @@ export default async function ServicePost({ params }) {
               <div className="relative mt-6 w-full rounded-lg overflow-hidden">
                 <Image
                   src={post.image}
-                  alt={`${post.title} - Deepak Gautam की सेवा`}
+                  alt={`${post.title} - Deepak Goutamकी सेवा`}
                   width={800}
                   height={400}
                   className="w-full h-[400px] object-cover rounded-lg"

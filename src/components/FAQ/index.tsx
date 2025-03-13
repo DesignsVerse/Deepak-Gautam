@@ -65,7 +65,7 @@ const Faq = () => {
       id: 2,
       category: "Courses",
       question:
-        "Does Astro Deepak Gautam offer astrology courses on Kaal Sarp Dosh Nivaran?",
+        "Does Astro Deepak Goutam offer astrology courses on Kaal Sarp Dosh Nivaran?",
       answer:
         "Yes, we provide online astrology courses on Kaal Sarp Dosh Nivaran, Mangal Dosh remedies, and Grahan Dosh effects. Visit {link} to check the syllabus, duration, and enrollment steps.",
       link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
@@ -74,9 +74,9 @@ const Faq = () => {
     {
       id: 3,
       category: "Show",
-      question: "What is 'The Deepak Gautam Show' about?",
+      question: "What is 'The Deepak GoutamShow' about?",
       answer:
-        "The Deepak Gautam Show covers astrology, Vedic remedies, and personal growth. Topics include Kaal Sarp Dosh effects, Kundali analysis, Navgraha Dosh solutions, and powerful mantras for success.",
+        "The Deepak GoutamShow covers astrology, Vedic remedies, and personal growth. Topics include Kaal Sarp Dosh effects, Kundali analysis, Navgraha Dosh solutions, and powerful mantras for success.",
       link: "https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai",
       linkText: "",
     },
@@ -219,7 +219,7 @@ const Faq = () => {
   return (
     <section className="w-full mt-10 bg-[#FDF7F4] mb-10 max-w-5xl mx-auto p-4 sm:p-6 text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#800000] mb-6">
-        Frequently Asked Questions (FAQs) – Deepak Gautam Pandit
+        Frequently Asked Questions (FAQs) – Deepak GoutamPandit
       </h2>
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <input
