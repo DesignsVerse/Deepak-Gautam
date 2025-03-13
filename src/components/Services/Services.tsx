@@ -33,7 +33,7 @@ const ServiceSection = () => {
           key={service.id}
           className="rounded-2xl text-center transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5] p-8 shadow-md hover:shadow-lg"
         >
-          <Link href={`/service/${service.id}`} prefetch={false}>
+          <Link href={`/services/${service.id}`} prefetch={false}>
             <SingleService services={service} />
           </Link>
         </div>
@@ -49,7 +49,7 @@ const ServiceSection = () => {
           key={service.id}
           className="rounded-2xl text-center transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5] p-6 shadow-md hover:shadow-lg"
         >
-          <Link href={`/service/${service.id}`} prefetch={false}>
+          <Link href={`/services/${service.id}`} prefetch={false}>
             <SingleService services={service} />
           </Link>
         </div>

@@ -228,7 +228,7 @@ export default function Footer() {
               <p className="mb-4 space-x-4">
                 <Link href="/help" className="hover:text-orange-400">Help</Link>
                 <span>|</span>
-                <Link href="/Terms-&-Services" className="hover:text-orange-400">Terms & Services</Link>
+                <Link href="/Terms-Services" className="hover:text-orange-400">Terms & Services</Link>
                 <span>|</span>
                 <Link href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</Link>
                 

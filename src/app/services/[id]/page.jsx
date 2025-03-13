@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
     robots: "index, follow",
     authors: [{ name: "Deepak Gautam" }],
     alternates: {
-      canonical: `https://www.deepakgautam.com/services/${params.id}`,
+      canonical: `https://www.ujjainkalsarp.com/services/${params.id}`,
     },
     openGraph: {
       title: `${post.title} | Deepak Gautam`,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
           alt: `${post.title} - Deepak GoutamService`,
         },
       ],
-      url: `https://www.deepakgautam.com/services/${params.id}`,
+      url: `https://www.ujjainkalsarp.com/services/${params.id}`,
       type: "website",
     },
     
@@ -52,7 +52,7 @@ export default async function ServicePost({ params }) {
       "@type": "Person",
       name: "Deepak Gautam",
     },
-    url: `https://www.deepakgautam.com/services/${params.id}`,
+    url: `https://www.ujjainkalsarp.com/services/${params.id}`,
     image: post.image || "/images/default-service.jpg",
   };
 

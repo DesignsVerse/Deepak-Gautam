@@ -6,7 +6,7 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
 
 export default function Help() {
-  
+
   const [expandedSection, setExpandedSection] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSection, setActiveSection] = useState(null);
@@ -22,7 +22,7 @@ export default function Help() {
   const sections = [
     {
       id: 1,
-      title: '1. How do I get started with [Your App/Service Name]?',
+      title: '1. How do I get started with ?',
       content:
         'To get started, sign up on our website by providing your email and creating a password. Once registered, you can log in and explore the dashboard to access all features. Check out our quick-start guide in the app for step-by-step instructions!',
     },

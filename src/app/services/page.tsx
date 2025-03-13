@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   robots: "index, follow", // ✅ Kept as is
   authors: [{ name: "Pandit Deepak Goutam" }], // ✅ Kept as is
   alternates: {
-    canonical: "https://www.deepakgautam.com/services", // ✅ Unchanged
+    canonical: "https://www.ujjainkalsarp.com/services", // ✅ Unchanged
   },
   openGraph: {
     title: "Our Services - Pandit Deepak Goutam | Kaal Sarp Puja Ujjain",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         alt: "Pandit Deepak Goutam - Kaal Sarp Puja and Astrology Services",
       },
     ],
-    url: "https://www.deepakgautam.com/services", // ✅ Unchanged
+    url: "https://www.ujjainkalsarp.com/services", // ✅ Unchanged
     type: "website",
   },
 };
@@ -40,7 +40,7 @@ const ServicePage = () => {
     "provider": {
       "@type": "Person",
       "name": "Pandit Deepak Goutam",
-      "url": "https://www.deepakgautam.com/services",
+      "url": "https://www.ujjainkalsarp.com/services",
     },
     "name": "Our Services - Pandit Deepak Goutam",
     "description":
