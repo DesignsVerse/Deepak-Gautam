@@ -11,7 +11,6 @@ export default function Help() {
   const [activeSection, setActiveSection] = useState(null);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-  
   const sectionRefs = useRef([]);
 
   const toggleSection = (sectionId) => {
