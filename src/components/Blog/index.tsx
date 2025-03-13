@@ -14,8 +14,8 @@ const Blog = () => {
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "Pandit Deepak Gautam - Kaal Sarp Dosh Remedies",
-      "description": "Latest updates and rituals by Pandit Deepak Gautam .",
+      "name": "Pandit Deepak Goutam- Kaal Sarp Dosh Remedies",
+      "description": "Latest updates and rituals by Pandit Deepak Goutam.",
       "url": "https://yourwebsite.com/blog",
       "publisher": {
         "@type": "Person",

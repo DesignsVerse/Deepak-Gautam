@@ -14,7 +14,7 @@ import ProductList from "@/components/E-Commerce";
 
 // Optimized Metadata for SEO
 export const metadata: Metadata = {
-  title: "Pandit Deepak Goutam - Kaal Sarp Dosh Puja Specialist in Ujjain",
+  title: "Kaal Sarp Dosh Puja Ujjain | Astro Deepak Goutam | Ujjain",
   description:
     "Authentic Kaal Sarp Dosh Puja in Ujjain by Pandit Deepak Goutam. Expert Vedic rituals at Mahakaleshwar Temple for Kaal Sarp Dosha Nivaran and spiritual peace.",
   keywords:
@@ -47,7 +47,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Pandit Deepak Goutam - Kaal Sarp Puja Specialist",
-    url: "https://www.deepakgautam.com",
+    url: "https://www.ujjainkalsarp.com",
     description:
       "Official website of Pandit Deepak Goutam, expert in Kaal Sarp Dosh Puja and Vedic rituals in Ujjain at Mahakaleshwar Temple.",
     publisher: {

@@ -11,7 +11,7 @@ const Service = () => {
       <div className="max-w-screen-lx mx-auto">
         {/* SEO-Optimized Section Title */}
         <SectionTitle
-          title="🔱 Our Services | Astrology Solutions | Deepak Gautam Ji"
+          title="🔱 Our Services | Astrology Solutions | Deepak GoutamJi"
           paragraph="🌟Expert in Kundli Milan, Tantra Sadhana, Grah Dosh Nivaran, and Business Growth Remedies. Experience Kaal Sarp Dosh Puja in Ujjain for success. "
           center
         />
