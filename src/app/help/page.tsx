@@ -6,7 +6,6 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
 
 export default function Help() {
-  
   const [expandedSection, setExpandedSection] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSection, setActiveSection] = useState(null);
