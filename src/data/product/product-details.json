@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Mithun Rashi Rudraksha 4 Face",
-    "image": "/images/product/p-1.webp",
+    "image": "/images/store/rashi/1.png",
     "images": [
       "/images/product/p-1.webp",
       "/images/product/p-2.webp",
@@ -35,7 +35,7 @@
   {
     "id": 2,
     "name": "Kark Rashi Rudraksha 2 Face",
-    "image": "/images/puja/2.webp",
+    "image": "/images/store/rashi/2.png",
     "images": [
       "/images/rudraksha-2face-1.jpg",
       "/images/rudraksha-2face-2.jpg"
@@ -65,7 +65,7 @@
   {
     "id": 3,
     "name": "Singh Rashi Rudraksha 1 Face",
-    "image": "/images/product/p-3.webp",
+    "image": "/images/store/rashi/3.png",
     "images": [
       "/images/rudraksha-1face-1.jpg",
       "/images/rudraksha-1face-2.jpg"
@@ -249,7 +249,7 @@
   {
     "id": 11,
     "name": "Mesh Rashi Rudraksha 3 Face",
-    "image": "/images/puja/10.webp",
+    "image": "/images/store/rashi/11.png",
     "images": [
       "/images/rudraksha-5face-3.jpg",
       "/images/rudraksha-5face-4.jpg"
@@ -272,7 +272,7 @@
   {
     "id": 12,
     "name": "Vrishabha Rashi Rudraksha 6 Face",
-    "image": "/images/puja/10.webp",
+    "image": "/images/store/rashi/10.png",
     "images": [
       "/images/rudraksha-5face-3.jpg",
       "/images/rudraksha-5face-4.jpg"
