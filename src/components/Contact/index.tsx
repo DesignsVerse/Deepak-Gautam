@@ -114,7 +114,7 @@ const Contact = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-3xl font-bold text-[#800000] mb-4"
             >
-              Send Us a Message
+              <h2> Send Us a Message</h2>
             </motion.h1>
             <p className="text-gray-600 mb-6">Have any questions? Feel free to reach out to us.</p>
 

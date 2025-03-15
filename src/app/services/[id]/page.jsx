@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${post.title} | Deepak Goutam- वेब डेवलपमेंट और डिजिटल मार्केटिंग विशेषज्ञ`,
+    title: `${post.title} | Deepak Goutam - Ujjain`,
     description:
       post.paragraph.slice(0, 150) + "..." || "Deepak Goutamसे इस सेवा के बारे में और जानें।",
     keywords: `${post.title}, Deepak Gautam, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, सेवा`,
@@ -117,7 +117,7 @@ export default async function ServicePost({ params }) {
               {post.sections && post.sections.length > 0 ? (
                 post.sections.map((section, index) => (
                   <div key={index} className="mt-8">
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-">{section.heading}</h2>
+                    <p className="text-2xl font-semibold text-gray-900 mb-">{section.heading}</p>
                     <ReactMarkdown className="text-lg text-gray-700 leading-relaxed">
                       {section.content}
                     </ReactMarkdown>
@@ -127,9 +127,9 @@ export default async function ServicePost({ params }) {
                 <p className="text-center text-gray-500 mt-4">कोई अतिरिक्त सामग्री उपलब्ध नहीं।</p>
               )}
               {/* Moved paragraph to the end */}
-              <h1 className="text-xl font-bold mt-4 ">
+              <p className="mt-4 ">
                 {post.details?.finalHeading || "कोई शीर्षक उपलब्ध नहीं"}
-              </h1>
+              </p>
               <p className="text-lg mt-">{post.details?.finalParagraph || "कोई विवरण उपलब्ध नहीं"}</p>
             </div>
           </div>
