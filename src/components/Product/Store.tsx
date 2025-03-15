@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import productData from "@/data/product/products.json";
-import SingleProduct from "@/components/E-Commerce/SingleProduct";
+import SingleProduct from "@/components/Product/SingleProduct";
 
 // Create a separate component for the search params logic
 const StoreContent = () => {
@@ -138,7 +138,7 @@ const StoreContent = () => {
               {currentProducts.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/E-commerce/${product.id}`}
+                  href={`/product/${product.id}`}
                   className="w-full"
                 >
                   <div className="w-full rounded-2xl transform transition-transform hover:scale-105 shadow-lg">

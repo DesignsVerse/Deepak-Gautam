@@ -35,7 +35,7 @@ const SingleProduct = ({ id }: { id: string }) => {
     <div className="max-w-xs mx-auto bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 relative">
       {/* Product Image with Background */}
       <div className="relative">
-        <Link href={`/E-commerce/${product.id}`} className="block" aria-label={`View details for ${product.name}`}>
+        <Link href={`/product/${product.id}`} className="block" aria-label={`View details for ${product.name}`}>
           <Image
             src={product.image}
             alt={product.name}
@@ -88,7 +88,7 @@ const SingleProduct = ({ id }: { id: string }) => {
 
         {/* Call to Action Button */}
         <Link
-          href={`/E-commerce/${product.id}`}
+          href={`/product/${product.id}`}
           className="mt-3 inline-block w-full bg-[#800000] text-white text-sm font-medium py-2 rounded-md hover:bg-green-600 transition-colors hover:shadow-lg"
         >
           View More

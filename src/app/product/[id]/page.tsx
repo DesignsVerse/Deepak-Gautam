@@ -8,10 +8,10 @@
   import { useState } from "react";
   import { motion } from "framer-motion";
   import { toast } from "react-hot-toast";
-  import ProductInfo from "@/components/E-Commerce/ProductInfo";
-  import CheckoutForm from "@/components/E-Commerce/CheckoutForm";
+  import ProductInfo from "@/components/Product/ProductInfo";
+  import CheckoutForm from "@/components/Product/CheckoutForm";
   import React from "react";
-  import ReviewSection from "@/components/E-Commerce/ReviewSection";
+  import ReviewSection from "@/components/Product/ReviewSection";
 
   export default function ProductDetailPage({ params: paramsPromise }: { params: Promise<{ id: string }> }) {
     const params = React.use(paramsPromise);
@@ -128,7 +128,7 @@
             <div className="text-sm text-gray-500 mb-6 flex items-center space-x-2">
               <Link href="/" className="hover:text-saffron transition-colors">Home</Link>
               <ArrowRight size={14} />
-              <Link href="/E-commerce" className="hover:text-saffron transition-colors">Store</Link>
+              <Link href="/product" className="hover:text-saffron transition-colors">Store</Link>
               <ArrowRight size={14} />
               <span className="text-maroon">{product.name}</span>
             </div>
@@ -334,7 +334,7 @@
                 <h2 className="text-2xl font-bold text-maroon mb-6">Related Products</h2>
                 <div className="grid   grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                   {relatedProducts.map((relatedProduct) => (
-                    <Link key={relatedProduct.id} href={`/E-commerce/${relatedProduct.id}`}>
+                    <Link key={relatedProduct.id} href={`/product/${relatedProduct.id}`}>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         className="bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl"
