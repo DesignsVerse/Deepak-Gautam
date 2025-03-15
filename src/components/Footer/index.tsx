@@ -239,16 +239,19 @@ export default function Footer() {
               <div className="flex justify-center md:justify-end space-x-4 mt-4">
                 <Link href="https://facebook.com" className="hover:text-orange-400 transition-colors">
                   <FaFacebookF />
+                  <span className="sr-only">Follow us on Facebook</span>
                 </Link>
-                
                 <Link href="https://www.youtube.com/@Astrodeepak4444" className="hover:text-orange-400 transition-colors">
                   <FaYoutube />
+                  <span className="sr-only">Subscribe to our YouTube channel</span>
                 </Link>
                 <Link href="https://linkedin.com" className="hover:text-orange-400 transition-colors">
                   <FaLinkedinIn />
+                  <span className="sr-only">Connect with us on LinkedIn</span>
                 </Link>
                 <Link href="https://www.instagram.com/astro.deepakgoutam" className="hover:text-orange-400 transition-colors">
                   <FaInstagram />
+                  <span className="sr-only">Follow us on Instagram</span>
                 </Link>
               </div>
             </div>

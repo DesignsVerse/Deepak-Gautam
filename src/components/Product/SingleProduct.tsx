@@ -82,8 +82,8 @@ const SingleProduct = ({ id }: { id: string }) => {
 
         {/* Pricing */}
         <p className="text-sm text-gray-600 mt-2">
-          <span className="line-through text-red-500 mr-2">₹{product.originalPrice.toFixed(2)}</span>
-          <span className="text-green-600 font-bold">₹{product.price.toFixed(2)}</span>
+          <span className="line-through text-red-700 mr-2">₹{product.originalPrice.toFixed(2)}</span>
+          <span className="text-green-800 font-bold">₹{product.price.toFixed(2)}</span>
         </p>
 
         {/* Call to Action Button */}

@@ -8,11 +8,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Banner: React.FC = () => {
   const images = [
-    { url: "/images/Banner/banner-1.png", alt: "Banner 1" },
-    { url: "/images/Banner/banner-2.png", alt: "Banner 2" },
-    { url: "/images/Banner/banner-3.png", alt: "Banner 3" },
-    { url: "/images/Banner/banner-4.png", alt: "Banner 4" },
-    { url: "/images/Banner/banner-5.png", alt: "Banner 5" },
+    { url: "/images/Banner/banner-1.webp", alt: "Banner 1" },
+    { url: "/images/Banner/banner-2.webp", alt: "Banner 2" },
+    { url: "/images/Banner/banner-3.webp", alt: "Banner 3" },
+    { url: "/images/Banner/banner-4.webp", alt: "Banner 4" },
+    { url: "/images/Banner/banner-5.webp", alt: "Banner 5" },
   ];
 
   const sliderRef = useRef<Slider | null>(null);

@@ -59,13 +59,14 @@ const Popup = () => {
               {/* Close Button */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
                 style={{
                   color: colors.text,
                   backgroundColor: `${colors.secondary}20`,
                 }}
+                aria-label="Close popup"
               >
-                <span className="text-xl">×</span>
+                <span className="text-2xl">×</span>
               </button>
 
               {/* Header */}
@@ -81,17 +82,17 @@ const Popup = () => {
 
               {/* Call Button */}
               <div className="text-center">
-                <button
-                  onClick={() => window.location.href = `tel:${callNumber}`}
-                  className="inline-block px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                <a
+                  href={`tel:${callNumber}`}
+                  className="inline-block px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
                   style={{ backgroundColor: colors.primary, color: colors.background }}
                 >
                   📞 Call Now: {callNumber}
-                </button>
+                </a>
               </div>
 
               {/* Footer Note */}
-              <p className="text-center text-sm mt-4 opacity-75" style={{ color: colors.text }}>
+              <p className="text-center text-sm mt-6 opacity-75" style={{ color: colors.text }}>
                 Hum aapke call ka intezaar kar rahe hain!
               </p>
             </div>
