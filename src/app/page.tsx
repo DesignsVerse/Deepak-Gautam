@@ -81,7 +81,6 @@ export default function Home() {
       <Blog />
       <Testimonials />
       <Faq />
-      <Popup />
       {/* <ScrollUp /> */}
     </>
   );
