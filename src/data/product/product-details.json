@@ -2,12 +2,9 @@
   {
     "id": 1,
     "name": "Mithun Rashi Rudraksha 4 Face",
-    "image": "/images/product/p-1.webp",
+    "image": "/images/product/store/rashi/1.png",
     "images": [
-      "/images/product/p-1.webp",
-      "/images/product/p-2.webp",
-      "/images/product/p-3.webp",
-      "/images/product/p-4.webp"
+      
     ],
     "price": 650.00,
     "originalPrice": 1100.00,
@@ -35,15 +32,14 @@
   {
     "id": 2,
     "name": "Kark Rashi Rudraksha 2 Face",
-    "image": "/images/puja/2.webp",
+    "image": "/images/product/store/rashi/2.png",
     "images": [
-      "/images/rudraksha-2face-1.jpg",
-      "/images/rudraksha-2face-2.jpg"
+      
     ],
     "price": 950.00,
     "originalPrice": 1250.00,
     "discount": 32,
-    "rating": 4.8,
+    "rating": 5,
     "faces": 2,
     "category": "Rashi Rudraksha",
     "rashi": "Kark",
@@ -65,15 +61,14 @@
   {
     "id": 3,
     "name": "Singh Rashi Rudraksha 1 Face",
-    "image": "/images/product/p-3.webp",
+    "image": "/images/product/store/rashi/3.png",
     "images": [
-      "/images/rudraksha-1face-1.jpg",
-      "/images/rudraksha-1face-2.jpg"
+      
     ],
     "price": 700.00,
     "originalPrice": 1200.00,
     "discount": 42,
-    "rating": 4.4,
+    "rating": 5,
     "faces": 1,
     "category": "Rashi Rudraksha",
     "rashi": "Singh",
@@ -88,15 +83,14 @@
   {
     "id": 4,
     "name": "Kanya Rashi Rudraksha 4 Face",
-    "image": "/images/puja/4.webp",
+    "image": "/images/product/store/rashi/4.png",
     "images": [
-      "/images/rudraksha-4face-1.jpg",
-      "/images/rudraksha-4face-2.jpg"
+      
     ],
     "price": 620.00,
     "originalPrice": 1050.00,
     "discount": 41,
-    "rating": 4.5,
+    "rating": 5,
     "faces": 4,
     "category": "Rashi Rudraksha",
     "rashi": "Kanya",
@@ -111,15 +105,14 @@
   {
     "id": 5,
     "name": "Tula Rashi Rudraksha 6 Face",
-    "image": "/images/product/p-5.webp",
+    "image": "/images/product/store/rashi/5.png",
     "images": [
-      "/images/rudraksha-6face-1.jpg",
-      "/images/rudraksha-6face-2.jpg"
+      
     ],
     "price": 680.00,
     "originalPrice": 1100.00,
     "discount": 38,
-    "rating": 4.6,
+    "rating": 5,
     "faces": 6,
     "rashi": "Tula",
     "category": "Rashi Rudraksha",
@@ -134,15 +127,14 @@
   {
     "id": 6,
     "name": "Vrishchik Rashi Rudraksha 3 Face",
-    "image": "/images/puja/6.webp",
+    "image": "/images/product/store/rashi/6.png",
     "images": [
-      "/images/rudraksha-3face-1.jpg",
-      "/images/rudraksha-3face-2.jpg"
+      
     ],
     "price": 640.00,
     "originalPrice": 1080.00,
     "discount": 40,
-    "rating": 4.4,
+    "rating": 5,
     "faces": 3,
     "rashi": "Vrishchik",
     "category": "Rashi Rudraksha",
@@ -157,15 +149,14 @@
   {
     "id": 7,
     "name": "Dhanu Rashi Rudraksha 5 Face",
-    "image": "/images/product/p-7.webp",
+    "image": "/images/product/store/rashi/7.png",
     "images": [
-      "/images/rudraksha-5face-1.jpg",
-      "/images/rudraksha-5face-2.jpg"
+      
     ],
     "price": 650.00,
     "originalPrice": 1120.00,
     "discount": 42,
-    "rating": 4.7,
+    "rating": 5,
     "faces": 5,
     "rashi": "Dhanu",
     "category": "Rashi Rudraksha",
@@ -180,15 +171,14 @@
   {
     "id": 8,
     "name": "Makar Rashi Rudraksha 7 Face",
-    "image": "/images/puja/8.webp",
+    "image": "/images/product/store/rashi/8.png",
     "images": [
-      "/images/rudraksha-7face-1.jpg",
-      "/images/rudraksha-7face-2.jpg"
+      
     ],
     "price": 680.00,
     "originalPrice": 1150.00,
     "discount": 41,
-    "rating": 4.3,
+    "rating": 5,
     "faces": 7,
     "rashi": "Makar",
     "category": "Rashi Rudraksha",
@@ -203,15 +193,14 @@
   {
     "id": 9,
     "name": "Kumbh Rashi Rudraksha 7 Face",
-    "image": "/images/puja/9.webp",
+    "image": "/images/product/store/rashi/9.png",
     "images": [
-      "/images/rudraksha-7face-3.jpg",
-      "/images/rudraksha-7face-4.jpg"
+      
     ],
     "price": 700.00,
     "originalPrice": 1200.00,
     "discount": 42,
-    "rating": 4.5,
+    "rating": 5,
     "faces": 7,
     "rashi": "Kumbh",
     "category": "Rashi Rudraksha",
@@ -226,15 +215,14 @@
   {
     "id": 10,
     "name": "Meen Rashi Rudraksha 5 Face",
-    "image": "/images/puja/10.webp",
+    "image": "/images/product/store/rashi/10.png",
     "images": [
-      "/images/rudraksha-5face-3.jpg",
-      "/images/rudraksha-5face-4.jpg"
+      
     ],
     "price": 660.00,
     "originalPrice": 1100.00,
     "discount": 40,
-    "rating": 4.6,
+    "rating": 5,
     "faces": 5,
     "rashi": "Meen",
     "category": "Rashi Rudraksha",
@@ -249,15 +237,14 @@
   {
     "id": 11,
     "name": "Mesh Rashi Rudraksha 3 Face",
-    "image": "/images/puja/10.webp",
+    "image": "/images/product/store/rashi/11.png",
     "images": [
-      "/images/rudraksha-5face-3.jpg",
-      "/images/rudraksha-5face-4.jpg"
+      
     ],
     "price": 660.00,
     "originalPrice": 1100.00,
     "discount": 40,
-    "rating": 4.6,
+    "rating": 5,
     "faces": 5,
     "rashi": "Meen",
     "category": "Rashi Rudraksha",
@@ -272,15 +259,13 @@
   {
     "id": 12,
     "name": "Vrishabha Rashi Rudraksha 6 Face",
-    "image": "/images/puja/10.webp",
+    "image": "/images/product/store/rashi/12.png",
     "images": [
-      "/images/rudraksha-5face-3.jpg",
-      "/images/rudraksha-5face-4.jpg"
     ],
     "price": 660.00,
     "originalPrice": 1100.00,
     "discount": 40,
-    "rating": 4.6,
+    "rating": 5,
     "faces": 5,
     "rashi": "Meen",
     "category": "Rashi Rudraksha",
