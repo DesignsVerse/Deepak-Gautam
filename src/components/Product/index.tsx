@@ -20,7 +20,7 @@ const ProductList = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
           {productData.slice(0, 4).map((product) => (
             <Link key={product.id} href={`/product/${product.id}`}>
-              <div className="text-center bg-white rounded-3xl transform transition-all duration-300     shadow-lg hover:shadow-2xl cursor-pointer w-full">
+              <div className="">
                 <SingleProduct id={product.id.toString()} />
               </div>
             </Link>
