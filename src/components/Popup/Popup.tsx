@@ -66,8 +66,9 @@ const Popup = () => {
 
               {/* Message */}
               <p className="text-center mb-6 leading-relaxed" style={{ color: colors.text }}>
-                Aap humse turant baat karne ke liye niche <span>"Call Now"</span> button dabayein.
+                Aap humse turant baat karne ke liye niche <span>&quot;Call Now&quot;</span> button dabayein.
               </p>
+
 
               {/* Call Button */}
               <div className="text-center">
