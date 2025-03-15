@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Slider from "react-slick";
-import { useEffect, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -15,31 +14,21 @@ const Banner: React.FC = () => {
     { url: "/images/Banner/banner-5.webp", alt: "Banner 5" },
   ];
 
-  const sliderRef = useRef<Slider | null>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (sliderRef.current) {
-        sliderRef.current.slickNext();
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const settings = {
     dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true, // Enable built-in autoplay
+    autoplaySpeed: 3000, // Set autoplay interval to 3 seconds
     arrows: false,
+    lazyLoad: "ondemand" as const, // Lazy load off-screen slides
   };
 
   return (
     <div className="relative mt-[8px] w-full aspect-[20/7] overflow-hidden z-10">
-      <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
+      <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="relative w-full aspect-[20/7]">
             <Image
@@ -47,9 +36,10 @@ const Banner: React.FC = () => {
               alt={image.alt}
               width={2000} // Example width (adjust based on your design)
               height={700} // Example height (20:7 ratio = 2000:700)
-              className="w-full h-full object-contain" // Replace objectFit with Tailwind
-              sizes="100vw" // Adjust based on your needs
+              className="w-full h-full object-cover" // Use object-cover for better fit
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               priority={index === 0} // Prioritize the first image for LCP
+              loading={index === 0 ? "eager" : "lazy"} // Lazy load off-screen images
             />
           </div>
         ))}

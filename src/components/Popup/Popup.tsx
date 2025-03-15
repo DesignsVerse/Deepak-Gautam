@@ -8,62 +8,51 @@ const Popup = () => {
 
   // Color scheme
   const colors = {
-    primary: "#800000", // Maroon
-    secondary: "#FFD700", // Gold
-    background: "#FFF8F0", // Light cream
-    text: "#4A2C2A", // Dark brown
+    primary: "#800000",
+    secondary: "#FFD700",
+    background: "#FFF8F0",
+    text: "#4A2C2A",
     overlay: "rgba(74, 44, 42, 0.4)",
   };
 
   useEffect(() => {
-    const hasShownPopup = localStorage.getItem("popupShown");
-    if (!hasShownPopup) {
-      setTimeout(() => setIsOpen(true), 3000); // Show popup after 3 sec
-    }
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
-    setIsOpen(false);
-    localStorage.setItem("popupShown", "true");
-  };
-
-  // Combined animation for popup and background
-  const popupContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    exit: { opacity: 0 },
+    if (isOpen) {
+      setIsOpen(false);
+      localStorage.setItem("popupShown", "true"); // Future popup disable karne ke liye
+    }
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          variants={popupContainerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.3 } }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
           className="fixed inset-0 flex justify-center items-center z-50"
           style={{ backgroundColor: colors.overlay }}
+          onClick={handleClose}
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            animate={{ scale: 1, opacity: 1, transition: { duration: 0.3 } }}
+            exit={{ scale: 0.8, opacity: 0, transition: { duration: 0.2 } }}
             className="relative w-full max-w-md mx-4"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className="rounded-xl shadow-2xl p-8 relative overflow-hidden"
-              style={{ backgroundColor: colors.background }}
-            >
+            <div className="rounded-xl shadow-2xl p-8 relative overflow-hidden" style={{ backgroundColor: colors.background }}>
               {/* Close Button */}
               <button
                 onClick={handleClose}
                 className="absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
-                style={{
-                  color: colors.text,
-                  backgroundColor: `${colors.secondary}20`,
-                }}
+                style={{ color: colors.text, backgroundColor: colors.secondary + "20" }}
                 aria-label="Close popup"
               >
                 <span className="text-2xl">×</span>
@@ -79,6 +68,7 @@ const Popup = () => {
               <p className="text-center mb-6 leading-relaxed" style={{ color: colors.text }}>
                 Aap humse turant baat karne ke liye niche <span>&quot;Call Now&quot;</span> button dabayein.
               </p>
+
 
               {/* Call Button */}
               <div className="text-center">
