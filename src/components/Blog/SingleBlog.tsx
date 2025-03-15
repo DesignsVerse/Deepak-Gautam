@@ -4,16 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star, Moon } from "lucide-react";
 import blogData from "@/data/blogData.json";
-import { useState } from "react";
 
 const SingleBlog = ({ id }: { id: string }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const blog = blogData.find((b) => b.id.toString() === id);
 
   if (!blog) {
     return (
-      <p className="text-red-500 text-center animate-pulse">
+      <p className="text-red-500 text-center">
         Cosmic alignment failed - Blog not found!
       </p>
     );
@@ -41,13 +38,8 @@ const SingleBlog = ({ id }: { id: string }) => {
   return (
     <article
       className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative flex flex-col"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       aria-labelledby={`blog-title-${blog.id}`}
     >
-      {/* Cosmic Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
-
       {/* Blog Thumbnail with Zodiac Highlight */}
       <Link href={`/blog/${blog.id}`} className="block relative">
         <Image
@@ -55,13 +47,24 @@ const SingleBlog = ({ id }: { id: string }) => {
           alt={`${blog.title || "Astrological Insights"} - Featured Image`}
           width={600}
           height={400}
-          className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
+          className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           loading="lazy"
         />
+        {/* Removed cosmic overlay, added background gradient via CSS */}
+        <style jsx>{`
+          .image-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+            z-index: 10;
+            pointer-events: none;
+          }
+        `}</style>
         {blog.zodiacSign && (
           <span
-            className="absolute top-3 left-3 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs sm:text-sm animate-fade-in"
+            className="absolute top-3 left-3 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs sm:text-sm"
             style={{ backgroundColor: getZodiacColor(blog.zodiacSign) }}
           >
             {blog.zodiacSign} ✨
@@ -71,13 +74,16 @@ const SingleBlog = ({ id }: { id: string }) => {
 
       {/* Blog Content */}
       <div className="p-4 sm:p-6 relative z-20 bg-white flex-grow">
-        {/* Animated Title */}
+        {/* Animated Title (using CSS for hover color) */}
         <h2
           id={`blog-title-${blog.id}`}
-          className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 transition-colors duration-300 line-clamp-2"
-          style={{ color: isHovered ? getZodiacColor(blog.zodiacSign) : "#800000" }}
+          className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 line-clamp-2"
         >
-          <Link href={`/blog/${blog.id}`} className="hover:text-[#D55F26] focus:outline-none focus:ring-2 focus:ring-[#D55F26]">
+          <Link
+            href={`/blog/${blog.id}`}
+            className="hover:text-[#D55F26] focus:outline-none focus:ring-2 focus:ring-[#D55F26]"
+            style={{ color: getZodiacColor(blog.zodiacSign) }}
+          >
             {blog.title}
           </Link>
         </h2>
@@ -95,26 +101,15 @@ const SingleBlog = ({ id }: { id: string }) => {
           </div>
         )}
 
-        {/* Author & Meta Section */}
-        <div className="flex justify-between items-center flex-wrap gap-2 sm:gap-4">
-          {/* Uncomment and optimize if needed */}
-          {/* <div className="flex items-center">
-            <Image
-              src={blog.author.image}
-              alt={`Profile of ${blog.author.name}`}
-              width={40}
-              height={40}
-              className="rounded-full border-2 border-purple-300 transition-transform duration-300 hover:rotate-12"
-            />
-            <div className="ml-2 sm:ml-3">
-              <p className="text-xs font-semibold text-gray-800">{blog.author.name}</p>
-              <p className="text-xs text-gray-500">{blog.author.designation}</p>
-            </div>
-          </div> */}
-
+        {/* Meta Section */}
+        <div className="border-t border-gray-200 mt-3 sm:mt-4 pt-3 sm:pt-4 flex justify-between items-center flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500">
+          <span className="flex items-center">
+            <Moon size={12} className="mr-1 flex-shrink-0" />
+            {blog.publishDate} | ⏳ {blog.readTime} min read
+          </span>
           <Link
             href={`/blog/${blog.id}`}
-            className="text-[#D55F26] text-sm font-semibold inline-flex items-center group hover:underline focus:outline-none focus:ring-2 focus:ring-[#D55F26]"
+            className="text-[#D55F26] font-semibold inline-flex items-center group hover:underline focus:outline-none focus:ring-2 focus:ring-[#D55F26]"
           >
             View More
             <ArrowRight
@@ -123,23 +118,6 @@ const SingleBlog = ({ id }: { id: string }) => {
             />
           </Link>
         </div>
-
-        {/* Meta Info */}
-        <div className="border-t border-gray-200 mt-3 sm:mt-4 pt-3 sm:pt-4 flex justify-between text-xs sm:text-sm text-gray-500">
-          <span className="flex items-center">
-            <Moon size={12} className="mr-1 flex-shrink-0" />
-            {blog.publishDate}
-          </span>
-          <span>⏳ {blog.readTime} min read</span>
-        </div>
-
-        {/* Lucky Color Bar */}
-        {blog.luckyColor && (
-          <div
-            className="h-1 mt-3 sm:mt-4 rounded-b animate-pulse"
-            style={{ backgroundColor: blog.luckyColor }}
-          />
-        )}
       </div>
     </article>
   );

@@ -6,26 +6,22 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+// Define the SingleServices component
 const SingleServices = ({ services }: { services: Services }) => {
   const { id, title, paragraph, image } = services;
 
-  // Animation Variants
+  // Simplified animation variants for card (using Framer Motion only for essential animations)
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
     hover: { scale: 1.03, y: -10, transition: { duration: 0.3 } },
   };
 
-  const buttonVariants = {
-    rest: { scale: 1 },
-    hover: { scale: 1.1, transition: { duration: 0.3, yoyo: Infinity } },
-  };
-
-  // Function to handle call button click
+  // Handle call button click
   const handleCallClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevents any default navigation
-    e.stopPropagation(); // Stops event from bubbling up to parent Link
-    window.location.href = "tel:+919153164444"; // Forces the call action
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href = "tel:+919153164444";
   };
 
   return (
@@ -34,113 +30,58 @@ const SingleServices = ({ services }: { services: Services }) => {
       initial="hidden"
       animate="visible"
       whileHover="hover"
-      className="relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 p-6 text-center border-2 border-yellow-500"
+      className="relative overflow-hidden rounded-xl bg-white shadow-lg p-6 text-center border-2 border-yellow-500"
     >
       {/* Service Image, Title, and Description wrapped in Link */}
-      <Link href={`/services/${id}`}>
+      <Link href={`/services/${id}`} className="block">
         <div className="relative flex justify-center items-center mx-auto w-24 h-24">
-          <motion.div
-            className="absolute w-24 h-24 rounded-full bg-gradient-to-ropacity-75"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          />
+          {/* Removed rotating gradient (use CSS background if needed) */}
           <Image
             src={image}
             alt={`${title} - पंडित दीपक गौतम जी की सेवा`}
             width={80}
             height={80}
-            className="w-20 h-20 object-cover rounded-full z-10 bg-[#FFECDD] p-1 shadow-md"
+            className="w-20 h-20 object-cover rounded-full bg-[#FFECDD] p-1 shadow-md"
           />
         </div>
 
         <h2 className="mt-6 text-xl font-bold text-[#800000] relative">
           {title}
-          <motion.span
-            className="absolute -top-2 -right-2 text-yellow-500"
-            animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <FaStar size={12} />
-          </motion.span>
+          {/* Removed animated star (use static star for simplicity) */}
         </h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-gray-700 text-sm mt-3 leading-relaxed"
-        >
+        {/* Removed motion.p, use static paragraph */}
+        <p className="text-gray-700 text-sm mt-3 leading-relaxed">
           {paragraph}
           <strong className="block mt-1 text-[#800000]">
             Kundli milan, grah dosh nivaran, shatru naash, aur safalta prapti.
           </strong>
           Such special services are available.
-        </motion.p>
+        </p>
       </Link>
 
       {/* CTA Buttons Container */}
       <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3">
-        {/* Service Button */}
-        <Link href={`/services/${id}`}>
-          <motion.button
-            variants={buttonVariants}
-            initial="rest"
-            whileHover="hover"
-            className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md group w-full sm:w-auto"
-          >
-            <motion.span
-              className="absolute inset-0 bg-[#FF5C16] transform -translate-x-full group-hover:translate-x-0"
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            />
-            <span className="relative z-10 flex items-center justify-center gap-2">
+        {/* Service Button (using CSS for hover effects) */}
+        <Link href={`/services/${id}`} className="block w-full sm:w-auto">
+          <button className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md hover:bg-[#FF5C16] hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+            <span className="flex items-center justify-center gap-2">
               <FaBookOpen />
               Know more
             </span>
-          </motion.button>
+          </button>
         </Link>
 
-        {/* Call Now Button */}
-        <motion.button
-          variants={buttonVariants}
-          initial="rest"
-          whileHover="hover"
-          onClick={handleCallClick} // Custom handler for call
-          className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md group w-full sm:w-auto"
+        {/* Call Now Button (using CSS for hover effects) */}
+        <button
+          onClick={handleCallClick}
+          className="relative overflow-hidden bg-[#800000] text-white font-semibold px-6 py-3 sm:px-4 sm:py-2 rounded-xl shadow-md hover:bg-[#FF5C16] hover:scale-105 transition-all duration-300 w-full sm:w-auto"
         >
-          <motion.span
-            className="absolute inset-0 bg-[#FF5C16] transform -translate-x-full group-hover:translate-x-0"
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          />
-          <span className="relative z-10 flex items-center justify-center gap-2">
+          <span className="flex items-center justify-center gap-2">
             <FaPhone />
             Call Now
           </span>
-        </motion.button>
-      </div>
-
-      {/* Cosmic Particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-yellow-500 rounded-full opacity-20"
-            style={{
-              width: Math.random() * 3 + 2,
-              height: Math.random() * 3 + 2,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -50],
-              opacity: [0.2, 0.5, 0],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              ease: "easeOut",
-            }}
-          />
-        ))}
+        </button>
       </div>
     </motion.div>
   );
