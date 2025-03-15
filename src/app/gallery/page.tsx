@@ -13,13 +13,13 @@ export default function Gallery() {
 
   // Sample data for gallery (replace with real data if available)
   const images = Array.from({ length: 10 }, (_, i) => ({
-    src: `/images/about/${i + 1}.jpg`,
+    src: `/images/gallery/${i + 1}.jpg`,
     alt: `Pandit Deepak Goutam - Kaal Sarp Puja Ujjain Image ${i + 1}`,
     category: i % 2 === 0 ? "rituals" : "ceremony",
   }));
 
   const videos = Array.from({ length: 5 }, (_, i) => ({
-    src: `/images/about/video/${i + 1}.mp4`,
+    src: `/images/gallery/video/${i + 1}.mp4`,
     alt: `Pandit Deepak Goutam Puja Video ${i + 1}`,
   }));
 

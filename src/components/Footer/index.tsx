@@ -57,8 +57,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-orange-400 transition-colors">
-                  About
+                <Link href="/gallery" className="hover:text-orange-400 transition-colors">
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -228,7 +228,7 @@ export default function Footer() {
               <p className="mb-4 space-x-4">
                 <Link href="/help" className="hover:text-orange-400">Help</Link>
                 <span>|</span>
-                <Link href="/Terms-Services" className="hover:text-orange-400">Terms & Services</Link>
+                <Link href="/terms-services" className="hover:text-orange-400">Terms & Services</Link>
                 <span>|</span>
                 <Link href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</Link>
                 
