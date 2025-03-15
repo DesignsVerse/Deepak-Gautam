@@ -1,11 +1,49 @@
 [
   {
     "id": 1,
+    "name": "Mesh Rashi Rudraksha 3 Face",
+    "image": "/images/product/store/rashi/11.png",
+    "images": [],
+    "price": 660.00,
+    "originalPrice": 1100.00,
+    "discount": 40,
+    "rating": 5,
+    "faces": 5,
+    "rashi": "Meen",
+    "category": "Rashi Rudraksha",
+    "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
+    "reviews": [],
+    "relatedIds": [
+      1,
+      3,
+      5
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Vrishabha Rashi Rudraksha 6 Face",
+    "image": "/images/product/store/rashi/12.png",
+    "images": [],
+    "price": 660.00,
+    "originalPrice": 1100.00,
+    "discount": 40,
+    "rating": 5,
+    "faces": 5,
+    "rashi": "Meen",
+    "category": "Rashi Rudraksha",
+    "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
+    "reviews": [],
+    "relatedIds": [
+      1,
+      3,
+      5
+    ]
+  },
+  {
+    "id": 3,
     "name": "Mithun Rashi Rudraksha 4 Face",
     "image": "/images/product/store/rashi/1.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 650.00,
     "originalPrice": 1100.00,
     "discount": 41,
@@ -30,12 +68,10 @@
     ]
   },
   {
-    "id": 2,
+    "id": 4,
     "name": "Kark Rashi Rudraksha 2 Face",
     "image": "/images/product/store/rashi/2.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 950.00,
     "originalPrice": 1250.00,
     "discount": 32,
@@ -59,12 +95,10 @@
     ]
   },
   {
-    "id": 3,
+    "id": 5,
     "name": "Singh Rashi Rudraksha 1 Face",
     "image": "/images/product/store/rashi/3.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 700.00,
     "originalPrice": 1200.00,
     "discount": 42,
@@ -81,12 +115,10 @@
     ]
   },
   {
-    "id": 4,
+    "id": 6,
     "name": "Kanya Rashi Rudraksha 4 Face",
     "image": "/images/product/store/rashi/4.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 620.00,
     "originalPrice": 1050.00,
     "discount": 41,
@@ -103,12 +135,10 @@
     ]
   },
   {
-    "id": 5,
+    "id": 7,
     "name": "Tula Rashi Rudraksha 6 Face",
     "image": "/images/product/store/rashi/5.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 680.00,
     "originalPrice": 1100.00,
     "discount": 38,
@@ -125,12 +155,10 @@
     ]
   },
   {
-    "id": 6,
+    "id": 8,
     "name": "Vrishchik Rashi Rudraksha 3 Face",
     "image": "/images/product/store/rashi/6.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 640.00,
     "originalPrice": 1080.00,
     "discount": 40,
@@ -147,12 +175,10 @@
     ]
   },
   {
-    "id": 7,
+    "id": 9,
     "name": "Dhanu Rashi Rudraksha 5 Face",
     "image": "/images/product/store/rashi/7.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 650.00,
     "originalPrice": 1120.00,
     "discount": 42,
@@ -169,12 +195,10 @@
     ]
   },
   {
-    "id": 8,
+    "id": 10,
     "name": "Makar Rashi Rudraksha 7 Face",
     "image": "/images/product/store/rashi/8.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 680.00,
     "originalPrice": 1150.00,
     "discount": 41,
@@ -191,12 +215,10 @@
     ]
   },
   {
-    "id": 9,
+    "id": 11,
     "name": "Kumbh Rashi Rudraksha 7 Face",
     "image": "/images/product/store/rashi/9.png",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 700.00,
     "originalPrice": 1200.00,
     "discount": 42,
@@ -213,55 +235,10 @@
     ]
   },
   {
-    "id": 10,
+    "id": 12,
     "name": "Meen Rashi Rudraksha 5 Face",
     "image": "/images/product/store/rashi/10.png",
-    "images": [
-      
-    ],
-    "price": 660.00,
-    "originalPrice": 1100.00,
-    "discount": 40,
-    "rating": 5,
-    "faces": 5,
-    "rashi": "Meen",
-    "category": "Rashi Rudraksha",
-    "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
-    "reviews": [],
-    "relatedIds": [
-      1,
-      3,
-      5
-    ]
-  },
-  {
-    "id": 11,
-    "name": "Mesh Rashi Rudraksha 3 Face",
-    "image": "/images/product/store/rashi/11.png",
-    "images": [
-      
-    ],
-    "price": 660.00,
-    "originalPrice": 1100.00,
-    "discount": 40,
-    "rating": 5,
-    "faces": 5,
-    "rashi": "Meen",
-    "category": "Rashi Rudraksha",
-    "description": "This 5 Mukhi Rudraksha is perfect for Meen Rashi, fostering creativity and inner peace.",
-    "reviews": [],
-    "relatedIds": [
-      1,
-      3,
-      5
-    ]
-  },
-  {
-    "id": 12,
-    "name": "Vrishabha Rashi Rudraksha 6 Face",
-    "image": "/images/product/store/rashi/12.png",
-    "images": [
-    ],
+    "images": [],
     "price": 660.00,
     "originalPrice": 1100.00,
     "discount": 40,
@@ -589,9 +566,7 @@
     "id": 27,
     "name": "Child-Related Problems & Miscarriage Issues - Garbh Gauri Rudraksha",
     "image": "/images/product/store/special-problem/1.webp",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 2000.00,
     "originalPrice": 3500.00,
     "discount": 43,
@@ -610,9 +585,7 @@
     "id": 28,
     "name": "Mangal Dosha and Property-Related Work - 3 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/2.webp",
-    "images": [
-
-    ],
+    "images": [],
     "price": 900.00,
     "originalPrice": 1500.00,
     "discount": 40,
@@ -631,9 +604,7 @@
     "id": 29,
     "name": "Shani Sade Sati and Dhaiya - 7 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/3.webp",
-    "images": [
-     
-    ],
+    "images": [],
     "price": 1200.00,
     "originalPrice": 2000.00,
     "discount": 40,
@@ -652,9 +623,7 @@
     "id": 30,
     "name": "Kaal Sarp Dosha and Rahu Pacification - 8 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/4.webp",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 1800.00,
     "originalPrice": 3000.00,
     "discount": 40,
@@ -673,9 +642,7 @@
     "id": 31,
     "name": "Ketu Pacification - 9 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/5.webp",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 2500.00,
     "originalPrice": 4000.00,
     "discount": 37,
@@ -694,9 +661,7 @@
     "id": 32,
     "name": "Obstacles in Education - 6 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/6.webp",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 850.00,
     "originalPrice": 1300.00,
     "discount": 35,
@@ -715,9 +680,7 @@
     "id": 33,
     "name": "Health-Related Problems - 5 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/7.webp",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 660.00,
     "originalPrice": 1100.00,
     "discount": 40,
@@ -736,10 +699,7 @@
     "id": 34,
     "name": "Career Growth and Obstacle Removal - Ganesh Rudraksha",
     "image": "/images/product/store/special-problem/8.webp",
-    "images": [
-      
-      
-    ],
+    "images": [],
     "price": 1500.00,
     "originalPrice": 2500.00,
     "discount": 40,
@@ -758,9 +718,7 @@
     "id": 35,
     "name": "Husband-Wife Disputes and Marriage Issues - Gauri Shankar Rudraksha",
     "image": "/images/product/store/special-problem/9.webp",
-    "images": [
-      
-    ],
+    "images": [],
     "price": 3000.00,
     "originalPrice": 5000.00,
     "discount": 40,
@@ -779,9 +737,7 @@
     "id": 36,
     "name": "Happy Married Life - 2 Mukhi Rudraksha",
     "image": "/images/product/store/special-problem/10.webp",
-    "images": [
-     
-    ],
+    "images": [],
     "price": 800.00,
     "originalPrice": 1200.00,
     "discount": 33,

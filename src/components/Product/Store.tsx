@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import productData from "@/data/product/products.json";
+import productData from "@/data/product/product.json"
 import SingleProduct from "@/components/Product/SingleProduct";
 
 // Create a separate component for the search params logic

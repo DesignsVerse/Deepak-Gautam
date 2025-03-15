@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import productDetailsData from "@/data/product/product-details.json";
+import productDetailsData from "@/data/product/product.json";
 import { Product } from "@/types/product";
 import { Star } from "lucide-react";
 
