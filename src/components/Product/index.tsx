@@ -1,6 +1,6 @@
 "use client";
 
-import productData from "@/data/product/product-details.json";
+import productData from "@/data/product/product.json";
 import SingleProduct from "@/components/Product/SingleProduct";
 import SectionTitle from "@/components/Common/SectionTitle";
 import Link from "next/link";

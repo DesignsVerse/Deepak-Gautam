@@ -2,7 +2,7 @@
   import Image from "next/image";
   import Link from "next/link";
   import { ArrowRight, Star, ShoppingCart, Heart } from "lucide-react";
-  import productDetailsData from "@/data/product/product-details.json";
+  import productDetailsData from "@/data/product/product.json";
   import { Product } from "@/types/product";
   import Head from "next/head";
   import { useState } from "react";
