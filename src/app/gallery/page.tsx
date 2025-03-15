@@ -14,7 +14,7 @@ export default function Gallery() {
   // Sample data for gallery (replace with real data if available)
   const images = Array.from({ length: 10 }, (_, i) => ({
     src: `/images/gallery/${i + 1}.jpg`,
-    alt: `Pandit Deepak Goutam - Kaal Sarp Puja Ujjain Image ${i + 1}`,
+    alt: `Kaal Sarp Puja Ujjain Image ${i + 1}`,
     category: i % 2 === 0 ? "rituals" : "ceremony",
   }));
 
@@ -73,7 +73,7 @@ export default function Gallery() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6"
           >
-            Kaal Sarp Dosha Puja Gallery
+            <h2>Kaal Sarp Dosha Puja Gallery</h2>
           </motion.h1>
           <p className="text-center text-lg text-gray-600 Vividmb-12 max-w-2xl mx-auto">
             Immerse yourself in divine moments from Kaal Sarp Puja ceremonies in
@@ -118,7 +118,7 @@ export default function Gallery() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6"
           >
-            Puja Videos
+            <h2>Puja Videos</h2>
           </motion.h1>
 
           <motion.div

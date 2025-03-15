@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${service.title} - Kaal Sarp Puja Ujjain | Pandit Deepak Goutam`,
+    title: `${service.title} - Kaal Sarp Puja Ujjain`,
     description: `${service.description.slice(0, 150)}... Book your Kaal Sarp Dosha Nivaran with Pandit Deepak Goutam in Ujjain today!`,
     keywords: "ujjain kaal sarp, kaal sarp puja ujjain, deepak goutam pandit, kaal sarp dosha nivaran, spiritual rituals",
     robots: "index, follow",

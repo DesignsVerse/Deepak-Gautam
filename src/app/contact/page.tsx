@@ -3,7 +3,7 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Pandit Deepak Goutam - Kaal Sarp Puja Ujjain", // ✅ Keyword-rich title
+  title: "Contact Deepak Goutam - Kaal Sarp Puja Ujjain", // ✅ Keyword-rich title
   description:
     "Contact Pandit Deepak Goutam for expert Kaal Sarp Puja in Ujjain. Book your Kaal Sarp Dosha Nivaran today!", // ✅ Concise, keyword-focused
   keywords:
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: "https://www.ujjainkalsarp.com/contact", // ✅ Updated to actual domain
   },
   openGraph: {
-    title: "Contact Pandit Deepak Goutam - Kaal Sarp Puja Ujjain",
+    title: "Contact Pandit Deepak Goutam, Ujjian",
     description:
       "Reach out to Pandit Deepak Goutam for Kaal Sarp Puja and Dosha Nivaran services in Ujjain. Expert astrology solutions await!",
     images: [
@@ -40,9 +40,9 @@ const ContactPage = () => {
 
       <section className="mt-10 pb-16">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl font-bold text-center mb-6">
+          <h2 className="text-3xl font-bold text-center mb-6">
             Contact Pandit Deepak Goutam for Kaal Sarp Puja in Ujjain
-          </h1>
+          </h2>
           <p className="text-center mb-8">
             Reach out to Pandit Deepak Goutam, a renowned expert in Kaal Sarp Dosha Nivaran, based in Ujjain. Book your puja today!
           </p>
