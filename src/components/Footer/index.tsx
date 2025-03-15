@@ -42,7 +42,7 @@ export default function Footer() {
             <h2 className="text-xl font-bold mb-4">Important Links</h2>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/E-commerce" className="hover:text-orange-400 transition-colors">
+                <Link href="/product" className="hover:text-orange-400 transition-colors">
                   Rudraksha
                 </Link>
               </li>

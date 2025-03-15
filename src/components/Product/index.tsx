@@ -1,7 +1,7 @@
 "use client";
 
 import productData from "@/data/product/product-details.json";
-import SingleProduct from "@/components/E-Commerce/SingleProduct";
+import SingleProduct from "@/components/Product/SingleProduct";
 import SectionTitle from "@/components/Common/SectionTitle";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ const ProductList = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
           {productData.slice(0, 4).map((product) => (
-            <Link key={product.id} href={`/E-commerce/${product.id}`}>
+            <Link key={product.id} href={`/product/${product.id}`}>
               <div className="text-center bg-white rounded-3xl transform transition-all duration-300     shadow-lg hover:shadow-2xl cursor-pointer w-full">
                 <SingleProduct id={product.id.toString()} />
               </div>
@@ -29,7 +29,7 @@ const ProductList = () => {
 
         {/* View More Button */}
         <div className="flex justify-center mt-10">
-          <Link href="/E-commerce">
+          <Link href="/product">
             <button className="relative bg-[#800000] text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg transition-all duration-300 hover:bg-[#FF5C16]">
               🛒 Explore More Products
             </button>

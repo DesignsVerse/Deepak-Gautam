@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import StorePage from "@/components/E-Commerce/Store";
+import StorePage from "@/components/Product/Store";
 import { Metadata } from "next";
 
 // Metadata for SEO
