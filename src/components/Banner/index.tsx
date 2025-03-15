@@ -27,7 +27,7 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <div className="relative mt-[8px] w-full aspect-[20/7] overflow-hidden z-10">
+    <div className=" relative mt-[px] w-full aspect-[20/7] overflow-hidden z-10">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="relative w-full aspect-[20/7]">
