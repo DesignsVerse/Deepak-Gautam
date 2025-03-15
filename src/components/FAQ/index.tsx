@@ -222,25 +222,31 @@ const Faq = () => {
         Frequently Asked Questions (FAQs) – Deepak GoutamPandit
       </h2>
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="Search FAQs"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 w-full sm:w-2/3 text-base focus:outline-none focus:ring-2 focus:ring-[#800000]"
-        />
-        <select
-          value={categoryFilter}
-          onChange={(e) => setCategoryFilter(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 w-full sm:w-1/3 text-base focus:outline-none focus:ring-2 focus:ring-[#800000]"
-        >
-          {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
-      </div>
+          <input
+            type="text"
+            placeholder="Search FAQs"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="border border-gray-300 rounded px-3 py-2 w-full sm:w-2/3 text-base focus:outline-none focus:ring-2 focus:ring-[#800000]"
+          />
+          <div className="flex flex-col w-full sm:w-1/3">
+            <label htmlFor="category-filter" className="mb-1 text-sm font-medium text-gray-700">
+              Filter by Category
+            </label>
+            <select
+              id="category-filter"
+              value={categoryFilter}
+              onChange={(e) => setCategoryFilter(e.target.value)}
+              className="border border-gray-300 rounded px-3 py-2 w-full text-base focus:outline-none focus:ring-2 focus:ring-[#800000]"
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       <div className="space-y-4">
         {displayedFaqs.length > 0 ? (
           displayedFaqs.map((item) => (
