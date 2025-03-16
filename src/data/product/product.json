@@ -257,11 +257,8 @@
   {
     "id": 13,
     "name": "1 Mukhi Rudraksha",
-    "image": "/images/puja/11.webp",
-    "images": [
-      "/images/rudraksha-1face-1.jpg",
-      "/images/rudraksha-1face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/1.png",
+    "images": [],
     "price": 1500.00,
     "originalPrice": 2500.00,
     "discount": 40,
@@ -279,11 +276,8 @@
   {
     "id": 14,
     "name": "2 Mukhi Rudraksha",
-    "image": "/images/puja/12.webp",
-    "images": [
-      "/images/rudraksha-2face-1.jpg",
-      "/images/rudraksha-2face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/2.png",
+    "images": [],
     "price": 800.00,
     "originalPrice": 1200.00,
     "discount": 33,
@@ -301,11 +295,8 @@
   {
     "id": 15,
     "name": "3 Mukhi Rudraksha",
-    "image": "/images/puja/13.webp",
-    "images": [
-      "/images/rudraksha-3face-1.jpg",
-      "/images/rudraksha-3face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/3.png",
+    "images": [],
     "price": 900.00,
     "originalPrice": 1500.00,
     "discount": 40,
@@ -323,11 +314,8 @@
   {
     "id": 16,
     "name": "4 Mukhi Rudraksha",
-    "image": "/images/puja/14.webp",
-    "images": [
-      "/images/rudraksha-4face-1.jpg",
-      "/images/rudraksha-4face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/4.png",
+    "images": [],
     "price": 700.00,
     "originalPrice": 1000.00,
     "discount": 30,
@@ -345,11 +333,8 @@
   {
     "id": 17,
     "name": "5 Mukhi Rudraksha",
-    "image": "/images/puja/15.webp",
-    "images": [
-      "/images/rudraksha-5face-1.jpg",
-      "/images/rudraksha-5face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/5.png",
+    "images": [],
     "price": 660.00,
     "originalPrice": 1100.00,
     "discount": 40,
@@ -367,11 +352,8 @@
   {
     "id": 18,
     "name": "6 Mukhi Rudraksha",
-    "image": "/images/puja/16.webp",
-    "images": [
-      "/images/rudraksha-6face-1.jpg",
-      "/images/rudraksha-6face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/6.png",
+    "images": [],
     "price": 850.00,
     "originalPrice": 1300.00,
     "discount": 35,
@@ -389,11 +371,8 @@
   {
     "id": 19,
     "name": "7 Mukhi Rudraksha",
-    "image": "/images/puja/17.webp",
-    "images": [
-      "/images/rudraksha-7face-1.jpg",
-      "/images/rudraksha-7face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/7.png",
+    "images": [],
     "price": 1200.00,
     "originalPrice": 2000.00,
     "discount": 40,
@@ -411,11 +390,8 @@
   {
     "id": 20,
     "name": "8 Mukhi Rudraksha",
-    "image": "/images/puja/18.webp",
-    "images": [
-      "/images/rudraksha-8face-1.jpg",
-      "/images/rudraksha-8face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/8.png",
+    "images": [],
     "price": 1800.00,
     "originalPrice": 3000.00,
     "discount": 40,
@@ -433,11 +409,8 @@
   {
     "id": 21,
     "name": "9 Mukhi Rudraksha",
-    "image": "/images/puja/19.webp",
-    "images": [
-      "/images/rudraksha-9face-1.jpg",
-      "/images/rudraksha-9face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/9.png",
+    "images": [],
     "price": 2500.00,
     "originalPrice": 4000.00,
     "discount": 37,
@@ -455,11 +428,8 @@
   {
     "id": 22,
     "name": "10 Mukhi Rudraksha",
-    "image": "/images/puja/20.webp",
-    "images": [
-      "/images/rudraksha-10face-1.jpg",
-      "/images/rudraksha-10face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/10.png",
+    "images": [],
     "price": 3000.00,
     "originalPrice": 5000.00,
     "discount": 40,
@@ -477,11 +447,8 @@
   {
     "id": 23,
     "name": "11 Mukhi Rudraksha",
-    "image": "/images/puja/21.webp",
-    "images": [
-      "/images/rudraksha-11face-1.jpg",
-      "/images/rudraksha-11face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/11.png",
+    "images": [],
     "price": 3500.00,
     "originalPrice": 6000.00,
     "discount": 42,
@@ -499,11 +466,8 @@
   {
     "id": 24,
     "name": "12 Mukhi Rudraksha",
-    "image": "/images/puja/22.webp",
-    "images": [
-      "/images/rudraksha-12face-1.jpg",
-      "/images/rudraksha-12face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/12.png",
+    "images": [],
     "price": 4000.00,
     "originalPrice": 7000.00,
     "discount": 43,
@@ -521,11 +485,8 @@
   {
     "id": 25,
     "name": "13 Mukhi Rudraksha",
-    "image": "/images/puja/23.webp",
-    "images": [
-      "/images/rudraksha-13face-1.jpg",
-      "/images/rudraksha-13face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/13.png",
+    "images": [],
     "price": 5000.00,
     "originalPrice": 8500.00,
     "discount": 41,
@@ -543,11 +504,8 @@
   {
     "id": 26,
     "name": "14 Mukhi Rudraksha",
-    "image": "/images/puja/24.webp",
-    "images": [
-      "/images/rudraksha-14face-1.jpg",
-      "/images/rudraksha-14face-2.jpg"
-    ],
+    "image": "/images/product/store/1-14-mukhi/14.png",
+    "images": [],
     "price": 6000.00,
     "originalPrice": 10000.00,
     "discount": 40,

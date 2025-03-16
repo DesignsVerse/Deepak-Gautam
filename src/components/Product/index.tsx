@@ -18,7 +18,7 @@ const ProductList = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-          {productData.slice(0, 4).map((product) => (
+          {productData.slice(13, 17).map((product) => (
             <Link key={product.id} href={`/product/${product.id}`}>
               <div className="">
                 <SingleProduct id={product.id.toString()} />
