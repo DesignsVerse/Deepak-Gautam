@@ -4,15 +4,14 @@ import { useState, useEffect, Suspense } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import productData from "@/data/product/product.json"
+import productData from "@/data/product/product.json";
 import SingleProduct from "@/components/Product/SingleProduct";
+import { generateSlug } from "@/lib/utils";
 
-// Create a separate component for the search params logic
 const StoreContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // Get initial values from URL or use defaults
   const initialPage = parseInt(searchParams.get("page") || "1", 10);
   const initialSort = searchParams.get("sort") || "default";
   const initialCategory = searchParams.get("category") || "all";
@@ -24,7 +23,6 @@ const StoreContent = () => {
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const productsPerPage = 12;
 
-  // Update URL when any state changes
   useEffect(() => {
     const params = new URLSearchParams();
     params.set("page", currentPage.toString());
@@ -34,7 +32,6 @@ const StoreContent = () => {
     router.push(`?${params.toString()}`, { scroll: false });
   }, [currentPage, sortOption, filterCategory, searchQuery, router]);
 
-  // Filter and sort products
   const filteredProducts = productData
     .filter((product) => {
       const matchesCategory = filterCategory === "all" || product.category === filterCategory;
@@ -49,7 +46,6 @@ const StoreContent = () => {
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / productsPerPage));
 
-  // Adjust page if it exceeds total pages
   useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(Math.max(1, totalPages));
@@ -83,6 +79,7 @@ const StoreContent = () => {
           availability: "https://schema.org/InStock",
         },
         description: product.description,
+        url: `/product/${product.slug || generateSlug(product.name)}`,
       },
     })),
   };
@@ -93,7 +90,7 @@ const StoreContent = () => {
         <title>Store - Deepak GoutamPanditji</title>
         <meta
           name="description"
-          content="Explore sacred Rudraksha, gemstones, and spiritual items at Deepak GoutamPanditji’s store. Find divine products for peace, prosperity, and spiritual growth."
+          content="Explore sacred Rudraksha, gemstones, and spiritual items at Deepak GoutamPanditji’s store."
         />
         <script
           type="application/ld+json"
@@ -138,7 +135,7 @@ const StoreContent = () => {
               {currentProducts.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/product/${product.id}`}
+                  href={`/product/${product.slug || generateSlug(product.name)}`}
                   className="w-full"
                 >
                   <div className="w-full rounded-2xl transform transition-transform hover:scale-105 shadow-lg">
@@ -159,7 +156,7 @@ const StoreContent = () => {
                 className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
                 aria-label="Previous Page"
               >
-                &lt;
+                {"<"}
               </button>
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
@@ -179,7 +176,7 @@ const StoreContent = () => {
                 className="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
                 aria-label="Next Page"
               >
-                &gt;
+                {">"}
               </button>
             </div>
           )}

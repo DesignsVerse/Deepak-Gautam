@@ -10,6 +10,7 @@
       id: number;
       name: string;
       image: string;
+      slug?: string;
       images?: string[]; // Optional array of additional images
       price: number;
       originalPrice: number;
