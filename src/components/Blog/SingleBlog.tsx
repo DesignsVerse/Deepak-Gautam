@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Star, Moon } from "lucide-react";
 import blogData from "@/data/blogData.json";
 
-const SingleBlog = ({ id }: { id: string }) => {
-  const blog = blogData.find((b) => b.id.toString() === id);
+const SingleBlog = ({ id, slug }: { id?: string; slug?: string }) => { // ✅ Added slug prop
+  const blog = blogData.find((b) => (id && b.id.toString() === id) || (slug && b.slug === slug)); // ✅ Flexible fetch
 
   if (!blog) {
     return (
@@ -41,7 +41,7 @@ const SingleBlog = ({ id }: { id: string }) => {
       aria-labelledby={`blog-title-${blog.id}`}
     >
       {/* Blog Thumbnail with Zodiac Highlight */}
-      <Link href={`/blog/${blog.id}`} className="block relative">
+      <Link href={`/blog/${blog.slug}`} className="block relative"> {/* ✅ Changed to slug */}
         <Image
           src={blog.thumbnail || "/images/default-astro-blog.jpg"}
           alt={`${blog.title || "Astrological Insights"} - Featured Image`}
@@ -51,7 +51,6 @@ const SingleBlog = ({ id }: { id: string }) => {
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           loading="lazy"
         />
-        {/* Removed cosmic overlay, added background gradient via CSS */}
         <style jsx>{`
           .image-container::before {
             content: '';
@@ -80,7 +79,7 @@ const SingleBlog = ({ id }: { id: string }) => {
           className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 line-clamp-2"
         >
           <Link
-            href={`/blog/${blog.id}`}
+            href={`/blog/${blog.slug}`} // ✅ Changed to slug
             className="hover:text-[#D55F26] focus:outline-none focus:ring-2 focus:ring-[#D55F26]"
             style={{ color: getZodiacColor(blog.zodiacSign) }}
           >
@@ -108,7 +107,7 @@ const SingleBlog = ({ id }: { id: string }) => {
             {blog.publishDate} | ⏳ {blog.readTime} min read
           </span>
           <Link
-            href={`/blog/${blog.id}`}
+            href={`/blog/${blog.slug}`} // ✅ Changed to slug
             className="text-[#D55F26] font-semibold inline-flex items-center group hover:underline focus:outline-none focus:ring-2 focus:ring-[#D55F26]"
           >
             View More

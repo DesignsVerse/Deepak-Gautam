@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
@@ -33,7 +33,7 @@ const Blog = () => {
         "keywords": "Kaal Sarp Puja Ujjain, Ujjain Kaal Sarp Dosh, Kaal Sarp Dosh",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `https://ujjainkalsarp.com/blog/${blog.id}`
+          "@id": `https://ujjainkalsarp.com/blog/${blog.slug}` // ✅ Changed to slug
         }
       }))
     });
@@ -67,7 +67,9 @@ const Blog = () => {
                   className="w-full md:w-[30%] flex-shrink-0 rounded-2xl text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-lg bg-white shadow-md"
                   aria-labelledby={`blog-title-${blog.id}`}
                 >
-                  <SingleBlog id={blog.id.toString()} />
+                  <Link href={`/blog/${blog.slug}`}> {/* ✅ Changed to slug */}
+                    <SingleBlog id={blog.id.toString()} slug={blog.slug} /> {/* ✅ Added slug prop */}
+                  </Link>
                 </article>
               ))}
             </div>
@@ -79,7 +81,7 @@ const Blog = () => {
                 className="bg-[#800000] text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-500 transition-all duration-300 hover:scale-105"
                 aria-label="Read more about Kaal Sarp Puja Ujjain by Pandit Deepak Gautam"
               >
-                Explore More 
+                Explore More
               </Link>
             </div>
           </div>

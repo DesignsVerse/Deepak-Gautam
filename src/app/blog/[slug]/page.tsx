@@ -3,16 +3,26 @@ import blogData from "@/data/blogData.json";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { Metadata } from "next";
-import RelatedBlogs from "@/components/Blog/RelatedBlogs"; // Naya component import
+import RelatedBlogs from "@/components/Blog/RelatedBlogs";
 
-export async function generateMetadata({ params }) {
-  const post = blogData.find((post) => post.id.toString() === params.id);
+// Generate metadata for the blog post
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  // Await params to ensure it's resolved
+  const resolvedParams = await params;
+
+  // Check if slug exists
+  if (!resolvedParams || !resolvedParams.slug) {
+    return { title: "Blog Post Not Found | Deepak Goutam" };
+  }
+
+  const post = blogData.find((post) => post.slug === resolvedParams.slug);
+
   if (!post) {
     return { title: "Blog Post Not Found | Deepak Goutam" };
   }
 
   return {
-    metadataBase: new URL("https://www.ujjainkalsarp.com"), // Added metadataBase
+    metadataBase: new URL("https://www.ujjainkalsarp.com"),
     title: `${post.title} | Deepak Goutam - kaal sarp ujjain pandit ji`,
     description:
       post.sections[0]?.content.slice(0, 150) + "..." || "Read more about this topic by Deepak Goutam.",
@@ -20,7 +30,7 @@ export async function generateMetadata({ params }) {
     robots: "index, follow",
     authors: [{ name: "Deepak Goutam" }],
     alternates: {
-      canonical: `/blog/${params.id}`,
+      canonical: `/blog/${post.slug}`,
     },
     openGraph: {
       title: `${post.title} | Deepak Goutam`,
@@ -33,21 +43,32 @@ export async function generateMetadata({ params }) {
           alt: `${post.title} - Deepak Goutam Blog`,
         },
       ],
-      url: `/blog/${params.id}`,
+      url: `/blog/${post.slug}`,
       type: "article",
     },
   };
 }
 
+// Generate static params for pre-rendering
 export async function generateStaticParams() {
   console.log("Generating Static Params...");
   return blogData.map((post) => ({
-    id: post.id.toString(),
+    slug: post.slug,
   }));
 }
 
-export default function BlogPost({ params }) {
-  const post = blogData.find((post) => post.id.toString() === params.id);
+// Blog post page component
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  // Await params to ensure it's resolved
+  const resolvedParams = await params;
+
+  // Check if slug exists
+  if (!resolvedParams || !resolvedParams.slug) {
+    console.log("Post Not Found!");
+    return notFound();
+  }
+
+  const post = blogData.find((post) => post.slug === resolvedParams.slug);
 
   if (!post) {
     console.log("Post Not Found!");
@@ -125,7 +146,7 @@ export default function BlogPost({ params }) {
 
         {/* Right Side: Related Blogs */}
         <div className="lg:col-span-1">
-          <RelatedBlogs currentBlogId={params.id} />
+          <RelatedBlogs currentBlogId={post.id} />
         </div>
       </div>
     </main>
