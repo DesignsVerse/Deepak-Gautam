@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/blog/[id]/page.tsx", "src/app/services/page.jsx", "src/components/Popup/CallNowPopup.tsx"  ],
+, "src/app/blog/[slug]/page.tsx", "src/app/services/page.jsx", "src/components/Popup/CallNowPopup.tsx"  ],
   "exclude": [
     "node_modules"
   ]

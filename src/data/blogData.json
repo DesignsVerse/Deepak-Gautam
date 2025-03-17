@@ -2,6 +2,7 @@
   {
     "id": "1",
     "title": "Ujjain Kaal Sarp Dosh:Effects, Remedies, and Expert Guidance",
+    "slug": "ujjain-kaal-sarp-dosh-remedies", 
     "thumbnail": "/images/blog/blog-1.webp",
     "zodiacSign": "",
     "cosmicTip": "",
@@ -68,6 +69,7 @@
   {
     "id": "2",
     "title": "The Effects of Mangal Dosh on Life",
+    "slug":"ujjain-kaal-sarp-dosh-remedies-1",
     "thumbnail": "/images/blog/blog-2.webp",
     "zodiacSign": "",
     "cosmicTip": "",
@@ -134,6 +136,7 @@
   },
   {
     "id": "3",
+    "slug":"rahu-ketu-kaal-sarp-effects-remedies",
     "title": "Exploring the Impact of Rahu and Ketu on Life and Effective Remedies",
     "thumbnail": "/images/blog/blog-3.webp",
     "zodiacSign": "",
@@ -202,7 +205,8 @@
   },
   {
     "id": "4",
-    "title": "Understanding Shani Dosh: Its Effects, Solutions, and Expert Guidance",
+    "slug":"rahu-ketu-kaal-sarp-effects-remedies-1",
+    "title": "Exploring the Impact of Rahu and Ketu on Life and Effective Remedies",
     "thumbnail": "/images/blog/blog-4.webp",
     "zodiacSign": "",
     "cosmicTip": "",
@@ -269,6 +273,7 @@
   },
   {
     "id": "5",
+    "slug":"kaal-sarp-dosh-challenges-solutions",
     "title": "Challenges Faced by People with Kaal Sarp Dosh and How to Overcome Them",
     "thumbnail": "/images/blog/blog-5.webp",
     "zodiacSign": "",
@@ -335,6 +340,7 @@
   },
   {
     "id": "6",
+    "slug":"solar-lunar-eclipses-kaal-sarp-remedies",
     "title": "How Solar and Lunar Eclipses Affect Life: Insights and Remedies",
     "thumbnail": "/images/blog/blog-6.webp",
     "zodiacSign": "",
@@ -402,6 +408,8 @@
   },
   {
     "id": "7",
+    "slug":"identify-kaal-sarp-dosh-signs-solutions",
+
     "title": "How to Identify Kaal Sarp Dosh in Your Life: Signs and Solutions",
     "thumbnail": "/images/blog/blog-12.webp",
     "zodiacSign": "",
@@ -468,6 +476,8 @@
   },
   {
     "id": "8",
+    "slug":"guru-chandal-dosh-kaal-sarp-effects-remedies",
+
     "title": "Understanding Guru Chandal Dosh: Its Meaning, Effects, and Remedies",
     "thumbnail": "/images/blog/blog-8.webp",
     "zodiacSign": "",
@@ -534,6 +544,8 @@
   },
   {
     "id": "9",
+    "slug":"navgrahas-kaal-sarp-balance-remedies",
+
     "title": "How Navgrahas Influence Life and Effective Ways to Balance Them",
     "thumbnail": "/images/blog/blog-9.webp",
     "zodiacSign": "",
@@ -601,6 +613,8 @@
   },
   {
     "id": "10",
+    "slug":"ujjain-kaal-sarp-dosh-puja-guide",
+
     "title": "Everything You Need to Know About Kaal Sarp Dosh Puja in Ujjain",
     "thumbnail": "/images/blog/blog-10.webp",
     "zodiacSign": "",
@@ -667,6 +681,8 @@
   },
   {
     "id": "11",
+    "slug":"zodiac-nakshatras-kaal-sarp-dosh-effects",
+
     "title": "Which Zodiac Signs and Nakshatras Are Most Affected by Kaal Sarp Dosh?",
     "thumbnail": "/images/blog/blog-11.webp",
     "zodiacSign": "",
@@ -733,6 +749,8 @@
   },
   {
     "id": "12",
+    "slug":"rahu-ketu-kaal-sarp-dosh-neutralize",
+
     "title": "Balancing Rahu and Ketu – How to Neutralize the Effects of Kaal Sarp Dosh?",
     "thumbnail": "/images/blog/blog-12.webp",
     "zodiacSign": "",
@@ -807,6 +825,8 @@
   },
   {
     "id": "13",
+    "slug":"12-types-kaal-sarp-dosh-effects",
+
     "title": "12 Types of Kaal Sarp Dosh: Meaning and Their Effects on Life",
     "thumbnail": "/images/blog/blog-13.webp",
     "zodiacSign": "",
@@ -861,6 +881,8 @@
   },
   {
     "id": "14",
+    "slug":"anant-kaal-sarp-dosh-remedies",
+
     "title": "Anant Kaal Sarp Dosh: Struggles and Remedies",
     "thumbnail": "/images/blog/blog-14.webp",
     "zodiacSign": "",
@@ -930,6 +952,8 @@
   },
   {
     "id": "15",
+    "slug":"kulik-kaal-sarp-dosh-wealth-prosperity",
+
     "title": "Kulik Kaal Sarp Dosh: How It Affects Wealth and Prosperity",
     "thumbnail": "/images/blog/blog-15.webp",
     "zodiacSign": "",
@@ -1007,6 +1031,8 @@
   },
   {
     "id": "16",
+    "slug":"vasuki-kaal-sarp-dosh-career-education",
+
     "title": "Vasuki Kaal Sarp Dosh: Its Influence on Career and Education",
     "thumbnail": "/images/blog/blog-16.webp",
     "zodiacSign": "",
@@ -1077,6 +1103,8 @@
   },
   {
     "id": "17",
+    "slug":"shankhpal-kaal-sarp-dosh-success-growth",
+
     "title": "Shankhpal Kaal Sarp Dosh: Understanding Its Effects on Success and Growth",
     "thumbnail": "/images/blog/blog-17.webp",
     "zodiacSign": "",
@@ -1147,6 +1175,8 @@
   },
   {
     "id": "18",
+    "slug":"padma-kaal-sarp-dosh-spiritual-challenges",
+
     "title": "Padma Kaal Sarp Dosh: Spiritual and Mental Challenges",
     "thumbnail": "/images/blog/blog-18.webp",
     "zodiacSign": "",
@@ -1217,6 +1247,8 @@
   },
   {
     "id": "19",
+    "slug":"maha-padma-kaal-sarp-dosh-family-relationships",
+
     "title": "Maha Padma Kaal Sarp Dosh: How It Impacts Family and Relationships",
     "thumbnail": "/images/blog/blog-19.webp",
     "zodiacSign": "",
@@ -1287,6 +1319,8 @@
   },
   {
     "id": "20",
+    "slug":"karkotak-kaal-sarp-dosh-health-well-being",
+
     "title": "Karkotak Kaal Sarp Dosh: Struggles in Health and Well-being",
     "thumbnail": "/images/blog/blog-20.webp",
     "zodiacSign": "",

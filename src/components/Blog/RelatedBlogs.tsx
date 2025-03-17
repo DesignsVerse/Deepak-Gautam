@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -34,7 +34,7 @@ const RelatedBlogs = ({ currentBlogId }: { currentBlogId: string }) => {
         {relatedBlogs.map((blog) => (
           <Link
             key={blog.id}
-            href={`/blog/${blog.id}`}
+            href={`/blog/${blog.slug}`} // ✅ Changed to slug
             className="group block bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 dark:border-gray-800"
           >
             <div className="flex items-center space-x-5 p-5 relative">
