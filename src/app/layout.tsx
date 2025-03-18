@@ -7,17 +7,15 @@ import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
 import { Metadata } from "next";
 import Popup from "@/components/Popup/Popup";
-import Script from "next/script";
+import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const GA_TRACKING_ID = "AW-10955081643"; // Replace with your actual Google Ads tracking ID
 
 // Global Metadata for the entire site
 export const metadata: Metadata = {
   title: {
     default: "Pandit Deepak Goutam - Kaal Sarp Puja Specialist in Ujjain",
-    template: "%s | Pandit Deepak Goutam - Ujjain Kaal Sarp",
+    template: "%s | Pandit Deepak Goutam - Ujjain Kaal Sarp", // Dynamic title template for sub-pages
   },
   description:
     "Pandit Deepak Goutam offers authentic Kaal Sarp Puja in Ujjain at Mahakaleshwar Temple. Expert Vedic rituals for Kaal Sarp Dosha Nivaran and spiritual peace.",
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   authors: [{ name: "Pandit Deepak Goutam" }],
   alternates: {
-    canonical: "https://www.ujjainkalsarp.com",
+    canonical: "https://www.ujjainkalsarp.com", // Updated to match your site
   },
   openGraph: {
     title: "Pandit Deepak Goutam - Kaal Sarp Puja Expert in Ujjain",
@@ -34,13 +32,13 @@ export const metadata: Metadata = {
       "Authentic Kaal Sarp Puja services in Ujjain by Pandit Deepak Goutam. Vedic solutions for Kaal Sarp Dosha Nivaran at Mahakaleshwar Temple.",
     images: [
       {
-        url: "/images/kaal-sarp-banner.jpg",
+        url: "/images/kaal-sarp-banner.jpg", // Updated to Kaal Sarp-specific image
         width: 1200,
         height: 630,
         alt: "Pandit Deepak Goutam - Kaal Sarp Puja in Ujjain",
       },
     ],
-    url: "https://www.ujjainkalsarp.com",
+    url: "https://www.ujjainkalsarp.com", // Updated to match your site
     type: "website",
   },
 };
@@ -51,7 +49,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Pandit Deepak Goutam - Ujjain Kaal Sarp",
-    url: "https://www.ujjainkalsarp.com",
+    url: "https://www.ujjainkalsarp.com", // Updated to match your site
     description:
       "Official website of Pandit Deepak Goutam, specialist in Kaal Sarp Puja and Vedic rituals in Ujjain at Mahakaleshwar Temple.",
     publisher: {
@@ -68,27 +66,13 @@ export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        {/* Google Ads Tag */}
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}');
-          `}
-        </Script>
-        
-        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
         />
       </head>
       <body className={`bg-white text-black ${inter.className}`}>
+      <GoogleAnalytics trackingId="AW-10955081643" />
         <Header />
         {children}
         <Popup />
