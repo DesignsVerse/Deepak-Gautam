@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
     title: `${post.title} | Deepak Goutam - Ujjain`,
     description:
       post.paragraph.slice(0, 150) + "..." || "Deepak Goutamसे इस सेवा के बारे में और जानें।",
-    keywords: `${post.title}, Deepak Gautam, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, सेवा`,
+    keywords: `${post.title}, Deepak Gautam, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, सेवा , काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन`,
     robots: "index, follow",
     authors: [{ name: "Deepak Gautam" }],
     alternates: {

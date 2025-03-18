@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | Deepak Goutam - kaal sarp ujjain pandit ji`,
     description:
       post.sections[0]?.content.slice(0, 150) + "..." || "Read more about this topic by Deepak Goutam.",
-    keywords: `${post.title.split(" ").join(", ")}, Deepak Goutam, ujjain, ujjain kaal sarp , kaal sarp ujjain, kaal sarp`,
+    keywords: `${post.title.split(" ").join(", ")}, Deepak Goutam, ujjain, ujjain kaal sarp , kaal sarp ujjain, kaal sarp, काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन`,
     robots: "index, follow",
     authors: [{ name: "Deepak Goutam" }],
     alternates: {

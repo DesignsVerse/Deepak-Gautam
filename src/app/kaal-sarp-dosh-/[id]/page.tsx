@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${service.title} - Kaal Sarp Puja Ujjain`,
     description: `${service.description.slice(0, 150)}... Book your Kaal Sarp Dosha Nivaran with Pandit Deepak Goutam in Ujjain today!`,
-    keywords: "ujjain kaal sarp, kaal sarp puja ujjain, deepak goutam pandit, kaal sarp dosha nivaran, spiritual rituals",
+    keywords: "ujjain kaal sarp, kaal sarp puja ujjain, deepak goutam pandit, kaal sarp dosha nivaran, spiritual rituals , काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन",
     robots: "index, follow",
     alternates: {
       canonical: `https://www.ujjainkalsarp.com/kaal-sarp-dosh-/${params.id}`,
