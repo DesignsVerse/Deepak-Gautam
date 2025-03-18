@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Contact Pandit Deepak Goutam for expert Kaal Sarp Puja in Ujjain. Book your Kaal Sarp Dosha Nivaran today!", // ✅ Concise, keyword-focused
   keywords:
-    "ujjain kaal sarp, kaal sarp ujjain, deepak goutam pandit, kaal sarp puja ujjain, kaal sarp dosha nivaran", // ✅ Targeted keywords
+    "ujjain kaal sarp, kaal sarp ujjain, deepak goutam pandit, kaal sarp puja ujjain, kaal sarp dosha nivaran , काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन", // ✅ Targeted keywords
   robots: "index, follow", // ✅ Good as is
   authors: [{ name: "Pandit Deepak Goutam" }], // ✅ Updated to Pandit ji’s title
   alternates: {

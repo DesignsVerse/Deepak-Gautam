@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Pandit Deepak Goutam offers authentic Kaal Sarp Puja in Ujjain at Mahakaleshwar Temple. Expert Vedic rituals for Kaal Sarp Dosha Nivaran and spiritual peace.",
   keywords:
-    "ujjain kaal sarp, kaal sarp puja ujjain, pandit deepak goutam, kaal sarp dosh nivaran, mahakaleshwar temple, vedic rituals, spiritual services",
+    " काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन, ujjain kaal sarp, kaal sarp puja ujjain, pandit deepak goutam, kaal sarp dosh nivaran, mahakaleshwar temple, vedic rituals, spiritual services",
   robots: "index, follow",
   authors: [{ name: "Pandit Deepak Goutam" }],
   alternates: {

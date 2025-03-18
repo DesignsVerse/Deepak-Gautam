@@ -85,27 +85,27 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services/3" className="hover:text-orange-400 transition-colors">
-                Rudrabhishek
+                  Rudrabhishek
                 </Link>
               </li>
               <li>
                 <Link href="/services/4" className="hover:text-orange-400 transition-colors">
-                Laghu Rudrabhishek
+                  Laghu Rudrabhishek
                 </Link>
               </li>
               <li>
                 <Link href="/services/5" className="hover:text-orange-400 transition-colors">
-                Mahamrityunjay Jaap
+                  Mahamrityunjay Jaap
                 </Link>
               </li>
               <li>
                 <Link href="/services/6" className="hover:text-orange-400 transition-colors">
-                Mahamrityunjay Pujan
+                  Mahamrityunjay Pujan
                 </Link>
               </li>
               <li>
                 <Link href="/services/7" className="hover:text-orange-400 transition-colors">
-                Ark Vivah
+                  Ark Vivah
                 </Link>
               </li>
               <li>
@@ -116,7 +116,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Right Column - Kaal Sarp Dosh Services with Links */}
+          {/* Right Column - Kaal Sarp Dosh Services */}
           <div>
             <h2 className="text-xl font-bold mb-4">Kaal Sarp Dosh Services</h2>
             <ul className="space-y-2 text-sm">
@@ -165,7 +165,6 @@ export default function Footer() {
                   Shankhchud Kaal Sarp Dosh
                 </Link>
               </li>
-              
               <li>
                 <Link href="/kaal-sarp-dosh-/110" className="hover:text-orange-400 transition-colors">
                   Vishdhar Kaal Sarp Dosh
@@ -178,29 +177,52 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/kaal-sarp-dosh-/111" className="hover:text-orange-400 transition-colors">
-                Patak Kaal Sarp Dosh
+                  Patak Kaal Sarp Dosh
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter Subscription with Call Now */}
+          {/* Rudraksha Section */}
           <div>
-            <h2 className="text-xl  font-bold mb-4">Subscribe To Our Newsletter</h2>
-            <p className="text-sm text-left">
-              Get the latest astrology insights, numerology predictions, and exclusive offers.
-            </p>
-            
-            <button
-              className="w-full mt-4 bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600 transition-colors"
-            
-            >
-              <a href="tel:+919153164444" className="hover:text-orange-400">Call Now</a>
-              
-            </button>
-            <p className="mt-4 text-sm">
-              <strong>Deepak Gautam</strong> is one of the <strong>best astrologers in India</strong> with 49+ years of expertise in <strong>Vedic Astrology, Numerology, and Palmistry</strong>.
-            </p>
+            <h2 className="text-xl font-bold mb-4">Rudraksha</h2>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/product/5-mukhi-rudraksha" className="hover:text-orange-400 transition-colors">
+                  5 Mukhi Rudraksha
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/7-mukhi-rudraksha" className="hover:text-orange-400 transition-colors">
+                  7 Mukhi Rudraksha
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/mesh-rashi-rudraksha-3-face" className="hover:text-orange-400 transition-colors">
+                Mesh Rashi Rudraksha 
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/vrishabha-rashi-rudraksha-6-face" className="hover:text-orange-400 transition-colors">
+                Vrishabha Rashi Rudraksha
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/child-related-problems-garbh-gauri-rudraksha" className="hover:text-orange-400 transition-colors">
+                Garbh Gauri Rudraksha
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/career-growth-obstacle-removal-ganesh-rudraksha" className="hover:text-orange-400 transition-colors">
+                  Ganesh Rudraksha
+                </Link>
+              </li>
+              <li>
+                <Link href="/product" className="hover:text-orange-400 transition-colors">
+                  View All Rudraksha
+                </Link>
+              </li>
+            </ul>
           </div>
         </motion.div>
 
@@ -231,7 +253,6 @@ export default function Footer() {
                 <Link href="/termservices" className="hover:text-orange-400">Terms & Services</Link>
                 <span>|</span>
                 <Link href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</Link>
-                
               </p>
               <p>© {new Date().getFullYear()} <strong>DesignsVerse</strong>. All Rights Reserved.</p>
 
