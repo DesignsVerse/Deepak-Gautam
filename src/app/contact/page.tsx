@@ -40,11 +40,12 @@ const ContactPage = () => {
 
       <section className="mt-10 pb-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-6">
+          <h2 className="mb-6 text-center text-3xl font-bold">
             Contact Pandit Deepak Goutam for Kaal Sarp Puja in Ujjain
           </h2>
-          <p className="text-center mb-8">
-            Reach out to Pandit Deepak Goutam, a renowned expert in Kaal Sarp Dosha Nivaran, based in Ujjain. Book your puja today!
+          <p className="mb-8 text-center">
+            Reach out to Pandit Deepak Goutam, a renowned expert in Kaal Sarp
+            Dosha Nivaran, based in Ujjain. Book your puja today!
           </p>
           <Contact />
         </div>

@@ -1,24 +1,30 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import blogData from "@/data/blogData.json"; // ✅ Ensure correct path
+import blogData from "@/data/blogData.json"; // Ensure correct path
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Link from "next/link";
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 12;
-  const totalPages = Math.max(1, Math.ceil(blogData.length / blogsPerPage));
+
+  // Sort blogData by publishDate in descending order (latest first)
+  const sortedBlogs = [...blogData].sort((a, b) => {
+    return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(); // Fixed with .getTime()
+  });
+
+  const totalPages = Math.max(1, Math.ceil(sortedBlogs.length / blogsPerPage));
 
   useEffect(() => {
     if (currentPage > totalPages) {
-      setCurrentPage((prev) => Math.max(1, totalPages)); // ✅ Prevent invalid page numbers
+      setCurrentPage((prev) => Math.max(1, totalPages)); // Prevent invalid page numbers
     }
   }, [totalPages, currentPage]);
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = blogData.slice(indexOfFirstBlog, indexOfLastBlog);
+  const currentBlogs = sortedBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
   const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
@@ -28,15 +34,15 @@ const Blog = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
           {currentBlogs.map((blog) => (
-            <Link key={blog.id} href={`/blog/${blog.slug}`} className="w-full"> {/* ✅ Changed to slug */}
+            <Link key={blog.id} href={`/blog/${blog.slug}`} className="w-full">
               <div className="w-full p-4 rounded-2xl transform transition-transform hover:scale-105 bg-gray-light">
-                <SingleBlog id={blog.id.toString()} slug={blog.slug} /> {/* ✅ Added slug prop */}
+                <SingleBlog id={blog.id.toString()} slug={blog.slug} />
               </div>
             </Link>
           ))}
         </div>
 
-        {/* ✅ Pagination */}
+        {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center mt-10 space-x-2">
             <button

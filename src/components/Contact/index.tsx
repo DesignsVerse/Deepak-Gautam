@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { motion } from "framer-motion"; // For animations
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -33,8 +33,13 @@ const Contact = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY",
-          ...formData,
+          access_key: "317724c9-f25d-4237-afcc-ed353931ecf0", // Replace with your actual Web3Forms access key
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          redirect: "https://web3forms.com/success", // Optional: success page
+          subject: "New Contact Form Submission", // Email subject
+          to: "harshmalviya343@gmail.com", // Your email address
         }),
       });
 
@@ -56,6 +61,7 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  // Rest of your component remains the same
   return (
     <>
       <Head>
@@ -83,7 +89,10 @@ const Contact = () => {
                   <FaMapMarkerAlt className="text-xl mt-1" />
                   <div>
                     <h3 className="font-semibold">Address</h3>
-                    <p>Surkhet, NP12, Bherendranagar 06</p>
+                    <p>69/1, Near Harsiddhi Mandir,
+                      Yogipura, Jaisinghpura, Ujjain,
+                      Madhya Pradesh 456006
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -91,15 +100,13 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold">Phone</h3>
                     <p>+91-9153164444</p>
-                    {/* <p>+0096 3434 5678</p> */}
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <FaEnvelope className="text-xl mt-1" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p>codinglab@gmail.com</p>
-                    <p>info.codinglab@gmail.com</p>
+                    <p>astrodeepakgoutam@gmail.com</p>
                   </div>
                 </div>
               </div>

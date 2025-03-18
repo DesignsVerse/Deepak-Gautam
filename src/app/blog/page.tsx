@@ -16,7 +16,9 @@ const BlogPage = () => {
   return (
     <>
       <Head>
-        <title>Blogs on Kaal Sarp Dosh & Astrology | Pandit Deepak GoutamJi - Ujjain</title>
+        <title>
+          Blogs on Kaal Sarp Dosh & Astrology | Pandit Deepak GoutamJi - Ujjain
+        </title>
         <meta
           name="description"
           content="Read blogs by Pandit Deepak GoutamJi on Kaal Sarp Dosh puja in Ujjain, astrology remedies, and Vedic rituals. Get expert insights into resolving Kaal Sarp Yog."
@@ -40,7 +42,10 @@ const BlogPage = () => {
         />
         <meta property="og:url" content="https://www.ujjainkalsarp.com/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.ujjainkalsarp.com/images/blog-og-image.jpg" />
+        <meta
+          property="og:image"
+          content="https://www.ujjainkalsarp.com/images/blog-og-image.jpg"
+        />
 
         {/* Structured Data */}
         <script
