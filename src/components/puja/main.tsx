@@ -147,7 +147,8 @@ export default function KaalSarpDoshPuja() {
       setTimeout(() => particle.remove(), 6000);
     };
 
-    
+    const interval = setInterval(createParticle, window.innerWidth < 768 ? 800 : 400);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -230,7 +231,7 @@ export default function KaalSarpDoshPuja() {
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
             <motion.a
               href="tel:+91-9153164444"
-              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-base"
+              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2A sm:px-6 sm:py-3 sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={currentContent.contact}
@@ -347,7 +348,7 @@ export default function KaalSarpDoshPuja() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          "{currentContent.footerQuote}"
+          &quot;{currentContent.footerQuote}&quot;
         </motion.p>
         <motion.div
           className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-orange-700"
