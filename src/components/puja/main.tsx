@@ -147,11 +147,7 @@ export default function KaalSarpDoshPuja() {
       setTimeout(() => particle.remove(), 6000);
     };
 
-    const interval = setInterval(
-      createParticle,
-      window.innerWidth < 768 ? 800 : 400,
-    );
-    return () => clearInterval(interval);
+    
   }, []);
 
   return (
@@ -351,7 +347,7 @@ export default function KaalSarpDoshPuja() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          \"{currentContent.footerQuote}\"
+          "{currentContent.footerQuote}"
         </motion.p>
         <motion.div
           className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-orange-700"
