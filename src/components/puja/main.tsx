@@ -92,7 +92,7 @@ export default function KaalSarpDoshPuja() {
       >
         <button
           onClick={() => setIsHindi(!isHindi)}
-          className="bg-orange-600 text-white px-4  py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors duration-300 shadow-lg"
+          className="bg-orange-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors duration-300 shadow-lg"
           aria-label={isHindi ? "Switch to English" : "Switch to Hindi"}
         >
           {isHindi ? "English" : "हिन्दी"}
@@ -152,7 +152,6 @@ export default function KaalSarpDoshPuja() {
             <motion.a
               href="https://wa.me/919153164444?text=Namaste!!%20Mujhe%20Consult%20krna%20hai"
               target="_blank"
-      
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-orange-600 to-red-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-500 tracking-wide"
               whileHover={{ scale: 1.15, boxShadow: "0 25px 50px rgba(255, 165, 0, 0.6)" }}
@@ -287,7 +286,7 @@ export default function KaalSarpDoshPuja() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          "{currentContent.footerQuote}"
+          &quot;{currentContent.footerQuote}&quot;
         </motion.p>
         <motion.div
           className="mt-4 sm:mt-6 text-orange-700 text-sm sm:text-base font-semibold tracking-wide"
