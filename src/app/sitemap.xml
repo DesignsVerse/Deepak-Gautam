@@ -1,110 +1,402 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- Created for https://www.ujjainkalsarp.com/ by Grok on March 09, 2025 -->
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://www.ujjainkalsarp.com/</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://www.ujjainkalsarp.com/</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.90</priority>
+<loc>https://www.ujjainkalsarp.com/services</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/gallery</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.ujjainkalsarp.com/product</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/blog</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.ujjainkalsarp.com/blog</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/contact</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.90</priority>
+<loc>https://www.ujjainkalsarp.com/gallery</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/privacy-policy</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.60</priority>
+<loc>https://www.ujjainkalsarp.com/contact</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/terms-of-service</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.60</priority>
+<loc>https://www.ujjainkalsarp.com/services/1</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/kaal-sarp-puja</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.95</priority>
+<loc>https://www.ujjainkalsarp.com/services/2</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/kaal-sarp-dosh-nivaran</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.85</priority>
+<loc>https://www.ujjainkalsarp.com/services/3</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/anant-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/product/2-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/kulik-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/product/3-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/vasuki-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/product/4-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/shankhchud-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/product/5-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/padma-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/blog/ujjain-kaal-sarp-dosh-remedies</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/mahapadma-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/blog/ujjain-kaal-sarp-dosh-remedies-1</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/takshak-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/blog/rahu-ketu-ka-jeevan-par-prabhav-aur-upay</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/services/karkotak-kaal-sarp-dosh</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://www.ujjainkalsarp.com/services/4</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-puja-guide</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.75</priority>
+<loc>https://www.ujjainkalsarp.com/services/5</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/blog/benefits-of-kaal-sarp-puja</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.75</priority>
+<loc>https://www.ujjainkalsarp.com/services/6</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://www.ujjainkalsarp.com/product</loc>
-  <lastmod>2025-03-09T00:00:00+00:00</lastmod>
-  <priority>0.65</priority>
+<loc>https://www.ujjainkalsarp.com/services/7</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
 </url>
-
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/101</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/102</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/103</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/104</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/105</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/106</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/107</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/108</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/109</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/110</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/112</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/kaal-sarp-dosh-/111</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/7-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/mesh-rashi-rudraksha-3-face</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/vrishabha-rashi-rudraksha-6-face</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/child-related-problems-garbh-gauri-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/career-growth-obstacle-removal-ganesh-rudraksha</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/help</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/termservices</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/privacy-policy</loc>
+<lastmod>2025-03-21T18:08:28+01:00</lastmod>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/8</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/9</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/10</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/11</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/12</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/13</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/14</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/services/15</loc>
+<lastmod>2025-03-21T18:08:30+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-puja-in-ujjain</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-puja-in-ujjain-pandit-ji-sifarish</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-dosh-ki-pehchan-lakshan-aur-upay</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/rahu-ketu-ko-santulit-karke-kaal-sarp-dosh-ka-nivaran</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/12-prakar-ka-kaal-sarp-dosh-arth-aur-prabhav</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/padma-kaal-sarp-dosh-adhyatmik-aur-manasik-chunautiyan</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/maha-padma-kaal-sarp-dosh-parivar-aur-rishte</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-dosh-puja-story</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/cost-of-kaal-sarp-dosh-puja-</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-dosh-ki-puja-kab-hoti-hai</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/blog/kaal-sarp-dosh-ke-nuksan</loc>
+<lastmod>2025-03-21T18:08:31+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/1-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:34+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/6-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:34+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/mithun-rashi-rudraksha-4-face</loc>
+<lastmod>2025-03-21T18:08:38+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/singh-rashi-rudraksha-1-face</loc>
+<lastmod>2025-03-21T18:08:38+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/health-related-problems-5-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:38+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/husband-wife-disputes-marriage-issues-gauri-shankar-rudraksha</loc>
+<lastmod>2025-03-21T18:08:38+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/mangal-dosha-3-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:38+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/9-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:39+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/8-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:43+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/happy-married-life-2-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:43+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/tula-rashi-rudraksha-6-face</loc>
+<lastmod>2025-03-21T18:08:43+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/obstacles-education-6-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:43+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/shani-sade-sati-7-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:43+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/10-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:43+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/11-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:44+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/kanya-rashi-rudraksha-4-face</loc>
+<lastmod>2025-03-21T18:08:44+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/12-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:44+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/kaal-sarp-dosha-8-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:44+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/ketu-pacification-9-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:44+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/13-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:44+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.ujjainkalsarp.com/product/14-mukhi-rudraksha</loc>
+<lastmod>2025-03-21T18:08:45+01:00</lastmod>
+<priority>0.8</priority>
+</url>
 </urlset>

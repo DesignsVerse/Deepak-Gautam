@@ -34,6 +34,25 @@ interface CheckoutFormProps {
   onClose: () => void;
 }
 
+interface OrderDetails {
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  pincode: string;
+  phone: string;
+  email?: string;
+  paymentMethod: string;
+  productName: string;
+  productId: string;
+  quantity: number;
+  selectedQuality: string;
+  adjustedPrice: number;
+  subtotal: number;
+  shipping: number;
+  total: number;
+}
+
 export default function CheckoutForm({
   product,
   quantity,
@@ -44,7 +63,7 @@ export default function CheckoutForm({
 }: CheckoutFormProps) {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [orderDetails, setOrderDetails] = useState<any>(null);
+  const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
 
   const {
     register,
@@ -99,10 +118,17 @@ export default function CheckoutForm({
   }, [trigger]);
 
   const handleOrderPreview = async (data: CheckoutFormData) => {
-    const orderData = {
-      ...data,
+    const orderData: OrderDetails = {
+      name: data.name,
+      address: data.address,
+      city: data.city,
+      state: data.state,
+      pincode: data.pincode,
+      phone: data.phone,
+      email: data.email,
+      paymentMethod: data.paymentMethod,
       productName: product.name,
-      productId: product.id,
+      productId: product.id.toString(),
       quantity,
       selectedQuality,
       adjustedPrice,
@@ -115,10 +141,27 @@ export default function CheckoutForm({
   };
 
   const handleConfirmOrder = async () => {
+    if (!orderDetails) return;
+
     try {
       setIsLoading(true);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Rudrak\'s Order Details:", orderDetails);
+
+      // Send order details to backend API
+      const response = await fetch('/api/send-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          orderDetails,
+          emailTo: "harshmalviya343@gmail.com", // Replace with your actual email address
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send order details');
+      }
+
       toast.success("Order placed successfully!");
       onClose();
     } catch (error) {
@@ -153,7 +196,7 @@ export default function CheckoutForm({
         {/* Desktop Order Summary */}
         <div className="hidden md:block md:w-1/3 bg-gray-50 p-6 overflow-y-auto">
           <h2 className="text-lg font-semibold text-maroon mb-4">
-            Rudrak&apos;s Order Summary
+            Rudrak's Order Summary
           </h2>
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
@@ -251,7 +294,7 @@ export default function CheckoutForm({
                   className="space-y-4"
                 >
                   <h3 className="text-lg font-semibold text-maroon md:block hidden">
-                    Rudrak&apos;s Shipping Address
+                    Rudrak's Shipping Address
                   </h3>
                   <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4">
                     <div>
@@ -332,7 +375,7 @@ export default function CheckoutForm({
                   className="space-y-4"
                 >
                   <h3 className="text-lg font-semibold text-maroon md:block hidden">
-                    Rudrak&apos;s Payment Method
+                    Rudrak's Payment Method
                   </h3>
                   <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4">
                     {[
@@ -393,7 +436,7 @@ export default function CheckoutForm({
                   className="space-y-4"
                 >
                   <h3 className="text-xl font-bold text-maroon border-b-2 border-maroon pb-2 md:block hidden">
-                    Rudrak&apos;s Order Invoice
+                    Rudrak's Order Invoice
                   </h3>
                   <div className="space-y-4 md:bg-gray-100 md:p-6 md:rounded-lg md:border md:border-green-200">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
