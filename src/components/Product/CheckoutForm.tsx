@@ -34,6 +34,25 @@ interface CheckoutFormProps {
   onClose: () => void;
 }
 
+interface OrderDetails {
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  pincode: string;
+  phone: string;
+  email?: string;
+  paymentMethod: string;
+  productName: string;
+  productId: string;
+  quantity: number;
+  selectedQuality: string;
+  adjustedPrice: number;
+  subtotal: number;
+  shipping: number;
+  total: number;
+}
+
 export default function CheckoutForm({
   product,
   quantity,
@@ -44,7 +63,7 @@ export default function CheckoutForm({
 }: CheckoutFormProps) {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [orderDetails, setOrderDetails] = useState<any>(null);
+  const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
 
   const {
     register,
@@ -99,10 +118,17 @@ export default function CheckoutForm({
   }, [trigger]);
 
   const handleOrderPreview = async (data: CheckoutFormData) => {
-    const orderData = {
-      ...data,
+    const orderData: OrderDetails = {
+      name: data.name,
+      address: data.address,
+      city: data.city,
+      state: data.state,
+      pincode: data.pincode,
+      phone: data.phone,
+      email: data.email,
+      paymentMethod: data.paymentMethod,
       productName: product.name,
-      productId: product.id,
+      productId: product.id.toString(),
       quantity,
       selectedQuality,
       adjustedPrice,
@@ -115,10 +141,27 @@ export default function CheckoutForm({
   };
 
   const handleConfirmOrder = async () => {
+    if (!orderDetails) return;
+
     try {
       setIsLoading(true);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Rudrak\'s Order Details:", orderDetails);
+
+      // Send order details to backend API
+      const response = await fetch('/api/send-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          orderDetails,
+          emailTo: "harshmalviya343@gmail.com", // Replace with your actual email address
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send order details');
+      }
+
       toast.success("Order placed successfully!");
       onClose();
     } catch (error) {
