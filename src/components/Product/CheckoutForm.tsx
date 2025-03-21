@@ -196,7 +196,7 @@ export default function CheckoutForm({
         {/* Desktop Order Summary */}
         <div className="hidden md:block md:w-1/3 bg-gray-50 p-6 overflow-y-auto">
           <h2 className="text-lg font-semibold text-maroon mb-4">
-            Rudrak's Order Summary
+            Rudrak\'s Order Summary
           </h2>
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
@@ -294,7 +294,7 @@ export default function CheckoutForm({
                   className="space-y-4"
                 >
                   <h3 className="text-lg font-semibold text-maroon md:block hidden">
-                    Rudrak's Shipping Address
+                    Rudrak\'s Shipping Address
                   </h3>
                   <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4">
                     <div>
@@ -375,7 +375,7 @@ export default function CheckoutForm({
                   className="space-y-4"
                 >
                   <h3 className="text-lg font-semibold text-maroon md:block hidden">
-                    Rudrak's Payment Method
+                    Rudrak\'s Payment Method
                   </h3>
                   <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4">
                     {[
@@ -436,7 +436,7 @@ export default function CheckoutForm({
                   className="space-y-4"
                 >
                   <h3 className="text-xl font-bold text-maroon border-b-2 border-maroon pb-2 md:block hidden">
-                    Rudrak's Order Invoice
+                    Rudrak\'s Order Invoice
                   </h3>
                   <div className="space-y-4 md:bg-gray-100 md:p-6 md:rounded-lg md:border md:border-green-200">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">

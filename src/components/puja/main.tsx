@@ -10,7 +10,6 @@ export default function KaalSarpDoshPuja() {
   const { scrollY } = useScroll({ target: containerRef });
   const yParallax = useTransform(scrollY, [0, 400], [0, -60]);
   const [isHindi, setIsHindi] = useState(false);
-  
 
   const content = {
     english: {
@@ -134,7 +133,7 @@ export default function KaalSarpDoshPuja() {
   useEffect(() => {
     const createParticle = () => {
       const container = document.querySelector(".particle-container");
-      if (container.childElementCount > 30) return;
+      if (container?.childElementCount > 30) return;
       const particle = document.createElement("div");
       particle.className =
         "absolute rounded-full bg-gradient-to-r from-orange-300 to-yellow-300 opacity-40";
@@ -233,39 +232,37 @@ export default function KaalSarpDoshPuja() {
 
           {/* CTA Buttons */}
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-          <motion.a
-  href="tel:+91-9153164444"
-  className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-base"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  aria-label={currentContent.contact}
-  onClick={async () => {
-    try {
-      // Define the shape of the data being sent
-      const clickData = {
-        timestamp: new Date().toISOString(),
-        button: "Call Now",
-      };
+            <motion.a
+              href="tel:+91-9153164444"
+              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={currentContent.contact}
+              onClick={async () => {
+                try {
+                  const clickData = {
+                    timestamp: new Date().toISOString(),
+                    button: "Call Now",
+                  };
 
-      // Send a silent request to your Next.js API route
-      const response = await fetch("/api/click", { // Change "/api/click" to "/api/track-click"
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(clickData),
-      });
+                  const response = await fetch("/api/click", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(clickData),
+                  });
 
-      if (!response.ok) {
-        throw new Error("Failed to track click");
-      }
-    } catch (error) {
-      console.error("Tracking failed:", error);
-    }
-  }}
->
-  <FaPhone /> {currentContent.contact}
-</motion.a>
+                  if (!response.ok) {
+                    throw new Error("Failed to track click");
+                  }
+                } catch (error) {
+                  console.error("Tracking failed:", error);
+                }
+              }}
+            >
+              <FaPhone /> {currentContent.contact}
+            </motion.a>
           </div>
 
           {/* Marquee */}
@@ -354,7 +351,7 @@ export default function KaalSarpDoshPuja() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          "{currentContent.footerQuote}"
+          \"{currentContent.footerQuote}\"
         </motion.p>
         <motion.div
           className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-orange-700"
