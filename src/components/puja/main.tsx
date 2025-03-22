@@ -230,36 +230,46 @@ export default function KaalSarpDoshPuja() {
           {/* CTA Buttons */}
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
             <motion.a
-              href="tel:+91-9153164444"
-              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2A sm:px-6 sm:py-3 sm:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label={currentContent.contact}
-              onClick={async () => {
-                try {
-                  const clickData = {
-                    timestamp: new Date().toISOString(),
-                    button: "Call Now",
-                  };
+            href="tel:+91-9153164444"
+            className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2A sm:px-6 sm:py-3 sm:text-base"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label={currentContent.contact}
+            onClick={async () => {
+            try {
+            const clickData = {
+            timestamp: new Date().toISOString(),
+            button: "Call Now",
+            };
 
-                  const response = await fetch("/api/click", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(clickData),
-                  });
+            // ✅ Push to Google Tag Manager
+            if (window.dataLayer) {
+            window.dataLayer.push({
+            event: "call_now_clicked",
+            button_text: "Call Now",
+            });
+            }
 
-                  if (!response.ok) {
-                    throw new Error("Failed to track click");
-                  }
-                } catch (error) {
-                  console.error("Tracking failed:", error);
-                }
-              }}
+            // ✅ Also track it in your backend (optional)
+            const response = await fetch("/api/click", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(clickData),
+            });
+
+            if (!response.ok) {
+            throw new Error("Failed to track click");
+            }
+            } catch (error) {
+            console.error("Tracking failed:", error);
+            }
+            }}
             >
-              <FaPhone /> {currentContent.contact}
+            <FaPhone /> {currentContent.contact}
             </motion.a>
+
           </div>
 
           {/* Marquee */}
