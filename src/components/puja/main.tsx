@@ -9,7 +9,7 @@ export default function KaalSarpDoshPuja() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll({ target: containerRef });
   const yParallax = useTransform(scrollY, [0, 400], [0, -60]);
-  const [isHindi, setIsHindi] = useState(false);
+  const [isHindi, setIsHindi] = useState(true); // Changed to true for Hindi as default
 
   const content = {
     english: {
@@ -50,7 +50,7 @@ export default function KaalSarpDoshPuja() {
       whyChoose: "Why Choose Pandit Deepak Goutam?",
       features: [
         {
-          title: "Vedic Mastery",
+          title: "Vedic mastery",
           desc: "Deep knowledge of ancient rituals and scriptures.",
           icon: "🕉️",
         },
@@ -72,9 +72,9 @@ export default function KaalSarpDoshPuja() {
     hindi: {
       title: "उज्जैन में काल सर्प दोष पूजा",
       freeConsult: "अभी अपनी मुफ्त कॉल परामर्श प्राप्त करें!",
-      marqueeText: "मुफ्त कॉल!",
+      marqueeText: "कॉल करें!",
       subtitle:
-        "काल सर्प दोष विशेषज्ञ पंडित दीपक गौतम की guidance में, खुशहाल और शांतिपूर्ण जीवन के लिए मुफ्त आध्यात्मिक समाधान पाएं।",
+        "काल सर्प दोष विशेषज्ञ पंडित दीपक गौतम की मार्गदर्शन में, खुशहाल और शांतिपूर्ण जीवन के लिए मुफ्त आध्यात्मिक समाधान पाएं।",
       pujaSteps: [
         {
           step: "संकल्प",
@@ -231,7 +231,7 @@ export default function KaalSarpDoshPuja() {
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
             <motion.a
               href="tel:+91-9153164444"
-              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2A sm:px-6 sm:py-3 sm:text-base"
+              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={currentContent.contact}
@@ -348,7 +348,7 @@ export default function KaalSarpDoshPuja() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          &quot;{currentContent.footerQuote}&quot;
+          "{currentContent.footerQuote}"
         </motion.p>
         <motion.div
           className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-orange-700"
