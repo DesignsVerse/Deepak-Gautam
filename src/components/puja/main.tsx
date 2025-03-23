@@ -9,7 +9,7 @@ export default function KaalSarpDoshPuja() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll({ target: containerRef });
   const yParallax = useTransform(scrollY, [0, 400], [0, -60]);
-  const [isHindi, setIsHindi] = useState(true); // Changed to true for Hindi as default
+  const [isHindi, setIsHindi] = useState(true); // Hindi as default
 
   const content = {
     english: {
@@ -65,7 +65,6 @@ export default function KaalSarpDoshPuja() {
           icon: "✨",
         },
       ],
-      
       footerQuote:
         "Step into a sacred journey of trust and devotion. Your spiritual peace is our sacred duty.",
       footerAuthor: "- Pandit Deepak Goutam",
@@ -349,7 +348,7 @@ export default function KaalSarpDoshPuja() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          "{currentContent.footerQuote}"
+          &quot;{currentContent.footerQuote}&quot; {/* Fixed with HTML entities */}
         </motion.p>
         <motion.div
           className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-orange-700"
