@@ -65,6 +65,7 @@ export default function KaalSarpDoshPuja() {
           icon: "✨",
         },
       ],
+      
       footerQuote:
         "Step into a sacred journey of trust and devotion. Your spiritual peace is our sacred duty.",
       footerAuthor: "- Pandit Deepak Goutam",
