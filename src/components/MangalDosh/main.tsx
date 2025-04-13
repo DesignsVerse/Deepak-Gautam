@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { FaPhone, FaGem, FaGlobe, FaPray } from "react-icons/fa";
-import PanditDesc from "./panditDesc";
+import PanditDescription1 from "../puja/PanditDesc";
 
 export default function MangalDoshPuja() {
   const containerRef = useRef(null);
@@ -66,7 +66,7 @@ export default function MangalDoshPuja() {
         },
       ],
       footerQuote:
-        "Embark on a sacred journey to balance and harmony. Your spiritual well-being is our divine commitment.",
+        "&quot;Embark on a sacred journey to balance and harmony. Your spiritual well-being is our divine commitment.&quot;",
       footerAuthor: "- Pandit Deepak Goutam",
     },
     hindi: {
@@ -123,7 +123,7 @@ export default function MangalDoshPuja() {
         },
       ],
       footerQuote:
-        "संतुलन और सामंजस्य की पवित्र यात्रा शुरू करें। आपकी आध्यात्मिक भलाई हमारा दैवीय संकल्प है।",
+        "&quot;संतुलन और सामंजस्य की पवित्र यात्रा शुरू करें। आपकी आध्यात्मिक भलाई हमारा दैवीय संकल्प है।&quot;",
       footerAuthor: "- पंडित दीपक गौतम",
     },
   };
@@ -299,7 +299,7 @@ export default function MangalDoshPuja() {
 
           {/* Timeline */}
           <div className="mt-8">
-            <PanditDesc isHindi={isHindi} />
+            <PanditDescription1 isHindi={isHindi} />
           </div>
         </div>
       </section>
@@ -356,9 +356,8 @@ export default function MangalDoshPuja() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
-        >
-          "{currentContent.footerQuote}"
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: currentContent.footerQuote }}
+        />
         <motion.div
           className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-orange-700"
           initial={{ opacity: 0, y: 20 }}
