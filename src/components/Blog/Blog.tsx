@@ -1,39 +1,26 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import blogData from "@/data/blogData.json";
+import blogData from "@/data/blogData.json"; // Ensure correct path
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
 
 const Blog = () => {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  
-  // Initialize page from URL or default to 1
-  const initialPage = parseInt(searchParams.get("page") || "1", 10);
-  const [currentPage, setCurrentPage] = useState(initialPage);
+  const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 12;
 
-  // Sort blogs by publishDate (latest first)
+  // Sort blogData by publishDate in descending order (latest first)
   const sortedBlogs = [...blogData].sort((a, b) => {
-    return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
+    return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(); // Fixed with .getTime()
   });
 
   const totalPages = Math.max(1, Math.ceil(sortedBlogs.length / blogsPerPage));
 
-  // Update URL when page changes and handle invalid pages
   useEffect(() => {
     if (currentPage > totalPages) {
-      setCurrentPage(totalPages);
-      router.push(`?page=${totalPages}`);
-    } else if (currentPage < 1) {
-      setCurrentPage(1);
-      router.push(`?page=1`);
-    } else {
-      router.push(`?page=${currentPage}`);
+      setCurrentPage((prev) => Math.max(1, totalPages)); // Prevent invalid page numbers
     }
-  }, [currentPage, totalPages, router]);
+  }, [totalPages, currentPage]);
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
