@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isCallNowPage = pathname === "/puja" || pathname === "/mangaldosh";
+  const isCallNowPage = pathname === "/puja" || pathname === "/mangaldosha";
   
 
   return (
