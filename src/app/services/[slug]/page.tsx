@@ -5,7 +5,12 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+// Define the props type explicitly to avoid type mismatch
+type ServicePageProps = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const post = data.find((post) => post.slug === params.slug);
   if (!post) {
     return { title: "Service Not Found | Deepak Gautam" };
@@ -37,7 +42,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ServicePost({ params }: { params: { slug: string } }) {
+export default async function ServicePost({ params }: ServicePageProps) {
   const post = data.find((post) => post.slug === params.slug);
   if (!post) return notFound();
 
