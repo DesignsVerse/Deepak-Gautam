@@ -3,46 +3,15 @@ import { notFound } from "next/navigation";
 import data from "@/data/services.json";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 
-// Define the props type explicitly to avoid type mismatch
+// Define the props type explicitly
 type ServicePageProps = {
   params: { slug: string };
 };
 
-export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const post = data.find((post) => post.slug === params.slug);
-  if (!post) {
-    return { title: "Service Not Found | Deepak Gautam" };
-  }
-
-  return {
-    title: `${post.title} | Deepak Goutam - Ujjain`,
-    description: post.paragraph.slice(0, 150) + "..." || "Deepak Goutam से इस सेवा के बारे में और जानें।",
-    keywords: `${post.title}, Deepak Gautam, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, सेवा, काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन`,
-    robots: "index, follow",
-    authors: [{ name: "Deepak Gautam" }],
-    alternates: {
-      canonical: `https://www.ujjainkalsarp.com/services/${post.slug}`,
-    },
-    openGraph: {
-      title: `${post.title} | Deepak Gautam`,
-      description: post.paragraph.slice(0, 150) + "..." || "Deepak Goutam की विशेषज्ञ सेवा।",
-      images: [
-        {
-          url: post.image || "/images/default-service.jpg",
-          width: 800,
-          height: 400,
-          alt: `${post.title} - Deepak Goutam Service`,
-        },
-      ],
-      url: `https://www.ujjainkalsarp.com/services/${post.slug}`,
-      type: "website",
-    },
-  };
-}
-
-export default async function ServicePost({ params }: ServicePageProps) {
+// Use NextPage to ensure compatibility (optional)
+const ServicePost: NextPage<ServicePageProps> = async ({ params }) => {
   const post = data.find((post) => post.slug === params.slug);
   if (!post) return notFound();
 
@@ -71,7 +40,6 @@ export default async function ServicePost({ params }: ServicePageProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content + Additional Content */}
         <section className="lg:col-span-2 border rounded-lg shadow-md p-6">
-          {/* Main Content */}
           <div>
             <div className="">
               <div className="flex items-center justify-between">
@@ -191,4 +159,38 @@ export default async function ServicePost({ params }: ServicePageProps) {
       </div>
     </main>
   );
+};
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const post = data.find((post) => post.slug === params.slug);
+  if (!post) {
+    return { title: "Service Not Found | Deepak Gautam" };
+  }
+
+  return {
+    title: `${post.title} | Deepak Goutam - Ujjain`,
+    description: post.paragraph.slice(0, 150) + "..." || "Deepak Goutam से इस सेवा के बारे में और जानें।",
+    keywords: `${post.title}, Deepak Gautam, वेबसाइट डेवलपमेंट, डिजिटल मार्केटिंग, SEO, पर्सनल ब्रांडिंग, सेवा, काल सर्प दोष, काल सर्प योग, उज्जैन काल सर्प दोष, उज्जैन काल सर्प योग, काल सर्प दोष पूजा उज्जैन, उज्जैन काल सर्प पूजा, काल सर्प दोष निवारण पूजा उज्जैन`,
+    robots: "index, follow",
+    authors: [{ name: "Deepak Gautam" }],
+    alternates: {
+      canonical: `https://www.ujjainkalsarp.com/services/${post.slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | Deepak Gautam`,
+      description: post.paragraph.slice(0, 150) + "..." || "Deepak Goutam की विशेषज्ञ सेवा।",
+      images: [
+        {
+          url: post.image || "/images/default-service.jpg",
+          width: 800,
+          height: 400,
+          alt: `${post.title} - Deepak Goutam Service`,
+        },
+      ],
+      url: `https://www.ujjainkalsarp.com/services/${post.slug}`,
+      type: "website",
+    },
+  };
 }
+
+export default ServicePost;
