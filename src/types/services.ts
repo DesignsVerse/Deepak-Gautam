@@ -7,7 +7,6 @@ type Author = {
 export type Services = {
   id: number;
   title: string;
-  slug:string;
   paragraph: string;
   image: string;
   
