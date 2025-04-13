@@ -27,7 +27,7 @@ const ServiceSection = () => {
   // Split services into featured (first 2) and regular services
   const [featuredServices, regularServices] = useMemo(() => {
     return [typedServiceData.slice(0, 2), typedServiceData.slice(2)];
-  }, []);
+  }, [typedServiceData]); // Added typedServiceData
 
   // Memoize featured service cards (larger boxes)
   const featuredCards = useMemo(
@@ -65,11 +65,11 @@ const ServiceSection = () => {
     <section style={sectionStyles} className="w-full">
       <div className="max-w-7xl mx-auto">
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-base leading-relaxed">
-          "In our astrological services{' '}
+          {"\"In our astrological services "}
           <strong className="font-semibold">
             Kundli milan, Vastu consultation, grah dosh nivaran, tantra-mantra anushthan, shatru naash, aur safalta prapti.
-          </strong>{' '}
-          These are the main services included. Select from the options below to find a solution to your problem."
+          </strong>
+          {" These are the main services included. Select from the options below to find a solution to your problem.\""}
         </p>
 
         {/* Featured Services - 2 larger boxes */}
