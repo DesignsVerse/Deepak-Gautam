@@ -2,6 +2,7 @@
   {
     "id": 1,
     "image": "/images/puja/1.webp",
+    "slug": "kaal-sarp-dosh-pujan",
     "title": "Kaal Sarp Dosh Pujan",
     "description": "Kaal Sarp Dosh is a significant astrological condition that occurs when all the planets in a person's Kundli (birth chart) are positioned between Rahu and Ketu, the lunar nodes. This alignment is believed to bring various challenges and obstacles in life, making progress difficult. Individuals affected by this dosh may experience financial instability, career setbacks, health concerns, and strained relationships within the family. It can also create mental stress, delays in success, and unexpected hardships. Many people believe that the presence of Kaal Sarp Dosh can lead to continuous struggles, despite hard work and dedication.y",
     "paragraph": "If you feel nothing is going right no matter how hard you try, this might be why. But don’t worry – there’s a good fix called Kaal Sarp Dosh Puja in Ujjain, done by experts like Pandit Deepak Goutam, a famous name in Ujjain for helping people with this.",
@@ -75,6 +76,8 @@
   {
     "id": 2,
     "title": "Mangal Dosh Pujan",
+    "slug": "mangal-dosh-pujan",
+
     "image": "/images/puja/2.webp",
     "description": "Mangal Dosh Pujan is a special ritual done to fix a problem in your Kundli called Mangal Dosh, which happens when Mars sits in certain spots. It can cause troubles like delays in marriage, fights with your partner, or other life issues.",
     "paragraph": "If you’re wondering why things like love or family peace aren’t working out, this might be why. The good news? Mangal Dosh Pujan in Ujjain, guided by Pandit Deepak Goutam, is a trusted way to solve it. In this easy guide, we’ll tell you everything about this Puja.",
@@ -148,6 +151,7 @@
   {
     "id": 3,
     "title": "Rudrabhishek",
+    "slug": "rudrabhishek",
     "image": "/images/puja/3.webp",
     "description": "Rudrabhishek is a special Puja done to please Lord Shiva and get his blessings. It’s a powerful ritual that can fix problems in your life, like health issues, money troubles, or family stress, by calming the planets in your Kundli",
     "paragraph": "If you feel stuck or need peace, this might be the answer. The best place for Rudrabhishek is Ujjain, where Pandit Deepak Goutam, a well-known Ujjain Pandit, does it with care. It’s also great for things like Kaal Sarp Dosh",
@@ -221,6 +225,7 @@
   {
     "id": 4,
     "title": "Laghu Rudrabhishek (Laghurudra)",
+    "slug": "laghu-rudrabhishek",
     "image": "/images/puja/4.webp",
     "description": "Laghu Rudrabhishek (Laghurudra) is a short and simple Puja to honor Lord Shiva and get his blessings. It’s a lighter version of Rudrabhishek, perfect for fixing small life problems like stress, health issues, or family troubles by calming the planets in your Kundli",
     "paragraph": "If you want peace or help with things like Kaal Sarp Dosh, this could work for you. The best place for Laghu Rudrabhishek is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with care",
@@ -294,6 +299,7 @@
   {
     "id": 5,
     "title": "Mahamrityunjay Jaap Anushthan",
+    "slug": "mahamrityunjay-jaap-anushthan",
     "image": "/images/puja/5.webp",
     "description": "Mahamrityunjay Jaap Anushthan is a strong Puja where you chant the Mahamrityunjay mantra many times to please Lord Shiva and get his protection. It’s great for big life problems like serious health issues, fear of death, or bad luck, and it calms the planets in your Kundli",
     "paragraph": "If you’re facing tough times or want safety from things like Kaal Sarp Dosh, this can help. The best place for Mahamrityunjay Jaap Anushthan is Ujjain, where Pandit Deepak Goutam, a well-known Ujjain Pandit, does it with full care",
@@ -367,6 +373,7 @@
   {
     "id": 6,
     "title": "Mahamrityunjay Pujan",
+    "slug": "mahamrityunjay-pujan",
     "image": "/images/puja/6.webp",
     "description": "Mahamrityunjay Pujan is a special Puja to honor Lord Shiva and ask for his protection using the Mahamrityunjay mantra. It’s a strong ritual to fix big problems like serious sickness, fear of death, or bad luck, and it calms the planets in your Kundli",
     "paragraph": "If you’re facing hard times or need help with things like Kaal Sarp Dosh, this can be a big support. The best place for Mahamrityunjay Pujan is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care",
@@ -441,6 +448,7 @@
     "id": 7,
     "title": "Ark Vivah",
     "image": "/images/puja/7.webp",
+    "slug": "ark-vivah",
     "description": "Ark Vivah is a special Puja done to fix marriage delays caused by Mangal Dosh in your Kundli. In this ritual, a person marries an Ark plant to remove the bad effects of Mars before their real marriage",
     "paragraph": "If you’re facing trouble finding a partner or delays in tying the knot, this could help. The best place for Ark Vivah is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care. It’s also linked to fixing things like Kaal Sarp Dosh",
     "sections": [
@@ -513,6 +521,7 @@
   {
     "id": 8,
     "title": "Kumbh Vivah / Peepal Vivah",
+    "slug": "kumbh-vivah-peepal-vivah",
     "image": "/images/puja/8.webp",
     "description": "Kumbh Vivah and Peepal Vivah are special Pujas done to fix marriage delays caused by Mangal Dosh in your Kundli. In Kumbh Vivah, a person marries a clay pot, and in Peepal Vivah, they marry a Peepal tree to remove the bad effects of Mars before their real marriage",
     "paragraph": "If you’re stuck finding a partner or facing delays in tying the knot, these can help. The best place for Kumbh Vivah or Peepal Vivah is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does them with full care. They’re also linked to fixing things like Kaal Sarp Dosh",
@@ -586,6 +595,7 @@
   {
     "id": 9,
     "title": "Nakshatra Shanti",
+    "slug": "nakshatra-shanti",
     "image": "/images/puja/9.webp",
     "description": "Nakshatra Shanti is a special Puja done to calm the bad effects of stars (nakshatras) in your Kundli. It helps fix problems like bad luck, health issues, or family troubles caused by the position of stars at your birth",
     "paragraph": "If you feel things aren’t going right or need peace, this could be the answer. The best place for Nakshatra Shanti is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care. It’s also linked to fixing things like Kaal Sarp Dosh",
@@ -659,6 +669,7 @@
   {
     "id": 10,
     "title": "Navgraha Dosh Pujan",
+    "slug": "navgraha-dosh-pujan",
     "image": "/images/puja/10.webp",
     "description": "Navgraha Dosh Pujan is a special Puja to calm all nine planets in your Kundli and fix problems they cause, like bad luck, health issues, or money troubles. It’s a strong ritual to balance your life when planets like Mars, Saturn, or Rahu mess things up",
     "paragraph": "If you feel everything’s going wrong, this might help. The best place for Navgraha Dosh Pujan is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care",
@@ -732,6 +743,7 @@
   {
     "id": 11,
     "title": "Santana Pratibandhak Dosh Pujan",
+    "slug": "santana-pratibandhak-dosh-pujan",
     "image": "/images/puja/11.webp",
     "description": "Santana Pratibandhak Dosh Pujan is a special Puja to fix problems in your Kundli that stop you from having kids or cause delays in starting a family. It’s a strong ritual to remove blocks related to children, often linked to bad planet effects",
     "paragraph": "If you’re trying for a baby but facing trouble, this might help. The best place for Santana Pratibandhak Dosh Pujan is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care",
@@ -805,6 +817,7 @@
   {
     "id": 12,
     "title": "Surya Grahan Dosh Pujan",
+    "slug": "surya-grahan-dosh-pujan",
     "image": "/images/puja/12.webp",
     "description": "Surya Grahan Dosh Pujan is a special Puja to fix problems in your Kundli caused by a solar eclipse, like bad luck, health issues, or family troubles. It’s a strong ritual to calm the Sun and other planets when they get upset during an eclipse",
     "paragraph": "If you feel stuck or unlucky after an eclipse, this might help. The best place for Surya Grahan Dosh Pujan is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care",
@@ -878,6 +891,7 @@
   {
     "id": 13,
     "title": "Guru Rahu/Guru Ketu Chandal Dosh Pujan",
+    "slug": "guru-rahu-guru-ketu-chandal-dosh-pujan",
     "image": "/images/puja/15.webp",
     "description": "Guru Rahu/Guru Ketu Chandal Dosh Pujan is a special Puja to remove negative effects caused by the malefic combination of Guru (Jupiter) with Rahu or Ketu in your Kundli. It helps in overcoming obstacles related to education, career, finances, and overall prosperity.",
     "paragraph": "If you feel blocked in life due to Guru Chandal Dosh, this Puja can help. The best place for Guru Rahu/Guru Ketu Chandal Dosh Pujan is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, performs it with full Vedic rituals.",
@@ -920,6 +934,7 @@
     "id": 14,
     "title": "Amavasya Shanti",
     "image": "/images/puja/14.webp",
+    "slug": "amavasya-shanti",
     "description": "Amavasya Shanti is a special Puja done to calm the bad effects of the new moon day in your Kundli, like bad luck, family troubles, or spiritual stress. It’s a strong ritual to balance the Moon and other planets",
     "paragraph": "If you feel heavy or unlucky around Amavasya, this might help. The best place for Amavasya Shanti is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care",
     "sections": [
@@ -988,6 +1003,7 @@
   {
     "id": 15,
     "title": "Shatru Badha Nivaran Bhairav Pujan",
+    "slug": "shatru-badha-nivaran-bhairav-pujan",
     "image": "/images/puja/13.webp",
     "description": "Shatru Badha Nivaran Bhairav Pujan is a special Puja to call on Lord Bhairav, a fierce form of Shiva, to remove enemies and obstacles from your life. It’s a strong ritual to fix troubles in your Kundli caused by rivals or bad energy",
     "paragraph": "If you feel someone’s against you or luck’s not on your side, this might help. The best place for Shatru Badha Nivaran Bhairav Pujan is Ujjain, where Pandit Deepak Goutam, a trusted Ujjain Pandit, does it with full care",

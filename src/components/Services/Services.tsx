@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import serviceData from "@/data/services.json";
 import SingleService from "@/components/Services/SingleServices";
 import Link from "next/link";
+import { Services } from "@/types/services";
 
 const sectionStyles = {
   padding: "20px",
@@ -20,9 +21,12 @@ const headingStyles = {
 };
 
 const ServiceSection = () => {
+  // Assert serviceData as Services[]
+  const typedServiceData = serviceData as Services[];
+
   // Split services into featured (first 2) and regular services
   const [featuredServices, regularServices] = useMemo(() => {
-    return [serviceData.slice(0, 2), serviceData.slice(2)];
+    return [typedServiceData.slice(0, 2), typedServiceData.slice(2)];
   }, []);
 
   // Memoize featured service cards (larger boxes)
@@ -33,7 +37,7 @@ const ServiceSection = () => {
           key={service.id}
           className="rounded-2xl text-center transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5] p-8 shadow-md hover:shadow-lg"
         >
-          <Link href={`/services/${service.id}`} prefetch={false}>
+          <Link href={`/services/${service.slug}`} prefetch={false}>
             <SingleService services={service} />
           </Link>
         </div>
@@ -49,7 +53,7 @@ const ServiceSection = () => {
           key={service.id}
           className="rounded-2xl text-center transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-[#FFF7F0] to-[#FFEAD8] hover:from-[#FFDEC0] hover:to-[#FFCFA5] p-6 shadow-md hover:shadow-lg"
         >
-          <Link href={`/services/${service.id}`} prefetch={false}>
+          <Link href={`/services/${service.slug}`} prefetch={false}>
             <SingleService services={service} />
           </Link>
         </div>
@@ -61,11 +65,11 @@ const ServiceSection = () => {
     <section style={sectionStyles} className="w-full">
       <div className="max-w-7xl mx-auto">
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-base leading-relaxed">
-          &quot;In our astrological services{' '}
+          "In our astrological services{' '}
           <strong className="font-semibold">
             Kundli milan, Vastu consultation, grah dosh nivaran, tantra-mantra anushthan, shatru naash, aur safalta prapti.
           </strong>{' '}
-          These are the main services included. Select from the options below to find a solution to your problem.&quot;
+          These are the main services included. Select from the options below to find a solution to your problem."
         </p>
 
         {/* Featured Services - 2 larger boxes */}
