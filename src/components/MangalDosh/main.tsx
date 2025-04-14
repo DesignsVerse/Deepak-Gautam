@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { FaPhone, FaGem, FaGlobe, FaPray } from "react-icons/fa";
-import PanditDescription1 from "../puja/PanditDesc";
+import PanditDes from "./panditDesc";
 
 export default function MangalDoshPuja() {
   const containerRef = useRef(null);
@@ -299,7 +299,7 @@ export default function MangalDoshPuja() {
 
           {/* Timeline */}
           <div className="mt-8">
-            <PanditDescription1 isHindi={isHindi} />
+            <PanditDes isHindi={isHindi} />
           </div>
         </div>
       </section>
