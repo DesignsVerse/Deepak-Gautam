@@ -254,7 +254,26 @@ export default function Footer() {
                 <span>|</span>
                 <Link href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</Link>
               </p>
-              <p>© {new Date().getFullYear()} <strong>DesignsVerse</strong>. All Rights Reserved.</p>
+              import Link from 'next/link';
+
+              <p>
+                © {new Date().getFullYear()} All Rights Reserved By{' '}
+                
+                 Deepak Goutam
+                
+              </p>
+              <p>
+                 Creat By{' '}
+                <a
+                  href="https://wa.me/919413466075?text=Namaste%20Mujko%20Website%20Banani%20Hai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  
+
+                >
+                  <strong className="hover:text-[#FF5C16]">DesignsVerse</strong>
+                </a>
+              </p>
 
               {/* Social Media Icons */}
               <div className="flex justify-center md:justify-end space-x-4 mt-4">
