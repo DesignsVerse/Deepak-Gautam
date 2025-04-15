@@ -263,7 +263,7 @@ export default function Footer() {
               <p>
                  Creat By{' '}
                 <a
-                  href="https://wa.me/919413466075?text=Namaste%20Mujko%20Website%20Banani%20Hai"
+                  href="https://wa.me/919413466075?text=Namaste%20Mujko%20Website%20Banvani%20Hai"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
