@@ -15,6 +15,7 @@
       price: number;
       originalPrice: number;
       discount: number;
+      paymentLink?: string; // Make it optional
       category: string,
       rating: number;
       faces: number;

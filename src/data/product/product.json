@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "paymentLink": "https://www.google.com/",
     "name": "Mesh Rashi Rudraksha 3 Face",
     "slug":"mesh-rashi-rudraksha-3-face",
     "image": "/images/product/store/rashi/11.png",
@@ -24,6 +25,7 @@
   },
   {
     "id": 2,
+    "paymentLink": "https://www.google.com/",
     "name": "Vrishabha Rashi Rudraksha 6 Face",
     "slug": "vrishabha-rashi-rudraksha-6-face",
     "image": "/images/product/store/rashi/12.png",
@@ -47,6 +49,8 @@
   },
   {
     "id": 3,
+    "paymentLink": "https://www.google.com/",
+
     "name": "Mithun Rashi Rudraksha 4 Face",
     "slug": "mithun-rashi-rudraksha-4-face",
     "image": "/images/product/store/rashi/1.png",
@@ -78,6 +82,8 @@
   },
   {
     "id": 4,
+    "paymentLink": "https://www.google.com/",
+
     "name": "Kark Rashi Rudraksha 2 Face",
     "slug": "kark-rashi-rudraksha-2-face",
     "image": "/images/product/store/rashi/2.png",
@@ -108,6 +114,8 @@
   },
   {
     "id": 5,
+    "paymentLink": "https://www.google.com/",
+
     "name": "Singh Rashi Rudraksha 1 Face",
     "slug": "singh-rashi-rudraksha-1-face",
     "image": "/images/product/store/rashi/3.png",
@@ -131,6 +139,8 @@
   },
   {
     "id": 6,
+    "paymentLink": "https://www.google.com/",
+
     "name": "Kanya Rashi Rudraksha 4 Face",
     "slug": "kanya-rashi-rudraksha-4-face",
     "image": "/images/product/store/rashi/4.png",
@@ -154,6 +164,8 @@
   },
   {
     "id": 7,
+    "paymentLink": "https://www.google.com/",
+
     "name": "Tula Rashi Rudraksha 6 Face",
     "slug": "tula-rashi-rudraksha-6-face",
     "image": "/images/product/store/rashi/5.png",
@@ -177,6 +189,8 @@
   },
   {
     "id": 8,
+    "paymentLink": "https://www.google.com/",
+
     "name": "Vrishchik Rashi Rudraksha 3 Face",
     "slug": "vrishchik-rashi-rudraksha-3-face",
     "image": "/images/product/store/rashi/6.png",
@@ -200,6 +214,8 @@
   },
   {
     "id": 9,
+    "paymentLink": "https://www.google.com/",
+    
     "name": "Dhanu Rashi Rudraksha 5 Face",
     "slug": "dhanu-rashi-rudraksha-5-face",
     "image": "/images/product/store/rashi/7.png",
