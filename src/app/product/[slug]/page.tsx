@@ -8,12 +8,14 @@ import { Product } from "@/types/product";
 import Head from "next/head";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { toast } from "react-hot-toast";
 import ProductInfo from "@/components/Product/ProductInfo";
 import CheckoutForm from "@/components/Product/CheckoutForm";
 import React from "react";
 import ReviewSection from "@/components/Product/ReviewSection";
 import { generateSlug } from "@/lib/utils";
+import { addToCart } from "@/lib/cartUtils";
+import { useCart } from "@/lib/CartContext";
+import { toast } from "react-hot-toast";
 
 export default function ProductDetailPage({
   params: paramsPromise,
@@ -21,7 +23,7 @@ export default function ProductDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const params = React.use(paramsPromise);
-
+  const { openCart } = useCart();
   const product = productDetailsData.find(
     (p) => (p.slug || generateSlug(p.name)) === params.slug,
   ) as Product | undefined;
@@ -54,6 +56,34 @@ export default function ProductDetailPage({
       </motion.div>
     );
   }
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToCart({
+      id: product.id.toString(),
+      name: product.name,
+      price: product.price + priceAdjustment,
+      image: product.image,
+      // quantity: quantity, // Include quantity
+    });
+    setIsInCart(true); // Update cart state
+    openCart();
+    toast.success(`${product.name} added to cart!`, { position: "top-right" });
+  };
+
+  const handleBuyNow = () => {
+    setIsCheckoutOpen(true);
+    addToCart({
+      id: product.id.toString(),
+      name: product.name,
+      price: product.price + priceAdjustment,
+      image: product.image,
+      // quantity: quantity, // Include quantity
+    });
+    setIsInCart(true); // Update cart state
+    openCart();
+    toast.success(`${product.name} added to cart!`, { position: "top-right" });
+  };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -97,10 +127,6 @@ export default function ProductDetailPage({
         : `${product.name} added to wishlist!`,
       { position: "top-right" },
     );
-  };
-
-  const handleBuyNow = () => {
-    setIsCheckoutOpen(true);
   };
 
   const handleQualitySelection = (quality: string) => {
@@ -252,7 +278,7 @@ export default function ProductDetailPage({
                   <label className="mb-2 block text-sm font-medium text-gray-700">
                     Select Quality
                   </label>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-2">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -263,7 +289,7 @@ export default function ProductDetailPage({
                           : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
                       }`}
                     >
-                      Normal Quality
+                      Good Quality
                     </motion.button>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -275,33 +301,42 @@ export default function ProductDetailPage({
                           : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
                       }`}
                     >
-                      High Quality
+                      Normal Quality
                     </motion.button>
                   </div>
                 </div>
                 <div className="mb-4">
-                  <label className="mb-1 block text-sm font-medium text-gray-700">
-                    Quantity
-                  </label>
-                  <input
-                    type="number"
-                    min="1"
-                    value={quantity}
-                    onChange={(e) =>
-                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                    }
-                    className="w-16 rounded-md border p-2"
-                  />
-                </div>
-                <div className="mb-6 flex gap-20 space-x-4">
+  <label className="mb-1 block text-sm font-medium text-gray-700">
+    Quantity
+  </label>
+  <input
+    type="number"
+    min="1"
+    value={quantity}
+    onChange={(e) =>
+      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+    }
+    className="w-16 rounded-md border p-2"
+  />
+</div>
+                <div className="mb-6 flex items-center space-x-4">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={handleBuyNow}
-                    className="flex items-center rounded-md bg-green-600 px-6 py-3 text-white transition-all duration-300 hover:bg-green-600"
+                    onClick={handleAddToCart}
+                    className="rounded-md bg-green-600 px-6 py-3 text-white transition-all duration-300 hover:bg-green-700"
+                    // aria-label={`Buy ${product.name} now`}
                   >
                     Buy Now
                   </motion.button>
+
+                  <button
+                    onClick={handleAddToCart}
+                    className="rounded-md bg-[#800000] px-6 py-3 text-white transition-all duration-300 hover:bg-[#FF9933]"
+                    aria-label={`Add ${product.name} to cart`}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -346,7 +381,9 @@ export default function ProductDetailPage({
                 {relatedProducts.map((relatedProduct) => (
                   <Link
                     key={relatedProduct.id}
-                    href={`/product/${relatedProduct.slug || generateSlug(relatedProduct.name)}`}
+                    href={`/product/${
+                      relatedProduct.slug || generateSlug(relatedProduct.name)
+                    }`}
                   >
                     <motion.div
                       whileHover={{ scale: 1.05 }}

@@ -1,17 +1,22 @@
+// components/Header.tsx
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
+import { useCart } from "@/lib/CartContext"; // Import useCart
 
 const Header = () => {
+  const { openCart, isCartOpen, closeCart } = useCart(); // Use CartContext
   const [language, setLanguage] = useState("HI");
   const [sticky, setSticky] = useState(false);
   const [shrink, setShrink] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -35,18 +40,45 @@ const Header = () => {
     };
   }, [lastScrollY]);
 
+  // Update cart count from localStorage
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = localStorage.getItem("cart");
+      if (cart) {
+        const items = JSON.parse(cart);
+        setCartCount(items.length);
+      } else {
+        setCartCount(0);
+      }
+    };
+
+    updateCartCount();
+    window.addEventListener("storage", updateCartCount);
+    return () => window.removeEventListener("storage", updateCartCount);
+  }, []);
+
   return (
     <>
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 
-          ${sticky ? "shadow-lg  bg-white" : "bg-[#800000]"} 
+          ${sticky ? "shadow-lg bg-white" : "bg-[#800000]"} 
           ${shrink ? "py-2" : "py-4"}`}
       >
         <header>
           <div className="container mx-auto px-4 flex items-center justify-between transition-all duration-300">
-            <Link href="/" className="flex items-center ">
-              <Image src="/images/logo/newlogo.png" alt="ujjainkalsarp" width={40} height={30} className="cursor-pointer mr-1" />
-              <span className={`text-m mt-2 font-bold tracking-wide ${sticky ? "text-black" : "text-white"}`}>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo/newlogo.png"
+                alt="ujjainkalsarp"
+                width={40}
+                height={30}
+                className="cursor-pointer mr-1"
+              />
+              <span
+                className={`text-m mt-2 font-bold tracking-wide ${
+                  sticky ? "text-black" : "text-white"
+                }`}
+              >
                 Deepak Goutam
               </span>
             </Link>
@@ -81,20 +113,42 @@ const Header = () => {
                     key={index}
                     href={menuItem.path}
                     className={`font-bold transition text-sm sm:text-base block py-2 relative ${
-                      mobileMenuOpen ? "text-black" : sticky ? "text-black" : "text-white"
+                      mobileMenuOpen
+                        ? "text-black"
+                        : sticky
+                        ? "text-black"
+                        : "text-white"
                     } hover:text-[#FF9933]`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {menuItem.title}
                   </Link>
                 ))}
-                {/* <button
-                  onClick={() => setLanguage(language === "HI" ? "EN" : "HI")}
+                <button
+                  onClick={openCart} // Use openCart from CartContext
                   className="font-bold px-4 py-2 transition-all duration-300 
-                    bg-[#800000] text-white hover:bg-[#FF9933] hover:scale-105"
+                    bg-[#800000] text-white hover:bg-[#FF9933] hover:scale-105 relative"
                 >
-                  {language === "EN" ? "🇺🇸 English" : "🇮🇳 हिंदी"}
-                </button> */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-[#FF9933] text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
+                      {cartCount}
+                    </span>
+                  )}
+                </button>
               </div>
             </nav>
           </div>
