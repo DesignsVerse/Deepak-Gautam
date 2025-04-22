@@ -98,7 +98,7 @@ export default function AdditionalServicePage({ params }) {
                 alt={`${service.title} - Kaal Sarp Puja by Pandit Deepak Goutam`}
                 width={800}
                 height={400}
-                className="rounded-lg object-cover w-full h-auto lg:h-[500px] lg:max-w-[800px]"
+                className="rounded-lg p-10 object-cover w-full h-auto lg:h-[600px] lg:max-w-[800px]"
                 priority={true}
               />
             </div>
