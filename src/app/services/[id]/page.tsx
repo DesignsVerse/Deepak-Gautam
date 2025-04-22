@@ -145,15 +145,15 @@ export default async function ServicePost({ params }) {
                   { id: 101, title: "Anant Kaal Sarp Dosh" },
                   { id: 102, title: "Kulik Kaal Sarp Dosh" },
                   { id: 103, title: "Vasuki Kaal Sarp Dosh " },
-                  { id: 104, title: "Shankhchud Kaal Sarp Dosh" },
+                  { id: 104, title: "Shankhpal  Kaal Sarp Dosh" },
                   { id: 105, title: "Padma Kaal Sarp Dosh" },
                   { id: 106, title: "Mahapadma Kaal Sarp Dosh" },
                   { id: 107, title: "Takshak Kaal Sarp Dosh" },
                   { id: 108, title: "Karkotak Kaal Sarp Dosh" },
-                  { id: 109, title: "Shankhnaad Kaal Sarp Dosh" },
-                  { id: 110, title: "Vishdhar Kaal Sarp Dosh" },
-                  { id: 112, title: "Sheshnag Kaal Sarp Dosh" },
-                  { id: 111, title: "Patak Kaal Sarp Dosh" },
+                  { id: 109, title: "Shankhchud Kaal Sarp Dosh" },
+                  { id: 110, title: "Ghatak Kaal Sarp Dosh"},
+                  { id: 111, title: "Vishdhar Kaal Sarp Dosh"},
+                  { id: 112 ,title: "Sheshnag Kaal Sarp Dosh"},
                 ].map((demo) => (
                   <li
                     key={demo.id}
