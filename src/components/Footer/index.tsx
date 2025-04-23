@@ -167,18 +167,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/kaal-sarp-dosh-/110" className="hover:text-orange-400 transition-colors">
-                  Vishdhar Kaal Sarp Dosh
-                </Link>
-              </li>
-              <li>
-                <Link href="/kaal-sarp-dosh-/112" className="hover:text-orange-400 transition-colors">
-                  Sheshnag Kaal Sarp Dosh
-                </Link>
+                Ghaatak Kaal Sarp Dosh                </Link>
               </li>
               <li>
                 <Link href="/kaal-sarp-dosh-/111" className="hover:text-orange-400 transition-colors">
-                  Patak Kaal Sarp Dosh
-                </Link>
+                Vishdhar Kaal Sarp Dosh                </Link>
+              </li>
+              <li>
+                <Link href="/kaal-sarp-dosh-/112" className="hover:text-orange-400 transition-colors">
+                Sheshnag Kaal Sarp Dosh                </Link>
               </li>
             </ul>
           </div>
