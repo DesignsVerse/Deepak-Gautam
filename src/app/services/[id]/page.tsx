@@ -151,7 +151,7 @@ export default async function ServicePost({ params }) {
                   { id: 107, title: "Takshak Kaal Sarp Dosh" },
                   { id: 108, title: "Karkotak Kaal Sarp Dosh" },
                   { id: 109, title: "Shankhchud Kaal Sarp Dosh" },
-                  { id: 110, title: "Ghatak Kaal Sarp Dosh"},
+                  { id: 110, title: "Ghaatak Kaal Sarp Dosh"},
                   { id: 111, title: "Vishdhar Kaal Sarp Dosh"},
                   { id: 112 ,title: "Sheshnag Kaal Sarp Dosh"},
                 ].map((demo) => (
