@@ -119,7 +119,7 @@ const order_id = generateOrderId()
         reset();
         window.location.href = paymentLink;
       } else {
-        toast.error("No payment link available. Please try again later.");
+        toast.error("");
       }
     } catch (error) {
       toast.error("An error occurred. Please try again.");
@@ -354,7 +354,7 @@ const order_id = generateOrderId()
                 ) : null}
                 <CashfreePopup
                   orderId = {order_id}
-                  amount="1"
+                  amount={grandTotal}
                   customer={{
                     id: "guest",
                     email: formValues.email || "guest@example.com",
