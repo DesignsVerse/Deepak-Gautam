@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
               src={image.url}
               alt={image.alt}
               width={2000} // Example width (adjust based on your design)
-              height={700} // Example height (20:7 ratio = 2000:700)
+              height={1000} // Example height (20:7 ratio = 2000:700)
               className="w-full h-full object-cover" // Use object-cover for better fit
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               priority={index === 0} // Prioritize the first image for LCP
