@@ -7,9 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Banner: React.FC = () => {
   const images = [
-    { url: "/images/Banner/banner-1.webp", alt: "Banner 1" },
-    { url: "/images/Banner/banner-2.webp", alt: "Banner 2" },
-    { url: "/images/Banner/banner-3.webp", alt: "Banner 3" },
+    { url: "/images/Banner/Kaal sarp.png", alt: "Banner 1" },
+    { url: "/images/Banner/Astrology.png", alt: "Banner 2" },
+    { url: "/images/Banner/Rudraabhishek.png", alt: "Banner 3" },
     { url: "/images/Banner/banner-4.webp", alt: "Banner 4" },
     { url: "/images/Banner/banner-5.webp", alt: "Banner 5" },
   ];
