@@ -27,24 +27,24 @@ const Banner: React.FC = () => {
   };
 
   return (
-<div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] z-10">
-  <Slider {...settings}>
-    {images.map((image, index) => (
-      <div key={index} className="relative w-full h-full">
-        <Image
-          src={image.url}
-          alt={image.alt}
-          fill // Takes the full parent size
-          className="object-contain" // <-- changed from object-cover to object-contain
-          sizes="100vw"
-          priority={index === 0}
-          loading={index === 0 ? "eager" : "lazy"}
-        />
-      </div>
-    ))}
-  </Slider>
-</div>
-
+    <div className=" relative mt-[px] w-full aspect-[20/7] overflow-hidden z-10">
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index} className="relative w-full aspect-[20/7]">
+            <Image
+              src={image.url}
+              alt={image.alt}
+              width={2000} // Example width (adjust based on your design)
+              height={1000} // Example height (20:7 ratio = 2000:700)
+              className="w-full h-full " // Use object-cover for better fit
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+              priority={index === 0} // Prioritize the first image for LCP
+              loading={index === 0 ? "eager" : "lazy"} // Lazy load off-screen images
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
