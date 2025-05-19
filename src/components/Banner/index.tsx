@@ -30,7 +30,8 @@ const Banner: React.FC = () => {
     <div className=" relative mt-[px] w-full h-[70vh] overflow-hidden z-10">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="relative w-full h-full
+          <div key={index} className="relative w-full h-full "
+  
             <Image
               src={image.url}
               alt={image.alt}
