@@ -20,25 +20,26 @@ const Banner: React.FC = () => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    autoplay: true, // Enable built-in autoplay
+    autoplaySpeed: 3000, // Set autoplay interval to 3 seconds
     arrows: false,
-    lazyLoad: "ondemand" as const,
+    lazyLoad: "ondemand" as const, // Lazy load off-screen slides
   };
 
   return (
-    <div className="relative w-full aspect-[20/7] overflow-hidden z-10">
+    <div className=" relative mt-[px] w-full aspect-[20/7] overflow-hidden z-10">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="relative w-full h-full flex justify-center items-center">
+          <div key={index} className="relative w-full aspect-[20/7]">
             <Image
               src={image.url}
               alt={image.alt}
-              layout="fill"
-              objectFit="contain" // Show entire image without cropping
+              width={2000} // Example width (adjust based on your design)
+              height={1000} // Example height (20:7 ratio = 2000:700)
+              className="w-full h-full object-cover" // Use object-cover for better fit
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
+              priority={index === 0} // Prioritize the first image for LCP
+              loading={index === 0 ? "eager" : "lazy"} // Lazy load off-screen images
             />
           </div>
         ))}
