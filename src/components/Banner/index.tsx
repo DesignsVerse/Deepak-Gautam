@@ -27,15 +27,14 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <div className=" relative mt-[px] w-full aspect-[20/7] overflow-hidden z-10">
+    <div className=" relative mt-[px] w-full h-[45vh] aspect-[20/7] overflow-hidden z-10">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="relative w-full aspect-[20/7]">
             <Image
               src={image.url}
               alt={image.alt}
-              width={2000} // Example width (adjust based on your design)
-              height={1000} // Example height (20:7 ratio = 2000:700)
+
               className="w-full h-full " // Use object-cover for better fit
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               priority={index === 0} // Prioritize the first image for LCP
