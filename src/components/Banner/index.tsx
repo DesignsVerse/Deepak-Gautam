@@ -11,7 +11,7 @@ const Banner: React.FC = () => {
     { url: "/images/Banner/Astrology.png", alt: "Banner 2" },
     { url: "/images/Banner/Rudraabhishek (1).png", alt: "Banner 3" },
     { url: "/images/Banner/Mangal.png", alt: "Banner 4" },
-    { url: "/images/Banner/Maha.png", alt: "Banner 5" },
+    { url: "/images/Banner/maha.png", alt: "Banner 5" },
   ];
 
   const settings = {
