@@ -353,13 +353,24 @@ const order_id = generateOrderId()
                   <Loader2 className="animate-spin mr-2" size={20} />
                 ) : null}
                 <CashfreePopup
-                  orderId = {order_id}
+                  orderId={order_id}
                   amount={grandTotal}
                   customer={{
                     id: "guest",
                     email: formValues.email || "guest@example.com",
                     phone: formValues.phone || "9413466075",
                     name: formValues.name || "Guest",
+                  }}
+                  products={cartItems.map(item => ({
+                    name: item.name,
+                    quantity: item.quantity,
+                    price: item.price,
+                  }))}
+                  address={{
+                    address: formValues.address,
+                    city: formValues.city,
+                    state: formValues.state,
+                    pincode: formValues.pincode,
                   }}
                 />
               </motion.button>
