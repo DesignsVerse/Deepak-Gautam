@@ -10,6 +10,24 @@ export async function POST(req) {
   const customerName = customer?.name || 'Guest';
 
   try {
+    // Build request body with only valid Cashfree fields (minimal required fields)
+    const requestBody = {
+      order_id: orderId,
+      order_amount: amount,
+      order_currency: 'INR',
+      customer_details: {
+        customer_id: customerId,
+        customer_email: customerEmail,
+        customer_phone: customerPhone,
+      },
+    };
+
+    // Add notify_url if base URL is configured (optional but recommended for webhooks)
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    if (baseUrl) {
+      requestBody.notify_url = `${baseUrl}/api/payment-webhook`;
+    }
+
     const response = await fetch('https://api.cashfree.com/pg/orders', {
       method: 'POST',
       headers: {
@@ -18,25 +36,7 @@ export async function POST(req) {
         'Content-Type': 'application/json',
         'x-api-version': '2022-09-01',
       },
-      body: JSON.stringify({
-        order_id: orderId,
-        order_amount: amount,
-        order_currency: 'INR',
-        customer_details: {
-          customer_id: customerId,
-          customer_email: customerEmail,
-          customer_phone: customerPhone,
-          customer_name: customerName,
-        },
-        // Add webhook URL for payment status updates
-        notify_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ujjainkalsarp.com'}/api/payment-webhook`,
-        // Store product information in order tags for webhook retrieval
-        order_tags: products && products.length > 0 ? {
-          products: JSON.stringify(products),
-          customer_name: customerName,
-          address: address ? JSON.stringify(address) : undefined,
-        } : undefined,
-      }),
+      body: JSON.stringify(requestBody),
     });
 
     const data = await response.json();
