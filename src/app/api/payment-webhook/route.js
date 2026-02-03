@@ -2,9 +2,38 @@
 // Cashfree webhook endpoint for payment status updates
 import { notifyPaymentStatus } from '@/lib/telegram';
 
+// Simple in-memory deduplication (use Redis/Vercel KV in production)
+const processedWebhooks = new Map();
+
 export async function POST(req) {
   try {
     const webhookData = await req.json();
+    
+    // Extract unique identifier for deduplication
+    const paymentId = webhookData.data?.payment?.cf_payment_id || 
+                     webhookData.data?.payment?.payment_id ||
+                     webhookData.payment_id;
+    const orderId = webhookData.data?.order?.order_id || webhookData.order_id;
+    const eventType = webhookData.type || webhookData.eventType;
+    
+    // Create unique key for this webhook event
+    const webhookKey = `${orderId}-${paymentId}-${eventType}`;
+    
+    // Check if already processed (within last 5 minutes)
+    if (processedWebhooks.has(webhookKey)) {
+      console.log('Duplicate webhook ignored:', webhookKey);
+      return new Response(
+        JSON.stringify({ message: 'Already processed' }), 
+        { 
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
+    // Mark as processed (expire after 5 minutes)
+    processedWebhooks.set(webhookKey, true);
+    setTimeout(() => processedWebhooks.delete(webhookKey), 5 * 60 * 1000);
     
     console.log('Cashfree Webhook Received:', JSON.stringify(webhookData, null, 2));
 
@@ -97,9 +126,31 @@ export async function POST(req) {
 }
 
 // Handle GET requests (for webhook verification)
+// SECURITY: Only allow with secret token to prevent bot crawling
 export async function GET(req) {
-  return new Response(JSON.stringify({ message: 'Webhook endpoint is active' }), { 
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  });
+  const authHeader = req.headers.get('authorization');
+  const secretToken = process.env.WEBHOOK_SECRET_TOKEN;
+  
+  // If secret token is configured, require it
+  if (secretToken && authHeader !== `Bearer ${secretToken}`) {
+    return new Response(
+      JSON.stringify({ error: 'Unauthorized' }), 
+      { 
+        status: 401,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+  }
+
+  // Return minimal response
+  return new Response(
+    JSON.stringify({ status: 'active' }), 
+    { 
+      status: 200,
+      headers: { 
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store, no-cache, must-revalidate'
+      }
+    }
+  );
 }
