@@ -9,14 +9,24 @@ export async function POST(req) {
   try {
     const webhookData = await req.json();
     
-    // Extract unique identifier for deduplication
-    const paymentId = webhookData.data?.payment?.cf_payment_id || 
-                     webhookData.data?.payment?.payment_id ||
-                     webhookData.payment_id;
-    const orderId = webhookData.data?.order?.order_id || webhookData.order_id;
+    console.log('Cashfree Webhook Received:', JSON.stringify(webhookData, null, 2));
+
+    // Cashfree webhook structure can vary, handle both formats
     const eventType = webhookData.type || webhookData.eventType;
+    const data = webhookData.data || webhookData;
+
+    // Extract order information
+    const order = data.order || data;
+    const orderId = order.order_id || order.orderId || webhookData.data?.order?.order_id || webhookData.order_id;
+    const amount = order.order_amount || order.orderAmount || 0;
     
-    // Create unique key for this webhook event
+    // Extract payment information
+    const payment = data.payment || {};
+    const paymentId = payment.payment_id || payment.paymentId || payment.cf_payment_id || payment.cfPaymentId || webhookData.data?.payment?.cf_payment_id || webhookData.data?.payment?.payment_id || webhookData.payment_id;
+    const paymentStatus = payment.payment_status || payment.paymentStatus;
+    const paymentMessage = payment.payment_message || payment.paymentMessage || payment.failure_reason || payment.failureReason;
+    
+    // Create unique key for this webhook event (for deduplication)
     const webhookKey = `${orderId}-${paymentId}-${eventType}`;
     
     // Check if already processed (within last 5 minutes)
@@ -34,23 +44,6 @@ export async function POST(req) {
     // Mark as processed (expire after 5 minutes)
     processedWebhooks.set(webhookKey, true);
     setTimeout(() => processedWebhooks.delete(webhookKey), 5 * 60 * 1000);
-    
-    console.log('Cashfree Webhook Received:', JSON.stringify(webhookData, null, 2));
-
-    // Cashfree webhook structure can vary, handle both formats
-    const eventType = webhookData.type || webhookData.eventType;
-    const data = webhookData.data || webhookData;
-
-    // Extract order information
-    const order = data.order || data;
-    const orderId = order.order_id || order.orderId;
-    const amount = order.order_amount || order.orderAmount || 0;
-    
-    // Extract payment information
-    const payment = data.payment || {};
-    const paymentId = payment.payment_id || payment.paymentId || payment.cf_payment_id || payment.cfPaymentId;
-    const paymentStatus = payment.payment_status || payment.paymentStatus;
-    const paymentMessage = payment.payment_message || payment.paymentMessage || payment.failure_reason || payment.failureReason;
 
     // Extract customer information
     const customerDetails = data.customer_details || data.customerDetails || {};
