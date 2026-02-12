@@ -488,8 +488,8 @@
     "slug": "9-mukhi-rudraksha",
     "image": "/images/product/store/1-14-mukhi/9.png",
     "images": [],
-    "price": 10000.00,
-    "originalPrice": 16667.00,
+    "price": 9500.00,
+    "originalPrice": 15833.00,
     "tags":["काल सर्प दोष", "काल सर्प योग", "उज्जैन काल सर्प दोष", "उज्जैन काल सर्प योग", "काल सर्प दोष पूजा उज्जैन", "उज्जैन काल सर्प पूजा", "काल सर्प दोष निवारण पूजा उज्जैन"  
   ],
     "discount": 40,
@@ -510,8 +510,8 @@
     "slug": "10-mukhi-rudraksha",
     "image": "/images/product/store/1-14-mukhi/10.png",
     "images": [],
-    "price": 10500.00,
-    "originalPrice": 17500.00,
+    "price": 10000.00,
+    "originalPrice": 16667.00,
     "tags":["काल सर्प दोष", "काल सर्प योग", "उज्जैन काल सर्प दोष", "उज्जैन काल सर्प योग", "काल सर्प दोष पूजा उज्जैन", "उज्जैन काल सर्प पूजा", "काल सर्प दोष निवारण पूजा उज्जैन"  
   ],
     "discount": 40,
@@ -532,8 +532,8 @@
     "slug": "11-mukhi-rudraksha",
     "image": "/images/product/store/1-14-mukhi/11.png",
     "images": [],
-    "price": 11500.00,
-    "originalPrice": 19167.00,
+    "price": 10500.00,
+    "originalPrice": 17500.00,
     "tags":["काल सर्प दोष", "काल सर्प योग", "उज्जैन काल सर्प दोष", "उज्जैन काल सर्प योग", "काल सर्प दोष पूजा उज्जैन", "उज्जैन काल सर्प पूजा", "काल सर्प दोष निवारण पूजा उज्जैन"  
   ],
     "discount": 40,
@@ -554,8 +554,8 @@
     "slug": "12-mukhi-rudraksha",
     "image": "/images/product/store/1-14-mukhi/12.png",
     "images": [],
-    "price": 19000.00,
-    "originalPrice": 31667.00,
+    "price": 11500.00,
+    "originalPrice": 19167.00,
     "tags":["काल सर्प दोष", "काल सर्प योग", "उज्जैन काल सर्प दोष", "उज्जैन काल सर्प योग", "काल सर्प दोष पूजा उज्जैन", "उज्जैन काल सर्प पूजा", "काल सर्प दोष निवारण पूजा उज्जैन"  
   ],
     "discount": 40,
@@ -576,8 +576,8 @@
     "slug": "13-mukhi-rudraksha",
     "image": "/images/product/store/1-14-mukhi/13.png",
     "images": [],
-    "price": 36000.00,
-    "originalPrice": 60000.00,
+    "price": 19000.00,
+    "originalPrice": 31667.00,
     "tags":["काल सर्प दोष", "काल सर्प योग", "उज्जैन काल सर्प दोष", "उज्जैन काल सर्प योग", "काल सर्प दोष पूजा उज्जैन", "उज्जैन काल सर्प पूजा", "काल सर्प दोष निवारण पूजा उज्जैन"  
   ],
     "discount": 40,
@@ -598,8 +598,8 @@
     "slug": "14-mukhi-rudraksha",
     "image": "/images/product/store/1-14-mukhi/14.png",
     "images": [],
-    "price": 35400.00,
-    "originalPrice": 59000.00,
+    "price": 36000.00,
+    "originalPrice": 60000.00,
     "tags":["काल सर्प दोष", "काल सर्प योग", "उज्जैन काल सर्प दोष", "उज्जैन काल सर्प योग", "काल सर्प दोष पूजा उज्जैन", "उज्जैन काल सर्प पूजा", "काल सर्प दोष निवारण पूजा उज्जैन"  
   ],
     "discount": 40,
@@ -834,5 +834,260 @@
       35,
       27
     ]
+  },
+  {
+    "id": 46,
+    "paymentLink": "https://www.google.com/",
+    "name": "Kamalgatta Mala",
+    "slug": "kamalgatta-mala",
+    "image": "/images/product/store/mala/kamalgatta.png",
+    "images": [],
+    "price": 500.00,
+    "originalPrice": 500.00,
+    "discount": 0,
+    "rating": 4.5,
+    "faces": null,
+    "rashi": "All",
+    "category": "Mala",
+    "description": "Kamalgatta Mala for spiritual practices and meditation.",
+    "reviews": [],
+    "relatedIds": [51, 52, 53]
+  },
+  {
+    "id": 51,
+    "paymentLink": "https://www.google.com/",
+    "name": "5 Mukhi Rudraksha Mala",
+    "slug": "5-mukhi-rudraksha-mala",
+    "image": "/images/product/store/mala/5-mukhi-mala.png",
+    "images": [],
+    "price": 1200.00,
+    "originalPrice": 2000.00,
+    "discount": 40,
+    "rating": 4.7,
+    "faces": 5,
+    "rashi": "All",
+    "category": "Mala",
+    "description": "This 5 Mukhi Rudraksha Mala is perfect for daily meditation and spiritual practices. It helps in fostering peace, health, and spiritual growth. The mala consists of 108 beads of authentic 5 Mukhi Rudraksha, known for its calming properties and ability to balance the five elements within the body.",
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Rajesh K.",
+        "rating": 5,
+        "comment": "Excellent quality mala, very peaceful energy!"
+      },
+      {
+        "id": 2,
+        "user": "Priya M.",
+        "rating": 5,
+        "comment": "Perfect for my daily meditation practice."
+      },
+      {
+        "id": 3,
+        "user": "Amit S.",
+        "rating": 4,
+        "comment": "Good quality beads, well strung."
+      },
+      {
+        "id": 4,
+        "user": "Sunita R.",
+        "rating": 5,
+        "comment": "Beautiful mala, feels very authentic."
+      },
+      {
+        "id": 5,
+        "user": "Vikram D.",
+        "rating": 5,
+        "comment": "Helps me focus during prayers."
+      },
+      {
+        "id": 6,
+        "user": "Anjali P.",
+        "rating": 4,
+        "comment": "Nice product, good value for money."
+      },
+      {
+        "id": 7,
+        "user": "Ramesh T.",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase."
+      },
+      {
+        "id": 8,
+        "user": "Kavita N.",
+        "rating": 5,
+        "comment": "Authentic Rudraksha, highly recommend!"
+      },
+      {
+        "id": 9,
+        "user": "Suresh L.",
+        "rating": 4,
+        "comment": "Good quality, feels genuine."
+      },
+      {
+        "id": 10,
+        "user": "Meera K.",
+        "rating": 5,
+        "comment": "Perfect for spiritual practices."
+      },
+      {
+        "id": 11,
+        "user": "Nitin B.",
+        "rating": 5,
+        "comment": "Excellent mala, very pleased!"
+      }
+    ],
+    "relatedIds": [52, 53, 46]
+  },
+  {
+    "id": 52,
+    "paymentLink": "https://www.google.com/",
+    "name": "5 Mukhi Baarik Rudraksha Mala",
+    "slug": "5-mukhi-baarik-rudraksha-mala",
+    "image": "/images/product/store/mala/5-mukhi-baarik-mala.png",
+    "images": [],
+    "price": 1350.00,
+    "originalPrice": 2250.00,
+    "discount": 40,
+    "rating": 4.6,
+    "faces": 5,
+    "rashi": "All",
+    "category": "Mala",
+    "description": "This 5 Mukhi Baarik Rudraksha Mala features fine small beads, perfect for those who prefer a more delicate mala. The smaller beads make it comfortable to wear and use for extended meditation sessions. Made with authentic 5 Mukhi Rudraksha beads, this mala helps in maintaining peace, health, and spiritual balance.",
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Deepak S.",
+        "rating": 5,
+        "comment": "Beautiful small beads, very comfortable to use!"
+      },
+      {
+        "id": 2,
+        "user": "Rekha M.",
+        "rating": 5,
+        "comment": "Perfect size for daily wear and meditation."
+      },
+      {
+        "id": 3,
+        "user": "Manoj K.",
+        "rating": 4,
+        "comment": "Fine quality beads, well crafted."
+      },
+      {
+        "id": 4,
+        "user": "Pooja R.",
+        "rating": 5,
+        "comment": "Love the smaller beads, very elegant."
+      },
+      {
+        "id": 5,
+        "user": "Arjun T.",
+        "rating": 4,
+        "comment": "Good quality, comfortable to hold."
+      },
+      {
+        "id": 6,
+        "user": "Swati N.",
+        "rating": 5,
+        "comment": "Excellent mala with fine beads."
+      },
+      {
+        "id": 7,
+        "user": "Rahul P.",
+        "rating": 5,
+        "comment": "Perfect for my meditation practice."
+      },
+      {
+        "id": 8,
+        "user": "Neha D.",
+        "rating": 4,
+        "comment": "Nice product, authentic Rudraksha."
+      },
+      {
+        "id": 9,
+        "user": "Kiran L.",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase!"
+      }
+    ],
+    "relatedIds": [51, 53, 46]
+  },
+  {
+    "id": 53,
+    "paymentLink": "https://www.google.com/",
+    "name": "5 Mukhi Rudraksha Japa Mala",
+    "slug": "5-mukhi-rudraksha-japa-mala",
+    "image": "/images/product/store/mala/5-mukhi-japa-mala.png",
+    "images": [],
+    "price": 1300.00,
+    "originalPrice": 2167.00,
+    "discount": 40,
+    "rating": 4.7,
+    "faces": 5,
+    "rashi": "All",
+    "category": "Mala",
+    "description": "This traditional 5 Mukhi Rudraksha Japa Mala is specifically designed for Japa meditation and mantra chanting. Made with 108 authentic 5 Mukhi Rudraksha beads, this mala is perfect for spiritual practices, helping to enhance focus, peace, and spiritual growth. The traditional design makes it ideal for daily prayers and meditation.",
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Shiva K.",
+        "rating": 5,
+        "comment": "Perfect traditional japa mala, excellent for chanting!"
+      },
+      {
+        "id": 2,
+        "user": "Lakshmi M.",
+        "rating": 5,
+        "comment": "Authentic Rudraksha, very good quality."
+      },
+      {
+        "id": 3,
+        "user": "Vishnu S.",
+        "rating": 4,
+        "comment": "Great for daily japa practice."
+      },
+      {
+        "id": 4,
+        "user": "Saraswati R.",
+        "rating": 5,
+        "comment": "Beautiful traditional mala, highly recommend!"
+      },
+      {
+        "id": 5,
+        "user": "Ganesh T.",
+        "rating": 5,
+        "comment": "Perfect for mantra chanting."
+      },
+      {
+        "id": 6,
+        "user": "Parvati N.",
+        "rating": 4,
+        "comment": "Good quality, feels authentic."
+      },
+      {
+        "id": 7,
+        "user": "Krishna P.",
+        "rating": 5,
+        "comment": "Excellent japa mala for spiritual practices."
+      },
+      {
+        "id": 8,
+        "user": "Durga D.",
+        "rating": 5,
+        "comment": "Very satisfied, perfect for meditation."
+      },
+      {
+        "id": 9,
+        "user": "Hanuman L.",
+        "rating": 4,
+        "comment": "Nice traditional design, good quality."
+      },
+      {
+        "id": 10,
+        "user": "Rama B.",
+        "rating": 5,
+        "comment": "Perfect mala for daily prayers!"
+      }
+    ],
+    "relatedIds": [51, 52, 46]
   }
 ]
