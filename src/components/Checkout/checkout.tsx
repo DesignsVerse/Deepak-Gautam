@@ -17,6 +17,8 @@ interface CartItem {
   price: number;
   image: string;
   quantity: number;
+  qualityType?: "nepali" | "indonesian";
+  selectedSize?: string;
 }
 
 const checkoutSchema = z.object({

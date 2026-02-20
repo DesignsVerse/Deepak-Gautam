@@ -42,6 +42,22 @@ export default function ProductDetailPage({
   const [quantity, setQuantity] = useState(1);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [priceAdjustment, setPriceAdjustment] = useState(0);
+  
+  // Quality toggle state for 1-14 Mukhi Rudraksha
+  const isMukhiRudraksha = product?.category === "1 to 14 Mukhi Rudraksha" || 
+    (product?.faces && product.faces >= 1 && product.faces <= 14);
+  const [qualityType, setQualityType] = useState<"nepali" | "indonesian">("indonesian");
+  
+  // Calculate price based on quality
+  const getPriceForQuality = (price: number) => {
+    if (isMukhiRudraksha && qualityType === "indonesian") {
+      return Math.round(price / 2);
+    }
+    return price;
+  };
+  
+  const currentPrice = getPriceForQuality(product?.price || 0);
+  const currentOriginalPrice = getPriceForQuality(product?.originalPrice || 0);
 
   if (!product) {
     return (
@@ -59,30 +75,38 @@ export default function ProductDetailPage({
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
+    const finalPrice = isMukhiRudraksha ? currentPrice : (product.price + priceAdjustment);
     addToCart({
       id: product.id.toString(),
       name: product.name,
-      price: product.price + priceAdjustment,
+      price: finalPrice,
       image: product.image,
+      qualityType: isMukhiRudraksha ? qualityType : undefined,
+      selectedSize: selectedSize,
       // quantity: quantity, // Include quantity
     });
     setIsInCart(true); // Update cart state
     openCart();
-    toast.success(`${product.name} added to cart!`, { position: "top-right" });
+    const qualityText = isMukhiRudraksha ? ` (${qualityType.charAt(0).toUpperCase() + qualityType.slice(1)})` : "";
+    toast.success(`${product.name}${qualityText} added to cart!`, { position: "top-right" });
   };
 
   const handleBuyNow = () => {
     setIsCheckoutOpen(true);
+    const finalPrice = isMukhiRudraksha ? currentPrice : (product.price + priceAdjustment);
     addToCart({
       id: product.id.toString(),
       name: product.name,
-      price: product.price + priceAdjustment,
+      price: finalPrice,
       image: product.image,
+      qualityType: isMukhiRudraksha ? qualityType : undefined,
+      selectedSize: selectedSize,
       // quantity: quantity, // Include quantity
     });
     setIsInCart(true); // Update cart state
     openCart();
-    toast.success(`${product.name} added to cart!`, { position: "top-right" });
+    const qualityText = isMukhiRudraksha ? ` (${qualityType.charAt(0).toUpperCase() + qualityType.slice(1)})` : "";
+    toast.success(`${product.name}${qualityText} added to cart!`, { position: "top-right" });
   };
 
   const structuredData = {
@@ -93,7 +117,7 @@ export default function ProductDetailPage({
     description: product.description,
     offers: {
       "@type": "Offer",
-      price: product.price + priceAdjustment,
+      price: isMukhiRudraksha ? currentPrice : (product.price + priceAdjustment),
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
     },
@@ -136,6 +160,10 @@ export default function ProductDetailPage({
     } else {
       setPriceAdjustment(0);
     }
+  };
+  
+  const handleQualityToggle = (quality: "nepali" | "indonesian") => {
+    setQualityType(quality);
   };
 
   return (
@@ -253,12 +281,12 @@ export default function ProductDetailPage({
                 </div>
                 <div className="mb-4">
                   <span className="text-gold text-2xl font-bold">
-                    ₹{(product.price + priceAdjustment).toFixed(2)}
+                    ₹{isMukhiRudraksha ? currentPrice.toFixed(2) : (product.price + priceAdjustment).toFixed(2)}
                   </span>
                   <span className="ml-3 text-lg text-gray-500 line-through">
-                    ₹{(product.originalPrice + priceAdjustment).toFixed(2)}
+                    ₹{isMukhiRudraksha ? currentOriginalPrice.toFixed(2) : (product.originalPrice + priceAdjustment).toFixed(2)}
                   </span>
-                  {product.discount > 0 && (
+                  {product.discount > 0 && !isMukhiRudraksha && (
                     <span className="ml-3 rounded-xl bg-green-700 p-2 text-white">
                       {product.discount}% off
                     </span>
@@ -274,37 +302,75 @@ export default function ProductDetailPage({
                     Blessed by Pandit Ji for prosperity and spiritual growth
                   </p>
                 </motion.div>
-                <div className="mb-4">
-                  <label className="mb-2 block text-sm font-medium text-gray-700">
-                    Select Quality
-                  </label>
-                  <div className="flex space-x-2">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => handleQualitySelection("Good Quality")}
-                      className={`flex-1 rounded-md border px-4 py-2 transition-all duration-300 ${
-                        selectedSize === "Good Quality"
-                          ? "border-[#800000] bg-[#800000] text-white"
-                          : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
-                      }`}
-                    >
-                      Good Quality
-                    </motion.button>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => handleQualitySelection("Normal Quality")}
-                      className={`flex-1 rounded-md border px-4 py-2 transition-all duration-300 ${
-                        selectedSize === "Normal Quality"
-                          ? "border-[#800000] bg-[#800000] text-white"
-                          : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
-                      }`}
-                    >
-                      Normal Quality
-                    </motion.button>
+                {isMukhiRudraksha && (
+                  <div className="mb-4">
+                    <label className="mb-2 block text-sm font-medium text-gray-700">
+                      Quality
+                    </label>
+                    <div className="flex space-x-2">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleQualityToggle("nepali")}
+                        className={`flex-1 rounded-md border px-4 py-2 transition-all duration-300 ${
+                          qualityType === "nepali"
+                            ? "border-[#800000] bg-[#800000] text-white"
+                            : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        Nepali
+                      </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleQualityToggle("indonesian")}
+                        className={`flex-1 rounded-md border px-4 py-2 transition-all duration-300 ${
+                          qualityType === "indonesian"
+                            ? "border-[#800000] bg-[#800000] text-white"
+                            : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        Indonesian
+                      </motion.button>
+                    </div>
+                    <p className="mt-2 text-sm text-gray-600">
+                      Origin: <span className="font-semibold capitalize">{qualityType}</span>
+                    </p>
                   </div>
-                </div>
+                )}
+                {!isMukhiRudraksha && (
+                  <div className="mb-4">
+                    <label className="mb-2 block text-sm font-medium text-gray-700">
+                      Select Quality
+                    </label>
+                    <div className="flex space-x-2">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleQualitySelection("Good Quality")}
+                        className={`flex-1 rounded-md border px-4 py-2 transition-all duration-300 ${
+                          selectedSize === "Good Quality"
+                            ? "border-[#800000] bg-[#800000] text-white"
+                            : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        Good Quality
+                      </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleQualitySelection("Normal Quality")}
+                        className={`flex-1 rounded-md border px-4 py-2 transition-all duration-300 ${
+                          selectedSize === "Normal Quality"
+                            ? "border-[#800000] bg-[#800000] text-white"
+                            : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        Normal Quality
+                      </motion.button>
+                    </div>
+                  </div>
+                )}
                 <div className="mb-4">
   <label className="mb-1 block text-sm font-medium text-gray-700">
     Quantity

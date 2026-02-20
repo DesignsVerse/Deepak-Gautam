@@ -12,6 +12,8 @@ interface CartItem {
   price: number;
   image: string;
   quantity: number;
+  qualityType?: "nepali" | "indonesian";
+  selectedSize?: string;
 }
 
 export default function CartPage() {
@@ -35,8 +37,12 @@ export default function CartPage() {
     setTotal(sum);
   };
 
-  const removeItem = (id: string) => {
-    const updatedCart = cartItems.filter(item => item.id !== id);
+  const removeItem = (itemToRemove: CartItem) => {
+    const updatedCart = cartItems.filter(item => 
+      !(item.id === itemToRemove.id && 
+        item.qualityType === itemToRemove.qualityType &&
+        item.selectedSize === itemToRemove.selectedSize)
+    );
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     calculateTotal(updatedCart);
@@ -44,11 +50,15 @@ export default function CartPage() {
     window.dispatchEvent(new Event("storage"));
   };
 
-  const updateQuantity = (id: string, newQuantity: number) => {
+  const updateQuantity = (itemToUpdate: CartItem, newQuantity: number) => {
     if (newQuantity < 1) return;
     
     const updatedCart = cartItems.map(item => 
-      item.id === id ? { ...item, quantity: newQuantity } : item
+      item.id === itemToUpdate.id && 
+      item.qualityType === itemToUpdate.qualityType &&
+      item.selectedSize === itemToUpdate.selectedSize
+        ? { ...item, quantity: newQuantity } 
+        : item
     );
     
     setCartItems(updatedCart);
@@ -108,8 +118,18 @@ export default function CartPage() {
                     </div>
                     <div>
                       <h3 className="font-medium text-gray-800">{item.name}</h3>
+                      {item.qualityType && (
+                        <p className="text-xs text-gray-500 capitalize">
+                          Quality: {item.qualityType}
+                        </p>
+                      )}
+                      {item.selectedSize && !item.qualityType && (
+                        <p className="text-xs text-gray-500">
+                          {item.selectedSize}
+                        </p>
+                      )}
                       <button 
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => removeItem(item)}
                         className="mt-1 text-sm text-red-500 hover:text-red-700 flex items-center md:hidden"
                       >
                         <X size={16} className="mr-1" /> Remove
@@ -128,14 +148,14 @@ export default function CartPage() {
                     <div className="flex items-center justify-center space-x-2">
                       <span className="md:hidden text-sm text-gray-500">Qty: </span>
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item, item.quantity - 1)}
                         className="w-8 h-8 flex items-center justify-center border rounded hover:bg-gray-100"
                       >
                         -
                       </button>
                       <span className="w-10 text-center">{item.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item, item.quantity + 1)}
                         className="w-8 h-8 flex items-center justify-center border rounded hover:bg-gray-100"
                       >
                         +
@@ -150,7 +170,7 @@ export default function CartPage() {
                       <span className="font-medium">₹{(item.price * item.quantity).toFixed(2)}</span>
                     </div>
                     <button 
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => removeItem(item)}
                       className="hidden md:block text-red-500 hover:text-red-700"
                       title="Remove item"
                     >

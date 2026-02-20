@@ -7,6 +7,8 @@ export interface CartItem {
   price: number;
   image: string;
   quantity: number;
+  qualityType?: "nepali" | "indonesian";
+  selectedSize?: string;
 }
 
 export const addToCart = (product: {
@@ -14,19 +16,29 @@ export const addToCart = (product: {
   name: string;
   price: number;
   image: string;
+  qualityType?: "nepali" | "indonesian";
+  selectedSize?: string;
   // quantity: number;
 }) => {
   // Get existing cart from localStorage
   const cartString = localStorage.getItem("cart");
   let cart: CartItem[] = cartString ? JSON.parse(cartString) : [];
 
-  // Check if product already exists in cart
-  const existingItem = cart.find(item => item.id === product.id);
+  // Check if product already exists in cart with same quality and size
+  const existingItem = cart.find(item => 
+    item.id === product.id && 
+    item.qualityType === product.qualityType &&
+    item.selectedSize === product.selectedSize
+  );
 
   if (existingItem) {
     // Update quantity if exists
     cart = cart.map(item =>
-      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      item.id === product.id && 
+      item.qualityType === product.qualityType &&
+      item.selectedSize === product.selectedSize
+        ? { ...item, quantity: item.quantity + 1 } 
+        : item
     );
   } else {
     // Add new item if doesn't exist

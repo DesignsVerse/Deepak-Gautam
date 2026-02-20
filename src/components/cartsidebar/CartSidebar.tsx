@@ -12,6 +12,8 @@ interface CartItem {
   price: number;
   image: string;
   quantity: number;
+  qualityType?: "nepali" | "indonesian";
+  selectedSize?: string;
 }
 
 const CartSidebar = () => {
@@ -63,19 +65,27 @@ const CartSidebar = () => {
     setTotal(sum);
   };
 
-  const removeItem = (id: string) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
+  const removeItem = (itemToRemove: CartItem) => {
+    const updatedCart = cartItems.filter((item) => 
+      !(item.id === itemToRemove.id && 
+        item.qualityType === itemToRemove.qualityType &&
+        item.selectedSize === itemToRemove.selectedSize)
+    );
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     calculateTotal(updatedCart);
     window.dispatchEvent(new Event("storage")); // Trigger storage event
   };
 
-  const updateQuantity = (id: string, newQuantity: number) => {
+  const updateQuantity = (itemToUpdate: CartItem, newQuantity: number) => {
     if (newQuantity < 1) return;
 
     const updatedCart = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity: newQuantity } : item,
+      item.id === itemToUpdate.id && 
+      item.qualityType === itemToUpdate.qualityType &&
+      item.selectedSize === itemToUpdate.selectedSize
+        ? { ...item, quantity: newQuantity } 
+        : item,
     );
 
     setCartItems(updatedCart);
@@ -129,12 +139,22 @@ const CartSidebar = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-medium text-gray-800">{item.name}</h3>
+                    {item.qualityType && (
+                      <p className="text-xs text-gray-500 capitalize">
+                        Quality: {item.qualityType}
+                      </p>
+                    )}
+                    {item.selectedSize && !item.qualityType && (
+                      <p className="text-xs text-gray-500">
+                        {item.selectedSize}
+                      </p>
+                    )}
                     <p className="text-[#800000] font-bold">
                       ₹{(item.price * item.quantity).toFixed(2)}
                     </p>
                     <div className="flex items-center mt-2">
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item, item.quantity - 1)}
                         className="px-2 bg-gray-200 rounded-l hover:bg-gray-300 transition-colors"
                         aria-label="Decrease quantity"
                       >
@@ -142,14 +162,14 @@ const CartSidebar = () => {
                       </button>
                       <span className="px-4 bg-gray-100">{item.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item, item.quantity + 1)}
                         className="px-2 bg-gray-200 rounded-r hover:bg-gray-300 transition-colors"
                         aria-label="Increase quantity"
                       >
                         +
                       </button>
                       <button
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => removeItem(item)}
                         className="ml-auto text-red-500 hover:text-red-700 transition-colors"
                         aria-label="Remove item"
                       >
