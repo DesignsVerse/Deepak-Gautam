@@ -1,251 +1,286 @@
-# Quality Toggle Feature & Pricing Documentation
+# Rudraksha Price Changes Documentation
 
 ## Overview
-This document outlines the implementation of the Quality Toggle feature for Rudraksha products and the updated Nepali pricing structure.
+This document details all price changes made to the 1-14 Mukhi Rudraksha products, including the implementation of Nepali and Indonesian quality pricing with the quality toggle feature.
 
 ---
 
-## 1. Quality Toggle Feature
+## 1. Price Structure Summary
 
-### 1.1 Feature Description
-A toggle button has been added to the product detail page that allows users to switch between **Nepali** and **Indonesian** quality Rudraksha beads. This feature enables customers to view different pricing options based on the quality/origin of the product.
+### 1.1 Quality Types
+- **Nepali Quality**: Original, premium quality Rudraksha (higher prices)
+- **Indonesian Quality**: Alternative quality option (lower prices)
 
 ### 1.2 Product Scope
-- **Applies To**: Only 1-14 Mukhi Rudraksha products (Product IDs: 1-14)
-- **Does Not Apply To**: 
-  - Gemstones (IDs 15-23)
-  - Special Rudraksha (IDs 24-33)
-  - Zodiac Rudraksha (IDs 34-45)
-  - Malas and Yantras (IDs 46-53)
-
-### 1.3 Default Behavior
-- **Default Quality**: Indonesian (set as default)
-- **Pricing Logic**: 
-  - **Nepali Quality**: Shows original Nepali prices
-  - **Indonesian Quality**: Shows prices that are **half of Nepali prices** (rounded to nearest integer)
-
-### 1.4 User Interface
-- Toggle buttons are displayed above the "Origin" section on product detail pages
-- Buttons are styled with the site's theme color (#800000) when active
-- Selected quality is reflected in:
-  - Price display
-  - Origin label
-  - Cart items
-  - Toast notifications
+- **Applies To**: Products with IDs 1-14 (1 Mukhi through 14 Mukhi Rudraksha)
+- **Does Not Apply To**: All other products (gemstones, special rudraksha, malas, etc.)
 
 ---
 
-## 2. Technical Implementation
+## 2. Nepali Prices (Reverted to Original)
 
-### 2.1 Files Modified
+The Nepali prices have been reverted to their original values in `shopData.ts`. These are the base prices displayed when "Nepali" quality is selected.
 
-#### 2.1.1 `src/components/Shop/slug.tsx`
+### 2.1 Complete Nepali Price List
+
+| Product ID | Product Name | Price (₹) | Discounted Price (₹) |
+|------------|--------------|-----------|---------------------|
+| 1 | 1 Mukhi Rudraksha | 6,000 | 3,600 |
+| 2 | 2 Mukhi Rudraksha | 2,833 | 1,700 |
+| 3 | 3 Mukhi Rudraksha | 4,167 | 2,500 |
+| 4 | 4 Mukhi Rudraksha | 3,167 | 1,900 |
+| 5 | 5 Mukhi Rudraksha | 2,500 | 1,500 |
+| 6 | 6 Mukhi Rudraksha | 3,167 | 1,900 |
+| 7 | 7 Mukhi Rudraksha | 4,167 | 2,500 |
+| 8 | 8 Mukhi Rudraksha | 15,833 | 9,500 |
+| 9 | 9 Mukhi Rudraksha | 15,833 | 9,500 |
+| 10 | 10 Mukhi Rudraksha | 16,667 | 10,000 |
+| 11 | 11 Mukhi Rudraksha | 17,500 | 10,500 |
+| 12 | 12 Mukhi Rudraksha | 19,167 | 11,500 |
+| 13 | 13 Mukhi Rudraksha | 31,667 | 19,000 |
+| 14 | 14 Mukhi Rudraksha | 59,000 | 36,000 |
+
+---
+
+## 3. Indonesian Prices (Explicit Pricing)
+
+Indonesian prices are now explicitly defined (not calculated as 50% of Nepali). These prices are used when "Indonesian" quality is selected.
+
+### 3.1 Complete Indonesian Price List
+
+| Product ID | Product Name | Indonesian Price (₹) |
+|------------|--------------|---------------------|
+| 1 | 1 Mukhi Rudraksha | 2,300 |
+| 2 | 2 Mukhi Rudraksha | 700 |
+| 3 | 3 Mukhi Rudraksha | 900 |
+| 4 | 4 Mukhi Rudraksha | 1,200 |
+| 5 | 5 Mukhi Rudraksha | 550 |
+| 6 | 6 Mukhi Rudraksha | 1,200 |
+| 7 | 7 Mukhi Rudraksha | 1,600 |
+| 8 | 8 Mukhi Rudraksha | 3,500 |
+| 9 | 9 Mukhi Rudraksha | 6,000 |
+| 10 | 10 Mukhi Rudraksha | 8,500 |
+| 11 | 11 Mukhi Rudraksha | 9,500 |
+| 12 | 12 Mukhi Rudraksha | 10,000 |
+| 13 | 13 Mukhi Rudraksha | 17,000 |
+| 14 | 14 Mukhi Rudraksha | *To be confirmed* |
+
+**Note**: Indonesian price for 14 Mukhi Rudraksha is pending confirmation. Currently uses fallback calculation.
+
+---
+
+## 4. Price Comparison Table
+
+| Product | Nepali Price (₹) | Indonesian Price (₹) | Difference (₹) | Savings % |
+|---------|------------------|---------------------|----------------|-----------|
+| 1 Mukhi | 6,000 / 3,600 | 2,300 | 3,700 / 1,300 | 61.7% / 36.1% |
+| 2 Mukhi | 2,833 / 1,700 | 700 | 2,133 / 1,000 | 75.3% / 58.8% |
+| 3 Mukhi | 4,167 / 2,500 | 900 | 3,267 / 1,600 | 78.4% / 64.0% |
+| 4 Mukhi | 3,167 / 1,900 | 1,200 | 1,967 / 700 | 62.1% / 36.8% |
+| 5 Mukhi | 2,500 / 1,500 | 550 | 1,950 / 950 | 78.0% / 63.3% |
+| 6 Mukhi | 3,167 / 1,900 | 1,200 | 1,967 / 700 | 62.1% / 36.8% |
+| 7 Mukhi | 4,167 / 2,500 | 1,600 | 2,567 / 900 | 61.6% / 36.0% |
+| 8 Mukhi | 15,833 / 9,500 | 3,500 | 12,333 / 6,000 | 77.9% / 63.2% |
+| 9 Mukhi | 15,833 / 9,500 | 6,000 | 9,833 / 3,500 | 62.1% / 36.8% |
+| 10 Mukhi | 16,667 / 10,000 | 8,500 | 8,167 / 1,500 | 49.0% / 15.0% |
+| 11 Mukhi | 17,500 / 10,500 | 9,500 | 8,000 / 1,000 | 45.7% / 9.5% |
+| 12 Mukhi | 19,167 / 11,500 | 10,000 | 9,167 / 1,500 | 47.8% / 13.0% |
+| 13 Mukhi | 31,667 / 19,000 | 17,000 | 14,667 / 2,000 | 46.3% / 10.5% |
+| 14 Mukhi | 59,000 / 36,000 | *TBC* | - | - |
+
+*Note: Prices shown as "Original / Discounted" format*
+
+---
+
+## 5. Technical Implementation
+
+### 5.1 Files Modified
+
+#### 5.1.1 `src/components/Shop/shopData.ts`
 **Changes:**
-- Added quality type state management (`qualityType` state)
-- Added check to identify 1-14 Mukhi Rudraksha products (`isMukhiRudraksha`)
-- Implemented price calculation function (`getPriceForQuality`)
-- Added conditional quality toggle UI component
-- Updated cart actions to include quality type
-- Modified price display to reflect selected quality
+- Reverted all 1-14 Mukhi Rudraksha prices to original Nepali values
+- Maintained original discounted prices
+- No changes to other product categories
 
-**Key Functions:**
+**Key Updates:**
 ```typescript
-// Check if product is 1-14 Mukhi Rudraksha
-const isMukhiRudraksha = product?.id >= 1 && product?.id <= 14;
+// Example for 1 Mukhi Rudraksha
+sizes: [
+  { name: "Regular", price: 6000, discountedPrice: 3600 }
+]
+```
 
-// Calculate prices based on quality
+#### 5.1.2 `src/components/Shop/slug.tsx`
+**Changes:**
+- Added explicit Indonesian price mapping
+- Updated quality toggle logic to use explicit prices instead of calculation
+- Maintained default quality as "Indonesian"
+
+**Indonesian Price Map:**
+```typescript
+const INDONESIAN_PRICES: Record<number, number> = {
+  1: 2300,
+  2: 700,
+  3: 900,
+  4: 1200,
+  5: 550,
+  6: 1200,
+  7: 1600,
+  8: 3500,
+  9: 6000,
+  10: 8500,
+  11: 9500,
+  12: 10000,
+  13: 17000,
+};
+```
+
+**Price Calculation Logic:**
+```typescript
 const getPriceForQuality = (price: number) => {
   if (isMukhiRudraksha && qualityType === "indonesian") {
+    // Use explicit Indonesian price if available
+    const indonesianPrice = INDONESIAN_PRICES[product.id];
+    if (indonesianPrice !== undefined) {
+      return indonesianPrice;
+    }
+    // Fallback to 50% calculation for products without explicit price
     return Math.round(price / 2);
   }
-  return price;
+  return price; // Return original Nepali price
 };
 ```
 
-#### 2.1.2 `src/redux/features/cart-slice.ts`
-**Changes:**
-- Updated `CartItem` type to include optional `qualityType` and `selectedSize` fields
-- Modified `addItemToCart` reducer to handle quality type
-- Updated cart item matching logic to treat items with different qualities as separate cart items
+---
 
-**Updated Type:**
+## 6. Quality Toggle Feature
+
+### 6.1 User Interface
+- Toggle buttons appear only on product detail pages for 1-14 Mukhi products
+- Default selection: **Indonesian**
+- Buttons styled with site theme color (#800000) when active
+
+### 6.2 Behavior
+- **Nepali Toggle**: Shows original Nepali prices from `shopData.ts`
+- **Indonesian Toggle**: Shows explicit Indonesian prices from the price map
+- Prices update dynamically when toggling
+- Origin label updates to reflect selected quality
+- Cart items include quality type for proper tracking
+
+### 6.3 Cart Integration
+- Quality type is saved with cart items
+- Different qualities create separate cart items
+- Toast notifications include quality type
+- Cart treats items with same ID but different quality as separate products
+
+---
+
+## 7. Price Change History
+
+### 7.1 Initial State (Before Changes)
+- All products had original Nepali prices
+- No quality differentiation
+
+### 7.2 First Update (Incorrect)
+- ❌ Updated `shopData.ts` with incorrect prices (Indonesian prices were mistakenly set as Nepali)
+- Prices were: 2300, 700, 900, 1200, 550, 1200, 1600, 3500, 6000, 8500, 9500, 10000, 17000
+
+### 7.3 Final Update (Corrected)
+- ✅ Reverted `shopData.ts` to original Nepali prices
+- ✅ Implemented explicit Indonesian price mapping in `slug.tsx`
+- ✅ Quality toggle now correctly shows:
+  - **Nepali**: Original prices (6,000, 2,833, 4,167, etc.)
+  - **Indonesian**: Explicit prices (2,300, 700, 900, etc.)
+
+---
+
+## 8. Data Structure
+
+### 8.1 Product Data (`shopData.ts`)
 ```typescript
-type CartItem = {
-  id: number;
-  title: string;
-  slug: string;
-  price: number;
-  discountedPrice: number;
-  quantity: number;
-  qualityType?: "nepali" | "indonesian";
-  selectedSize?: string;
-  imgs?: {
-    thumbnails: string[];
-    previews: string[];
-  };
+{
+  id: 1,
+  title: "1 Mukhi Rudraksha - Original Nepali Ek Mukhi Rudraksha",
+  sizes: [
+    { name: "Regular", price: 6000, discountedPrice: 3600 }
+  ]
+}
+```
+
+### 8.2 Indonesian Price Map (`slug.tsx`)
+```typescript
+const INDONESIAN_PRICES: Record<number, number> = {
+  1: 2300,   // 1 Mukhi
+  2: 700,    // 2 Mukhi
+  3: 900,    // 3 Mukhi
+  4: 1200,   // 4 Mukhi
+  5: 550,    // 5 Mukhi
+  6: 1200,   // 6 Mukhi
+  7: 1600,   // 7 Mukhi
+  8: 3500,   // 8 Mukhi
+  9: 6000,   // 9 Mukhi
+  10: 8500,  // 10 Mukhi
+  11: 9500,  // 11 Mukhi
+  12: 10000, // 12 Mukhi
+  13: 17000, // 13 Mukhi
+  // 14 Mukhi: To be confirmed
 };
 ```
 
-#### 2.1.3 `src/components/Shop/shopData.ts`
-**Changes:**
-- Updated Nepali prices for all 1-14 Mukhi Rudraksha products
-- Set `discountedPrice` equal to `price` for consistency (no discount applied)
-
 ---
 
-## 3. Updated Nepali Pricing (1-14 Mukhi Rudraksha)
+## 9. Testing Checklist
 
-### 3.1 Price List
-
-| Product ID | Product Name | Old Price (₹) | New Nepali Price (₹) | Indonesian Price (₹) |
-|------------|--------------|---------------|---------------------|---------------------|
-| 1 | 1 Mukhi Rudraksha | 6,000 | **2,300** | 1,150 |
-| 2 | 2 Mukhi Rudraksha | 2,833 | **700** | 350 |
-| 3 | 3 Mukhi Rudraksha | 4,167 | **900** | 450 |
-| 4 | 4 Mukhi Rudraksha | 3,167 | **1,200** | 600 |
-| 5 | 5 Mukhi Rudraksha | 2,500 | **550** | 275 |
-| 6 | 6 Mukhi Rudraksha | 3,167 | **1,200** | 600 |
-| 7 | 7 Mukhi Rudraksha | 4,167 | **1,600** | 800 |
-| 8 | 8 Mukhi Rudraksha | 15,833 | **3,500** | 1,750 |
-| 9 | 9 Mukhi Rudraksha | 15,833 | **6,000** | 3,000 |
-| 10 | 10 Mukhi Rudraksha | 16,667 | **8,500** | 4,250 |
-| 11 | 11 Mukhi Rudraksha | 17,500 | **9,500** | 4,750 |
-| 12 | 12 Mukhi Rudraksha | 19,167 | **10,000** | 5,000 |
-| 13 | 13 Mukhi Rudraksha | 31,667 | **17,000** | 8,500 |
-| 14 | 14 Mukhi Rudraksha | 59,000 | **59,000** (unchanged) | 29,500 |
-
-### 3.2 Pricing Notes
-- All prices are in Indian Rupees (₹)
-- Indonesian prices are automatically calculated as 50% of Nepali prices
-- Prices are rounded to the nearest integer
-- No discount is applied to the base prices (discountedPrice = price)
-
----
-
-## 4. User Experience Flow
-
-### 4.1 Product Page Interaction
-
-1. **User visits a 1-14 Mukhi Rudraksha product page**
-   - Quality toggle is visible (default: Indonesian selected)
-   - Prices displayed reflect Indonesian pricing (half of Nepali)
-
-2. **User toggles to Nepali quality**
-   - Prices update to show full Nepali prices
-   - Origin label changes to "Nepali"
-
-3. **User toggles back to Indonesian quality**
-   - Prices update to show Indonesian prices (half of Nepali)
-   - Origin label changes to "Indonesian"
-
-4. **User adds product to cart**
-   - Quality type is saved with the cart item
-   - Toast notification includes quality type
-   - Cart treats different qualities as separate items
-
-### 4.2 Non-Mukhi Products
-
-For products that are NOT 1-14 Mukhi Rudraksha:
-- No quality toggle is displayed
-- Original prices are shown
-- Origin always displays as "Nepali"
-- No quality type is saved in cart
-
----
-
-## 5. Cart Behavior
-
-### 5.1 Cart Item Identification
-Items are considered the same cart item only if they match:
-- Product ID
-- Quality Type (for 1-14 Mukhi products)
-- Selected Size
-
-### 5.2 Example Scenarios
-
-**Scenario 1: Same Product, Different Qualities**
-- 1 Mukhi Rudraksha (Nepali) - Quantity: 1
-- 1 Mukhi Rudraksha (Indonesian) - Quantity: 1
-- **Result**: Two separate cart items
-
-**Scenario 2: Same Product, Same Quality**
-- 1 Mukhi Rudraksha (Nepali) - Quantity: 1
-- User adds another 1 Mukhi Rudraksha (Nepali)
-- **Result**: Quantity increases to 2
-
----
-
-## 6. Code Structure
-
-### 6.1 Component Hierarchy
-
-```
-ShopDetails Component
-└── ProductCard Component
-    ├── Quality Toggle (conditional - only for IDs 1-14)
-    ├── Price Display (dynamic based on quality)
-    ├── Origin Display (dynamic based on quality)
-    └── Add to Cart / Buy Now (includes quality type)
-```
-
-### 6.2 State Management
-
-```typescript
-// Product-level state
-const [qualityType, setQualityType] = useState<"nepali" | "indonesian">("indonesian");
-const [selectedSize, setSelectedSize] = useState(...);
-
-// Computed values
-const isMukhiRudraksha = product?.id >= 1 && product?.id <= 14;
-const currentPrice = getPriceForQuality(selectedSize.price);
-const currentDiscountedPrice = getPriceForQuality(selectedSize.discountedPrice);
-```
-
----
-
-## 7. Future Considerations
-
-### 7.1 Potential Enhancements
-- Add Indonesian-specific pricing (instead of 50% calculation)
-- Add quality indicators/badges on product listings
-- Add filter option to show only Nepali or Indonesian products
-- Add quality comparison tool
-
-### 7.2 Data Updates Needed
-- Confirm price for 14 Mukhi Rudraksha (currently unchanged at ₹59,000)
-- If Indonesian prices differ from 50% calculation, update pricing logic
-- Consider adding quality-specific product descriptions
-
----
-
-## 8. Testing Checklist
-
-- [x] Quality toggle appears only for 1-14 Mukhi products
+- [x] Nepali prices reverted to original values
+- [x] Indonesian prices explicitly defined
+- [x] Quality toggle shows correct prices
 - [x] Default quality is Indonesian
-- [x] Prices update correctly when toggling quality
-- [x] Origin label updates correctly
+- [x] Toggle only appears for 1-14 Mukhi products
 - [x] Cart saves quality type correctly
-- [x] Different qualities create separate cart items
-- [x] Non-Mukhi products show no toggle
-- [x] Toast notifications include quality type
-- [x] All prices match the updated Nepali pricing
+- [x] Price display updates on toggle
+- [x] Origin label updates correctly
+- [ ] Indonesian price for 14 Mukhi confirmed (pending)
 
 ---
 
-## 9. Summary
+## 10. Pending Items
 
-The Quality Toggle feature has been successfully implemented to allow customers to choose between Nepali and Indonesian quality Rudraksha beads for 1-14 Mukhi products. The feature:
+### 10.1 Confirmation Needed
+- **14 Mukhi Rudraksha Indonesian Price**: Currently uses fallback calculation (50% of Nepali = ₹29,500). Awaiting explicit price confirmation.
 
-- ✅ Provides clear pricing options
-- ✅ Maintains user-friendly interface
-- ✅ Properly handles cart operations
-- ✅ Applies only to relevant products
-- ✅ Uses updated Nepali pricing structure
-
-All changes have been tested and are ready for production use.
+### 10.2 Future Considerations
+- Add Indonesian-specific discounted prices if applicable
+- Consider adding quality indicators on product listings
+- Add filter option for quality type on shop page
 
 ---
 
-**Document Version**: 1.0  
+## 11. Summary
+
+### ✅ Completed
+1. Reverted all Nepali prices to original values
+2. Implemented explicit Indonesian price mapping
+3. Quality toggle feature working correctly
+4. Cart integration complete
+5. Mobile-only image cropping for Shiva Lingam temple image
+
+### 📋 Current Status
+- **Nepali Prices**: ✅ All correct (original values restored)
+- **Indonesian Prices**: ✅ 13 out of 14 products have explicit prices
+- **Quality Toggle**: ✅ Fully functional
+- **14 Mukhi Indonesian Price**: ⏳ Pending confirmation
+
+---
+
+## 12. Contact & Support
+
+For questions or updates regarding pricing:
+- Review this documentation
+- Check `src/components/Shop/shopData.ts` for Nepali prices
+- Check `src/components/Shop/slug.tsx` for Indonesian price mapping
+
+---
+
+**Document Version**: 2.0  
 **Last Updated**: Current Date  
-**Author**: Development Team
+**Status**: Active - Awaiting 14 Mukhi Indonesian price confirmation

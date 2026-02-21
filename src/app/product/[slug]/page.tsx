@@ -42,20 +42,46 @@ export default function ProductDetailPage({
   const [quantity, setQuantity] = useState(1);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [priceAdjustment, setPriceAdjustment] = useState(0);
-  
+
   // Quality toggle state for 1-14 Mukhi Rudraksha
-  const isMukhiRudraksha = product?.category === "1 to 14 Mukhi Rudraksha" || 
+  const isMukhiRudraksha =
+    product?.category === "1 to 14 Mukhi Rudraksha" ||
     (product?.faces && product.faces >= 1 && product.faces <= 14);
-  const [qualityType, setQualityType] = useState<"nepali" | "indonesian">("indonesian");
-  
+  const [qualityType, setQualityType] =
+    useState<"nepali" | "indonesian">("indonesian");
+
+  // Explicit Indonesian prices for 1-14 Mukhi products (by product id)
+  const INDONESIAN_PRICES: Record<number, number> = {
+    13: 2300, // 1 Mukhi
+    14: 700, // 2 Mukhi
+    15: 900, // 3 Mukhi
+    16: 1200, // 4 Mukhi
+    17: 550, // 5 Mukhi
+    18: 1200, // 6 Mukhi
+    19: 1600, // 7 Mukhi
+    20: 3500, // 8 Mukhi
+    21: 6000, // 9 Mukhi
+    22: 8500, // 10 Mukhi
+    23: 9500, // 11 Mukhi
+    24: 10000, // 12 Mukhi
+    25: 17000, // 13 Mukhi
+    // 26 (14 Mukhi) – uses fallback calculation (50% of Nepali) until confirmed
+  };
+
   // Calculate price based on quality
   const getPriceForQuality = (price: number) => {
     if (isMukhiRudraksha && qualityType === "indonesian") {
+      const id = product?.id ?? -1;
+      const indonesianPrice = INDONESIAN_PRICES[id];
+      if (indonesianPrice !== undefined) {
+        return indonesianPrice;
+      }
+      // Fallback: 50% of Nepali price for products without explicit Indonesian price
       return Math.round(price / 2);
     }
     return price;
   };
-  
+
   const currentPrice = getPriceForQuality(product?.price || 0);
   const currentOriginalPrice = getPriceForQuality(product?.originalPrice || 0);
 
