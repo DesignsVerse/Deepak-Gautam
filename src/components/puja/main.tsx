@@ -226,15 +226,7 @@ export default function KaalSarpDoshPuja() {
                 )}
               </h2>
               <p className="mb-2 text-base font-bold text-yellow-100 sm:text-lg md:text-xl">
-                {isHindi ? (
-                  <>
-                    <span className="text-yellow-300">केवल 2,500 भारतीय रुपये में</span> | उज्जैन में | महाकाल के पास
-                  </>
-                ) : (
-                  <>
-                    <span className="text-yellow-300">Only 2,500 Indian Rupees</span> | In Ujjain | Near Mahakal
-                  </>
-                )}
+                {isHindi ? "उज्जैन में | महाकाल के पास" : "In Ujjain | Near Mahakal"}
               </p>
               <motion.div
                 className="mt-4 inline-block rounded-lg bg-yellow-400 px-4 py-2"
@@ -257,14 +249,12 @@ export default function KaalSarpDoshPuja() {
             {isHindi ? (
               <>
                 <span> काल सर्प दोष</span> पूजा{" "}
-                <span className="text-orange-700">उज्जैन</span> में{" "}
-                <span className="text-green-600 font-bold">सिर्फ ₹2,500 में</span>
+                <span className="text-orange-700">उज्जैन</span> में
               </>
             ) : (
               <>
                 Kaal Sarp Dosh Puja in{" "}
-                <span className="text-orange-700">Ujjain</span>{" "}
-                <span className="text-green-600 font-bold">at Only ₹2,500</span>
+                <span className="text-orange-700">Ujjain</span>
               </>
             )}
           </motion.h1>
@@ -277,20 +267,6 @@ export default function KaalSarpDoshPuja() {
           >
             {currentContent.subtitle}
           </motion.p>
-
-          {/* Price Highlight */}
-          <motion.div
-            className="relative z-10 mb-6 flex items-center justify-center gap-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          >
-            <div className="rounded-lg bg-green-100 px-4 py-2 shadow-md">
-              <span className="text-sm font-semibold text-gray-700 sm:text-base">
-                {isHindi ? "केवल ₹2,500 में बुक करें" : "Book Now at Only ₹2,500"}
-              </span>
-            </div>
-          </motion.div>
 
           {/* CTA Buttons */}
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
