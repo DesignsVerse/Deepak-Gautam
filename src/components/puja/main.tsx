@@ -240,12 +240,14 @@ export default function KaalSarpDoshPuja() {
             {isHindi ? (
               <>
                 <span> काल सर्प दोष</span> पूजा{" "}
-                <span className="text-orange-700">उज्जैन</span> में
+                <span className="text-orange-700">उज्जैन</span> में{" "}
+                <span className="text-green-600 font-bold">सिर्फ ₹2,500 में</span>
               </>
             ) : (
               <>
                 Kaal Sarp Dosh Puja in{" "}
-                <span className="text-orange-700">Ujjain</span>
+                <span className="text-orange-700">Ujjain</span>{" "}
+                <span className="text-green-600 font-bold">at Only ₹2,500</span>
               </>
             )}
           </motion.h1>
