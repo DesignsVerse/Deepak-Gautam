@@ -201,20 +201,20 @@ export default function KaalSarpDoshPuja() {
 
           {/* Special Offer Banner */}
           <motion.div
-            className="relative z-10 mb-6 mx-auto max-w-2xl rounded-2xl bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 p-4 shadow-2xl"
+            className="relative z-10 mb-6 mx-auto max-w-3xl rounded-2xl bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 p-6 shadow-2xl border-4 border-yellow-400"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="text-center">
               <motion.div
-                className="mb-2 text-sm font-bold text-yellow-200 sm:text-base"
+                className="mb-3 text-lg font-bold text-yellow-200 sm:text-xl md:text-2xl"
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 {isHindi ? "🎉 विशेष ऑफर 🎉" : "🎉 SPECIAL OFFER 🎉"}
               </motion.div>
-              <h2 className="mb-2 text-2xl font-extrabold text-white drop-shadow-lg sm:text-3xl md:text-4xl">
+              <h2 className="mb-3 text-3xl font-extrabold text-white drop-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl">
                 {isHindi ? (
                   <>
                     काल सर्प पूजा <span className="text-yellow-300">सिर्फ ₹2,500</span> में
@@ -225,9 +225,26 @@ export default function KaalSarpDoshPuja() {
                   </>
                 )}
               </h2>
-              <p className="text-sm font-semibold text-yellow-100 sm:text-base">
-                {isHindi ? "उज्जैन में | महाकाल के पास" : "In Ujjain | Near Mahakal"}
+              <p className="mb-2 text-base font-bold text-yellow-100 sm:text-lg md:text-xl">
+                {isHindi ? (
+                  <>
+                    <span className="text-yellow-300">केवल 2,500 भारतीय रुपये में</span> | उज्जैन में | महाकाल के पास
+                  </>
+                ) : (
+                  <>
+                    <span className="text-yellow-300">Only 2,500 Indian Rupees</span> | In Ujjain | Near Mahakal
+                  </>
+                )}
               </p>
+              <motion.div
+                className="mt-4 inline-block rounded-lg bg-yellow-400 px-4 py-2"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <p className="text-sm font-extrabold text-orange-900 sm:text-base md:text-lg">
+                  {isHindi ? "🔥 अभी बुक करें 🔥" : "🔥 Book Now 🔥"}
+                </p>
+              </motion.div>
             </div>
           </motion.div>
 
