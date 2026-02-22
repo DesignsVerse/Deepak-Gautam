@@ -30,6 +30,28 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#800000] text-white py-12">
+      {/* Special Offer Banner in Footer */}
+      <div className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 py-4 mb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
+                🎉 विशेष ऑफर | Special Offer 🎉
+              </h3>
+              <p className="text-sm sm:text-base text-yellow-100">
+                काल सर्प पूजा सिर्फ ₹2,500 में उज्जैन में | Kaal Sarp Puja at Only ₹2,500 in Ujjain
+              </p>
+            </div>
+            <a
+              href="tel:+91-9153164444"
+              className="bg-white text-orange-600 px-6 py-2 rounded-full text-sm sm:text-base font-bold hover:bg-yellow-100 transition-colors whitespace-nowrap"
+            >
+              📞 Call Now: +91-9153164444
+            </a>
+          </div>
+        </div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"

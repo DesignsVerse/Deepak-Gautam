@@ -57,12 +57,36 @@ const Header = () => {
     return () => window.removeEventListener("storage", updateCartCount);
   }, []);
 
+  // Don't show offer banner on puja page
+  const showOfferBanner = pathname !== "/puja";
+
   return (
     <>
+      {/* Special Offer Banner */}
+      {showOfferBanner && (
+        <div className="fixed top-0 left-0 w-full z-[60] bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 text-white py-2 shadow-lg">
+          <div className="container mx-auto px-4 flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center gap-2 flex-1 min-w-[200px]">
+              <span className="text-sm sm:text-base font-bold animate-pulse">🎉</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                काल सर्प पूजा सिर्फ ₹2,500 में | Kaal Sarp Puja at Only ₹2,500 in Ujjain
+              </span>
+            </div>
+            <a
+              href="tel:+91-9153164444"
+              className="bg-white text-orange-600 px-3 py-1 rounded-full text-xs sm:text-sm font-bold hover:bg-yellow-100 transition-colors whitespace-nowrap"
+            >
+              📞 Call Now
+            </a>
+          </div>
+        </div>
+      )}
+      
       <div
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 
+        className={`fixed left-0 w-full z-50 transition-all duration-500 
           ${sticky ? "shadow-lg bg-white" : "bg-[#800000]"} 
-          ${shrink ? "py-2" : "py-4"}`}
+          ${shrink ? "py-2" : "py-4"}
+          ${showOfferBanner ? "top-10" : "top-0"}`}
       >
         <header>
           <div className="container mx-auto px-4 flex items-center justify-between transition-all duration-300">

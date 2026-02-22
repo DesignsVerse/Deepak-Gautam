@@ -199,6 +199,38 @@ export default function KaalSarpDoshPuja() {
             <FaPhone /> {currentContent.freeConsult}
           </motion.h3>
 
+          {/* Special Offer Banner */}
+          <motion.div
+            className="relative z-10 mb-6 mx-auto max-w-2xl rounded-2xl bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 p-4 shadow-2xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <div className="text-center">
+              <motion.div
+                className="mb-2 text-sm font-bold text-yellow-200 sm:text-base"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {isHindi ? "🎉 विशेष ऑफर 🎉" : "🎉 SPECIAL OFFER 🎉"}
+              </motion.div>
+              <h2 className="mb-2 text-2xl font-extrabold text-white drop-shadow-lg sm:text-3xl md:text-4xl">
+                {isHindi ? (
+                  <>
+                    काल सर्प पूजा <span className="text-yellow-300">सिर्फ ₹2,500</span> में
+                  </>
+                ) : (
+                  <>
+                    Kaal Sarp Puja at <span className="text-yellow-300">Only ₹2,500</span>
+                  </>
+                )}
+              </h2>
+              <p className="text-sm font-semibold text-yellow-100 sm:text-base">
+                {isHindi ? "उज्जैन में | महाकाल के पास" : "In Ujjain | Near Mahakal"}
+              </p>
+            </div>
+          </motion.div>
+
           <motion.h1
             className="relative z-10 mb-6 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 drop-shadow-xl sm:text-4xl md:text-5xl"
             initial={{ opacity: 0, y: -50 }}
@@ -226,6 +258,20 @@ export default function KaalSarpDoshPuja() {
           >
             {currentContent.subtitle}
           </motion.p>
+
+          {/* Price Highlight */}
+          <motion.div
+            className="relative z-10 mb-6 flex items-center justify-center gap-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          >
+            <div className="rounded-lg bg-green-100 px-4 py-2 shadow-md">
+              <span className="text-sm font-semibold text-gray-700 sm:text-base">
+                {isHindi ? "केवल ₹2,500 में बुक करें" : "Book Now at Only ₹2,500"}
+              </span>
+            </div>
+          </motion.div>
 
           {/* CTA Buttons */}
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
