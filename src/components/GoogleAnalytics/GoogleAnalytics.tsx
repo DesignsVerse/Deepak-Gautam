@@ -2,22 +2,22 @@
 import Script from "next/script";
 
 interface GoogleAnalyticsProps {
-  trackingId: string;
+  trackingIds: string[];
 }
 
-const GoogleAnalytics = ({ trackingId }: GoogleAnalyticsProps) => {
+const GoogleAnalytics = ({ trackingIds }: GoogleAnalyticsProps) => {
   return (
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${trackingIds[0]}`}
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${trackingId}');
+          ${trackingIds.map((id) => `gtag('config', '${id}');`).join("\n")}
         `}
       </Script>
     </>

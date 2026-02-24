@@ -226,7 +226,7 @@ export default function KaalSarpDoshPuja() {
                 )}
               </h2>
               <p className="mb-2 text-base font-bold text-yellow-100 sm:text-lg md:text-xl">
-                {isHindi ? "उज्जैन में | महाकाल के पास" : "In Ujjain | Near Mahakal"}
+                {isHindi ? "उज्जैन, मध्य प्रदेश" : "Ujjain, Madhya Pradesh"}
               </p>
               <motion.div
                 className="mt-4 inline-block rounded-lg bg-yellow-400 px-4 py-2"
@@ -272,7 +272,7 @@ export default function KaalSarpDoshPuja() {
           <div className="relative z-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
             <motion.a
               href="tel:+91-9153164444"
-              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2A sm:px-6 sm:py-3 sm:text-base"
+              className="flex w-full max-w-xs items-center justify-center gap-1 rounded-full bg-gradient-to-r from-orange-600 to-red-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-xl sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={currentContent.contact}

@@ -17,7 +17,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
     <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
-      {!isCallNowPage && <GoogleAnalytics trackingId="AW-10955081643" />}
+      {!isCallNowPage && (
+        <GoogleAnalytics trackingIds={["AW-10955081643", "AW-17974197468"]} />
+      )}
       {!isCallNowPage && <Header />}
       {children}
       {!isCallNowPage && <Popup />}
