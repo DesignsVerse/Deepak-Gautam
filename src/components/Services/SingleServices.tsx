@@ -21,6 +21,12 @@ const SingleServices = ({ services }: { services: Services }) => {
   const handleCallClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    
+    // ✅ Track Google Ads Conversion
+    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion();
+    }
+    
     window.location.href = "tel:+919153164444";
   };
 

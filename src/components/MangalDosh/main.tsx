@@ -237,14 +237,19 @@ export default function MangalDoshPuja() {
               aria-label={currentContent.contact}
               onClick={async () => {
                 try {
+                  // ✅ Track Google Ads Conversion
+                  if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                    (window as any).gtag_report_conversion();
+                  }
+
                   const clickData = {
                     timestamp: new Date().toISOString(),
                     button: "Call Now",
                   };
 
                   // Push to Google Tag Manager
-                  if (window.dataLayer) {
-                    window.dataLayer.push({
+                  if ((window as any).dataLayer) {
+                    (window as any).dataLayer.push({
                       event: "call_now_clicked",
                       button_text: "Call Now",
                     });

@@ -84,7 +84,16 @@ const Hero = () => {
             </Link>
 
             {/* Call Now Button with Phone Link */}
-            <Link href="tel:+919153164444" rel="noopener noreferrer">
+            <Link 
+              href="tel:+919153164444" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                // ✅ Track Google Ads Conversion
+                if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                  (window as any).gtag_report_conversion();
+                }
+              }}
+            >
               <motion.button
                 className="mt-2 md:mt-4 px-5 sm:px-6 py-3 bg-gradient-to-r from-[#FF5C16] to-[#800000] text-white font-semibold rounded-lg shadow-md text-sm md:text-base relative overflow-hidden"
                 variants={buttonVariants}

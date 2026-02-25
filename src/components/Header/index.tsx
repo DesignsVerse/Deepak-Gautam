@@ -75,6 +75,12 @@ const Header = () => {
             <a
               href="tel:+91-9153164444"
               className="bg-white text-orange-600 px-3 py-1 rounded-full text-xs sm:text-sm font-bold hover:bg-yellow-100 transition-colors whitespace-nowrap"
+              onClick={() => {
+                // ✅ Track Google Ads Conversion
+                if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                  (window as any).gtag_report_conversion();
+                }
+              }}
             >
               📞 Call Now
             </a>

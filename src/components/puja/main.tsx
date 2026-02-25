@@ -276,37 +276,42 @@ export default function KaalSarpDoshPuja() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={currentContent.contact}
-              onClick={async () => {
+              onClick={async (e) => {
                 try {
+                  // ✅ Track Google Ads Conversion
+                  if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                    (window as any).gtag_report_conversion();
+                  }
+
                   const clickData = {
                     timestamp: new Date().toISOString(),
                     button: "Call Now",
                   };
 
-            // ✅ Push to Google Tag Manager
-            if (window.dataLayer) {
-            window.dataLayer.push({
-            event: "call_now_clicked",
-            button_text: "Call Now",
-            });
-            }
+                  // ✅ Push to Google Tag Manager
+                  if ((window as any).dataLayer) {
+                    (window as any).dataLayer.push({
+                      event: "call_now_clicked",
+                      button_text: "Call Now",
+                    });
+                  }
 
-            // ✅ Also track it in your backend (optional)
-            const response = await fetch("/api/click", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(clickData),
-            });
+                  // ✅ Also track it in your backend (optional)
+                  const response = await fetch("/api/click", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(clickData),
+                  });
 
-            if (!response.ok) {
-            throw new Error("Failed to track click");
-            }
-            } catch (error) {
-            console.error("Tracking failed:", error);
-            }
-            }}
+                  if (!response.ok) {
+                    throw new Error("Failed to track click");
+                  }
+                } catch (error) {
+                  console.error("Tracking failed:", error);
+                }
+              }}
             >
             <FaPhone /> {currentContent.contact}
             </motion.a>

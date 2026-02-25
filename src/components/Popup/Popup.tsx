@@ -76,6 +76,12 @@ const Popup = () => {
                   href={`tel:${callNumber}`}
                   className="inline-block px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
                   style={{ backgroundColor: colors.primary, color: colors.background }}
+                  onClick={() => {
+                    // ✅ Track Google Ads Conversion
+                    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                      (window as any).gtag_report_conversion();
+                    }
+                  }}
                 >
                   📞 Call Now: {callNumber}
                 </a>

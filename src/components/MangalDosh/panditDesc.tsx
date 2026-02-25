@@ -115,6 +115,12 @@ const PanditDes = ({ isHindi }) => {
                 <a
                   href="tel:+91-9153164444"
                   className="relative z-10 flex items-center gap-1 sm:gap-2"
+                  onClick={() => {
+                    // ✅ Track Google Ads Conversion
+                    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                      (window as any).gtag_report_conversion();
+                    }
+                  }}
                 >
                   <span>{currentContent.buttonText}</span>
                   <span className="text-lg group-hover:animate-bounce sm:text-xl">

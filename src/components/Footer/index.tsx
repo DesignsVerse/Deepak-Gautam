@@ -45,6 +45,12 @@ export default function Footer() {
             <a
               href="tel:+91-9153164444"
               className="bg-white text-orange-600 px-6 py-2 rounded-full text-sm sm:text-base font-bold hover:bg-yellow-100 transition-colors whitespace-nowrap"
+              onClick={() => {
+                // ✅ Track Google Ads Conversion
+                if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                  (window as any).gtag_report_conversion();
+                }
+              }}
             >
               📞 Call Now: +91-9153164444
             </a>
