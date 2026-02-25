@@ -221,7 +221,7 @@ export default function KaalSarpDoshPuja() {
                   </>
                 ) : (
                   <>
-                    Kaal Sarp Puja at <span className="text-yellow-300">Only ₹2,500</span>
+                    Kaal Sarp Puja at  <span className="text-yellow-300">Only ₹2,500</span>
                   </>
                 )}
               </h2>
